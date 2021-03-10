@@ -68,9 +68,19 @@ header nav ul li a:hover {
     transition: 0.5s;
 }
 
+header nav ul li a:active {
+    color: #8F5613;
+    transition: 0.3s;
+}
+
 header nav ul li a:hover svg path {
     fill: #E39128;
     transition: 0.5s;
+}
+
+header nav ul li a:active svg path {
+    fill: #8F5613;
+    transition: 0.3s;
 }
 
 header nav ul li button {
@@ -88,6 +98,11 @@ header nav ul li button {
 header nav ul li button:hover {
     background: #CD6326;
     transition: 0.5s;
+}
+
+header nav ul li button:active {
+    background: #8F5613;
+    transition: 0.3s;
 }
 
 h2 {
@@ -144,6 +159,11 @@ main {
     transition: 0.5s;
 }
 
+.content-block div button:active {
+    background: #8F5613;
+    transition: 0.3s;
+}
+
 .latest-articles {
     width: 1200px;
     height: 728px;
@@ -186,6 +206,11 @@ h4 div:last-child {
 .latest-articles nav a:hover svg path {
     fill: #E39128;
     transition: 0.5s;
+}
+
+.latest-articles nav a:active svg path {
+    fill: #8F5613;
+    transition: 0.3s;
 }
 
 .latest-articles nav div {
@@ -284,6 +309,11 @@ h5 form input:last-child:hover {
     transition: 0.5s;
 }
 
+h5 form input:last-child:active {
+    background: #8F5613;
+    transition: 0.3s;
+}
+
 
 footer {
     width: 100%;
@@ -338,7 +368,17 @@ footer {
     transition: 0.5s;
 }
 
+.wrapper nav ul a:active {
+    color: #8F5613;
+    transition: 0.3s;
+}
+
 .wrapper nav ul a:hover svg path:first-child {
     fill: #E39128;
     transition: 0.5s;
+}
+
+.wrapper nav ul a:active svg path:first-child {
+    fill: #8F5613;
+    transition: 0.3s;
 }
