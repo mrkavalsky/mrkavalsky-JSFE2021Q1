@@ -234,3 +234,60 @@ h4 div:last-child {
     line-height: 27px;
     color: #F7F7F7;
 }
+
+.get-notified {
+    width: 1200px;
+    height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5 {
+    width: auto;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+h5 span {
+    font-size: 27px;
+    line-height: 40px;
+    color: #333333;
+}
+
+h5 form input:first-child {
+    width: 540px;
+    height: 60px;
+    border: 1px solid #666666;
+    background: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 27px;
+    color: #666666;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+h5 form input:last-child {
+    width: 120px;
+    height: 60px;
+    background: #CD6326;
+    border-style: none;
+    border-radius: 0px 5px 5px 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 27px;
+    color: #F7F7F7;
+}
+
+h5 form input:last-child:hover {
+    background: #E39128;
+    transition: 0.5s;
+}
+
