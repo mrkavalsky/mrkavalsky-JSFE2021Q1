@@ -11,6 +11,7 @@ h1 {
     font-size: 2rem;
     line-height: 60px;
     font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
 }
 
 .survival {
@@ -136,7 +137,7 @@ main {
 
 .content-block div {
     width: 274px;
-    height: 356px;
+    height: 341px;
     margin-top: 120px;
     display: flex;
     flex-direction: column;
@@ -206,6 +207,10 @@ h4 div:last-child {
 .latest-articles nav a:hover svg path {
     fill: #E39128;
     transition: 0.5s;
+}
+
+.latest-articles nav a svg {
+    margin-top: 12px;
 }
 
 .latest-articles nav a:active svg path {
@@ -345,7 +350,7 @@ footer {
 }
 
 .wrapper nav:nth-child(2) {
-    width: 480px;
+    width: 475px;
 }
 
 .wrapper nav:nth-child(3) {
@@ -356,7 +361,7 @@ footer {
     list-style-type: none;
 }
 
-.wrapper nav ul a {
+.wrapper nav:nth-child(2) ul a {
     text-decoration: none;
     font-size: 23px;
     line-height: 60px;
