@@ -94,6 +94,12 @@ body {
 	transition: 0.3s;
 	cursor: pointer;
 }
+
+.active {
+	transform: scale(0.95);
+	transition: 0.1s;
+}
+
 .piano-key:hover {
 	background-color: #fff;
 }
