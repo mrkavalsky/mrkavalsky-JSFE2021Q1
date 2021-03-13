@@ -1,5 +1,7 @@
 const keys = document.querySelectorAll('.piano-key');
 const fullscreen = document.querySelector('.fullscreen');
+const btnNotes = document.querySelector('.btn-notes');
+const btnLetters = document.querySelector('.btn-letters');
 let isMouseDown = false;
 
 function removeTransition(e) {
@@ -10,7 +12,7 @@ function removeTransition(e) {
 function playSound(e) {
     const type = e.type;
     let code;
-    
+
     switch (type) {
         case 'mouseover':
             if(!isMouseDown) return;
@@ -45,6 +47,16 @@ function setFullScreen() {
     }
 }
 
+function setNotes() {
+    btnNotes.classList.add('btn-active');
+    btnLetters.classList.remove('btn-active');
+}
+
+function setLetter() {
+    btnLetters.classList.add('btn-active');
+    btnNotes.classList.remove('btn-active');
+}
+
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 document.addEventListener('click', playSound);
@@ -53,3 +65,5 @@ fullscreen.addEventListener('click', setFullScreen);
 document.addEventListener('mousedown', setMouseMode);
 document.addEventListener('mouseup', setMouseMode);
 document.addEventListener('mouseover', playSound);
+btnNotes.addEventListener('click', setNotes);
+btnLetters.addEventListener('click', setLetter);
