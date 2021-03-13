@@ -7,7 +7,24 @@ function removeTransition(e) {
     this.classList.remove('active');
 }
 
-function playSound(code) {
+function playSound(e) {
+    const type = e.type;
+    let code;
+    
+    switch (type) {
+        case 'mouseover':
+            if(!isMouseDown) return;
+            code = e.target.dataset.code;
+            break;
+        case 'click':
+            code = e.target.dataset.code;
+            break;
+        case 'keydown':
+            code = e.code;
+            break;
+        default: return;
+    };
+
     const audio = document.querySelector(`audio[data-code="${code}"]`);
     const key = document.querySelector(`.piano-key[data-code="${code}"]`);
     if(!audio) return;
@@ -20,28 +37,19 @@ function setMouseMode() {
     isMouseDown = !isMouseDown;
 }
 
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-
-document.addEventListener('click', function(e) {
-    const code = e.target.dataset.code;
-    playSound(code); 
-});
-document.addEventListener('keydown', function(e) {
-    const code = e.code;
-    playSound(code);    
-});
-
-fullscreen.addEventListener('click', function(e) {
+function setFullScreen() {
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
     } else {
         document.exitFullscreen();
     }
-});
+}
+
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+document.addEventListener('click', playSound);
+document.addEventListener('keydown', playSound);
+fullscreen.addEventListener('click', setFullScreen);
 document.addEventListener('mousedown', setMouseMode);
 document.addEventListener('mouseup', setMouseMode);
-document.addEventListener('mouseover', function(e) {
-    if(!isMouseDown) return;
-    const code = e.target.dataset.code;
-    playSound(code);
-});
+document.addEventListener('mouseover', playSound);
