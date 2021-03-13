@@ -1,5 +1,6 @@
 const keys = document.querySelectorAll('.piano-key');
 const fullscreen = document.querySelector('.fullscreen');
+let isMouseDown = false;
 
 function removeTransition(e) {
     if(e.propertyName == 'transform')
@@ -13,6 +14,10 @@ function playSound(code) {
     audio.currentTime = 0;
     audio.play();
     key.classList.add('active');
+}
+
+function setMouseMode() {
+    isMouseDown = !isMouseDown;
 }
 
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
@@ -32,4 +37,11 @@ fullscreen.addEventListener('click', function(e) {
     } else {
         document.exitFullscreen();
     }
+});
+document.addEventListener('mousedown', setMouseMode);
+document.addEventListener('mouseup', setMouseMode);
+document.addEventListener('mouseover', function(e) {
+    if(!isMouseDown) return;
+    const code = e.target.dataset.code;
+    playSound(code);
 });
