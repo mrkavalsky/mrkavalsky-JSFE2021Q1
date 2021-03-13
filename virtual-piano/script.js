@@ -1,4 +1,5 @@
 const keys = document.querySelectorAll('.piano-key');
+const fullscreen = document.querySelector('.fullscreen');
 
 function removeTransition(e) {
     if(e.propertyName == 'transform')
@@ -15,6 +16,7 @@ function playSound(code) {
 }
 
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
 document.addEventListener('click', function(e) {
     const code = e.target.dataset.code;
     playSound(code); 
@@ -22,4 +24,12 @@ document.addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
     const code = e.code;
     playSound(code);    
+});
+
+fullscreen.addEventListener('click', function(e) {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
 });
