@@ -50,11 +50,13 @@ function setFullScreen() {
 function setNotes() {
     btnNotes.classList.add('btn-active');
     btnLetters.classList.remove('btn-active');
+    keys.forEach(key => key.classList.remove('piano-key-letter'));
 }
 
 function setLetter() {
     btnLetters.classList.add('btn-active');
     btnNotes.classList.remove('btn-active');
+    keys.forEach(key => key.classList.add('piano-key-letter'));
 }
 
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));

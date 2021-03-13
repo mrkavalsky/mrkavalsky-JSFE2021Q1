@@ -148,8 +148,9 @@ body {
 	left: 20px;
 	transition: 0.3s;
 }
-.piano-key::after {
-	display: none;
+.piano-key-letter::after,
+.piano-key-letter::before {
+	display: block;
 	content: attr(data-letter);
 }
 .piano-key:hover::before,
