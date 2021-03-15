@@ -387,3 +387,8 @@ footer {
     fill: #8F5613;
     transition: 0.3s;
 }
+
+.wrapper nav ul a {
+    display: flex;
+    align-items: center;
+}
