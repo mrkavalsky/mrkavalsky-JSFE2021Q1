@@ -35,8 +35,12 @@ function playSound(e) {
     key.classList.add('active');
 }
 
-function setMouseMode() {
-    isMouseDown = !isMouseDown;
+function setMouseMode(e) {
+    if(e.type == 'mouseup') isMouseDown = false;
+    else 
+        keys.forEach(key => {
+            if(key == e.target) isMouseDown = true;
+        });
 }
 
 function setFullScreen() {
