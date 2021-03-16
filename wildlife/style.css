@@ -8,7 +8,7 @@ h1 {
     display: block;
     width: 155px;
     color: #F7F7F7;
-    font-size: 2rem;
+    font-size: 32px;
     line-height: 60px;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -108,7 +108,7 @@ header nav ul li button:active {
 
 h2 {
     font-weight: normal;
-    font-size: 3rem;
+    font-size: 48px;
     line-height: 72px;
     letter-spacing: 2px;
     color: #CD6326;
@@ -185,13 +185,13 @@ h4 {
 }
 
 h4 div:first-child {
-    font-size: 3rem;
+    font-size: 48px;
     line-height: 72px;
     color: #333333;
 }
 
 h4 div:last-child {
-    font-size: 1.5rem;
+    font-size: 24px;
     line-height: 36px;
     color: #666666;
 }
