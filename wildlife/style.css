@@ -392,3 +392,43 @@ footer {
     display: flex;
     align-items: center;
 }
+
+.facebook {
+    width: 40px;
+    height: 40px;
+    background: url(./assets/Facebook.svg);
+}
+
+.instagram {
+    width: 40px;
+    height: 40px;
+    background: url(./assets/Instagram.svg);
+}
+
+.pintrest {
+    width: 40px;
+    height: 40px;
+    background: url(./assets/Pinterest.svg);
+}
+
+.telegram {
+    width: 40px;
+    height: 40px;
+    background: url(./assets/Telegram.svg);
+}
+
+.facebook:hover,
+.instagram:hover,
+.pintrest:hover,
+.telegram:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.facebook:active,
+.instagram:active,
+.pintrest:active,
+.telegram:active{
+    transform: scale(0.9);
+    transition: 0.2s;
+}
