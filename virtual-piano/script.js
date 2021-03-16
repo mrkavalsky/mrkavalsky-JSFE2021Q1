@@ -5,7 +5,7 @@ const btnLetters = document.querySelector('.btn-letters');
 let isMouseDown = false;
 
 function removeTransition(e) {
-    if(e.propertyName == 'transform')
+    if(e.propertyName == 'transform' && !isMouseDown)
     this.classList.remove('active');
 }
 
@@ -63,7 +63,12 @@ function setLetter() {
     keys.forEach(key => key.classList.add('piano-key-letter'));
 }
 
+function removeClassActive() {
+    this.classList.remove('active');
+}
+
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach(key => key.addEventListener('mouseout', removeClassActive));
 
 document.addEventListener('click', playSound);
 document.addEventListener('keydown', playSound);
