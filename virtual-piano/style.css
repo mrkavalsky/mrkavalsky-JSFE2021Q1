@@ -97,7 +97,7 @@ body {
 
 .active {
 	transform: scale(0.9);
-	transition: all 0.1s;
+	transition: all 0.2s;
 	border:solid 5px red;
 }
 
