@@ -31,6 +31,7 @@ function playSound(e) {
     audio.currentTime = 0;
     audio.play();
     key.classList.add('active');
+    key.classList.remove('piano-key-hover');
 }
 
 function toggleMouseMode(e) {
@@ -66,7 +67,11 @@ function removeClassActive(e) {
         let key = document.querySelector(`.piano-key[data-code="${e.code}"]`);
         if(key === null) return;
         key.classList.remove('active');
-    } else this.classList.remove('active');
+        key.classList.add('piano-key-hover');
+    } else {
+        this.classList.remove('active');
+        this.classList.add('piano-key-hover');
+    };
 }
 
 function toggleKeyMode() {
