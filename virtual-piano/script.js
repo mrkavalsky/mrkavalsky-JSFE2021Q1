@@ -3,11 +3,7 @@ const fullscreen = document.querySelector('.fullscreen');
 const btnNotes = document.querySelector('.btn-notes');
 const btnLetters = document.querySelector('.btn-letters');
 let isMouseDown = false;
-
-function removeTransition(e) {
-    if(e.propertyName == 'transform' && !isMouseDown)
-    this.classList.remove('active');
-}
+let isKeyDown = false;
 
 function playSound(e) {
     const type = e.type;
@@ -18,10 +14,12 @@ function playSound(e) {
             if(!isMouseDown) return;
             code = e.target.dataset.code;
             break;
-        case 'click':
+        case 'mousedown':
             code = e.target.dataset.code;
             break;
         case 'keydown':
+            if(isKeyDown) return;
+            isKeyDown = true;
             code = e.code;
             break;
         default: return;
@@ -35,7 +33,7 @@ function playSound(e) {
     key.classList.add('active');
 }
 
-function setMouseMode(e) {
+function toggleMouseMode(e) {
     if(e.type == 'mouseup') isMouseDown = false;
     else 
         keys.forEach(key => {
@@ -63,18 +61,29 @@ function setLetter() {
     keys.forEach(key => key.classList.add('piano-key-letter'));
 }
 
-function removeClassActive() {
-    this.classList.remove('active');
+function removeClassActive(e) {
+    if( e.type == 'keyup') {
+        let key = document.querySelector(`.piano-key[data-code="${e.code}"]`);
+        if(key === null) return;
+        key.classList.remove('active');
+    } else this.classList.remove('active');
 }
 
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+function toggleKeyMode() {
+    isKeyDown = false;
+}
+
+keys.forEach(key => key.addEventListener('mouseup', removeClassActive));
 keys.forEach(key => key.addEventListener('mouseout', removeClassActive));
 
-document.addEventListener('click', playSound);
+document.addEventListener('mousedown', playSound);
 document.addEventListener('keydown', playSound);
-fullscreen.addEventListener('click', setFullScreen);
-document.addEventListener('mousedown', setMouseMode);
-document.addEventListener('mouseup', setMouseMode);
+document.addEventListener('mousedown', toggleMouseMode);
+document.addEventListener('mouseup', toggleMouseMode);
 document.addEventListener('mouseover', playSound);
+document.addEventListener('keyup', removeClassActive);
+document.addEventListener('keyup', toggleKeyMode);
+
+fullscreen.addEventListener('click', setFullScreen);
 btnNotes.addEventListener('click', setNotes);
 btnLetters.addEventListener('click', setLetter);

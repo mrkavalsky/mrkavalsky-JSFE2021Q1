@@ -96,9 +96,10 @@ body {
 }
 
 .active {
-	transform: scale(0.9);
-	transition: all 0.2s;
-	border:solid 5px red;
+	transform: scale(0.96);
+	transition: all 0.1s;
+	border: 5px solid red;
+	border-top: 0px;
 }
 
 .piano-key:hover {
@@ -119,6 +120,7 @@ body {
 	height: 170px;
 	background-color: #313940;
 	border-radius: 0px 0px 9px 9px;
+	border-top: 0px;
 	top: 0;
 	z-index: 3;
 	pointer-events: auto;
