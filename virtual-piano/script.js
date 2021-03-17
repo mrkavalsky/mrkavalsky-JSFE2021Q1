@@ -3,11 +3,7 @@ const fullscreen = document.querySelector('.fullscreen');
 const btnNotes = document.querySelector('.btn-notes');
 const btnLetters = document.querySelector('.btn-letters');
 let isMouseDown = false;
-
-function removeTransition(e) {
-    if(e.propertyName == 'transform')
-    this.classList.remove('active');
-}
+let isKeyDown = false;
 
 function playSound(e) {
     const type = e.type;
@@ -18,10 +14,12 @@ function playSound(e) {
             if(!isMouseDown) return;
             code = e.target.dataset.code;
             break;
-        case 'click':
+        case 'mousedown':
             code = e.target.dataset.code;
             break;
         case 'keydown':
+            if(isKeyDown) return;
+            isKeyDown = true;
             code = e.code;
             break;
         default: return;
@@ -33,10 +31,15 @@ function playSound(e) {
     audio.currentTime = 0;
     audio.play();
     key.classList.add('active');
+    key.classList.remove('piano-key-hover');
 }
 
-function setMouseMode() {
-    isMouseDown = !isMouseDown;
+function toggleMouseMode(e) {
+    if(e.type == 'mouseup') isMouseDown = false;
+    else 
+        keys.forEach(key => {
+            if(key == e.target) isMouseDown = true;
+        });
 }
 
 function setFullScreen() {
@@ -59,13 +62,33 @@ function setLetter() {
     keys.forEach(key => key.classList.add('piano-key-letter'));
 }
 
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+function removeClassActive(e) {
+    if( e.type == 'keyup') {
+        let key = document.querySelector(`.piano-key[data-code="${e.code}"]`);
+        if(key === null) return;
+        key.classList.remove('active');
+        key.classList.add('piano-key-hover');
+    } else {
+        this.classList.remove('active');
+        this.classList.add('piano-key-hover');
+    };
+}
 
-document.addEventListener('click', playSound);
+function toggleKeyMode() {
+    isKeyDown = false;
+}
+
+keys.forEach(key => key.addEventListener('mouseup', removeClassActive));
+keys.forEach(key => key.addEventListener('mouseout', removeClassActive));
+
+document.addEventListener('mousedown', playSound);
 document.addEventListener('keydown', playSound);
-fullscreen.addEventListener('click', setFullScreen);
-document.addEventListener('mousedown', setMouseMode);
-document.addEventListener('mouseup', setMouseMode);
+document.addEventListener('mousedown', toggleMouseMode);
+document.addEventListener('mouseup', toggleMouseMode);
 document.addEventListener('mouseover', playSound);
+document.addEventListener('keyup', removeClassActive);
+document.addEventListener('keyup', toggleKeyMode);
+
+fullscreen.addEventListener('click', setFullScreen);
 btnNotes.addEventListener('click', setNotes);
 btnLetters.addEventListener('click', setLetter);

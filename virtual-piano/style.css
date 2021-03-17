@@ -96,9 +96,20 @@ body {
 }
 
 .active {
-	transform: scale(0.9);
+	transform: scale(0.96);
 	transition: all 0.1s;
-	border:solid 5px red;
+	border: 5px solid red;
+	border-top: 0px;
+}
+
+/* .active:hover::before,
+.active:hover::after {
+	color: red;
+} */
+
+.active::before,
+.active::after {
+	color: red;
 }
 
 .piano-key:hover {
@@ -119,6 +130,7 @@ body {
 	height: 170px;
 	background-color: #313940;
 	border-radius: 0px 0px 9px 9px;
+	border-top: 0px;
 	top: 0;
 	z-index: 3;
 	pointer-events: auto;
@@ -143,7 +155,6 @@ body {
 	font-size: 26px;
 	line-height: 40px;
 	text-align: center;
-	color: #a2abb3;
 	bottom: -45px;
 	left: 20px;
 	transition: 0.3s;
@@ -155,8 +166,14 @@ body {
 	content: attr(data-letter);
 	pointer-events: none;
 }
-.piano-key:hover::before,
-.piano-key:hover::after {
+
+.piano-key-hover::before,
+.piano-key-hover::after {
+	color: #a2abb3;
+}
+
+.piano-key-hover:hover::before,
+.piano-key-hover:hover::after {
 	color: #d7dfe6;
 }
 
