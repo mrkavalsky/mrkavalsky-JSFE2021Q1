@@ -102,11 +102,6 @@ body {
 	border-top: 0px;
 }
 
-/* .active:hover::before,
-.active:hover::after {
-	color: red;
-} */
-
 .active::before,
 .active::after {
 	color: red;

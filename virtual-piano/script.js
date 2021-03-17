@@ -3,7 +3,6 @@ const fullscreen = document.querySelector('.fullscreen');
 const btnNotes = document.querySelector('.btn-notes');
 const btnLetters = document.querySelector('.btn-letters');
 let isMouseDown = false;
-let isKeyDown = false;
 
 function playSound(e) {
     const type = e.type;
@@ -18,8 +17,7 @@ function playSound(e) {
             code = e.target.dataset.code;
             break;
         case 'keydown':
-            if(isKeyDown) return;
-            isKeyDown = true;
+            if(e.repeat) return;
             code = e.code;
             break;
         default: return;
@@ -74,10 +72,6 @@ function removeClassActive(e) {
     };
 }
 
-function toggleKeyMode() {
-    isKeyDown = false;
-}
-
 keys.forEach(key => key.addEventListener('mouseup', removeClassActive));
 keys.forEach(key => key.addEventListener('mouseout', removeClassActive));
 
@@ -87,7 +81,6 @@ document.addEventListener('mousedown', toggleMouseMode);
 document.addEventListener('mouseup', toggleMouseMode);
 document.addEventListener('mouseover', playSound);
 document.addEventListener('keyup', removeClassActive);
-document.addEventListener('keyup', toggleKeyMode);
 
 fullscreen.addEventListener('click', setFullScreen);
 btnNotes.addEventListener('click', setNotes);
