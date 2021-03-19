@@ -96,10 +96,13 @@ body {
 }
 
 .active {
-	transform: scale(0.96);
 	transition: all 0.1s;
-	border: 5px solid red;
-	border-top: 0px;
+	background-color: red;
+}
+
+.piano-key.sharp.active {
+	transition: all 0.1s;
+	background-color: red;
 }
 
 .active::before,
@@ -107,9 +110,14 @@ body {
 	color: red;
 }
 
-.piano-key:hover {
+.piano-key-hover:hover {
 	background-color: #fff;
 }
+
+.piano-key-hover.sharp:hover{
+	background-color:#23282e;;
+}
+
 .keys-sharp {
 	position: absolute;
 	top: 0;
