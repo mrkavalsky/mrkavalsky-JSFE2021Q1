@@ -103,6 +103,7 @@ h2 {
   color: #626262;
 }
 .watch-online-wrapper-content h3 {
+  font-family: Merriweather;
   font-style: normal;
   font-weight: bold;
   font-size: 84px;
@@ -116,6 +117,7 @@ h2 {
 .watch-online-wrapper-content__letter-wrapper span {
   line-height: 0.55;
   height: 0;
+  font-family: Merriweather;
 }
 .watch-online-wrapper-content__letter-wrapper span:first-child {
   position: relative;
