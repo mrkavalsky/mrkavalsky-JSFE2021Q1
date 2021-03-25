@@ -26,6 +26,11 @@ header {
 }
 .nav-wrapper a {
   text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #080029;
 }
 .nav-wrapper img {
   width: 52px;
