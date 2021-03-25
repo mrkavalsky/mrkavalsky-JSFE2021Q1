@@ -110,6 +110,33 @@ h2 {
   line-height: 106px;
   color: #080029;
 }
+.watch-online-wrapper-content__buttons a:first-child button {
+  width: 250px;
+  height: 60px;
+  background: #080029;
+  border-radius: 5px;
+  border-style: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #fcfcfc;
+}
+.watch-online-wrapper-content__buttons a:last-child button {
+  width: 260px;
+  height: 60px;
+  border: 2px solid #080029;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background:  #fcfcfc;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #080029;
+}
 .watch-online-wrapper picture img {
   width: 696px;
   align-self: flex-end;
