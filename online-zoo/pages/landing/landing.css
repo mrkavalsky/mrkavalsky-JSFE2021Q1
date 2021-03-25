@@ -200,4 +200,8 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin-right: 20px;
+}
+.how-it-works__picture {
+  margin-left: 20px;
 }
