@@ -205,3 +205,11 @@ h2 {
 .how-it-works__picture {
   margin-left: 20px;
 }
+.try-now__h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #0B0B0B;
+}
