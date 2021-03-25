@@ -26,6 +26,10 @@ header {
 }
 .nav-wrapper img {
   width: 52px;
+  margin-right: 92px;
+}
+.nav-wrapper nav {
+  margin-left: 92px;
 }
 .logo {
   width: 90px;
