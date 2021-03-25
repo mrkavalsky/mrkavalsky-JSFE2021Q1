@@ -213,3 +213,11 @@ h2 {
   letter-spacing: 0.115em;
   color: #0B0B0B;
 }
+.try-now__h3 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #080029;
+}
