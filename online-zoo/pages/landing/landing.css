@@ -6,6 +6,9 @@
 a {
   text-decoration: none;
 }
+li {
+  list-style: none;
+}
 header {
   background:  #fcfcfc;
   display: flex;
@@ -47,9 +50,6 @@ header {
   align-items: center;
   justify-content: space-between;
 
-}
-.nav-wrapper nav ul li {
-  list-style: none;
 }
 .logo {
   width: 90px;
