@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+}
+header {
+  background:  #fcfcfc;
+  display: flex;
+  justify-content: center;
+}
+.header-wrapper {
+  max-width: 1920px;
+  width: 100%;
+  height: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.nav-wrapper {
+  max-width: 1710px;
+  width: 100%;
+  height: 90px;
+  border: 2px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-wrapper img {
+  width: 52px;
+}
+.logo {
+  width: 90px;
+  height: 90px;
+  border: 2px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
