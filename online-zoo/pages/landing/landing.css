@@ -181,3 +181,8 @@ h2 {
   width: 48px;
   height: 48px;
 }
+.how-it-works-wrapper {
+  display: flex;
+  justify-content: center;
+  background:  #fcfcfc;
+}
