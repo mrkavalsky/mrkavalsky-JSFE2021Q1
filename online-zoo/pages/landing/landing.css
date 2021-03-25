@@ -8,16 +8,14 @@ header {
   justify-content: center;
 }
 .header-wrapper {
-  max-width: 1800px;
-  width: 100%;
+  width: 1800px;
   height: 115px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 .nav-wrapper {
-  max-width: 1710px;
-  width: 100%;
+  width: 1710px;
   height: 90px;
   border: 2px solid #f0f0f0;
   border-left: 0;
