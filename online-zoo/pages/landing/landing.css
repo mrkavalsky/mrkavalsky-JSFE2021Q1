@@ -90,6 +90,10 @@ aside {
   width: 700px;
   height: 490px;
   background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 h2 {
   font-style: normal;
