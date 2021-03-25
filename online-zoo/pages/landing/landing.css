@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  padding: 0;
 }
 header {
   background:  #fcfcfc;
@@ -30,6 +31,16 @@ header {
 }
 .nav-wrapper nav {
   margin-left: 92px;
+}
+.nav-wrapper nav ul {
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.nav-wrapper nav ul li {
+  list-style: none;
 }
 .logo {
   width: 90px;
