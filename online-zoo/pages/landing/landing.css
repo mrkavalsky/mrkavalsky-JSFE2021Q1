@@ -109,6 +109,19 @@ h2 {
   line-height: 106px;
   color: #080029;
 }
+.watch-online-wrapper-content__letter-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+.watch-online-wrapper-content__letter-wrapper span {
+  line-height: 0.55;
+  height: 0;
+}
+.watch-online-wrapper-content__letter-wrapper span:first-child {
+  position: relative;
+  top: -46px;
+  color: #d00000;
+}
 .watch-online-wrapper-content__buttons {
   display: flex;
   width: 605px;
