@@ -112,3 +112,7 @@ aside {
   background:  #fcfcfc;
   border-radius: 50%;
 }
+.aside-add-block {
+  width: 48px;
+  height: 48px;
+}
