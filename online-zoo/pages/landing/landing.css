@@ -104,3 +104,11 @@ aside {
   justify-content: space-between;
   align-items: center;
 }
+.aside-up {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #f0f0f0;
+  box-sizing: border-box;
+  background:  #fcfcfc;
+  border-radius: 50%;
+}
