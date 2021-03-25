@@ -221,3 +221,10 @@ h2 {
   line-height: 145%;
   color: #080029;
 }
+.try-now__h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+}
