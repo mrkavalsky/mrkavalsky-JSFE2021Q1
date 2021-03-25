@@ -31,10 +31,35 @@ header {
 }
 .nav-wrapper a {
   font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: 154%;
   color: #080029;
+}
+.pseudo-hover {
+  font-weight: 500;
+}
+.nav-wrapper__about{
+  display: block;
+  width: 54px;
+}
+.nav-wrapper__map {
+  display: block;
+  width: 35px;
+}
+.nav-wrapper__zoos {
+  display: block;
+  width: 41px;
+}
+.nav-wrapper__contacts {
+  display: block;
+  width: 92px;
+}
+.nav-wrapper__design{
+  display: block;
+  width: 58px;
+}
+.nav-wrapper a:hover {
+  font-weight: 500;
 }
 .nav-wrapper img {
   width: 52px;
@@ -48,7 +73,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 .logo {
   width: 90px;
