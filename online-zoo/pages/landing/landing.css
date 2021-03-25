@@ -60,4 +60,39 @@ header {
   justify-content: center;
   position: fixed;
   left: calc((100% - 1800px) / 2);
+  background:  #fcfcfc;
+}
+.watch-online {
+  background:  #fcfcfc;
+  display: flex;
+  justify-content: center;
+}
+.watch-online-wrapper {
+  width: 1436px;
+  height: 970px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+aside {
+  width: 90px;
+  height: 670px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background:  #fcfcfc;
+  position: fixed;
+  left: calc((100% - 1800px) / 2);
+  border: 2px solid #f0f0f0;
+}
+.watch-online-wrapper-content {
+  width: 700px;
+  height: 490px;
+  background: red;
+}
+.watch-online-wrapper picture img {
+  width: 696px;
+  align-self: flex-end;
+  margin-bottom: 27px;
 }
