@@ -96,3 +96,11 @@ aside {
   align-self: flex-end;
   margin-bottom: 27px;
 }
+.aside-links {
+  width: 24px;
+  height: 172px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
