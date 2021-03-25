@@ -85,6 +85,7 @@ aside {
   position: fixed;
   left: calc((100% - 1800px) / 2);
   border: 2px solid #f0f0f0;
+  border-top: 0;
 }
 .watch-online-wrapper-content {
   width: 700px;
