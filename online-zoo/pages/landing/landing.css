@@ -25,6 +25,9 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+.nav-wrapper a {
+  text-decoration: none;
+}
 .nav-wrapper img {
   width: 52px;
   margin-right: 92px;
