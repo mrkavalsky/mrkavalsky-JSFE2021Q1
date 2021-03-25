@@ -110,6 +110,11 @@ h2 {
   line-height: 106px;
   color: #080029;
 }
+.watch-online-wrapper-content__buttons {
+  display: flex;
+  width: 605px;
+  justify-content: space-between;
+}
 .watch-online-wrapper-content__buttons a:first-child button {
   width: 250px;
   height: 60px;
