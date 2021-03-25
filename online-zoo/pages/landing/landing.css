@@ -193,3 +193,11 @@ h2 {
   justify-content: space-evenly;
   align-items: center;
 }
+.try-now {
+  width: 696px;
+  height: 477px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
