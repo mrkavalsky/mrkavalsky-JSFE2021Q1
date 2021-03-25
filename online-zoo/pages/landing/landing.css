@@ -3,6 +3,9 @@
   padding: 0;
   font-family: 'Rubik', sans-serif;
 }
+a {
+  text-decoration: none;
+}
 header {
   background:  #fcfcfc;
   display: flex;
@@ -25,7 +28,6 @@ header {
   justify-content: space-between;
 }
 .nav-wrapper a {
-  text-decoration: none;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
