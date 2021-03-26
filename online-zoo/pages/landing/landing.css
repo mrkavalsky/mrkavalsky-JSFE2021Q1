@@ -264,3 +264,9 @@ h2 {
   line-height: 21px;
   color: #fcfcfc;
 }
+.famous-pets-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d9e8ff;
+}
