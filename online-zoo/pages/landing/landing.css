@@ -385,3 +385,22 @@ h2 {
 .slider__background_item6 {
   background: url(../../assets/images/slider__item6.png);
 }
+.info {
+  opacity: 0;
+  width: 190px;
+  height: auto;
+  font-size: 18px;
+  line-height: 154%;
+  text-align: center;
+  color: #fcfcfc;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,50%) scale(5);
+  transition: all .3s;
+}
+.slider__item:hover .info {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+  display: block;
+}
