@@ -321,3 +321,33 @@ h2 {
 .slider__button_right {
   transform: rotate(180deg);
 }
+.slider__items { 
+  width: 1064px;
+  height: 696px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.slider__item {
+  width: 328px;
+  height: 328px;
+}
+.slider__item_item1 {
+  background: url(../../assets/images/slider__item1.png);
+}
+.slider__item_item2 {
+  background: url(../../assets/images/slider__item2.png);
+}
+.slider__item_item3 {
+  background: url(../../assets/images/slider__item3.png);
+}
+.slider__item_item4 {
+  background: url(../../assets/images/slider__item4.png);
+}
+.slider__item_item5 {
+  background: url(../../assets/images/slider__item5.png);
+}
+.slider__item_item6 {
+  background: url(../../assets/images/slider__item6.png);
+}
