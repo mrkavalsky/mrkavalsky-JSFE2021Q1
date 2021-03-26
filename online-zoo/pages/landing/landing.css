@@ -301,3 +301,23 @@ h2 {
   line-height: 145%;
   color: #080029;
 }
+.slider__buttons {
+  width: 150px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider__button {
+  width: 65px;
+  height: 65px;
+  border-style: none;
+  border-radius: 50%;
+  background: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider__button_right {
+  transform: rotate(180deg);
+}
