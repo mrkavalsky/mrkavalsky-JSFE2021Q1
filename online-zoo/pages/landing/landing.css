@@ -429,11 +429,12 @@ h2 {
   color: #fcfcfc;
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 75%;
   transform: translate(-50%,50%) scale(5);
   transition: all .3s;
 }
 .slider__item:hover .info {
   opacity: 1;
+  top: 45%;
   transform: translate(-50%,-50%) scale(1);
 }
