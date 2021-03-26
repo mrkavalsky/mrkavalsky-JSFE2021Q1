@@ -74,6 +74,11 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+.nav-wrapper_text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .logo {
   width: 90px;
   height: 90px;
