@@ -277,3 +277,11 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+.slider__nav {
+  width: 326px;
+  height: 364px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
