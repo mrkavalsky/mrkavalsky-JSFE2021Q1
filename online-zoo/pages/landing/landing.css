@@ -270,3 +270,10 @@ h2 {
   align-items: center;
   background: #d9e8ff;
 }
+.slider {
+  width: 1920px;
+  height: 896px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
