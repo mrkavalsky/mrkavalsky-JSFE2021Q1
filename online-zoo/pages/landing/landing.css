@@ -333,6 +333,16 @@ h2 {
   width: 328px;
   height: 328px;
 }
+.slider__item_overflow {
+  overflow: hidden;
+}
+.slider__item_hover {
+  transition: all 0.3s;
+}
+.slider__item_hover:hover {
+  transform: scale(1.15);
+  filter: blur(1px) brightness(0.85);
+}
 .slider__item_item1 {
   background: url(../../assets/images/slider__item1.png);
 }
