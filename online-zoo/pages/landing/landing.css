@@ -456,3 +456,17 @@ h2 {
   display: flex;
   flex-direction: column;
 }
+.pay-and-feed__img {
+  width: 312px;
+  height: 312px;
+}
+.pay-and-feed__img_security {
+  background-image: url(../../assets/images/pay-and-feed__img_security.svg);
+
+}
+.pay-and-feed__img_delivery {
+  background-image: url(../../assets/images/pay-and-feed__img_delivery.svg);
+}
+.pay-and-feed__img_animal {
+  background-image: url(../../assets/images/pay-and-feed__img_animal.svg);
+}
