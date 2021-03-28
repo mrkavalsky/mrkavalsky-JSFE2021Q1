@@ -481,6 +481,7 @@ aside {
   height: 312px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .pay-and-feed__in-details {
   width: 456px;
@@ -535,4 +536,20 @@ aside {
 }
 .pay-and-feed__in-details_margin-top-41px {
   margin-top: 41px;
+}
+.pay-and-feed__security-delivery-arrow {
+  background-image: url(../../assets/images/pay-and-feed__arrow1.svg);
+  width: 273px;
+  height: 211px;
+  position: absolute;
+  left: 552px;
+  top: 146px;
+}
+.pay-and-feed__delivery-security-arrow {
+  background-image: url(../../assets/images/pay-and-feed__arrow2.svg);
+  width: 343px;
+  height: 197px;
+  position: absolute;
+  left: -368px;
+  top: 162px;
 }
