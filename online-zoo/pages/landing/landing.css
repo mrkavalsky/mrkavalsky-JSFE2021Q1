@@ -124,7 +124,7 @@ aside {
   justify-content: space-between;
   align-items: flex-start;
 }
-h2 {
+.watch-online-wrapper-content__h2 {
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
@@ -132,7 +132,7 @@ h2 {
   letter-spacing: 0.115em;
   color: #626262;
 }
-.watch-online-wrapper-content h3 {
+.watch-online-wrapper-content__h3 {
   font-family: Merriweather;
   font-style: normal;
   font-weight: bold;
