@@ -470,3 +470,10 @@ h2 {
 .pay-and-feed__img_animal {
   background-image: url(../../assets/images/pay-and-feed__img_animal.svg);
 }
+.pay-and-feed__content {
+  width: 824px;
+  height: 312px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
