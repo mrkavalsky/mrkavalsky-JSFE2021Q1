@@ -489,3 +489,20 @@ aside {
   flex-direction: column;
   align-items: flex-start;
 }
+.pay-and-feed__content-wrapper_align-center {
+  align-self: center;
+  margin-top: 100px;
+  position: relative;
+  right: 120px;
+}
+.pay-and-feed__content_align-left {
+  align-self: flex-start;
+  margin-left: 224px;
+}
+.pay-and-feed__content_align-right {
+  align-self: flex-end;
+  margin: 60px 116px 47px 0;
+}
+.pay-and-feed__h2 {
+  margin-bottom: 30px;
+}
