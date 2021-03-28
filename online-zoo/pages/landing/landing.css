@@ -450,3 +450,9 @@ h2 {
   align-items: center;
   background: #fcfcfc;
 }
+.pay-and-feed {
+  width: 1920px;
+  height: 1300px;
+  display: flex;
+  flex-direction: column;
+}
