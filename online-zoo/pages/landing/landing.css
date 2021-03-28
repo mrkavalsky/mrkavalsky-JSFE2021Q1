@@ -456,6 +456,12 @@ aside {
   display: flex;
   flex-direction: column;
 }
+.pay-and-feed__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 .pay-and-feed__img {
   width: 312px;
   height: 312px;
