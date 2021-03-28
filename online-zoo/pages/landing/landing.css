@@ -444,3 +444,9 @@ h2 {
   top: 45%;
   transform: translate(-50%,-50%) scale(1);
 }
+.pay-and-feed-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcfcfc;
+}
