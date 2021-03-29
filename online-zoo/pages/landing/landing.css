@@ -635,3 +635,10 @@ aside {
   background: #fcfcfc;
   border-radius: 15px;
 }
+.testimonials-slider__button {
+  width: 65px;
+  height: 65px;
+  background: #fcfcfc;
+  border-radius: 50%;
+  border-style: none;
+}
