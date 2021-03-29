@@ -714,6 +714,13 @@ aside {
   justify-content: space-between;
   align-items: flex-start;
 }
+.zoogeography__animal {
+  width: 344px;
+  height: 512px;
+  background: #fcfcfc;
+  box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
+  border-radius: 15px;
+}
 .zoogeography__map {
   width: 1223px;
   height: 700px;
