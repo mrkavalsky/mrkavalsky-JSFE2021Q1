@@ -714,3 +714,8 @@ aside {
   justify-content: space-between;
   align-items: flex-start;
 }
+.zoogeography__map {
+  width: 1223px;
+  height: 700px;
+  background: url(../../assets/images/zoogeography__map.svg);
+}
