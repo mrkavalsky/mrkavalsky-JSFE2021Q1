@@ -654,3 +654,24 @@ aside {
 .testimonials-slider__button_right {
   transform: rotate(180deg);
 }
+.testimonials-slider__name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 135%;
+  color: #0b0b0b;
+}
+.testimonials-slider__feedback {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #181818;
+}
+.testimonials-slider__link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fcfcfc;
+}
