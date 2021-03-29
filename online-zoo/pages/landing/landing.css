@@ -700,3 +700,9 @@ aside {
   align-items: center;
   background: #fcfcfc;
 }
+.zoogeography {
+  width: 1920px;
+  height: 862px;
+  display: flex;
+  justify-content: flex-end;
+}
