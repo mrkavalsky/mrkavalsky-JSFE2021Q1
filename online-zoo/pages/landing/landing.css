@@ -573,3 +573,11 @@ aside {
   align-items: flex-start;
   flex-direction: column;
 }
+.testimonials-slider {
+  width: 1064px;
+  height: 414px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
