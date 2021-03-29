@@ -635,6 +635,12 @@ aside {
   background: #fcfcfc;
   border-radius: 15px;
 }
+.testimonials-slider__nav {
+  width: 150px;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+}
 .testimonials-slider__button {
   width: 65px;
   height: 65px;
