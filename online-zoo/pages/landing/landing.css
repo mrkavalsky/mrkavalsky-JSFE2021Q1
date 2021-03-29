@@ -559,3 +559,10 @@ aside {
   justify-content: center;
   background: #080029;
 }
+.testimonials {
+  width: 1920px;
+  height: 616px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
