@@ -553,3 +553,9 @@ aside {
   left: -368px;
   top: 162px;
 }
+.testimonials-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #080029;
+}
