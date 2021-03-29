@@ -580,6 +580,7 @@ aside {
   line-height: 26px;
   letter-spacing: 0.115em;
   color: #fcfcfc;
+  margin-bottom: 60px;
 }
 .testimonials__h3 {
   font-family: Merriweather;
@@ -588,6 +589,7 @@ aside {
   font-size: 36px;
   line-height: 145%;
   color: #fcfcfc;
+  margin-bottom: 40px;
 }
 .testimonials__h4 {
   font-style: normal;
@@ -595,6 +597,7 @@ aside {
   font-size: 18px;
   line-height: 154%;
   color: #fcfcfc;
+  margin-bottom: 60px;
 }
 .testimonials__button {
   font-style: normal;
