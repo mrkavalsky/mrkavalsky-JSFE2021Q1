@@ -706,3 +706,11 @@ aside {
   display: flex;
   justify-content: flex-end;
 }
+.zoogeography__animal-wrapper {
+  width: 344px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
