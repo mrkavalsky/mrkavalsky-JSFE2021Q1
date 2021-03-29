@@ -720,6 +720,7 @@ aside {
   background: #fcfcfc;
   box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
   border-radius: 15px;
+  overflow: hidden;
 }
 .zoogeography__map {
   width: 1223px;
