@@ -566,3 +566,10 @@ aside {
   align-items: center;
   justify-content: flex-end;
 }
+.testimonials__feedback {
+  width: 513px;
+  height: 412px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
