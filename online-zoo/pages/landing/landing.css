@@ -339,6 +339,7 @@ aside {
   width: 328px;
   height: 328px;
   position: relative;
+  border-radius: 5px;
 }
 .item_overflow {
   overflow: hidden;
