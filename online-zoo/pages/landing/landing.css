@@ -623,3 +623,9 @@ aside {
   align-items: flex-start;
   margin-right: 60px;
 }
+.testimonials-slider__items {
+  width: 1064px;
+  height: 273px;
+  display: flex;
+  justify-content: space-between;
+}
