@@ -647,4 +647,10 @@ aside {
   background: #fcfcfc;
   border-radius: 50%;
   border-style: none;
+  background-image: url(../../assets/icons/testimonials-slider__button-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.testimonials-slider__button_right {
+  transform: rotate(180deg);
 }
