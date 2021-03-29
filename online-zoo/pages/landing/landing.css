@@ -606,6 +606,12 @@ aside {
   line-height: 21px;
   text-align: center;
   color: #fcfcfc;
+  border: 2px solid #fcfcfc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: none;
+  width: 286px;
+  height: 61px;
 }
 .testimonials-slider {
   width: 1064px;
