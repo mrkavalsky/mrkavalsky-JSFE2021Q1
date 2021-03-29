@@ -573,6 +573,37 @@ aside {
   align-items: flex-start;
   flex-direction: column;
 }
+.testimonials__h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #fcfcfc;
+}
+.testimonials__h3 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #fcfcfc;
+}
+.testimonials__h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #fcfcfc;
+}
+.testimonials__button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #fcfcfc;
+}
 .testimonials-slider {
   width: 1064px;
   height: 414px;
