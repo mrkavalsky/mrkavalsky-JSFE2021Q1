@@ -572,6 +572,7 @@ aside {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  margin-right: 40px;
 }
 .testimonials__h2 {
   font-style: normal;
@@ -620,4 +621,5 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin-right: 60px;
 }
