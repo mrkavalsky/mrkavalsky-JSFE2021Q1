@@ -714,6 +714,7 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin: 100px 24px 0 0;
 }
 .zoogeography__animal {
   width: 344px;
@@ -726,6 +727,7 @@ aside {
 .zoogeography__map {
   width: 1223px;
   height: 700px;
+  margin: 50px 85px 0 0;
   background: url(../../assets/images/zoogeography__map.svg);
 }
 .zoogeography__h2 {
