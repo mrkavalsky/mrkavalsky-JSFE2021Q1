@@ -683,3 +683,14 @@ aside {
   display: flex;
   align-items: center;
 }
+.testimonials-slider__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.testimonials-slider__avatar_avatar1 {
+  background-image: url(../../assets/images/testimonials-slider__item1.png);
+}
+.testimonials-slider__avatar_avatar2 {
+  background-image: url(../../assets/images/testimonials-slider__item2.png);
+}
