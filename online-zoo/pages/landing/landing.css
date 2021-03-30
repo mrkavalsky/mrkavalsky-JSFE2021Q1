@@ -908,3 +908,11 @@ aside {
   justify-content: space-between;
   align-items: flex-start;
 }
+.footer__donate {
+  width: 339px;
+  height: 257px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
