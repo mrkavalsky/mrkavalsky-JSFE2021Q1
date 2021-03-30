@@ -777,6 +777,16 @@ aside {
   position: absolute;
   transform: translate(-50%, -100%);
 }
+.zoogeography__mark:hover .zoogeography__svg-mark {
+  width: 140px;
+  height: 168px;
+}
+.zoogeography__mark:hover .zoogeography__svg-path {
+  stroke-width: 2px;
+}
+.zoogeography__tranansition {
+  transition: all .5s;
+}
 .zoogeography__mark_item1 {
   top: 317px;
   left: 176px;
@@ -803,6 +813,10 @@ aside {
   top: 36%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.zoogeography__mark:hover .zoogeography__mark-animal {
+  height: 53px;
+  width: 57px;
 }
 .zoogeography__mark-animal_item1 {
   background-image: url(../../assets/icons/zoogeography__mark-item1.svg);
