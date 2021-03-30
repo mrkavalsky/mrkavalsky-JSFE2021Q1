@@ -891,4 +891,5 @@ aside {
   justify-content: space-between;
   width: 1432px;
   height: 132px;
+  border-top: 1px solid #747474;
 }
