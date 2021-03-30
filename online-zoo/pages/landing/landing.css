@@ -879,6 +879,12 @@ aside {
   font-size: 18px;
   line-height: 21px;
   color: #fcfcfc;
+  width: 339px;
+  height: 61px;
+  border: 2px solid #fcfcfc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: none;
 }
 .footer__copyright {
   font-style: normal;
