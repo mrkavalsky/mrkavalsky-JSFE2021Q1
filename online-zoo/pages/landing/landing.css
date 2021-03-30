@@ -945,3 +945,11 @@ aside {
   line-height: 19px;
   color: #fcfcfc;
 }
+.footer__logos {
+  width: 303px;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
