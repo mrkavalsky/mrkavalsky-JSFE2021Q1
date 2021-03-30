@@ -953,3 +953,9 @@ aside {
   justify-content: space-between;
   align-items: flex-start;
 }
+.footer__digital-and-school{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
