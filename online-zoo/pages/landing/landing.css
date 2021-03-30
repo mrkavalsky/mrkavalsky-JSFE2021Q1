@@ -938,3 +938,10 @@ aside {
   display: flex;
   justify-content: space-between;
 }
+.footer__symbol-x {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fcfcfc;
+}
