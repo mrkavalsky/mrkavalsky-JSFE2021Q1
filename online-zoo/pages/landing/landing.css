@@ -774,29 +774,23 @@ aside {
   height: 298px;
 }
 .zoogeography__mark {
-  width: 105px;
-  height: 135px;
-  background-image: url(../../assets/icons/zoogeography__mark.svg);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   position: absolute;
   transform: translate(-50%, -100%);
 }
 .zoogeography__mark_item1 {
-  top: 323px;
+  top: 317px;
   left: 176px;
 }
 .zoogeography__mark_item2 {
-  top: 343px;
+  top: 337px;
   left: 308px;
 }
 .zoogeography__mark_item3 {
-  top: 467px;
+  top: 461px;
   left: 625px;
 }
 .zoogeography__mark_item4 {
-  top: 331px;
+  top: 325px;
   left: 944px;
 }
 .zoogeography__mark-animal {
