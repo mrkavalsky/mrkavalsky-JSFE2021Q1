@@ -858,6 +858,7 @@ aside {
   line-height: 26px;
   letter-spacing: 0.115em;
   color: #fcfcfc;
+  margin-bottom: 10px;
 }
 .footer__h3 {
   font-style: normal;
@@ -898,4 +899,12 @@ aside {
   width: 1432px;
   height: 132px;
   border-top: 1px solid #747474;
+}
+.footer__nav {
+  width: 200px;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
