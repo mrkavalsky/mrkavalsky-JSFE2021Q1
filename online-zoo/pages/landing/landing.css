@@ -925,3 +925,11 @@ aside {
   margin-top: 100px;
   margin-left: 5px;
 }
+.footer__button-and-links {
+  width: 339px;
+  height: 368px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
