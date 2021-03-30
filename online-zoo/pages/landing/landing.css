@@ -836,3 +836,11 @@ aside {
   align-items: center;
   background: #0b0b0b;
 }
+.footer {
+  width: 1920px;
+  height: 766px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
