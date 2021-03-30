@@ -886,4 +886,9 @@ aside {
   font-size: 16px;
   line-height: 145%;
   color: #bcbcbc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1432px;
+  height: 132px;
 }
