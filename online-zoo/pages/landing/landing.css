@@ -908,6 +908,7 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin-right: 50px;
 }
 .footer__donate {
   width: 339px;
