@@ -830,3 +830,9 @@ aside {
 .zoogeography__mark-animal_item4 {
   background-image: url(../../assets/icons/zoogeography__mark-item4.svg);
 }
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0b0b;
+}
