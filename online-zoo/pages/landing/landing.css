@@ -916,3 +916,8 @@ aside {
   justify-content: space-between;
   align-items: flex-start;
 }
+.footer__content-wrapper {
+  width: 1432px;
+  display: flex;
+  justify-content: space-between;
+}
