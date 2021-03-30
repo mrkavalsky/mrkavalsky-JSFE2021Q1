@@ -933,3 +933,8 @@ aside {
   justify-content: space-between;
   align-items: center;
 }
+.footer__social-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
