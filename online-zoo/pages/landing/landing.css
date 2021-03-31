@@ -103,7 +103,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-aside {
+.aside {
   width: 90px;
   height: 670px;
   display: flex;
