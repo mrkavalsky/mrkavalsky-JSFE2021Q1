@@ -145,10 +145,13 @@ header {
 }
 .aside-up {
   cursor: pointer;
-  transition: all .3s;
 }
 .aside-up:hover {
   transform: scale(1.2);
+  transition: all .3s;
+}
+.aside-up:active {
+  transform: scale(0.95);
 }
 .watch-online-wrapper-content {
   width: 700px;
