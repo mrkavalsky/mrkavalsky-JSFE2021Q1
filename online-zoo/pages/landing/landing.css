@@ -181,6 +181,13 @@ header {
   line-height: 106px;
   color: #080029;
 }
+.watch-online-wrapper-content__img {
+  overflow: hidden;
+  width: 696px;
+  height: 673px;
+  border-radius: 5px;
+  object-fit: cover;
+}
 .letter-wrapper {
   display: inline-flex;
   flex-direction: column;
