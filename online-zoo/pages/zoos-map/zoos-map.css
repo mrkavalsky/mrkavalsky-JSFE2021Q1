@@ -159,4 +159,9 @@ header {
   background: url(../../assets/images/zoos-map.png);
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.hud-wrapper {
+  width: 1800px;
 }
