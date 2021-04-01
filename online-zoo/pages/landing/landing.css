@@ -314,10 +314,10 @@ header {
   line-height: 154%;
   color: #747474;
 }
-.try-now__button button {
+.try-now__button {
   width: 218px;
   height: 61px;
-  background: #0F0049;
+  background: #0f0049;
   border-radius: 5px;
   border-style: none;
   font-style: normal;
@@ -325,6 +325,13 @@ header {
   font-size: 18px;
   line-height: 21px;
   color: #fcfcfc;
+  transition: all .2s;
+}
+.try-now__button:hover {
+  background: #080029;
+}
+.try-now__button:active {
+  background: #150068;
 }
 .famous-pets-wrapper {
   display: flex;
