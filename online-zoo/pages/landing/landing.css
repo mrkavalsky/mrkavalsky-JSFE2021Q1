@@ -4,6 +4,10 @@
   font-family: 'Rubik', sans-serif;
   user-select: none;
 }
+button {
+  outline: none;
+  cursor: pointer;
+}
 a {
   text-decoration: none;
 }
@@ -199,7 +203,7 @@ header {
 .watch-online-wrapper-content__button-choose {
   width: 250px;
   height: 60px;
-  background: #080029;
+  background: #0f0049;
   border-radius: 5px;
   border-style: none;
   font-style: normal;
@@ -208,11 +212,18 @@ header {
   line-height: 21px;
   text-align: center;
   color: #fcfcfc;
+  transition: all .2s;
+}
+.watch-online-wrapper-content__button-choose:hover {
+  background: #080029;
+}
+.watch-online-wrapper-content__button-choose:active {
+  background: #150068;
 }
 .watch-online-wrapper-content__button-online {
   width: 260px;
   height: 60px;
-  border: 2px solid #080029;
+  border: 2px solid #0f0049;
   box-sizing: border-box;
   border-radius: 5px;
   background:  #fcfcfc;
@@ -221,7 +232,14 @@ header {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
-  color: #080029;
+  color: #0f0049;
+  transition: all .2s;
+}
+.watch-online-wrapper-content__button-online:hover {
+  border: 2px solid #080029;
+}
+.watch-online-wrapper-content__button-online:active {
+  border: 2px solid #3888ff;
 }
 .watch-online-wrapper picture img {
   width: 696px;
