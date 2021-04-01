@@ -119,6 +119,17 @@ header {
   border-top: 0;
   background:  #fcfcfc;
 }
+.aside__nav-button {
+  width: 86px;
+  height: 86px;
+  border-style: none;
+}
+.aside__nav-button_top {
+  background: no-repeat center url(../../assets/icons/zoos-map-arrow-top.svg);
+}
+.aside__nav-button_bottom {
+  background: no-repeat center url(../../assets/icons/zoos-map-arrow-bottom.svg);
+}
 .background-map {
   max-width: 1920px;
   width: 100%;
