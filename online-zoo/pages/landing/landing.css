@@ -99,6 +99,12 @@ header {
   justify-content: center;
   background:  #fcfcfc;
 }
+.logo__icon {
+  transition: all 0.5s;
+}
+.logo:hover .logo__icon {
+  transform: scale(1.2);
+}
 .watch-online {
   background:  #fcfcfc;
   display: flex;
@@ -130,6 +136,19 @@ header {
   border: 2px solid #f0f0f0;
   border-top: 0;
   background:  #fcfcfc;
+}
+.aside__social-icon {
+  transition: all .5s;
+}
+.aside__social-link:hover .aside__social-icon {
+  transform: scale(1.2);
+}
+.aside-up {
+  cursor: pointer;
+  transition: all .5s;
+}
+.aside-up:hover {
+  transform: scale(1.2);
 }
 .watch-online-wrapper-content {
   width: 700px;
