@@ -20,7 +20,6 @@ li {
   z-index: -3;
 }
 header {
-  background:  #fcfcfc;
   display: flex;
   justify-content: center;
 }
@@ -32,6 +31,7 @@ header {
   align-items: flex-end;
 }
 .nav-wrapper {
+  background:  #fcfcfc;
   width: 1704px;
   height: 90px;
   border: 2px solid #f0f0f0;
@@ -151,4 +151,12 @@ header {
 .aside-add-block {
   width: 48px;
   height: 48px;
+}
+.background-map {
+  max-width: 1920px;
+  width: 100%;
+  height: 100vh;
+  background: url(../../assets/images/zoos-map.png);
+  background-position: center;
+  background-size: cover;
 }
