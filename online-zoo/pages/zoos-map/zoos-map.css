@@ -143,3 +143,10 @@ header {
 .hud-wrapper {
   width: 1800px;
 }
+.aside__animal-buttons {
+  height: 436px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
