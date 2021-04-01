@@ -100,7 +100,7 @@ header {
   background:  #fcfcfc;
 }
 .logo__icon {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .logo:hover .logo__icon {
   transform: scale(1.2);
@@ -138,14 +138,14 @@ header {
   background:  #fcfcfc;
 }
 .aside__social-icon {
-  transition: all .5s;
+  transition: all .3s;
 }
 .aside__social-link:hover .aside__social-icon {
   transform: scale(1.2);
 }
 .aside-up {
   cursor: pointer;
-  transition: all .5s;
+  transition: all .3s;
 }
 .aside-up:hover {
   transform: scale(1.2);
