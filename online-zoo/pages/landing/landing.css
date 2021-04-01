@@ -900,8 +900,6 @@ header {
   left: 944px;
 }
 .zoogeography__mark-animal {
-  height: 46px;
-  width: 40px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -910,25 +908,19 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.zoogeography__mark_deactive:hover .zoogeography__mark-fill {
+  fill: #0f0049;
+}
+.zoogeography__mark_active .zoogeography__mark-fill {
+  fill: #0f0049;
+}
 .zoogeography__mark_deactive:hover .zoogeography__mark-animal {
-  height: 53px;
-  width: 57px;
+  height: 54px; 
+  width: 67px;
 }
 .zoogeography__mark_active .zoogeography__mark-animal {
-  height: 53px;
-  width: 57px;
-}
-.zoogeography__mark-animal_item1 {
-  background-image: url(../../assets/icons/zoogeography__mark-item1.svg);
-}
-.zoogeography__mark-animal_item2 {
-  background-image: url(../../assets/icons/zoogeography__mark-item2.svg);
-}
-.zoogeography__mark-animal_item3 {
-  background-image: url(../../assets/icons/zoogeography__mark-item3.svg);
-}
-.zoogeography__mark-animal_item4 {
-  background-image: url(../../assets/icons/zoogeography__mark-item4.svg);
+  height: 54px;
+  width: 67px;
 }
 .footer-wrapper {
   display: flex;
