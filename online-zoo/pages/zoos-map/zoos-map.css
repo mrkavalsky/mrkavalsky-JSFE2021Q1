@@ -130,6 +130,14 @@ header {
 .aside__nav-button_bottom {
   background: no-repeat center url(../../assets/icons/zoos-map-arrow-bottom.svg);
 }
+.aside__animal-button {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #D9E8FF;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: none;
+}
 .background-map {
   max-width: 1920px;
   width: 100%;
