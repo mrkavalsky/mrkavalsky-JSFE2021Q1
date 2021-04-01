@@ -986,6 +986,13 @@ header {
   box-sizing: border-box;
   border-radius: 5px;
   background: none;
+  transition: all .2s;
+}
+.footer__button:hover {
+  background: #080029;
+}
+.footer__button:active {
+  background: #150068;
 }
 .footer__copyright {
   font-style: normal;
