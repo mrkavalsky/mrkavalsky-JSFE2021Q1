@@ -298,6 +298,15 @@ header {
 .how-it-works__picture {
   margin-left: 20px;
 }
+.how-it-works__img {
+  width: 512px;
+  height: 760px;
+  border-radius: 5px;
+  overflow: hidden;
+  object-fit: cover;
+  transform: scaleX(-1);
+  object-position: -255px;
+}
 .try-now__h2 {
   font-style: normal;
   font-weight: normal;
