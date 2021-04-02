@@ -127,6 +127,30 @@ header {
   flex-direction: column;
   align-items: center;
 }
+.main__h2 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #080029;
+}
+.main__p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 154%;
+  text-align: center;
+  color: #080029;
+}
+.main__button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #fcfcfc;
+}
 .main__video {
   border-radius: 5px;
 }
@@ -137,6 +161,18 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+.main__support-link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  text-align: center;
+  color: #747474;
+}
+.main__link {
+  text-decoration: underline;
+  color: #3888ff;
 }
 .footer__nav-link {
   font-style: normal;
