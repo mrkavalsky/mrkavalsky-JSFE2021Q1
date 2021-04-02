@@ -245,6 +245,10 @@ header {
   box-shadow: 4px 12px 22px rgba(0, 0, 0, 0.06);
   border-radius: 15px;
   overflow: hidden;
+  position: absolute;
+  top: 75px;
+  left: -172px;
+  transform: translate(-50%, -50%);
 }
 .background-map__h3 {
   font-family: Merriweather;
