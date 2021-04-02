@@ -887,6 +887,7 @@ header {
 .zoogeography__mark {
   position: absolute;
   transform: translate(-50%, -100%);
+  cursor: pointer;
 }
 .zoogeography__mark_deactive:hover .zoogeography__svg-mark {
   width: 140px;
