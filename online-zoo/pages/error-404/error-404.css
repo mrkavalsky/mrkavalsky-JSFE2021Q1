@@ -154,6 +154,18 @@ header {
   text-align: center;
   color: #fcfcfc;
   margin-top: 50px;
+  width: 250px;
+  height: 60px;
+  background: #0f0049;
+  border-radius: 5px;
+  border-style: none;
+  transition: all .2s;
+}
+.main__button:hover {
+  background: #080029;
+}
+.main__button:active {
+  background: #150068;
 }
 .main__video {
   border-radius: 5px;
