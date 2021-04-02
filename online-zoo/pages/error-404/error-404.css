@@ -126,6 +126,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 .main__h2 {
   font-family: Merriweather;
@@ -156,6 +157,7 @@ header {
 }
 .main__video {
   border-radius: 5px;
+  margin-top: 80px;
 }
 .main__support-link {
   font-style: normal;
@@ -165,6 +167,7 @@ header {
   text-align: center;
   color: #747474;
   width: 425px;
+  margin: 60px 0 80px 0;
 }
 .main__link {
   text-decoration: underline;
