@@ -165,8 +165,8 @@ header {
   width: 100%;
   height: 100vh;
   background: url(../../assets/images/zoos-map.png);
-  background-position: center;
-  background-size: cover;
+  background-position: -130px -695px;
+  background-size: 2159px 2180px;
   display: flex;
   justify-content: center;
 }
