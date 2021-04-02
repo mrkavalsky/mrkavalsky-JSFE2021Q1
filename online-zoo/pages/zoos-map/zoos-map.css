@@ -249,6 +249,7 @@ header {
   top: 75px;
   left: -172px;
   transform: translate(-50%, -50%);
+  cursor: auto;
 }
 .background-map__h3 {
   font-family: Merriweather;
@@ -283,4 +284,10 @@ header {
   box-sizing: border-box;
   padding: 20px 40px 55px;
   height: 298px;
+}
+.background-map__animal-photo {
+  width: 344px;
+  height: 218px;
+  object-fit: cover;
+  object-position: 0 -42px;
 }
