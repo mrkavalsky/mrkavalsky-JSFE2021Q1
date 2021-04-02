@@ -169,6 +169,7 @@ header {
   background-size: 2159px 2180px;
   display: flex;
   justify-content: center;
+  position: absolute;
 }
 .hud-wrapper {
   width: 1800px;
@@ -179,4 +180,60 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+.background-map__mark {
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+.background-map__mark_deactive:hover .background-map__svg-mark {
+  width: 140px;
+  height: 168px;
+}
+.background-map__mark_active .background-map__svg-mark {
+  width: 140px;
+  height: 168px;
+}
+.background-map__mark_deactive:hover .background-map__svg-path {
+  stroke-width: 2px;
+}
+.background-map__mark_active .background-map__svg-path {
+  stroke-width: 2px;
+}
+.background-map__tranansition {
+  transition: all .5s;
+}
+.background-map__mark_item2 {
+  top: 345px;
+  left: 258px;
+}
+.background-map__mark_item3 {
+  top: 598px;
+  left: 949px;
+}
+.background-map__mark_item4 {
+  top: 388px;
+  left: 1626px;
+}
+.background-map__mark-animal {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.background-map__mark_deactive:hover .background-map__mark-fill {
+  fill: #0f0049;
+}
+.background-map__mark_active .background-map__mark-fill {
+  fill: #0f0049;
+}
+.background-map__mark_deactive:hover .background-map__mark-animal {
+  height: 67px; 
+  width: 67px;
+}
+.background-map__mark_active .background-map__mark-animal {
+  height: 67px;
+  width: 67px;
 }
