@@ -157,14 +157,6 @@ header {
 .main__video {
   border-radius: 5px;
 }
-.footer {
-  width: 1800px;
-  height: 766px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
 .main__support-link {
   font-style: normal;
   font-weight: normal;
@@ -172,10 +164,19 @@ header {
   line-height: 154%;
   text-align: center;
   color: #747474;
+  width: 425px;
 }
 .main__link {
   text-decoration: underline;
   color: #3888ff;
+}
+.footer {
+  width: 1800px;
+  height: 766px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer__nav-link {
   font-style: normal;
