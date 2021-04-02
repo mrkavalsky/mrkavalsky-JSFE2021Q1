@@ -115,6 +115,9 @@ header {
   align-items: center;
   background: #0b0b0b;
 }
+.main__video {
+  border-radius: 5px;
+}
 .footer {
   width: 1800px;
   height: 766px;
