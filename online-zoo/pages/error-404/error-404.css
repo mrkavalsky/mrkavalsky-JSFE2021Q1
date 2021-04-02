@@ -134,6 +134,7 @@ header {
   font-size: 36px;
   line-height: 145%;
   color: #080029;
+  margin-top: 116px;
 }
 .main__p {
   font-style: normal;
@@ -142,6 +143,7 @@ header {
   line-height: 154%;
   text-align: center;
   color: #080029;
+  margin-top: 30px;
 }
 .main__button {
   font-style: normal;
@@ -150,6 +152,7 @@ header {
   line-height: 21px;
   text-align: center;
   color: #fcfcfc;
+  margin-top: 50px;
 }
 .main__video {
   border-radius: 5px;
