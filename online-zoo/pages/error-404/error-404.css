@@ -127,6 +127,8 @@ header {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  background: no-repeat url(../../assets/images/404.jpg);
+  background-position: 296px 42px;
 }
 .main__h2 {
   font-family: Merriweather;
