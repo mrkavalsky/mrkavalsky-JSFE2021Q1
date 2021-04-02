@@ -93,6 +93,116 @@ header {
   cursor: pointer;
 }
 
+.pay-and-feed-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcfcfc;
+  width: 100%;
+}
+.pay-and-feed {
+  width: 1800px;
+  height: 1300px;
+  display: flex;
+  flex-direction: column;
+}
+.pay-and-feed__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.pay-and-feed__img {
+  width: 312px;
+  height: 312px;
+}
+.pay-and-feed__img_security {
+  background-image: url(../../../assets/images/pay-and-feed__img_security.svg);
+
+}
+.pay-and-feed__img_delivery {
+  background-image: url(../../../assets/images/pay-and-feed__img_delivery.svg);
+}
+.pay-and-feed__img_animal {
+  background-image: url(../../../assets/images/pay-and-feed__img_animal.svg);
+}
+.pay-and-feed__content {
+  width: 824px;
+  height: 312px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.pay-and-feed__in-details {
+  width: 456px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pay-and-feed__content-wrapper_align-center {
+  align-self: center;
+  margin-top: 100px;
+  position: relative;
+  right: 120px;
+}
+.pay-and-feed__content_align-left {
+  align-self: flex-start;
+  margin-left: 180px;
+}
+.pay-and-feed__content_align-right {
+  align-self: flex-end;
+  margin: 60px 60px 47px 0;
+}
+.pay-and-feed__h2 {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #0b0b0b;
+}
+.pay-and-feed__h3 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #0f0049;
+  margin-bottom: 30px;
+}
+.pay-and-feed__h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+}
+.pay-and-feed__in-details_margin-top-55px {
+  margin-top: 55px;
+}
+.pay-and-feed__in-details_margin-top-104px {
+  margin-top: 104px;
+}
+.pay-and-feed__in-details_margin-top-41px {
+  margin-top: 41px;
+}
+.pay-and-feed__security-delivery-arrow {
+  background-image: url(../../../assets/images/pay-and-feed__arrow1.svg);
+  width: 273px;
+  height: 211px;
+  position: absolute;
+  left: 478px;
+  top: 146px;
+}
+.pay-and-feed__delivery-security-arrow {
+  background-image: url(../../../assets/images/pay-and-feed__arrow2.svg);
+  width: 343px;
+  height: 197px;
+  position: absolute;
+  left: -368px;
+  top: 148px;
+}
 .footer-wrapper {
   display: flex;
   justify-content: center;
