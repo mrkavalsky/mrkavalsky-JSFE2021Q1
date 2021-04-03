@@ -213,6 +213,12 @@ header {
   height: 184px;
   position: absolute;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s;
 }
 .slider__videos {
   width: 100%;
@@ -224,8 +230,36 @@ header {
   z-index: 2;
   transition: all 0.3s;
 }
+.slider__viewers {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 145%;
+  color: #FCFCFC;
+  border-bottom: 1px solid #fcfcfc;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+.slider__link {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fcfcfc;
+}
 .slider__item:hover .slider__video {
   filter: blur(1px) brightness(0.85);
+}
+.slider__item:hover .slider__cup {
+  opacity: 1;
 }
 .slider__nav {
   width: 150px;
