@@ -166,6 +166,11 @@ header {
   width: 48px;
   height: 48px;
 }
+.translation {
+  display: flex;
+  justify-content: space-between;
+  width: 1518px;
+}
 .translation__video {
   border-radius: 5px;
 }
