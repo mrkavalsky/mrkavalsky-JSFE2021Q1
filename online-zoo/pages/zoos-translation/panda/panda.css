@@ -166,6 +166,13 @@ header {
   width: 48px;
   height: 48px;
 }
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fcfcfc;
+  width: 100%;
+}
 .pay-and-feed-wrapper {
   display: flex;
   justify-content: center;
