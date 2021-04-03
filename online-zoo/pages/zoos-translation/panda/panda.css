@@ -182,6 +182,13 @@ header {
   align-items: flex-start;
   margin: 60px 0;
 }
+.slider__triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 8.5px 0 8.5px;
+  border-color: #000000 transparent transparent transparent;
+}
 .slider__videos {
   width: 100%;
   display: flex;
