@@ -174,7 +174,12 @@ header {
   width: 100%;
 }
 .slider {
-  width: 1800px;
+  width: 1432px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .pay-and-feed-wrapper {
   display: flex;
