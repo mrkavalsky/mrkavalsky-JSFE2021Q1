@@ -175,6 +175,35 @@ header {
   justify-content: space-between;
   width: 1518px;
 }
+.translation__h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #0b0b0b;
+}
+.translation__count {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+}
+.translation__h2 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 145%;
+  color: #080029;
+}
+.translation__p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+}
 .translation__content {
   width: 420px;
   height: 441px;
