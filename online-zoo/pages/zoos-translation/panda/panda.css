@@ -183,6 +183,26 @@ header {
   justify-content: space-between;
   align-items: flex-start;
 }
+.translation__button {
+  width: 250px;
+  height: 60px;
+  background: #0f0049;
+  border-radius: 5px;
+  border-style: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #fcfcfc;
+  transition: all .2s;
+}
+.translation__button:hover {
+  background: #080029;
+}
+.translation__button:active {
+  background: #150068;
+}
 .translation__video {
   border-radius: 5px;
 }
