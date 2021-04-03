@@ -173,6 +173,9 @@ header {
   background: #fcfcfc;
   width: 100%;
 }
+.slider {
+  width: 1800px;
+}
 .pay-and-feed-wrapper {
   display: flex;
   justify-content: center;
