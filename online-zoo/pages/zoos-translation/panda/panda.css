@@ -166,6 +166,9 @@ header {
   width: 48px;
   height: 48px;
 }
+.translation__video {
+  border-radius: 5px;
+}
 .slider-wrapper {
   display: flex;
   justify-content: center;
