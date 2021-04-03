@@ -189,6 +189,11 @@ header {
   justify-content: space-between;
   width: 1518px;
 }
+.translation__eye {
+  width: 20px;
+  height: 20px;
+  background: url(../../../assets/icons/translation__eye.svg);
+}
 .translation__name {
   width: 420px;
   height: 110px;
