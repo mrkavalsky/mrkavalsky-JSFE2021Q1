@@ -188,6 +188,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #080029;
 }
 .slider__triangle {
   width: 0;
