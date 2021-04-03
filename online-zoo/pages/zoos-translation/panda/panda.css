@@ -207,6 +207,26 @@ header {
   display: flex;
   justify-content: space-between;
 }
+.slider__button {
+  width: 65px;
+  height: 65px;
+  border-style: none;
+  border-radius: 50%;
+  background: #0f0049;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+.slider__button:hover {
+  background: #080029;
+}
+.slider__button:active {
+  background: #150068;
+}
+.slider__button_right {
+  transform: rotate(180deg);
+}
 .pay-and-feed-wrapper {
   display: flex;
   justify-content: center;
