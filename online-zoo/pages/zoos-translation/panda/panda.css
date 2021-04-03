@@ -166,6 +166,10 @@ header {
   width: 48px;
   height: 48px;
 }
+.translation__wrapper {
+  margin-top: 72px;
+  margin-left: calc( ( 100% - 1610px ) / 2 );
+}
 .translation {
   display: flex;
   justify-content: space-between;
