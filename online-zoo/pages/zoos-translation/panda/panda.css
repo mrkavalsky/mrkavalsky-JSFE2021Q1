@@ -189,6 +189,15 @@ header {
   justify-content: space-between;
   width: 1518px;
 }
+.translation__img {
+  background: url(../../../assets/images/panda-translation__icon.jpg);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-size: 300%;
+  background-position: -80px -16px;
+  margin-right: 20px;
+}
 .translation__eye {
   width: 20px;
   height: 20px;
@@ -199,6 +208,7 @@ header {
   width: 420px;
   height: 110px;
   border-bottom: 1px solid #e3e3e3;
+  display: flex;
 }
 .translation__h3 {
   font-style: normal;
