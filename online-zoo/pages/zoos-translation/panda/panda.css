@@ -171,6 +171,14 @@ header {
   justify-content: space-between;
   width: 1518px;
 }
+.translation__content {
+  width: 420px;
+  height: 441px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 .translation__video {
   border-radius: 5px;
 }
