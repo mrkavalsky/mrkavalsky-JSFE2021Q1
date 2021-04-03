@@ -207,6 +207,13 @@ header {
   display: flex;
   justify-content: space-between;
 }
+.slider__nav {
+  width: 150px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .slider__button {
   width: 65px;
   height: 65px;
