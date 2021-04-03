@@ -124,47 +124,61 @@ header {
   width: 90px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   border: 2px solid #f0f0f0;
   border-top: 0;
   background:  #fcfcfc;
 }
-.aside__social-icon {
-  transition: all .3s;
-}
-.aside__social-link:hover .aside__social-icon {
-  transform: scale(1.2);
-}
-.aside-up {
-  cursor: pointer;
-  transition: all .3s;
-}
-.aside-up:hover {
-  transform: scale(1.2);
-}
-.aside-up:active {
-  transform: scale(0.95);
-}
-.aside-links {
-  width: 24px;
-  height: 172px;
+.aside__animal-buttons {
+  height: 436px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.aside-up {
-  width: 48px;
-  height: 48px;
-  border: 2px solid #f0f0f0;
-  box-sizing: border-box;
-  background:  #fcfcfc;
-  border-radius: 50%;
+.aside__nav-button {
+  width: 86px;
+  height: 86px;
+  border: 2px solid #fcfcfc;
+  transition: all .2s;
 }
-.aside-add-block {
-  width: 48px;
-  height: 48px;
+.aside__nav-button:hover {
+  border: 2px solid #609fff;
+}
+.aside__nav-button:active {
+  border: 2px solid #080029;
+}
+.aside__nav-button_top {
+  background: no-repeat center url(../../../assets/icons/zoos-map-arrow-top.svg);
+}
+.aside__nav-button_bottom {
+  background: no-repeat center url(../../../assets/icons/zoos-map-arrow-bottom.svg);
+}
+.aside__animal-button {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #d9E8ff;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: none;
+  transition: all .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aside__animal-button:hover {
+  border-color: #609fff;
+}
+.aside__animal-button:active {
+  border-color: #080029;
+}
+.aside__animal-button_quest {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #0f0049;
 }
 .translation__wrapper {
   margin-top: 72px;
