@@ -202,10 +202,30 @@ header {
   border-width: 13px 8.5px 0 8.5px;
   border-color: #000000 transparent transparent transparent;
 }
+.slider__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.slider__cup {
+  width: 328px; 
+  height: 184px;
+  position: absolute;
+  z-index: 5;
+}
 .slider__videos {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.slider__video {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s;
+}
+.slider__item:hover .slider__video {
+  filter: blur(1px) brightness(0.85);
 }
 .slider__nav {
   width: 150px;
