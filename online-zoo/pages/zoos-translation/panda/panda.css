@@ -14,23 +14,30 @@ a {
 li {
   list-style: none;
 }
+.body {
+  background: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .main {
   display: flex;
-  flex-wrap: wrap;
-  background: #fcfcfc;
+  width: 1800px;
+}
+.main-wrapper {
+  width: 1706px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .online-zoo {
   visibility: hidden;
   position: absolute;
   z-index: -3;
 }
-header {
-  background:  #fcfcfc;
-  display: flex;
-  justify-content: center;
-}
 .header-wrapper {
-  width: 1800px;
+  width: 1706px;
   height: 115px;
   display: flex;
   justify-content: flex-end;
@@ -115,9 +122,9 @@ header {
 .aside {
   background:  #fcfcfc;
   position: sticky;
-  left: calc( ( 100% - 1800px ) / 2 );
-  top: 115px;
-  transform: translateY(-94px);
+  top: 21px;
+  height: 766px;
+  transform: translateX(2px);
 }
 .aside__nav {
   height: 670px;
@@ -180,14 +187,11 @@ header {
   line-height: 154%;
   color: #0f0049;
 }
-.translation__wrapper {
-  margin-top: 72px;
-  margin-left: calc( ( 100% - 1610px ) / 2 );
-}
 .translation {
   display: flex;
   justify-content: space-between;
   width: 1518px;
+  margin: 71px 0 0 94px;
 }
 .translation__img {
   background: url(../../../assets/images/panda-translation__icon.jpg);
@@ -274,13 +278,6 @@ header {
 .translation__video {
   border-radius: 5px;
 }
-.slider-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fcfcfc;
-  width: 100%;
-}
 .slider {
   width: 1432px;
   height: 380px;
@@ -288,7 +285,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 60px 0;
+  margin: 60px 0 60px 94px;
 }
 .slider__h2 {
   width: 234px;
@@ -401,10 +398,8 @@ header {
   justify-content: center;
   align-items: center;
   background: #fcfcfc;
-  width: 100%;
 }
 .accordion-background {
-  width: 100%;
   display: flex;
   justify-content: center;
 }
