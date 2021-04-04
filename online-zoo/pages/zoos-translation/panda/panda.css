@@ -436,6 +436,12 @@ header {
   line-height: 145%;
   color: #609fff;
 }
+.accordion__button {
+  width: 22px;
+  height: 22px;
+  border-style: none;
+  background: no-repeat center url(../../../assets/icons/accordion__button-minus.svg);
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
