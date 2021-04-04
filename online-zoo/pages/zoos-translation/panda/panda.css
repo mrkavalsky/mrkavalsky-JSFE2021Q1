@@ -210,9 +210,11 @@ li {
 }
 .translation__name {
   width: 420px;
-  height: 110px;
   border-bottom: 1px solid #e3e3e3;
   display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 40px;
 }
 .translation__h3 {
   font-style: normal;
