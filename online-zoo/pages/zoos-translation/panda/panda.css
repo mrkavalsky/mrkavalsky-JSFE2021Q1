@@ -430,9 +430,8 @@ header {
   font-size: 18px;
   line-height: 154%;
   color: #747474;
-}
-.accordion-wrapper__p_margin-bottom {
-  margin-bottom: 34px;
+  width: 1381px;
+  margin: 30px 0;
 }
 .accordion__h3 {
   font-style: normal;
