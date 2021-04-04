@@ -403,6 +403,11 @@ header {
   background: #fcfcfc;
   width: 100%;
 }
+.accordion-background {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
