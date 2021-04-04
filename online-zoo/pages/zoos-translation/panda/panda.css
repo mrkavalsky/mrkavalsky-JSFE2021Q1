@@ -411,6 +411,9 @@ header {
 .accordion-wrapper {
   width: 1432px;
 }
+.accordion-wrapper__content {
+  width: 512px;
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
