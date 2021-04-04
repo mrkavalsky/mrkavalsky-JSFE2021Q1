@@ -408,6 +408,9 @@ header {
   display: flex;
   justify-content: center;
 }
+.accordion-wrapper {
+  width: 1432px;
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
