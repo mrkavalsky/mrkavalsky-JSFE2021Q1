@@ -413,6 +413,7 @@ header {
 }
 .accordion-wrapper__content {
   width: 512px;
+  margin-bottom: 46px;
 }
 .accordion-wrapper__h2 {
   font-family: Merriweather;
@@ -421,6 +422,7 @@ header {
   font-size: 36px;
   line-height: 145%;
   color: #080029;
+  margin-bottom: 30px;
 }
 .accordion-wrapper__p {
   font-style: normal;
@@ -428,6 +430,9 @@ header {
   font-size: 18px;
   line-height: 154%;
   color: #747474;
+}
+.accordion-wrapper__p_margin-bottom {
+  margin-bottom: 34px;
 }
 .accordion__h3 {
   font-style: normal;
@@ -441,6 +446,9 @@ header {
   height: 22px;
   border-style: none;
   background: no-repeat center url(../../../assets/icons/accordion__button-minus.svg);
+}
+.accordion {
+  margin-bottom: 105px;
 }
 .pay-and-feed {
   width: 1800px;
