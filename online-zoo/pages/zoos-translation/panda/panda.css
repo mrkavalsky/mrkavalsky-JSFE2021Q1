@@ -404,14 +404,14 @@ li {
 }
 .accordion-background {
   display: flex;
-  justify-content: center;
+  margin-left: 94px;
 }
 .accordion-wrapper {
   width: 1432px;
 }
 .accordion-wrapper__content {
   width: 512px;
-  margin-bottom: 46px;
+  margin-bottom: 64px;
 }
 .accordion-wrapper__h2 {
   font-family: Merriweather;
