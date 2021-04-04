@@ -469,7 +469,7 @@ li {
   color: #609fff;
 }
 .pay-and-feed {
-  width: 1800px;
+  width: 1710px;
   height: 1300px;
   display: flex;
   flex-direction: column;
@@ -511,11 +511,11 @@ li {
   align-self: center;
   margin-top: 100px;
   position: relative;
-  right: 120px;
+  right: 167px;
 }
 .pay-and-feed__content_align-left {
   align-self: flex-start;
-  margin-left: 180px;
+  margin-left: 90px;
 }
 .pay-and-feed__content_align-right {
   align-self: flex-end;
