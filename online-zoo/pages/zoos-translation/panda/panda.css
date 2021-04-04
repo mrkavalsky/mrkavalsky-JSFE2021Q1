@@ -180,6 +180,9 @@ li {
 .aside__animal-button:active {
   border-color: #080029;
 }
+.aside__animal-button_active {
+  border-color: #609fff;
+}
 .aside__animal-button_quest {
   font-style: normal;
   font-weight: normal;
