@@ -197,12 +197,11 @@ li {
   margin: 71px 0 0 94px;
 }
 .translation__img {
-  background: url(../../../assets/images/panda-translation__icon.jpg);
+  background: url(../../../assets/images/gorilla-page__icon.png);
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-size: 300%;
-  background-position: -80px -16px;
+  background-size: contain;
   margin-right: 20px;
 }
 .translation__eye {
