@@ -462,6 +462,14 @@ header {
   margin-bottom: 20px;
   border-bottom: 1px solid #609fff;
 }
+.accordion__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  text-decoration: underline;
+  color: #609fff;
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
