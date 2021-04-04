@@ -414,6 +414,28 @@ header {
 .accordion-wrapper__content {
   width: 512px;
 }
+.accordion-wrapper__h2 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #080029;
+}
+.accordion-wrapper__p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+}
+.accordion__h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 145%;
+  color: #609fff;
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
