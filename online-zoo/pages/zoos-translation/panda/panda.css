@@ -573,6 +573,7 @@ li {
   justify-content: center;
   align-items: center;
   background: #0b0b0b;
+  width: 100%;
 }
 .footer {
   width: 1800px;
