@@ -450,6 +450,12 @@ header {
 .accordion {
   margin-bottom: 105px;
 }
+.accordion__button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .pay-and-feed {
   width: 1800px;
   height: 1300px;
