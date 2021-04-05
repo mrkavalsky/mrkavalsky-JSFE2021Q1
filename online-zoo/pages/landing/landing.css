@@ -37,7 +37,7 @@ header {
   align-items: flex-end;
 }
 .nav-wrapper {
-  width: 1704px;
+  width: 1708px;
   height: 86px;
   border: 2px solid #f0f0f0;
   display: flex;
@@ -75,7 +75,7 @@ header {
   margin-right: 92px;
 }
 .nav-wrapper nav {
-  margin-left: 89px;
+  margin-left: 92px;
   margin-top: 4px;
 }
 .nav-wrapper nav ul {
@@ -128,7 +128,7 @@ header {
 .aside {
   background:  #fcfcfc;
   position: sticky;
-  left: calc( ( 100% - 1792px ) / 2 );
+  left: calc( ( 100% - 1800px ) / 2 );
   top: 115px;
   transform: translateY(-90px);
 }
@@ -145,6 +145,11 @@ header {
 }
 .aside__social-icon {
   transition: all .3s;
+}
+.aside__social-link {
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 .aside__social-link:hover .aside__social-icon {
   transform: scale(1.2);
