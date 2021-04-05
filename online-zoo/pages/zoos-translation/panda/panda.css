@@ -61,8 +61,7 @@ li {
   width: 54px;
 }
 .nav-wrapper__map {
-  display: block;
-  width: 35px;
+  width: 56px;
 }
 .nav-wrapper__zoos {
   display: block;
@@ -84,7 +83,8 @@ li {
   margin-right: 92px;
 }
 .nav-wrapper nav {
-  margin-left: 92px;
+  margin-left: 89px;
+  margin-top: 4px;
 }
 .nav-wrapper nav ul {
   width: 800px;
