@@ -128,9 +128,9 @@ header {
 .aside {
   background:  #fcfcfc;
   position: sticky;
-  left: calc( ( 100% - 1800px ) / 2 );
+  left: calc( ( 100% - 1792px ) / 2 );
   top: 115px;
-  transform: translateY(-94px);
+  transform: translateY(-90px);
 }
 .aside__nav {
   height: 670px;
