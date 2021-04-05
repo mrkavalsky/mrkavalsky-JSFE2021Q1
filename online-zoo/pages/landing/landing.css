@@ -37,29 +37,23 @@ header {
   align-items: flex-end;
 }
 .nav-wrapper {
-  width: 1704px;
-  height: 90px;
+  width: 1708px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.nav-wrapper a {
-  font-style: normal;
-  font-size: 18px;
-  line-height: 154%;
-  color: #080029;
-}
 .pseudo-hover {
   font-weight: 500;
+  cursor: auto;
 }
 .nav-wrapper__about{
   display: block;
   width: 54px;
 }
 .nav-wrapper__map {
-  display: block;
-  width: 35px;
+  width: 56px;
 }
 .nav-wrapper__zoos {
   display: block;
@@ -82,6 +76,7 @@ header {
 }
 .nav-wrapper nav {
   margin-left: 92px;
+  margin-top: 4px;
 }
 .nav-wrapper nav ul {
   width: 800px;
@@ -93,13 +88,17 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #080029;
 }
 .user {
   cursor: pointer;
 }
 .logo {
-  width: 90px;
-  height: 90px;
+  width: 86px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   display: flex;
   align-items: center;
@@ -131,11 +130,11 @@ header {
   position: sticky;
   left: calc( ( 100% - 1800px ) / 2 );
   top: 115px;
-  transform: translateY(-94px);
+  transform: translateY(-90px);
 }
 .aside__nav {
   height: 670px;
-  width: 90px;
+  width: 86px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -146,6 +145,11 @@ header {
 }
 .aside__social-icon {
   transition: all .3s;
+}
+.aside__social-link {
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 .aside__social-link:hover .aside__social-icon {
   transform: scale(1.2);
@@ -192,6 +196,7 @@ header {
   height: 673px;
   border-radius: 5px;
   object-fit: cover;
+  object-position: 0 -202px;
 }
 .letter-wrapper {
   display: inline-flex;
@@ -286,7 +291,7 @@ header {
 }
 .how-it-works {
   width: 1800px;
-  height: 969px;
+  height: 975px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -310,7 +315,7 @@ header {
   overflow: hidden;
   object-fit: cover;
   transform: scaleX(-1);
-  object-position: -255px;
+  object-position: -264px;
 }
 .try-now__h2 {
   font-style: normal;
@@ -319,6 +324,7 @@ header {
   line-height: 26px;
   letter-spacing: 0.115em;
   color: #0b0b0b;
+  margin-bottom: -7px;
 }
 .try-now__h3 {
   font-family: Merriweather;
@@ -327,6 +333,7 @@ header {
   font-size: 36px;
   line-height: 145%;
   color: #080029;
+  margin-bottom: -20px;
 }
 .try-now__h4 {
   font-style: normal;
@@ -434,6 +441,7 @@ header {
   height: 328px;
   position: relative;
   border-radius: 5px;
+  cursor: pointer;
 }
 .item_overflow {
   overflow: hidden;
@@ -597,7 +605,7 @@ header {
 }
 .pay-and-feed__content_align-right {
   align-self: flex-end;
-  margin: 60px 60px 47px 0;
+  margin: 60px 60px 51px 0;
 }
 .pay-and-feed__h2 {
   margin-bottom: 30px;
@@ -907,12 +915,12 @@ header {
   transition: all .5s;
 }
 .zoogeography__mark_item1 {
-  top: 317px;
-  left: 176px;
+  top: 325px;
+  left: 174px;
 }
 .zoogeography__mark_item2 {
   top: 337px;
-  left: 308px;
+  left: 305px;
 }
 .zoogeography__mark_item3 {
   top: 461px;
@@ -920,14 +928,14 @@ header {
 }
 .zoogeography__mark_item4 {
   top: 325px;
-  left: 944px;
+  left: 942px;
 }
 .zoogeography__mark-animal {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 36%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

@@ -38,29 +38,23 @@ header {
 .nav-wrapper {
   background:  #fcfcfc;
   width: 1704px;
-  height: 90px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   border-left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.nav-wrapper a {
-  font-style: normal;
-  font-size: 18px;
-  line-height: 154%;
-  color: #080029;
-}
 .pseudo-hover {
   font-weight: 500;
+  cursor: auto;
 }
 .nav-wrapper__about{
   display: block;
   width: 54px;
 }
 .nav-wrapper__map {
-  display: block;
-  width: 35px;
+  width: 56px;
 }
 .nav-wrapper__zoos {
   display: block;
@@ -79,10 +73,11 @@ header {
 }
 .nav-wrapper img {
   width: 52px;
-  margin-right: 92px;
+  margin-right: 83px;
 }
 .nav-wrapper nav {
-  margin-left: 92px;
+  margin-left: 89px;
+  margin-top: 4px;
 }
 .nav-wrapper nav ul {
   width: 800px;
@@ -94,13 +89,17 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #080029;
 }
 .user {
   cursor: pointer;
 }
 .logo {
-  width: 90px;
-  height: 90px;
+  width: 86px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   display: flex;
   align-items: center;
@@ -115,7 +114,7 @@ header {
 }
 .aside__nav {
   height: 670px;
-  width: 90px;
+  width: 86px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -165,14 +164,14 @@ header {
   width: 100%;
   height: 100vh;
   background: url(../../assets/images/zoos-map.png);
-  background-position: -130px -695px;
-  background-size: 2159px 2180px;
+  background-position: -94px -695px;
+  background-size: 2165px 2180px;
   display: flex;
   justify-content: center;
   position: absolute;
 }
 .hud-wrapper {
-  width: 1800px;
+  width: 1796px;
 }
 .aside__animal-buttons {
   height: 436px;
@@ -205,22 +204,22 @@ header {
 }
 .background-map__mark_item2 {
   top: 345px;
-  left: 258px;
+  left: 293px;
 }
 .background-map__mark_item3 {
   top: 598px;
-  left: 949px;
+  left: 992px;
 }
 .background-map__mark_item4 {
   top: 388px;
-  left: 1626px;
+  left: 1672px;
 }
 .background-map__mark-animal {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 36%;
+  top: 31%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -246,8 +245,8 @@ header {
   border-radius: 15px;
   overflow: hidden;
   position: absolute;
-  top: 75px;
-  left: -172px;
+  top: 70px;
+  left: -166px;
   transform: translate(-50%, -50%);
   cursor: auto;
 }
@@ -266,7 +265,7 @@ header {
   line-height: 154%;
   text-align: center;
   color: #747474;
-  margin-bottom: 32px;
+  margin-bottom: 5px;
 }
 .background-map__link {
   font-style: normal;
