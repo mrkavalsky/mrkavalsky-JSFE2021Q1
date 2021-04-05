@@ -907,12 +907,12 @@ header {
   transition: all .5s;
 }
 .zoogeography__mark_item1 {
-  top: 317px;
-  left: 176px;
+  top: 325px;
+  left: 174px;
 }
 .zoogeography__mark_item2 {
   top: 337px;
-  left: 308px;
+  left: 305px;
 }
 .zoogeography__mark_item3 {
   top: 461px;
@@ -920,14 +920,14 @@ header {
 }
 .zoogeography__mark_item4 {
   top: 325px;
-  left: 944px;
+  left: 942px;
 }
 .zoogeography__mark-animal {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 36%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
