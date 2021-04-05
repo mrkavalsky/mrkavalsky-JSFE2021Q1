@@ -44,12 +44,6 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.nav-wrapper a {
-  font-style: normal;
-  font-size: 18px;
-  line-height: 154%;
-  color: #080029;
-}
 .pseudo-hover {
   font-weight: 500;
   cursor: auto;
@@ -94,6 +88,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #080029;
 }
 .user {
   cursor: pointer;
