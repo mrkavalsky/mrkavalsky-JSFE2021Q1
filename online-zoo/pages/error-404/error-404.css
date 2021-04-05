@@ -34,7 +34,7 @@ header {
 .nav-wrapper {
   background:  #fcfcfc;
   width: 1704px;
-  height: 90px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   border-left: 0;
   display: flex;
@@ -94,8 +94,8 @@ header {
   cursor: pointer;
 }
 .logo {
-  width: 90px;
-  height: 90px;
+  width: 86px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   display: flex;
   align-items: center;

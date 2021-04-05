@@ -45,7 +45,7 @@ li {
 }
 .nav-wrapper {
   width: 1704px;
-  height: 90px;
+  height: 86px;
   border-left: 0;
   border: 2px solid #f0f0f0;
   display: flex;
@@ -105,8 +105,8 @@ li {
   cursor: pointer;
 }
 .logo {
-  width: 90px;
-  height: 90px;
+  width: 86px;
+  height: 86px;
   border: 2px solid #f0f0f0;
   display: flex;
   align-items: center;
@@ -127,7 +127,7 @@ li {
 }
 .aside__nav {
   height: 670px;
-  width: 90px;
+  width: 86px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
