@@ -316,6 +316,8 @@ li {
   overflow: hidden;
   border-radius: 5px;
   cursor: pointer;
+  width: 328px;
+  height: 184px;
 }
 .slider__cup {
   width: 328px; 
