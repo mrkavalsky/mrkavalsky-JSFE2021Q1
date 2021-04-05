@@ -164,8 +164,8 @@ header {
   width: 100%;
   height: 100vh;
   background: url(../../assets/images/zoos-map.png);
-  background-position: -130px -695px;
-  background-size: 2159px 2180px;
+  background-position: -94px -695px;
+  background-size: 2165px 2180px;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -204,22 +204,22 @@ header {
 }
 .background-map__mark_item2 {
   top: 345px;
-  left: 258px;
+  left: 293px;
 }
 .background-map__mark_item3 {
   top: 598px;
-  left: 949px;
+  left: 992px;
 }
 .background-map__mark_item4 {
   top: 388px;
-  left: 1626px;
+  left: 1672px;
 }
 .background-map__mark-animal {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 36%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -245,8 +245,8 @@ header {
   border-radius: 15px;
   overflow: hidden;
   position: absolute;
-  top: 75px;
-  left: -172px;
+  top: 70px;
+  left: -166px;
   transform: translate(-50%, -50%);
   cursor: auto;
 }
@@ -265,7 +265,7 @@ header {
   line-height: 154%;
   text-align: center;
   color: #747474;
-  margin-bottom: 32px;
+  margin-bottom: 5px;
 }
 .background-map__link {
   font-style: normal;
