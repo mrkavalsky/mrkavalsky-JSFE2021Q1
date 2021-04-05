@@ -46,6 +46,7 @@ li {
 .nav-wrapper {
   width: 1704px;
   height: 90px;
+  border-left: 0;
   border: 2px solid #f0f0f0;
   display: flex;
   align-items: center;
@@ -123,7 +124,6 @@ li {
   position: sticky;
   top: 21px;
   height: 766px;
-  transform: translateX(2px);
 }
 .aside__nav {
   height: 670px;
