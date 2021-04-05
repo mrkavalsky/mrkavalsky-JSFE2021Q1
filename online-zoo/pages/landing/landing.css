@@ -191,6 +191,7 @@ header {
   height: 673px;
   border-radius: 5px;
   object-fit: cover;
+  object-position: 0 -202px;
 }
 .letter-wrapper {
   display: inline-flex;
