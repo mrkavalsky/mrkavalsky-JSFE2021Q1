@@ -145,6 +145,9 @@ header {
   line-height: 154%;
   text-align: center;
   color: #080029;
+
+}
+.main__p_margin-top {
   margin-top: 30px;
 }
 .main__button {
