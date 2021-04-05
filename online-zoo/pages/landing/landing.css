@@ -318,6 +318,7 @@ header {
   line-height: 26px;
   letter-spacing: 0.115em;
   color: #0b0b0b;
+  margin-bottom: -7px;
 }
 .try-now__h3 {
   font-family: Merriweather;
@@ -326,6 +327,7 @@ header {
   font-size: 36px;
   line-height: 145%;
   color: #080029;
+  margin-bottom: -20px;
 }
 .try-now__h4 {
   font-style: normal;
