@@ -219,7 +219,7 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 33%;
+  top: 31%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
