@@ -52,6 +52,7 @@ header {
 }
 .pseudo-hover {
   font-weight: 500;
+  cursor: auto;
 }
 .nav-wrapper__about{
   display: block;
