@@ -434,6 +434,7 @@ header {
   height: 328px;
   position: relative;
   border-radius: 5px;
+  cursor: pointer;
 }
 .item_overflow {
   overflow: hidden;
