@@ -310,7 +310,7 @@ header {
   overflow: hidden;
   object-fit: cover;
   transform: scaleX(-1);
-  object-position: -255px;
+  object-position: -264px;
 }
 .try-now__h2 {
   font-style: normal;
