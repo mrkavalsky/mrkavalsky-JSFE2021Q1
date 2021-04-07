@@ -451,7 +451,7 @@ li {
   background: no-repeat center url(../../../assets/icons/accordion__button-minus.svg);
 }
 .accordion {
-  margin-bottom: 85px;
+  margin-bottom: 105px;
 }
 .accordion__button-wrapper {
   width: 100%;
@@ -473,7 +473,7 @@ li {
 }
 .pay-and-feed {
   width: 1710px;
-  height: 1300px;
+  height: 1380px;
   display: flex;
   flex-direction: column;
 }
