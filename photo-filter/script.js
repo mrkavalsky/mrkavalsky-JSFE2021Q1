@@ -1,9 +1,11 @@
 const filters = document.querySelector('.filters');
 
 function handleFilters(e) {
-  const inputValue = e.target.value;
-  let output = e.target.nextSibling.nextSibling;
-  output.value = inputValue;
+  const input = e.target;
+  const suffix = input.dataset.sizing;
+  const output = e.target.nextSibling.nextSibling;
+  output.value = input.value;
+  document.documentElement.style.setProperty(`--${input.name}`, input.value + suffix);
 }
 
 filters.addEventListener('input', handleFilters);
