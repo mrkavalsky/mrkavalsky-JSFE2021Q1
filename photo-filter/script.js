@@ -63,6 +63,7 @@ function getTime() {
 function getFile() {
   const file = loadBtn.files[0];
   const reader = new FileReader();
+  if (file) return;
   let src;
   reader.onload = () => {
     src = reader.result;
