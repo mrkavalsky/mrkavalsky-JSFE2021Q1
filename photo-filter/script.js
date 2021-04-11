@@ -107,9 +107,24 @@ function setFilter() {
   let filterProp = [];
   arr.forEach(label => {
     const input = label.children[0];
-    filterProp.push(`${input.name}(${input.value}${input.dataset.sizing})`);
+    const filterValue = input.name === 'blur' ? getBlur(input.value) : input.value;
+    filterProp.push(`${input.name}(${filterValue}${input.dataset.sizing})`);
   });
   return filterProp.join(' ');
+}
+
+function getBlur(value) {
+  if (image.naturalWidth > image.naturalHeight) {
+    if (image.naturalWidth > image.width) {
+      return Math.round(image.naturalWidth / image.width) * value;
+    } 
+  }
+  else {
+    if (image.naturalHeight > image.height) {
+      return Math.round(image.naturalHeight / image.height) * value;
+    } 
+  }
+  return value;
 }
 
 filters.addEventListener('input', getInput);
