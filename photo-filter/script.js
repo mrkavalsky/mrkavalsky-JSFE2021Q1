@@ -88,6 +88,7 @@ function drawImage() {
   canvas.width = image.naturalWidth;
   canvas.height = image.naturalHeight;
   const context = canvas.getContext('2d');
+  context.filter = setFilter();
   context.drawImage(image, 0, 0);
   const dataURL = canvas.toDataURL("image/png");
   downloadFile(dataURL);
@@ -99,6 +100,16 @@ function downloadFile(dataURL) {
   link.href = dataURL;
   link.click();
   link.delete;
+}
+
+function setFilter() {
+  const arr = [...filters.children];
+  let filterProp = [];
+  arr.forEach(label => {
+    const input = label.children[0];
+    filterProp.push(`${input.name}(${input.value}${input.dataset.sizing})`);
+  });
+  return filterProp.join(' ');
 }
 
 filters.addEventListener('input', getInput);
