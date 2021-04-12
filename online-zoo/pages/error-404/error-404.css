@@ -315,3 +315,28 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1920px) {
+  .header-wrapper {
+    width: calc( 100% - 80px );
+    height: 95px;
+  }
+  .nav-wrapper {
+    width: calc( 100% - 56px ) ;
+    height: 66px;
+  }
+  .nav-wrapper nav {
+    margin-left: 88px;
+  }
+  .nav-wrapper nav ul {
+    width: 680px;
+  }
+  .logo {
+    width: auto;
+    height: auto;
+  }
+  .logo__icon {
+    height: 32px;
+    width: auto;
+    margin: 19px 0 19px 13px;
+  }
+}
