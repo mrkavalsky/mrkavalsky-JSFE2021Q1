@@ -325,7 +325,12 @@ header {
     height: 66px;
   }
   .nav-wrapper nav {
+    margin-top: 0px;
+    margin-bottom: 5px;
     margin-left: 88px;
+  }
+  .nav-wrapper img {
+    width: 42px;
   }
   .nav-wrapper nav ul {
     width: 680px;
@@ -342,7 +347,7 @@ header {
   .main__content {
     width: 651px;
     margin-top: 61px;
-    background-position: 213px 42px;
+    background-position: 207px 30px;
     background-size: 238px 108px;
   }
   .main__h2 {
@@ -372,24 +377,30 @@ header {
   }
   .footer__copyright {
     max-width: 1432px;
-    width: calc( 100% - 40px );
+    width: calc( 100% - 80px );
     height: 103px;
     margin-left: 5px;
   }
   .footer__content-wrapper {
     max-width: 1432px;
-    width: calc( 100% - 40px );
+    width: calc( 100% - 80px );
     margin-top: 100px;
     margin-left: 5px;
   }
   .footer__logos {
-    width: 128px;
+    width: 119px;
+  }
+  .footer__nav {
+    margin-right: 64px;
   }
   .footer__digital-and-school{
     height: 176px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+  .footer__button-and-links {
+    margin-right: 67px;
   }
   .footer__online-zoo-logo {
     width: 119px;
