@@ -339,4 +339,30 @@ header {
     width: auto;
     margin: 19px 0 19px 13px;
   }
+  .main__content {
+    width: 651px;
+    margin-top: 61px;
+    background-position: 213px 42px;
+    background-size: 238px 108px;
+  }
+  .main__h2 {
+    font-size: 28px;
+    margin-top: 98px;
+  }
+  .main__p {
+    font-size: 18px;
+  }
+  .main__button {
+    margin-top: 40px;
+    width: 261px;
+    height: 51px;
+    font-size: 16px;
+  }
+  .main__video {
+    width: 832px;
+    height: 469px;
+  }
+  .main__support-link {
+    font-size: 16px;
+  }
 }
