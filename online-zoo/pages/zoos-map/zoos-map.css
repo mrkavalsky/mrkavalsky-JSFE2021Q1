@@ -511,11 +511,11 @@ header {
   }
   .background-map__mark_item1 {
     top: 16.5vw;
-    left: -5vw;
+    left: -500px;
   }
   .background-map__mark_item2 {
     top: 30vw;
-    left: -5vw;
+    left: -500px;
   }
   .background-map__mark_item3 {
     top: 79.5vw;
@@ -523,7 +523,7 @@ header {
   }
   .background-map__mark_item4 {
     top: 32.5vw;
-    left: -5vw;
+    left: -500px;
   }
   .background-map__animal {
     width: 249px;
