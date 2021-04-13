@@ -474,8 +474,15 @@ header {
     flex-direction: row;
   }
   .aside__nav-button {
-    width: 66px;
-    height: 66px;
+    width: 65px;
+    height: 80px;
+    border-radius: 12px;
+  }
+  .aside__nav-button_top {
+    background: no-repeat center url(../../assets/icons/zoos-map__arrow-left.svg);
+  }
+  .aside__nav-button_bottom {
+    background: no-repeat center url(../../assets/icons/zoos-map__arrow-right.svg);
   }
   .aside__animal-button {
     width: 45px;
@@ -490,8 +497,12 @@ header {
     align-items: center;
   }
   .aside__animal-buttons {
-    width: 463px;
+    width: calc( 100% - 142px);
     height: 45px;
     flex-direction: row;
+  }
+  .aside__animal-svg {
+    width: 29px;
+    height: 29px;
   }
 }
