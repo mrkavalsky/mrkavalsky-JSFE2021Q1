@@ -318,7 +318,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .header-wrapper {
     width: calc( 100% - 80px );
     height: 95px;
