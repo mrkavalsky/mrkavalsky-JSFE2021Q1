@@ -466,7 +466,8 @@ header {
   .footer__copyright {
     width: calc( 100% - 40px );
     height: 60px;
-    margin-top: 60px;
+    margin-top: 57px;
+    font-size: 14px;
   }
   .footer__content-wrapper {
     width: calc( 100% - 40px );
@@ -483,19 +484,46 @@ header {
   }
   .footer__nav {
     margin-right: 0;
+    height: 366px;
   }
   .footer__digital-and-school{
     width: 264px;
     height: 49px;
     flex-direction: row;
-    margin-right: 134px;
+    margin-right: 132px;
   }
   .footer__button-and-links {
     margin-right: 0;
     margin-right: 58px;
+    height: 302px;
   }
   .footer__online-zoo-logo {
     width: 95px;
     height: 74px;
+  }
+  .footer__nav-link {
+    font-size: 16px;
+  }
+  .footer__digital-logo {
+    width: 98px;
+    height: auto;
+  }
+  .footer__rsschool-logo {
+    width: 97px;
+    height: auto;
+  }
+  .footer__h3 {
+    font-size: 16px;
+  }
+  .footer__social-link {
+    font-size: 18px;
+  }
+  .footer__button {
+    font-size: 16px;
+    width: 318px;
+    height: 59px;
+  }
+  .footer__donate {
+    height: 230px;
   }
 }
