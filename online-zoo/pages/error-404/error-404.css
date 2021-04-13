@@ -412,7 +412,7 @@ header {
 }
 @media (max-width: 1000px) {
   header {
-    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.32);
   }
   .header-wrapper {
     width: calc( 100% - 40px );
@@ -548,6 +548,7 @@ header {
     width: calc( 100% - 20px );
     margin-top: 21px;
     background-position-x: center;
+    background-position-y: 29px;
   }
   .main__h2 {
     font-size: 20px;
@@ -555,26 +556,34 @@ header {
   }
   .main__p {
     font-size: 14px;
+    width: 85%;
   }
   .main__button {
-    margin-top: 25px;
+    margin-top: 29px;
+    font-size: 14px;
+    width: 243px;
   }
   .main__video {
     margin-top: 40px;
     max-width: 600px;
     width: calc( 100% - 20px );
     max-height: 338px;
-    height: 56vw;
+    height: 52vw;
   }
   .main__support-link {
     margin: 30px 0 50px 0;
     font-size: 12px;
+    max-width: 420px;
+    width: 85%;
   }
   .footer__copyright {
     width: calc( 100% - 20px );
-    height: 60px;
-    margin-top: 57px;
-    font-size: 14px;
+    height: 80px;
+    margin-top: 36px;
+    font-size: 11px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    box-sizing: border-box;
   }
   .footer__content-wrapper {
     width: calc( 100% - 20px );
@@ -587,23 +596,24 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 66px;
+    margin-bottom: 60px;
   }
   .footer__nav {
     height: 283px;
-    width: auto;
+    width: 142px;
   }
   .footer__digital-and-school{
     width: 84px;
-    height: 132px;
+    height: 137px;
     flex-direction: column;
     margin-right: 0;
   }
   .footer__button-and-links {
     margin-right: 0;
-    min-height: 302px;
+    min-height: 259px;
+    height: auto;
     max-width: 339px;
-    width: calc( 100% - 20px );
+    width: 100%;
     justify-self: center;
   }
   .footer__online-zoo-logo {
@@ -615,12 +625,15 @@ header {
   }
   .footer__digital-logo {
     width: 80px;
+    order: 3;
   }
   .footer__rsschool-logo {
     width: 84px;
+    order: 1;
   }
   .footer__h2 {
     font-size: 18px;
+    margin-bottom: 0;
   }
   .footer__h3 {
     font-size: 14px;
@@ -635,7 +648,15 @@ header {
     width: 100%;
   }
   .footer__donate {
-    height: 230px;
+    max-width: 339px;
+    width: 100%;
+    height: 205px;
     align-items: center;
+  }
+  .footer__author {
+    order: -1;
+  }
+  .footer__symbol-x {
+    order: 2;
   }
 }
