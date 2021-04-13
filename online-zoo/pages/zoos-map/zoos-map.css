@@ -390,6 +390,8 @@ header {
   .background-map__animal {
     width: 292px;
     height: 448px;
+    top: 58px;
+    left: -146px;
   }
   .background-map__h3 {
     font-size: 28px;
