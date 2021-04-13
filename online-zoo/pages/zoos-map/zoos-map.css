@@ -505,4 +505,47 @@ header {
     width: 29px;
     height: 29px;
   }
+  .background-map {
+    background-position: -54vw -50vw;
+    background-size: 220vw 218vw;
+  }
+  .background-map__mark_item1 {
+    top: 16.5vw;
+    left: -5vw;
+  }
+  .background-map__mark_item2 {
+    top: 30vw;
+    left: -5vw;
+  }
+  .background-map__mark_item3 {
+    top: 79.5vw;
+    left: 56.5vw;
+  }
+  .background-map__mark_item4 {
+    top: 32.5vw;
+    left: -5vw;
+  }
+  .background-map__animal {
+    width: 249px;
+    height: 392px;
+    top: 61px;
+    left: -124px;
+  }
+  .background-map__animal-photo {
+    height: 160px;
+  }
+  .background-map__h3 {
+    font-size: 24px;
+  }
+  .background-map__h4 {
+    font-size: 14px;
+  }
+  .background-map__link {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .background-map__animal-info {
+    height: 230px;
+    padding-bottom: 30px;
+  }
 }
