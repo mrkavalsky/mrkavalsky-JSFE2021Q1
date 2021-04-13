@@ -360,27 +360,32 @@ header {
   .background-map__mark {
     z-index: 2;
   }
+  .background-map__mark-animal {
+    top: 36%;
+  }
   .background-map__mark_deactive:hover .background-map__svg-mark {
-    width: 140px;
-    height: 168px;
+    width: 93px;
+    height: 135px;
   }
   .background-map__mark_active .background-map__svg-mark {
-    width: 140px;
-    height: 168px;
+    width: 93px;
+    height: 135px;
   }
-  .background-map__mark_deactive:hover .background-map__svg-path {
-    stroke-width: 2px;
-  }
-  .background-map__mark_active .background-map__svg-path {
-    stroke-width: 2px;
+  .background-map__svg-mark {
+    width: 77px;
+    height: 120px;
   }
   .background-map__mark_deactive:hover .background-map__mark-animal {
-    height: 67px; 
-    width: 67px;
+    height: 42px; 
+    width: 38px;
   }
   .background-map__mark_active .background-map__mark-animal {
-    height: 67px;
-    width: 67px;
+    height: 42px;
+    width: 38px;
+  }
+  .background-map__mark-animal {
+    height: 35px;
+    width: 35px;
   }
   .background-map__animal {
     width: 292px;
