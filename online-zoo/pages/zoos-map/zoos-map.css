@@ -357,6 +357,26 @@ header {
   .aside__animal-buttons {
     height: 416px;
   }
+  .background-map {
+    background-position: 1vw -25vw;
+    background-size: 115vw 114vw;
+  }
+  .background-map__mark_item1 {
+    top: 16.5vw;
+    left: 2.5vw;
+  }
+  .background-map__mark_item2 {
+    top: 30vw;
+    left: 21vw;
+  }
+  .background-map__mark_item3 {
+    top: 42.5vw;
+    left: 58.5vw;
+  }
+  .background-map__mark_item4 {
+    top: 32.5vw;
+    left: 95vw;
+  }
   .background-map__mark {
     z-index: 2;
   }
