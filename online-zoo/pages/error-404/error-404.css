@@ -417,6 +417,11 @@ header {
     align-items: center;
     justify-content: space-between;
   }
+  .logo__icon {
+    height: 37px;
+    width: auto;
+    margin: 0;
+  }
   .nav-wrapper {
     display: none;
   }
