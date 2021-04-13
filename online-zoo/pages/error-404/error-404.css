@@ -570,4 +570,72 @@ header {
     margin: 30px 0 50px 0;
     font-size: 12px;
   }
+  .footer__copyright {
+    width: calc( 100% - 20px );
+    height: 60px;
+    margin-top: 57px;
+    font-size: 14px;
+  }
+  .footer__content-wrapper {
+    width: calc( 100% - 20px );
+    margin-top: 60px;
+    flex-wrap: wrap;
+  }
+  .footer__logos {
+    width: 84px;
+    height: 283px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 66px;
+  }
+  .footer__nav {
+    height: 283px;
+    width: auto;
+  }
+  .footer__digital-and-school{
+    width: 84px;
+    height: 132px;
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .footer__button-and-links {
+    margin-right: 0;
+    min-height: 302px;
+    max-width: 339px;
+    width: calc( 100% - 20px );
+    justify-self: center;
+  }
+  .footer__online-zoo-logo {
+    width: 60px;
+    height: 47px;
+  }
+  .footer__nav-link {
+    font-size: 14px;
+  }
+  .footer__digital-logo {
+    width: 80px;
+  }
+  .footer__rsschool-logo {
+    width: 84px;
+  }
+  .footer__h2 {
+    font-size: 18px;
+  }
+  .footer__h3 {
+    font-size: 14px;
+    text-align: center;
+  }
+  .footer__social-link {
+    font-size: 14px;
+  }
+  .footer__button {
+    font-size: 14px;
+    max-width: 318px;
+    width: 100%;
+  }
+  .footer__donate {
+    height: 230px;
+    align-items: center;
+  }
 }
