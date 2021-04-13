@@ -333,4 +333,23 @@ header {
     height: 32px;
     width: auto;
   }
+  .aside__nav {
+    height: 620px;
+    width: 66px;
+  }
+  .aside__nav-button {
+    width: 66px;
+    height: 66px;
+  }
+  .aside__animal-button {
+    width: 45px;
+    height: 45px;
+  }
+  .hud-wrapper {
+    max-width: 1796px;
+    width: calc( 100% - 80px );
+  }
+  .aside__animal-buttons {
+    height: 416px;
+  }
 }
