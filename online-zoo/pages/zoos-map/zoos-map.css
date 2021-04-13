@@ -175,8 +175,8 @@ header {
   width: 100%;
   height: 100vh;
   background: url(../../assets/images/zoos-map.png);
-  background-position: -94px -695px;
-  background-size: 2165px 2180px;
+  background-position: -5vw -37vw;
+  background-size: 113vw 114vw;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -215,21 +215,21 @@ header {
   transition: all .5s;
 }
 .background-map__mark_item1 {
-  top: 368px;
-  left: 75px;
-  z-index: -1;
+  top: 19vw;
+  left: 4vw;
+  z-index: 2;
 }
 .background-map__mark_item2 {
-  top: 345px;
-  left: 293px;
+  top: 18vw;
+  left: 15vw;
 }
 .background-map__mark_item3 {
-  top: 598px;
-  left: 992px;
+  top: 31vw;
+  left: 51.5vw;
 }
 .background-map__mark_item4 {
-  top: 388px;
-  left: 1672px;
+  top: 20vw;
+  left: 87vw;
 }
 .background-map__mark-animal {
   background-position: center;
@@ -373,22 +373,6 @@ header {
   }
   .background-map__mark_active .background-map__svg-path {
     stroke-width: 2px;
-  }
-  .background-map__mark_item1 {
-    top: 368px;
-    left: 75px;
-  }
-  .background-map__mark_item2 {
-    top: 345px;
-    left: 293px;
-  }
-  .background-map__mark_item3 {
-    top: 598px;
-    left: 992px;
-  }
-  .background-map__mark_item4 {
-    top: 388px;
-    left: 1672px;
   }
   .background-map__mark_deactive:hover .background-map__mark-animal {
     height: 67px; 
