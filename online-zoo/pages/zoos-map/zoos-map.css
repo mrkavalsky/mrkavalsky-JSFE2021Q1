@@ -549,3 +549,16 @@ header {
     padding-bottom: 30px;
   }
 }
+@media (max-width: 639px) {
+  .header-wrapper {
+    height: 59px;
+  }
+  .nav-wrapper__menu {
+    width: 35px;
+    height: 21px;
+    background-size: 35px 21px;
+  }
+  .logo__icon {
+    height: 29px;
+  }
+}
