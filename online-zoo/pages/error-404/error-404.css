@@ -427,7 +427,34 @@ header {
     background: url(../../assets/icons/burger_menu.svg);
     border-style: none;
   }
-
+  .main__content {
+    width: 578px;
+    background-position: 296px 42px;
+    background-size: 190px 80px;
+    margin-top: 64px;
+  }
+  .main__h2 {
+    font-size: 26px;
+    margin-top: 98px;
+  }
+  .main__p {
+    font-size: 16px;
+    word-spacing: -1px;
+  }
+  .main__p_margin-top {
+    margin-top: 25px;
+  }
+  .main__button {
+    margin-top: 35px;
+  }
+  .main__video {
+    margin-top: 70px;
+    width: 600px;
+    height: 338px;
+  }
+  .main__support-link {
+    margin: 40px 0 60px 0;
+  }
   .footer {
     height: auto;
   }
