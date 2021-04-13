@@ -28,6 +28,13 @@ header {
   display: flex;
   justify-content: center;
 }
+.nav-wrapper__menu {
+  display: none;
+  width: 55px;
+  height: 35px;
+  background: url(../../assets/icons/burger_menu.svg);
+  border-style: none;
+}
 .header-wrapper {
   width: 1800px;
   height: 115px;
