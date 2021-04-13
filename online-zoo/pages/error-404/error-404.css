@@ -543,4 +543,31 @@ header {
     height: 21px;
     background-size: 35px 21px;
   }
+  .main__content {
+    max-width: 578px;
+    width: calc( 100% - 20px );
+    margin-top: 21px;
+    background-position-x: center;
+  }
+  .main__h2 {
+    font-size: 20px;
+    margin-top: 77px;
+  }
+  .main__p {
+    font-size: 14px;
+  }
+  .main__button {
+    margin-top: 25px;
+  }
+  .main__video {
+    margin-top: 40px;
+    max-width: 600px;
+    width: calc( 100% - 20px );
+    max-height: 338px;
+    height: 56vw;
+  }
+  .main__support-link {
+    margin: 30px 0 50px 0;
+    font-size: 12px;
+  }
 }
