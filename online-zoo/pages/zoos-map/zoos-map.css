@@ -437,7 +437,7 @@ header {
     height: 195px;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 1060px) {
   .header-wrapper {
     height: 88px;
     margin-top: 0;
@@ -498,6 +498,7 @@ header {
     align-items: center;
   }
   .aside__animal-buttons {
+    max-width: 640px;
     width: calc( 100% - 142px);
     height: 45px;
     flex-direction: row;
