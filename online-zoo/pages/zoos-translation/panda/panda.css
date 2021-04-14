@@ -784,8 +784,9 @@ li {
     font-size: 15px;
   }
   .translation {
-    max-width: 1070px;
-    width: calc( 100% - 114px );
+    justify-content: flex-start;
+    column-gap: 30px;
+    width: 78vw;
     margin: 71px 0 0 74px;
   }
   .translation__img {
@@ -836,8 +837,8 @@ li {
   .translation__video {
     width: 45vw;
     height: 26vw;
-    max-height: 345px;
-    max-width: 615px;
+    max-height: 600px;
+    max-width: 1064px;
     border-radius: 5px;
   }
   .slider {
