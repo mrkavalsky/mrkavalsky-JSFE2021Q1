@@ -737,4 +737,36 @@ li {
   .nav-wrapper nav ul {
     width: 678px;
   }
+  .logo {
+    width: 66px;
+    height: 66px;
+  }
+  .logo__icon {
+    height: 32px;
+    width: auto;
+  }
+  .aside {
+    height: 626px;
+  }
+  .aside__nav {
+    height: 550px;
+    width: 66px;
+  }
+  .aside__animal-buttons {
+    height: 416px;
+  }
+  .aside__nav-button {
+    width: 66px;
+    height: 66px;
+  }
+  .aside__animal-button {
+    width: 45px;
+    height: 45px;
+  }
+  .aside__animal-svg {
+    transform: scale(0.8);
+  }
+  .aside__animal-button_quest {
+    font-size: 15px;
+  }
 }
