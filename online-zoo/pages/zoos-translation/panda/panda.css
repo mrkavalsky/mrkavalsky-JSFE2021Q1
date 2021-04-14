@@ -712,3 +712,11 @@ li {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1880px) {
+  .main {
+    width: calc(  100% - 80px );
+  }
+  .main-wrapper {
+    width: calc( 100% - 66px );
+  }
+}
