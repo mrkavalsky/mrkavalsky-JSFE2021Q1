@@ -273,12 +273,19 @@ li {
   text-align: center;
   color: #fcfcfc;
   transition: all .2s;
+  position: relative;
 }
 .translation__button:hover {
   background: #080029;
 }
 .translation__button:active {
   background: #150068;
+}
+.translation__button::after {
+  content: 'Feed the panda';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: auto;
 }
 .translation__video {
   border-radius: 5px;
@@ -822,6 +829,9 @@ li {
     width: 211px;
     height: 59px;
     font-size: 16px;
+  }
+  .translation__button::after {
+    content: 'Try now';
   }
   .translation__video {
     width: 45vw;
