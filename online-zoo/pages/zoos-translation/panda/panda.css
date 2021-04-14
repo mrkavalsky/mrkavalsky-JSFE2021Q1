@@ -867,4 +867,23 @@ li {
     width: 56px;
     height: 56px;
   }
+  .accordion-background {
+    margin-left: 74px;
+  }
+  .accordion-wrapper {
+    width: calc( 100% - 114px );
+  }
+  .accordion-wrapper__p {
+    font-size: 16px;
+    width: 100%;
+  }
+  .accordion__h3 {
+    font-size: 24px;
+  }
+  .accordion {
+    margin-bottom: 40px;
+  }
+  .accordion__link {
+    font-size: 16px;
+  }
 }
