@@ -942,23 +942,30 @@ li {
   .pay-and-feed__content {
     width: 725px;
     height: auto;
+    align-items: center;
+    margin-left: 110px;
+    margin-bottom: 77px;
   }
   .pay-and-feed__content-wrapper_align-center {
     align-self: center;
-    margin-top: 0;
+    margin-top: 103px;
     position: static;
     right: 0;
   }
   .pay-and-feed__content_align-left {
     align-self: center;
-    margin-left: 0;
+    margin: 0;
+    margin-left: 110px;
+    margin-bottom: 139px;
   }
   .pay-and-feed__content_align-right {
     align-self: center;
     margin: 0;
+    margin-left: 110px;
+    margin-bottom: 103px;
   }
   .pay-and-feed__h2 {
-    margin-bottom: 30px;
+    margin-bottom: 77px;
     font-size: 20px;
   }
   .pay-and-feed__h3 {
