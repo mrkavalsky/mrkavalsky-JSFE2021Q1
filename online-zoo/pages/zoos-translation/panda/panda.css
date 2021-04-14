@@ -52,6 +52,13 @@ li {
   align-items: center;
   justify-content: space-between;
 }
+.nav-wrapper__menu {
+  display: none;
+  width: 55px;
+  height: 35px;
+  background: url(../../../assets/icons/burger_menu.svg);
+  border-style: none;
+}
 .pseudo-hover {
   font-weight: 500;
   cursor: auto;
