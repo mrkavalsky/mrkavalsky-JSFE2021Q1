@@ -1018,3 +1018,16 @@ li {
     display: none;
   }
 }
+@media (max-width: 1199px) {
+  .main {
+    width: calc(  100% - 40px );
+    flex-direction: column;
+  }
+  .main-wrapper {
+    width: 100%;
+    order: -1;
+  }
+  .aside {
+    bottom: 25px;
+  }
+}
