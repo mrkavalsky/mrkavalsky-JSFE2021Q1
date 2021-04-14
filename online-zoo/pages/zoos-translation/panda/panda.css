@@ -1033,6 +1033,15 @@ li {
     width: 100%;
     order: -1;
   }
+  .logo_enabled {
+    display: none;
+  }
+  .logo_disabled {
+    display: flex;
+  }
+  .aside__animal-button_quest {
+    display: none;
+  }
   .aside {
     bottom: 25px;
   }
