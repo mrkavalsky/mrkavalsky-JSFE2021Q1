@@ -729,10 +729,11 @@ li {
   }
   .nav-wrapper img {
     width: 40px;
+    margin-right: 72px;
   }
   .nav-wrapper nav {
-    margin-left: 92px;
-    margin-top: 4px;
+    margin-left: 73px;
+    margin-top: 0;
   }
   .nav-wrapper nav ul {
     width: 678px;
@@ -749,7 +750,7 @@ li {
     height: 626px;
   }
   .aside__nav {
-    height: 550px;
+    height: 547px;
     width: 66px;
   }
   .aside__animal-buttons {
@@ -778,6 +779,7 @@ li {
     width: 54px;
     height: 54px;
     background-position: -63px -13px;
+    margin-right: 26px;
   }
   .translation__eye {
     width: 16px;
@@ -825,7 +827,7 @@ li {
   .slider {
     width: 69.25vw;
     height: 302px;
-    margin: 50px 0 40px 74px;
+    margin: 44px 0 81px 74px;
   }
   .slider__h2 {
     width: 148px;
@@ -871,7 +873,7 @@ li {
     margin-left: 74px;
   }
   .accordion-wrapper {
-    width: calc( 100% - 114px );
+    width: 100%;
   }
   .accordion-wrapper__p {
     font-size: 16px;
