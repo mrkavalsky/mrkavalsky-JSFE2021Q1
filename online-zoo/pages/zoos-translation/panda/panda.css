@@ -770,6 +770,7 @@ li {
     font-size: 15px;
   }
   .translation {
+    max-width: 1070px;
     width: calc( 100% - 114px );
     margin: 71px 0 0 74px;
   }
@@ -807,6 +808,7 @@ li {
   .translation__content {
     width: 360px;
     height: 26vw;
+    max-height: 345px;
   }
   .translation__button {
     width: 211px;
@@ -816,6 +818,8 @@ li {
   .translation__video {
     width: 45vw;
     height: 26vw;
+    max-height: 345px;
+    max-width: 615px;
     border-radius: 5px;
   }
   .slider {
