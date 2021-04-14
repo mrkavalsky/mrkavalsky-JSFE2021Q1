@@ -231,6 +231,12 @@ li {
   box-sizing: border-box;
   padding-bottom: 40px;
 }
+.translation__name_enabled {
+  display: flex;
+}
+.translation__name_disabled {
+  display: none;
+}
 .translation__h3 {
   font-style: normal;
   font-weight: normal;
@@ -1039,6 +1045,7 @@ li {
   .main-wrapper {
     width: 100%;
     order: -1;
+    align-items: center;
   }
   .logo_enabled {
     display: none;
@@ -1118,6 +1125,11 @@ li {
     width: 29px;
     height: 29px;
   }
+  .section-wrapper {
+    display: flex;
+    width: calc( 100% - 40px);
+    margin-top: 50px;
+  }
   .translation {
     flex-direction: column;
     column-gap: 0;
@@ -1125,56 +1137,42 @@ li {
     margin: 0;
   }
   .translation__img {
-    width: 54px;
-    height: 54px;
-    background-position: -63px -13px;
-    margin-right: 26px;
+    margin-right: 15px;
   }
-  .translation__eye {
-    width: 16px;
-    height: 16px;
-    background-size: 16px 16px;
+  .translation__name_enabled {
+    display: none;
   }
-  .translation__name {
-    width: 100%;
-    border-bottom: 0;
-    padding-bottom: 0;
+  .translation__name_disabled {
+    display: flex;
   }
   .translation__h3 {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 19px;
   }
   .translation__count {
-    font-size: 18px;
-    height: 20px;
+    font-size: 14px;
+    line-height: 154%;
   }
   .translation__h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-  .translation__p {
-    font-size: 16px;
-    width: 100%;
+    margin-bottom: 20px;
   }
   .translation__content {
-    width: 360px;
-    height: 26vw;
-    max-height: 345px;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
   }
   .translation__button {
-    width: 211px;
-    height: 59px;
-    font-size: 16px;
+    width: 181px;
+    height: 51px;
+    margin-top: 30px;
   }
   .translation__button::after {
     content: 'Try now';
   }
   .translation__video {
-    width: 45vw;
-    height: 26vw;
-    max-height: 600px;
-    max-width: 1064px;
-    border-radius: 5px;
+    width: 100%;
+    height: 34vw;
+    margin-top: 25px;
   }
   .slider {
     width: 30%;
