@@ -1052,4 +1052,29 @@ li {
   .aside {
     bottom: 25px;
   }
+  .header-wrapper {
+    height: 88px;
+    margin-top: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-wrapper {
+    display: none;
+  }
+  .nav-wrapper__menu {
+    display: block;
+  }
+  .logo {
+    width: auto;
+    height: auto;
+    border: 0;
+    background: none;
+  }
+  .logo__icon {
+    height: 38px;
+    width: auto;
+  }
+  header {
+    width: 100%;
+  }
 }
