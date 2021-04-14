@@ -818,4 +818,49 @@ li {
     height: 26vw;
     border-radius: 5px;
   }
+  .slider {
+    width: 69.25vw;
+    height: 302px;
+    margin: 50px 0 40px 74px;
+  }
+  .slider__h2 {
+    width: 148px;
+    height: 32px;
+    font-size: 22px;
+  }
+  .slider__item {
+    overflow: visible;
+    width: 257px;
+    height: 144px;
+  }
+  .slider__cup {
+    width: 257px;
+    height: 144px;
+  }
+  .slider__videos {
+    overflow: hidden;
+    justify-content: flex-start;
+    column-gap: 30px;
+  }
+  .slider__video {
+    width: 257px;
+    height: 144px;
+    border-radius: 5px;
+  }
+  .slider__viewers {
+    font-size: 20px;
+    height: 40px;
+    margin-top: 15px;
+  }
+  .slider__link {
+    height: 40px;
+  }
+  .slider__nav {
+    width: 132px;
+    height: 56px;
+  }
+  .slider__button {
+    width: 56px;
+    height: 56px;
+  }
 }
