@@ -1172,7 +1172,7 @@ li {
   }
   .translation__video {
     width: 100%;
-    height: 34vw;
+    height: 36.5vw;
     margin-top: 25px;
   }
   .slider {
@@ -1187,20 +1187,20 @@ li {
   }
   .slider__item {
     width: 100%;
-    height: 15.9375vw;
+    height: 16vw;
   }
   .slider__cup {
     width: 100%;
-    height: 15.9375vw;
+    height: 16vw;
   }
   .slider__videos {
     flex-direction: column;
-    height: 36vw;
+    height: 37vw;
     row-gap: 30px;
   }
   .slider__video {
     width: 100%;
-    height: 15.9375vw;
+    height: 16vw;
   }
   .slider__nav {
     display: none;
