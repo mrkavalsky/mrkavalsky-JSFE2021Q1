@@ -1049,9 +1049,6 @@ li {
   .aside__animal-button_quest {
     display: none;
   }
-  .aside {
-    bottom: 25px;
-  }
   .header-wrapper {
     height: 88px;
     margin-top: 0;
@@ -1076,5 +1073,44 @@ li {
   }
   header {
     width: 100%;
+  }
+  .aside {
+    bottom: 25px;
+    width: 100%;
+    height: auto;
+    z-index: 9999;
+  }
+  .aside__nav {
+    width: 100%;
+    height: 80px;
+    border-radius: 12px;
+    border: 0;
+    flex-direction: row;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.1));
+  }
+  .aside__nav-button {
+    width: 65px;
+    height: 80px;
+    border-radius: 12px;
+  }
+  .aside__nav-button_top {
+    background: no-repeat center url(../../../assets/icons/zoos-map__arrow-left.svg);
+  }
+  .aside__nav-button_bottom {
+    background: no-repeat center url(../../../assets/icons/zoos-map__arrow-right.svg);
+  }
+  .aside__animal-button {
+    width: 45px;
+    height: 45px;
+  }
+  .aside__animal-buttons {
+    max-width: 640px;
+    width: calc( 100% - 142px);
+    height: 45px;
+    flex-direction: row;
+  }
+  .aside__animal-svg {
+    width: 29px;
+    height: 29px;
   }
 }
