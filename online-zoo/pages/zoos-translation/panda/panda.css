@@ -1179,45 +1179,30 @@ li {
     width: 30%;
     height: auto;
     margin: 0 0 0 30px;
+    row-gap: 25px;
+    justify-content: flex-start;
   }
   .slider__h2 {
-    width: 148px;
-    height: 32px;
-    font-size: 22px;
+    margin-top: 22px;
   }
   .slider__item {
-    overflow: visible;
-    width: 257px;
-    height: 144px;
+    width: 100%;
+    height: 15.9375vw;
   }
   .slider__cup {
-    width: 257px;
-    height: 144px;
+    width: 100%;
+    height: 15.9375vw;
   }
   .slider__videos {
-    overflow: hidden;
-    justify-content: flex-start;
-    column-gap: 30px;
+    flex-direction: column;
+    height: 36vw;
+    row-gap: 30px;
   }
   .slider__video {
-    width: 257px;
-    height: 144px;
-    border-radius: 5px;
-  }
-  .slider__viewers {
-    font-size: 20px;
-    height: 40px;
-    margin-top: 15px;
-  }
-  .slider__link {
-    height: 40px;
+    width: 100%;
+    height: 15.9375vw;
   }
   .slider__nav {
-    width: 132px;
-    height: 56px;
-  }
-  .slider__button {
-    width: 56px;
-    height: 56px;
+    display: none;
   }
 }
