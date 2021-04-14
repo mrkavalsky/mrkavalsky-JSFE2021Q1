@@ -1118,4 +1118,62 @@ li {
     width: 29px;
     height: 29px;
   }
+  .translation {
+    flex-direction: column;
+    column-gap: 0;
+    width: 65%;
+    margin: 0;
+  }
+  .translation__img {
+    width: 54px;
+    height: 54px;
+    background-position: -63px -13px;
+    margin-right: 26px;
+  }
+  .translation__eye {
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+  }
+  .translation__name {
+    width: 100%;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .translation__h3 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .translation__count {
+    font-size: 18px;
+    height: 20px;
+  }
+  .translation__h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .translation__p {
+    font-size: 16px;
+    width: 100%;
+  }
+  .translation__content {
+    width: 360px;
+    height: 26vw;
+    max-height: 345px;
+  }
+  .translation__button {
+    width: 211px;
+    height: 59px;
+    font-size: 16px;
+  }
+  .translation__button::after {
+    content: 'Try now';
+  }
+  .translation__video {
+    width: 45vw;
+    height: 26vw;
+    max-height: 600px;
+    max-width: 1064px;
+    border-radius: 5px;
+  }
 }
