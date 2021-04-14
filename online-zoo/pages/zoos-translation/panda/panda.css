@@ -113,6 +113,12 @@ li {
   justify-content: center;
   background:  #fcfcfc;
 }
+.logo_enabled {
+  display: flex;
+}
+.logo_disabled {
+  display: none;
+}
 .logo__icon {
   transition: all 0.3s;
 }
