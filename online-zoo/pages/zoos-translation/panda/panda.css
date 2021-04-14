@@ -886,4 +886,63 @@ li {
   .accordion__link {
     font-size: 16px;
   }
+  .pay-and-feed {
+    max-width: 1710px;
+    width: calc( 100% - 70px );
+  }
+}
+@media (max-width: 1500px) {
+  .pay-and-feed {
+    align-items: center;
+    height: auto;
+  }
+  .pay-and-feed__img {
+    width: 242px;
+    height: 242px;
+    background-size: 242px 242px;
+  }
+  .pay-and-feed__content {
+    width: 725px;
+    height: auto;
+  }
+  .pay-and-feed__content-wrapper_align-center {
+    align-self: center;
+    margin-top: 0;
+    position: static;
+    right: 0;
+  }
+  .pay-and-feed__content_align-left {
+    align-self: center;
+    margin-left: 0;
+  }
+  .pay-and-feed__content_align-right {
+    align-self: center;
+    margin: 0;
+  }
+  .pay-and-feed__h2 {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  .pay-and-feed__h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .pay-and-feed__h4 {
+    font-size: 16px;
+  }
+  .pay-and-feed__in-details_margin-top-55px {
+    margin-top: 0;
+  }
+  .pay-and-feed__in-details_margin-top-104px {
+    margin-top: 0;
+  }
+  .pay-and-feed__in-details_margin-top-41px {
+    margin-top: 0;
+  }
+  .pay-and-feed__security-delivery-arrow {
+    display: none;
+  }
+  .pay-and-feed__delivery-security-arrow {
+    display: none;
+  }
 }
