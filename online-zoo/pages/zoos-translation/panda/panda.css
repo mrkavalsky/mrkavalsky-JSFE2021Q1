@@ -1375,6 +1375,24 @@ li {
   .aside {
     width: calc(  100% - 20px );
   }
+  .accordion-background {
+    width: calc( 100% - 20px);
+  }
+  .accordion__h3 {
+    font-size: 18px;
+  }
+  .accordion-wrapper__h2 {
+    font-size: 20px;
+  }
+  .accordion-wrapper__p {
+    font-size: 14px;
+  }
+  .accordion-wrapper__content {
+    width: 100%;
+  }
+  .accordion__link {
+    font-size: 14px;
+  }
   .pay-and-feed__h2_disebled {
     font-size: 16px;
   }
