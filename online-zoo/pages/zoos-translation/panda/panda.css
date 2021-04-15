@@ -1129,7 +1129,7 @@ li {
   .section-wrapper {
     display: flex;
     width: calc( 100% - 40px);
-    margin: 50px 0;
+    margin: 47px 0 90px 0;
   }
   .translation {
     flex-direction: column;
@@ -1160,19 +1160,19 @@ li {
   .translation__content {
     width: 100%;
     height: auto;
-    margin-top: 50px;
+    margin-top: 53px;
   }
   .translation__button {
     width: 181px;
     height: 51px;
-    margin-top: 30px;
+    margin-top: 34px;
   }
   .translation__button::after {
     content: 'Try now';
   }
   .translation__video {
     width: 100%;
-    height: 36.5vw;
+    height: 33.5vw;
     margin-top: 25px;
   }
   .slider {
@@ -1195,8 +1195,8 @@ li {
   }
   .slider__videos {
     flex-direction: column;
-    height: 37vw;
-    row-gap: 30px;
+    height: 34vw;
+    row-gap: 10px;
   }
   .slider__video {
     width: 100%;
@@ -1212,12 +1212,19 @@ li {
   .accordion__h3 {
     font-size: 20px;
   }
+  .accordion-wrapper__content {
+    margin-bottom: 44px;
+}
+.accordion__item {
+  margin-bottom: 30px;
+}
   .accordion-wrapper__h2 {
     font-size: 26px;
   }
   .pay-and-feed__h2_disebled {
     align-self: center;
     margin: 0;
+    margin-top: 79px;
   }
   .pay-and-feed {
     width: calc( 100% - 40px );
@@ -1235,6 +1242,7 @@ li {
     flex-direction: column;
     align-items: center;
     margin: 0;
+    margin-top: 58px;
   }
   .pay-and-feed__content-wrapper_align-center {
     margin-top: 0;
@@ -1242,16 +1250,29 @@ li {
   .pay-and-feed__in-details {
     width: 67vw;
     align-items: center;
+    margin-top: 32px;
   }
   .pay-and-feed__content_align-left {
     margin: 0;
+    margin-top: 63px;
+  }
+  .pay-and-feed__img_bckgrnd-size {
+    width: 250px;
+    height: 250px;
+    background-size: 250px 250px;
   }
   .pay-and-feed__content_align-right {
     margin: 0;
+    margin-top: 63px;
+  }
+  .pay-and-feed__in-details_margin-top-41px {
+    margin: 24px 0 44px 0px;
   }
   .pay-and-feed__h3 {
     font-size: 24px;
     margin-bottom: 25px;
+    width: 70%;
+    text-align: center;
   }
   .pay-and-feed__h4 {
     font-size: 18px;
