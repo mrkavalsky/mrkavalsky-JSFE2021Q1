@@ -1375,6 +1375,42 @@ li {
   .aside {
     width: calc(  100% - 40px );
   }
+  .pay-and-feed__h2_disebled {
+    font-size: 16px;
+  }
+  .pay-and-feed {
+    width: calc( 100% - 20px );
+  }
+  .pay-and-feed-wrapper {
+    width: 100%;
+  }
+  .pay-and-feed__content {
+    margin: 0;
+    margin-top: 58px;
+  }
+  .pay-and-feed__in-details {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 32px;
+  }
+  .pay-and-feed__content_align-left {
+    margin: 0;
+    margin-top: 63px;
+  }
+  .pay-and-feed__content_align-right {
+    margin: 0;
+    margin-top: 63px;
+  }
+  .pay-and-feed__in-details_margin-top-41px {
+    margin: 24px 0 44px 0px;
+  }
+  .pay-and-feed__h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  .pay-and-feed__h4 {
+    font-size: 14px;
+  }
   .footer__copyright {
     width: calc( 100% - 20px );
     height: 80px;
