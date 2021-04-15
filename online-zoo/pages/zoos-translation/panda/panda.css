@@ -1205,4 +1205,14 @@ li {
   .slider__nav {
     display: none;
   }
+  .accordion-background {
+    margin-left: 0;
+    width: calc( 100% - 40px);
+  }
+  .accordion__h3 {
+    font-size: 20px;
+  }
+  .accordion-wrapper__h2 {
+    font-size: 26px;
+  }
 }
