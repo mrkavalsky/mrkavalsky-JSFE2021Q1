@@ -1353,6 +1353,7 @@ li {
 @media (max-width: 639px) {
   .header-wrapper {
     height: 59px;
+    width: calc(  100% - 20px );
   }
   .nav-wrapper__menu {
     width: 35px;
@@ -1384,6 +1385,7 @@ li {
   .section-wrapper {
     width: calc( 100% - 20px);
     flex-direction: column;
+    margin: 40px 0 70px 0;
   }
   .translation {
     flex-direction: column;
@@ -1391,6 +1393,9 @@ li {
   }
   .translation__img {
     margin-right: 15px;
+    width: 43px;
+    height: 43px;
+    background-position: -50px -13px;
   }
   .translation__h3 {
     font-size: 14px;
@@ -1403,20 +1408,27 @@ li {
   .translation__h2 {
     font-size: 20px;
     width: 70%;
+    margin-bottom: 19px;
   }
   .translation__content {
-    margin-top: 0;
+    margin-top: 51px;
+  }
+  .translation__content_disabled {
+    display: flex;
+  }
+  .translation__content_enabled {
+    display: none;
   }
   .translation__button {
     width: 173px;
     height: 49px;
-    margin-top: 34px;
+    margin-top: 24px;
     font-size: 14px;
   }
   .translation__video {
     width: 100%;
     height: 52.5vw;
-    margin-top: 25px;
+    margin-top: 22px;
   }
   .slider {
     width: 100%;
@@ -1424,7 +1436,7 @@ li {
     row-gap: 0;
   }
   .slider__h2 {
-    margin-top: 22px;
+    margin-top: 18px;
     font-size: 20px;
   }
   .slider__item {
@@ -1441,6 +1453,7 @@ li {
     height: 34vw;
     row-gap: 0;
     column-gap: 20px;
+    margin-top: 22px;
   }
   .slider__video {
     width: 44vw;
@@ -1469,6 +1482,7 @@ li {
   }
   .pay-and-feed__h2_disebled {
     font-size: 16px;
+    margin-top: 47px;
   }
   .pay-and-feed {
     width: calc( 100% - 20px );
@@ -1478,27 +1492,28 @@ li {
   }
   .pay-and-feed__content {
     margin: 0;
-    margin-top: 58px;
+    margin-top: 26px;
   }
   .pay-and-feed__in-details {
     width: 100%;
     max-width: 400px;
-    margin-top: 32px;
+    margin-top: 33px;
   }
   .pay-and-feed__content_align-left {
     margin: 0;
-    margin-top: 63px;
+    margin-top: 39px;
   }
   .pay-and-feed__content_align-right {
     margin: 0;
-    margin-top: 63px;
+    margin-top: 26px;
   }
   .pay-and-feed__in-details_margin-top-41px {
-    margin: 24px 0 44px 0px;
+    margin: 11px 0 66px 0px;
   }
   .pay-and-feed__h3 {
     font-size: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
+    width: 86%;
   }
   .pay-and-feed__h4 {
     font-size: 14px;
