@@ -279,6 +279,12 @@ li {
   justify-content: space-between;
   align-items: flex-start;
 }
+.translation__content_disabled {
+  display: none;
+}
+.translation__content_enabled {
+  display: flex;
+}
 .translation__button {
   width: 284px;
   height: 60px;
@@ -1374,6 +1380,82 @@ li {
   }
   .aside {
     width: calc(  100% - 20px );
+  }
+  .section-wrapper {
+    width: calc( 100% - 20px);
+    flex-direction: column;
+  }
+  .translation {
+    flex-direction: column;
+    column-gap: 0;
+    width: 100%;
+    margin: 0;
+  }
+  .translation__img {
+    margin-right: 15px;
+  }
+  .translation__h3 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .translation__count {
+    font-size: 14px;
+    line-height: 154%;
+  }
+  .translation__h2 {
+    margin-bottom: 20px;
+  }
+  .translation__content {
+    margin-top: 0;
+  }
+  .translation__content_disabled {
+    display: flex;
+  }
+  .translation__content_enabled {
+    display: none;
+  }
+  .translation__button {
+    width: 181px;
+    height: 51px;
+    margin-top: 34px;
+  }
+  .translation__button::after {
+    content: 'Try now';
+  }
+  .translation__video {
+    width: 100%;
+    height: 33.5vw;
+    margin-top: 25px;
+  }
+  .slider {
+    width: 30%;
+    height: auto;
+    margin: 0 0 0 30px;
+    row-gap: 25px;
+    justify-content: flex-start;
+  }
+  .slider__h2 {
+    margin-top: 22px;
+  }
+  .slider__item {
+    width: 100%;
+    height: 16vw;
+  }
+  .slider__cup {
+    width: 100%;
+    height: 16vw;
+  }
+  .slider__videos {
+    flex-direction: column;
+    height: 34vw;
+    row-gap: 10px;
+  }
+  .slider__video {
+    width: 100%;
+    height: 16vw;
+  }
+  .slider__nav {
+    display: none;
   }
   .accordion-background {
     width: calc( 100% - 20px);
