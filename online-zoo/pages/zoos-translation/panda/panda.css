@@ -1215,6 +1215,48 @@ li {
   .accordion-wrapper__h2 {
     font-size: 26px;
   }
+  .pay-and-feed__h2_disebled {
+    align-self: center;
+    margin: 0;
+  }
+  .pay-and-feed {
+    width: calc( 100% - 40px );
+  }
+  .pay-and-feed-wrapper {
+    width: 100%;
+  }
+  .pay-and-feed__img {
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+  }
+  .pay-and-feed__content {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .pay-and-feed__content-wrapper_align-center {
+    margin-top: 0;
+  }
+  .pay-and-feed__in-details {
+    width: 67vw;
+    align-items: center;
+  }
+  .pay-and-feed__content_align-left {
+    margin: 0;
+  }
+  .pay-and-feed__content_align-right {
+    margin: 0;
+  }
+  .pay-and-feed__h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  .pay-and-feed__h4 {
+    font-size: 18px;
+    text-align: center;
+  }
   .footer {
     height: auto;
   }
