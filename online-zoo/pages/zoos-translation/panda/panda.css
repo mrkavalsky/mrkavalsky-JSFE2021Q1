@@ -1373,7 +1373,7 @@ li {
     width: 100%;
   }
   .aside {
-    width: calc(  100% - 40px );
+    width: calc(  100% - 20px );
   }
   .pay-and-feed__h2_disebled {
     font-size: 16px;
