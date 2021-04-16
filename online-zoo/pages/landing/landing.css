@@ -292,16 +292,17 @@ header {
 }
 .how-it-works-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background:  #fcfcfc;
   width: 100%;
 }
 .how-it-works {
-  width: 1710px;
+  width: 1433px;
   height: 975px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  margin-left: 94px;
 }
 .try-now {
   width: 696px;
@@ -311,9 +312,6 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 16px;
-}
-.how-it-works__picture {
-  margin-right: 30px;
 }
 .how-it-works__img {
   width: 512px;
