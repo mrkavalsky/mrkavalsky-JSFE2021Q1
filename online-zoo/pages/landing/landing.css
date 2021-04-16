@@ -1157,7 +1157,7 @@ header {
     width: auto;
   }
   .aside {
-    height: 626px;
+    height: 618px;
   }
   .aside__nav {
     height: 547px;
@@ -1427,11 +1427,11 @@ header {
   }
   .zoogeography__mark_item3 {
     top: 461px;
-    left: 625px;
+    left: 0;
   }
   .zoogeography__mark_item4 {
     top: 325px;
-    left: 942px;
+    left: 0;
   }
   .zoogeography__mark-animal {
     top: 33%;
