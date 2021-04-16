@@ -123,16 +123,14 @@ header {
 .watch-online {
   background:  #fcfcfc;
   display: flex;
-  justify-content: center;
-  margin-left: calc( ( 100% - 1610px ) / 2 );;
+  justify-content: flex-start;
 }
 .watch-online-wrapper {
   width: 1430px;
-  height: 670px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 72px;
+  margin: 56px 0 0 96px;
 }
 .aside {
   background:  #fcfcfc;
