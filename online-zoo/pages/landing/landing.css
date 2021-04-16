@@ -635,6 +635,12 @@ header {
   letter-spacing: 0.115em;
   color: #0b0b0b;
 }
+.pay-and-feed__h2_enabled {
+  display: block;
+}
+.pay-and-feed__h2_disabled {
+  display: none;
+}
 .pay-and-feed__h3 {
   font-family: Merriweather;
   font-style: normal;
@@ -1178,6 +1184,10 @@ header {
     width: 18px;
     height: 18px;
   }
+  .pay-and-feed {
+    max-width: 1710px;
+    width: calc( 100% - 70px );
+  }
   .footer {
     max-width: 1800px;
     width: 100%;
@@ -1213,5 +1223,77 @@ header {
   .footer__online-zoo-logo {
     width: 119px;
     height: 91px;
+  }
+}
+@media (max-width: 1500px) {
+  .pay-and-feed__h2_enabled {
+    display: none;
+  }
+  .pay-and-feed__h2_disabled {
+    display: block;
+    align-self: flex-start;
+    margin: 101px 0 0 39px;
+  }
+  .pay-and-feed {
+    align-items: center;
+    height: auto;
+  }
+  .pay-and-feed__img {
+    width: 242px;
+    height: 242px;
+    background-size: 242px 242px;
+  }
+  .pay-and-feed__content {
+    width: 725px;
+    height: auto;
+    align-items: center;
+    margin-left: 110px;
+    margin-bottom: 77px;
+  }
+  .pay-and-feed__content-wrapper_align-center {
+    align-self: center;
+    margin-top: 79px;
+    position: static;
+    right: 0;
+  }
+  .pay-and-feed__in-details {
+    width: 435px;
+  }
+  .pay-and-feed__content_align-left {
+    align-self: center;
+    margin: 0;
+    margin-left: 110px;
+    margin-bottom: 139px;
+  }
+  .pay-and-feed__content_align-right {
+    align-self: center;
+    margin: 0;
+    margin-left: 110px;
+    margin-bottom: 103px;
+  }
+  .pay-and-feed__h2 {
+    font-size: 20px;
+  }
+  .pay-and-feed__h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .pay-and-feed__h4 {
+    font-size: 16px;
+  }
+  .pay-and-feed__in-details_margin-top-55px {
+    margin-top: 0;
+  }
+  .pay-and-feed__in-details_margin-top-104px {
+    margin-top: 0;
+  }
+  .pay-and-feed__in-details_margin-top-41px {
+    margin-top: 0;
+  }
+  .pay-and-feed__security-delivery-arrow {
+    display: none;
+  }
+  .pay-and-feed__delivery-security-arrow {
+    display: none;
   }
 }
