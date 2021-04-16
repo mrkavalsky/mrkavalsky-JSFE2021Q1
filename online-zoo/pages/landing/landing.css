@@ -23,7 +23,10 @@ li {
 }
 .main {
   display: flex;
-  flex-wrap: wrap;
+  width: 1800px;
+}
+.section-wrapper {
+  width: 1710px;
 }
 .online-zoo {
   visibility: hidden;
@@ -36,7 +39,7 @@ header {
   justify-content: center;
 }
 .header-wrapper {
-  width: 1800px;
+  width: 1710px;
   height: 115px;
   display: flex;
   justify-content: flex-end;
@@ -134,9 +137,9 @@ header {
 .aside {
   background:  #fcfcfc;
   position: sticky;
-  left: calc( ( 100% - 1800px ) / 2 );
-  top: 115px;
-  transform: translateY(-90px);
+  height: 762px;
+  top: 25px;
+  transform: translateX(2px);
 }
 .aside__nav {
   height: 670px;
@@ -296,7 +299,7 @@ header {
   width: 100%;
 }
 .how-it-works {
-  width: 1800px;
+  width: 1710px;
   height: 975px;
   display: flex;
   justify-content: space-evenly;
@@ -375,7 +378,7 @@ header {
   width: 100%;
 }
 .slider {
-  width: 1800px;
+  width: 1710px;
   height: 896px;
   display: flex;
   justify-content: center;
@@ -561,7 +564,7 @@ header {
   width: 100%;
 }
 .pay-and-feed {
-  width: 1800px;
+  width: 1710px;
   height: 1300px;
   display: flex;
   flex-direction: column;
@@ -671,7 +674,7 @@ header {
   width: 100%;
 }
 .testimonials {
-  width: 1800px;
+  width: 1710px;
   height: 616px;
   display: flex;
   align-items: center;
@@ -827,7 +830,7 @@ header {
   width: 100%;
 }
 .zoogeography {
-  width: 1800px;
+  width: 1710px;
   height: 862px;
   display: flex;
   justify-content: flex-end;
