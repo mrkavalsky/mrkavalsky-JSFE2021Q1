@@ -610,7 +610,7 @@ li {
 .pay-and-feed__h2_enabled {
   display: block;
 }
-.pay-and-feed__h2_disebled {
+.pay-and-feed__h2_disabled {
   display: none;
 }
 .footer-wrapper {
@@ -975,7 +975,7 @@ li {
   .pay-and-feed__h2_enabled {
     display: none;
   }
-  .pay-and-feed__h2_disebled {
+  .pay-and-feed__h2_disabled {
     display: block;
     align-self: flex-start;
     margin: 101px 0 0 39px;
@@ -1226,7 +1226,7 @@ li {
   .accordion-wrapper__h2 {
     font-size: 26px;
   }
-  .pay-and-feed__h2_disebled {
+  .pay-and-feed__h2_disabled {
     align-self: center;
     margin: 0;
     margin-top: 79px;
@@ -1480,7 +1480,7 @@ li {
   .accordion__link {
     font-size: 14px;
   }
-  .pay-and-feed__h2_disebled {
+  .pay-and-feed__h2_disabled {
     font-size: 16px;
     margin-top: 47px;
   }
