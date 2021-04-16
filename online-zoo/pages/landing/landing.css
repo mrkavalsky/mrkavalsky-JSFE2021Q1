@@ -1184,29 +1184,29 @@ header {
   }
   .watch-online-wrapper {
     width: calc( 100% - 74px );
-    margin: 56px 0 0 74px;
+    margin: 59px 0 0 74px;
   }
   .watch-online-wrapper-content {
     width: 499px;
     height: 372px;
-    margin-bottom: 60px;
+    margin-bottom: 4px;
   }
   .watch-online-wrapper-content__h3 {
     font-size: 56px;
     line-height: 70px;
-    margin-bottom: 34px;
+    margin-bottom: 17px;
   }
   .watch-online-wrapper-content__img {
     width: 400px;
     height: 456px;
-    object-position: 0 -202px;
+    object-position: 0 -113px;
   }
   .letter-wrapper__part:first-child {
     top: -35px;
     left: 3px;
   }
   .watch-online-wrapper-content__buttons {
-    width: 474px;
+    width: 462px;
   }
   .watch-online-wrapper-content__button-choose {
     width: 209px;
