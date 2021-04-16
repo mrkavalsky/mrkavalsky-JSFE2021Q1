@@ -368,17 +368,18 @@ header {
 }
 .famous-pets-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: #d9e8ff;
   width: 100%;
 }
 .slider {
-  width: 1710px;
+  width: 1433px;
   height: 896px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 92px;
 }
 .slider__nav {
   width: 326px;
