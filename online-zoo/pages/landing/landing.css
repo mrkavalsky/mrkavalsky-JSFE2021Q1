@@ -688,7 +688,7 @@ header {
   content: '';
   background: #080029;
   width: 110vw;
-  height: 616px;
+  height: 100%;
   position: absolute;
   z-index: -1;
   left: 50%;
