@@ -1121,3 +1121,61 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1880px) {
+  .main {
+    width: calc(  100% - 80px );
+  }
+  .section-wrapper {
+    width: calc( 100% - 66px );
+  }
+  .header-wrapper {
+    width: 100%;
+    height: 95px;
+  }
+  .nav-wrapper {
+    width: 100%;
+    height: 66px;
+  }
+  .nav-wrapper img {
+    width: 40px;
+    margin-right: 72px;
+  }
+  .nav-wrapper nav {
+    margin-left: 73px;
+    margin-top: 0;
+  }
+  .nav-wrapper nav ul {
+    width: 678px;
+  }
+  .logo {
+    width: 66px;
+    height: 66px;
+  }
+  .logo__icon {
+    height: 32px;
+    width: auto;
+  }
+  .aside {
+    height: 626px;
+  }
+  .aside__nav {
+    height: 547px;
+    width: 66px;
+  }
+  .aside-links {
+    width: 22px;
+    height: 166px;
+  }
+  .aside-up {
+    width: 42px;
+    height: 42px;
+  }
+  .aside-add-block {
+    width: 42px;
+    height: 42px;
+  }
+  .aside__social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
