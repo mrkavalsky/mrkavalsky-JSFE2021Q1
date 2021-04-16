@@ -1245,6 +1245,70 @@ header {
     height: 59px;
     font-size: 16px;
   }
+  .slider {
+    width: calc( 100% - 74px );
+    margin-left: 74px;
+  }
+  .slider__nav {
+    width: auto;
+    height: 279px;
+    margin-top: 90px;
+  }
+  .slider__h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .slider__h3 {
+    font-size: 28px;
+    width: 215px;
+  }
+  .slider__buttons {
+    width: 132px;
+    height: auto;
+  }
+  .slider__button {
+    width: 56px;
+    height: 56px;
+  }
+  .slider__items { 
+    width: 546px;
+    height: 546px;
+    align-content: flex-start;
+    justify-content: flex-start;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-left: 40px;
+    overflow: hidden;
+  }
+  .item {
+    width: 258px;
+    height: 258px;
+  }
+  .item__background {
+    width: 258px;
+    height: 258px;
+    background-size: 258px 258px;
+  }
+  .item__background::after {
+    left: 118px;
+    top: 133px;
+    font-size: 35px;
+  }
+  .item__link {
+    top: 227px;
+  }
+  .item__circle {
+    width: 59px;
+    height: 59px;
+  }
+  .item:hover .item__circle {
+    width: 185px;
+    height: 185px;
+  }
+  .item__location {
+    width: 145px;
+    font-size: 16px;
+  }
   .pay-and-feed {
     max-width: 1710px;
     width: calc( 100% - 70px );
