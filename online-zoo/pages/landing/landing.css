@@ -1157,23 +1157,24 @@ header {
     width: auto;
   }
   .aside {
-    height: 618px;
+    height: 585px;
   }
   .aside__nav {
-    height: 547px;
+    height: 514px;
     width: 66px;
   }
   .aside-links {
     width: 22px;
-    height: 166px;
+    height: 142px;
   }
   .aside-up {
     width: 42px;
     height: 42px;
+    margin-top: 15px;
   }
   .aside-add-block {
     width: 42px;
-    height: 42px;
+    height: 84px;
   }
   .aside__social-icon {
     width: 18px;
