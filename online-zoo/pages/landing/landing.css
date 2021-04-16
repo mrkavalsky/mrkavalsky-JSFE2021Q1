@@ -14,10 +14,16 @@ a {
 li {
   list-style: none;
 }
+.body {
+  width: 100%;
+  background: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .main {
   display: flex;
   flex-wrap: wrap;
-  background: #fcfcfc;
 }
 .online-zoo {
   visibility: hidden;
