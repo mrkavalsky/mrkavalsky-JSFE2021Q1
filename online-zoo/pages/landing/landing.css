@@ -20,6 +20,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 .main {
   display: flex;
@@ -669,6 +670,18 @@ header {
   justify-content: center;
   background: #080029;
   width: 100%;
+  position: relative;
+}
+.testimonials-wrapper::after {
+  content: '';
+  background: #080029;
+  width: 110vw;
+  height: 616px;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .testimonials {
   width: 1710px;
