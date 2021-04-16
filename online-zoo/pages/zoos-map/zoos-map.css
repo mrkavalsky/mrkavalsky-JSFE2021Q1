@@ -581,7 +581,7 @@ header {
     width: calc( 100% - 60px);
   }
   .background-map__animal {
-    display: none;
+    visibility: hidden;
   }
   .background-map {
     background-position: -60vw -62vw;
