@@ -1220,6 +1220,31 @@ header {
     font-size: 16px;
     line-height: 19px;
   }
+  .how-it-works {
+    width: calc( 100% - 74px );
+    margin-left: 74px;
+  }
+  .try-now {
+    width: 551px;
+    height: 404px;
+    margin-bottom: 16px;
+  }
+  .how-it-works__img {
+    width: 401px;
+    height: 585px;
+    object-position: -264px;
+  }
+  .try-now__h3 {
+    font-size: 28px;
+  }
+  .try-now__h4 {
+    font-size: 16px;
+  }
+  .try-now__button {
+    width: 210px;
+    height: 59px;
+    font-size: 16px;
+  }
   .pay-and-feed {
     max-width: 1710px;
     width: calc( 100% - 70px );
