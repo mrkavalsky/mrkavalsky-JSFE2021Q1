@@ -1255,13 +1255,16 @@ header {
     font-size: 16px;
   }
   .slider {
-    width: calc( 100% - 74px );
-    margin-left: 74px;
+    width: calc( 100% - 68px );
+    margin-left: 0;
+    height: auto;
+    padding: 94px 0;
   }
   .slider__nav {
     width: auto;
     height: 279px;
-    margin-top: 90px;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
   .slider__h2 {
     font-size: 20px;
@@ -1270,6 +1273,7 @@ header {
   .slider__h3 {
     font-size: 28px;
     width: 215px;
+    margin-top: 16px;
   }
   .slider__buttons {
     width: 132px;
@@ -1286,7 +1290,7 @@ header {
     justify-content: flex-start;
     column-gap: 30px;
     row-gap: 30px;
-    margin-left: 40px;
+    margin-left: 72px;
     overflow: hidden;
   }
   .item {
