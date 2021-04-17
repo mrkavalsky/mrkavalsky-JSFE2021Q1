@@ -1691,7 +1691,7 @@ header {
   .watch-online-wrapper-content__h3 {
     font-size: 42px;
     line-height: 53px;
-    margin-bottom: 17px;
+    margin-bottom: 5px;
   }
   .watch-online-wrapper-content__img {
     width: 41vw;
@@ -1714,7 +1714,7 @@ header {
   }
   .how-it-works {
     width: calc( 100% - 40px );
-    padding: 60px 20px 80px;
+    padding: 54px 20px 80px;
     margin: 0;
     flex-direction: column;
   }
@@ -1737,6 +1737,7 @@ header {
   .try-now__h3 {
     font-size: 26px;
     text-align: center;
+    margin-top: 7px;
   }
   .try-now__h4 {
     font-size: 16px;
@@ -1747,7 +1748,7 @@ header {
   }
   .slider {
     width: calc( 100% - 40px );
-    padding: 60px 0 80px;
+    padding: 57px 0 80px;
     flex-direction: column;
   }
   .slider__nav {
@@ -1758,7 +1759,7 @@ header {
   .slider__h3 {
     font-size: 24px;
     width: 189px;
-    margin-top: 16px;
+    margin-top: 0;
     text-align: center;
   }
   .slider__items { 
@@ -1766,8 +1767,8 @@ header {
     height: 390px;
     flex-direction: column;
     margin-left: 0;
-    column-gap: 22px;
-    row-gap: 22px;
+    column-gap: 30px;
+    row-gap: 30px;
   }
   .item {
     width: 180px;
@@ -1819,19 +1820,24 @@ header {
     margin-bottom: 80px;
   }
   .testimonials__h2 {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
   .testimonials__h3 {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
   .testimonials__h4 {
-    margin-bottom: 61px;
+    margin-bottom: 51px;
     text-align: center;
+    width: 84%;
   }
   .testimonials-slider {
     width: 100%;
     height: 370px;
     align-items: center;
+  }
+  .testimonials-slider__items {
+    box-sizing: border-box;
+    padding-left: 9px;
   }
   .pay-and-feed__h2_disabled {
     align-self: center;
@@ -1840,6 +1846,7 @@ header {
   }
   .pay-and-feed {
     width: calc( 100% - 40px );
+    margin-left: 20px;
   }
   .pay-and-feed-wrapper {
     width: 100%;
@@ -1878,12 +1885,12 @@ header {
     margin-top: 63px;
   }
   .pay-and-feed__in-details_margin-top-41px {
-    margin: 24px 0 44px 0px;
+    margin: 24px 0 103px 0px;
   }
   .pay-and-feed__h3 {
     font-size: 24px;
     margin-bottom: 25px;
-    width: 70%;
+    width: 78%;
     text-align: center;
   }
   .pay-and-feed__h4 {
@@ -1902,8 +1909,8 @@ header {
     height: auto;
   }
   .zoogeography__animal-photo {
-    height: 196px;
-    object-position: -4px;
+    height: 161px;
+    object-position: 0;
   }
   .zoogeography__animal {
     width: 250px;
@@ -1926,15 +1933,15 @@ header {
   }
   .zoogeography__h4 {
     font-size: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 14px;
   }
   .zoogeography__link {
     font-size: 16px;
     line-height: 19px;
   }
   .zoogeography__animal-info {
-    padding: 15px 17px 44px;
-    height: 254px;
+    padding: 15px 17px 27px;
+    height: 225px;
   }
   .zoogeography__mark_deactive:hover .zoogeography__svg-mark {
     width: 80px;
@@ -1949,20 +1956,20 @@ header {
     height: auto;
   }
   .zoogeography__mark_item1 {
-    top: 46%;
+    top: 47%;
     left: 14.5%;
   }
   .zoogeography__mark_item2 {
-    top: 48%;
-    left: 25%;
+    top: 50%;
+    left: 25.5%;
   }
   .zoogeography__mark_item3 {
-    top: 61%;
+    top: 64%;
     left: 48.5%;
   }
   .zoogeography__mark_item4 {
-    top: 45%;
-    left: 76%;
+    top: 49.5%;
+    left: 77%;
   }
   .zoogeography__mark-animal {
     top: 33%;
@@ -2012,11 +2019,11 @@ header {
     width: 264px;
     height: 49px;
     flex-direction: row;
-    margin-right: 132px;
+    margin-right: 128px;
   }
   .footer__button-and-links {
     margin-right: 0;
-    margin-right: 44px;
+    margin-right: 51px;
     height: 302px;
   }
   .footer__online-zoo-logo {
