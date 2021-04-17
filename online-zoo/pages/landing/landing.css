@@ -2072,4 +2072,42 @@ header {
   .logo__icon {
     height: 29px;
   }
+  .pay-and-feed__h2_disabled {
+    font-size: 16px;
+    margin-top: 47px;
+  }
+  .pay-and-feed {
+    width: calc( 100% - 20px );
+  }
+  .pay-and-feed-wrapper {
+    width: 100%;
+  }
+  .pay-and-feed__content {
+    margin: 0;
+    margin-top: 26px;
+  }
+  .pay-and-feed__in-details {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 33px;
+  }
+  .pay-and-feed__content_align-left {
+    margin: 0;
+    margin-top: 39px;
+  }
+  .pay-and-feed__content_align-right {
+    margin: 0;
+    margin-top: 26px;
+  }
+  .pay-and-feed__in-details_margin-top-41px {
+    margin: 11px 0 66px 0px;
+  }
+  .pay-and-feed__h3 {
+    font-size: 20px;
+    margin-bottom: 22px;
+    width: 86%;
+  }
+  .pay-and-feed__h4 {
+    font-size: 14px;
+  }
 }
