@@ -1325,6 +1325,7 @@ header {
   .pay-and-feed {
     max-width: 1710px;
     width: calc( 100% - 70px );
+    margin-left: 33px;
   }
   .testimonials {
     max-width: 1710px;
@@ -1547,7 +1548,8 @@ header {
   }
   .pay-and-feed__h3 {
     font-size: 28px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    width: 80%;
   }
   .pay-and-feed__h4 {
     font-size: 16px;
