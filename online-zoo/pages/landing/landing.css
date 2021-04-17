@@ -1224,19 +1224,27 @@ header {
   .how-it-works {
     width: calc( 100% - 74px );
     margin-left: 74px;
+    height: auto;
+    padding: 100px 0;
+    box-sizing: border-box;
+    margin-top: 94px;
   }
   .try-now {
-    width: 551px;
-    height: 404px;
-    margin-bottom: 16px;
+    width: 544px;
+    height: 413px;
+    margin-bottom: 55px;
   }
   .how-it-works__img {
     width: 401px;
     height: 585px;
-    object-position: -264px;
+    object-position: -184px;
+  }
+  .try-now__h2 {
+    margin: 0;
   }
   .try-now__h3 {
     font-size: 28px;
+    margin: 0;
   }
   .try-now__h4 {
     font-size: 16px;
