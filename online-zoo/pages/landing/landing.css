@@ -1386,7 +1386,7 @@ header {
     margin-bottom: 61px;
   }
   .testimonials-slider {
-    width: calc( 100% - 432px );
+    width: calc( 100% - 500px );
     height: 365px;
   }
   .testimonials-slider__items {
