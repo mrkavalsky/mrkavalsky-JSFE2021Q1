@@ -2182,6 +2182,7 @@ header {
   }
   .pay-and-feed {
     width: calc( 100% - 20px );
+    margin-left: 10px;
   }
   .pay-and-feed-wrapper {
     width: 100%;
