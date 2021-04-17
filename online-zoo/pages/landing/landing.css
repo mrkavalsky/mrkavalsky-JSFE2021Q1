@@ -1300,16 +1300,16 @@ header {
     margin-left: 72px;
     overflow: hidden;
   }
-  .item__background_item1 {
+  .item_item1 {
     order: -4;
   }
-  .item__background_item2 {
+  .item_item2 {
     order: -2;
   }
-  .item__background_item4 {
+  .item_item4 {
     order: -3;
   }
-  .item__background_item5 {
+  .item_item5 {
     order: -1;
   }
   .item {
