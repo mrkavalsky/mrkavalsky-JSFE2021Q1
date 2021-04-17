@@ -1290,14 +1290,27 @@ header {
     height: 56px;
   }
   .slider__items { 
-    width: 546px;
+    width: 45.4vw;
     height: 546px;
+    flex-direction: column;
     align-content: flex-start;
     justify-content: flex-start;
     column-gap: 30px;
     row-gap: 30px;
     margin-left: 72px;
     overflow: hidden;
+  }
+  .item__background_item1 {
+    order: -4;
+  }
+  .item__background_item2 {
+    order: -2;
+  }
+  .item__background_item4 {
+    order: -3;
+  }
+  .item__background_item5 {
+    order: -1;
   }
   .item {
     width: 258px;
@@ -1314,7 +1327,7 @@ header {
     font-size: 35px;
   }
   .item__link {
-    top: 227px;
+    top: 232px;
   }
   .item__circle {
     width: 59px;
