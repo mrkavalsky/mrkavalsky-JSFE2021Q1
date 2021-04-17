@@ -2072,6 +2072,29 @@ header {
   .logo__icon {
     height: 29px;
   }
+  .watch-online-wrapper {
+    width: calc(  100% - 20px );
+    margin: 0;
+    padding: 70px 0 60px;
+  }
+  .watch-online-wrapper-content {
+    width: 300px;
+    height: 309px;
+    margin-bottom: 4px;
+    align-items: center;
+  }
+  .watch-online-wrapper-content__h3 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .watch-online-wrapper-content__img {
+    display: none;
+  }
+  .watch-online-wrapper-content__button-choose {
+    width: 198px;
+    height: 49px;
+    font-size: 14px;
+  }
   .pay-and-feed__h2_disabled {
     font-size: 16px;
     margin-top: 47px;
