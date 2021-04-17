@@ -1350,7 +1350,7 @@ header {
     max-width: 1710px;
     width: calc( 100% - 70px );
     height: auto;
-    padding: 104px 0 80px 0;
+    padding: 109px 0 80px 0;
     margin-left: 74px;
     justify-content: flex-start;
   }
@@ -1373,7 +1373,7 @@ header {
     margin-bottom: 61px;
   }
   .testimonials-slider {
-    width: 38vw;
+    width: calc( 100% - 432px );
     height: 365px;
   }
   .testimonials-slider__items {
@@ -1544,7 +1544,7 @@ header {
   .pay-and-feed__h2_disabled {
     display: block;
     align-self: flex-start;
-    margin: 101px 0 0 39px;
+    margin: 98px 0 0 39px;
   }
   .pay-and-feed {
     align-items: center;
