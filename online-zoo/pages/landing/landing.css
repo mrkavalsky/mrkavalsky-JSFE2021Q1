@@ -1669,6 +1669,40 @@ header {
     justify-content: center;
     margin-bottom: 1px;
   }
+  .watch-online {
+    width: 100%;
+    justify-content: center;
+  }
+  .watch-online-wrapper {
+    width: calc(  100% - 40px );
+    margin: 0;
+    padding: 60px 0;
+  }
+  .watch-online-wrapper-content {
+    width: 316px;
+    height: 311px;
+    margin-bottom: 4px;
+  }
+  .watch-online-wrapper-content__h3 {
+    font-size: 42px;
+    line-height: 53px;
+    margin-bottom: 17px;
+  }
+  .watch-online-wrapper-content__img {
+    width: 41vw;
+    height: 50.94vw;
+    object-position: 0 80%;
+  }
+  .letter-wrapper__part:first-child {
+    top: -27px;
+    left: 1px;
+  }
+  .watch-online-wrapper-content__buttons {
+    width: auto;
+  }
+  .watch-online-wrapper-content__button-online {
+    display: none;
+  }
   .footer {
     height: auto;
   }
