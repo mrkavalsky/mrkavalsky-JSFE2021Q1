@@ -1186,6 +1186,7 @@ header {
   .watch-online-wrapper {
     width: calc( 100% - 74px );
     margin: 59px 0 0 74px;
+    max-width: 1430px;
   }
   .watch-online-wrapper-content {
     width: 499px;
@@ -1198,9 +1199,11 @@ header {
     margin-bottom: 17px;
   }
   .watch-online-wrapper-content__img {
-    width: 400px;
-    height: 456px;
-    object-position: 0 -113px;
+    width: calc( 100vw - 800px );
+    height: calc( 100vw - 743px );
+    max-width: 696px;
+    max-height: 673px;
+    object-position: 0 80%;
   }
   .letter-wrapper__part:first-child {
     top: -35px;
