@@ -1890,6 +1890,98 @@ header {
     font-size: 18px;
     text-align: center;
   }
+  .zoogeography {
+    width: calc( 100% - 40px );
+    padding: 10px 0 80px;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .zoogeography__animal-wrapper {
+    width: auto;
+    height: auto;
+  }
+  .zoogeography__animal-photo {
+    height: 196px;
+    object-position: -4px;
+  }
+  .zoogeography__animal {
+    width: 250px;
+    height: 390px;
+    position: relative;
+    top: 70px;
+    z-index: 99;
+  }
+  .zoogeography__map {
+    width: 100%;
+    height: 54.1vw;
+    background-size: 100% 54.1vw;
+    margin: 0;
+  }
+  .zoogeography__h2 {
+    display: none;
+  }
+  .zoogeography__h3 {
+    font-size: 24px;
+  }
+  .zoogeography__h4 {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .zoogeography__link {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .zoogeography__animal-info {
+    padding: 15px 17px 44px;
+    height: 254px;
+  }
+  .zoogeography__mark_deactive:hover .zoogeography__svg-mark {
+    width: 80px;
+    height: auto;
+  }
+  .zoogeography__mark_active .zoogeography__svg-mark {
+    width: 80px;
+    height: auto;
+  }
+  .zoogeography__svg-mark {
+    width: 65px;
+    height: auto;
+  }
+  .zoogeography__mark_item1 {
+    top: 46%;
+    left: 14.5%;
+  }
+  .zoogeography__mark_item2 {
+    top: 48%;
+    left: 25%;
+  }
+  .zoogeography__mark_item3 {
+    top: 61%;
+    left: 48.5%;
+  }
+  .zoogeography__mark_item4 {
+    top: 45%;
+    left: 76%;
+  }
+  .zoogeography__mark-animal {
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: auto;
+  }
+  .zoogeography__tranansition {
+    transition: all .5s;
+  }
+  .zoogeography__mark_deactive:hover .zoogeography__mark-animal {
+    height: auto; 
+    width: 30px;
+  }
+  .zoogeography__mark_active .zoogeography__mark-animal {
+    height: auto;
+    width: 30px;
+  }
   .footer {
     height: auto;
   }
