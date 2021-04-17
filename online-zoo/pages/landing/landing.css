@@ -2215,6 +2215,47 @@ header {
   .pay-and-feed__h4 {
     font-size: 14px;
   }
+  .testimonials {
+    width: calc( 100% - 20px );
+    padding: 60px 0;
+  }
+  .testimonials__feedback {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .testimonials__h2 {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+  .testimonials__h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .testimonials__h4 {
+    margin-bottom: 51px;
+    font-size: 14px;
+    width: 100%;
+  }
+  .testimonials-slider {
+    height: 425px;
+  }
+  .testimonials-slider__items {
+    padding-left: 0;
+  }
+  .testimonials-slider__item {
+    width: 300px;
+    height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+  }
+  .testimonials-slider__name {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+  .testimonials-slider__feedback {
+    font-size: 18px;
+  }
   .footer__copyright {
     width: calc( 100% - 20px );
     height: 80px;
