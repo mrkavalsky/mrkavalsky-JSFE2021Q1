@@ -1226,6 +1226,7 @@ header {
   }
   .how-it-works {
     width: calc( 100% - 74px );
+    max-width: 1430px;
     margin-left: 74px;
     height: auto;
     padding: 100px 0;
@@ -1238,9 +1239,11 @@ header {
     margin-bottom: 55px;
   }
   .how-it-works__img {
-    width: 401px;
-    height: 585px;
-    object-position: -184px;
+    max-width: 512px;
+    max-height: 760px;
+    width: calc( 100vw - 799px );
+    height: calc( 100vw - 616px );
+    object-position: 39%;
   }
   .try-now__h2 {
     margin: 0;
