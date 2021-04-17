@@ -2121,6 +2121,61 @@ header {
   .try-now__h4 {
     font-size: 14px;
   }
+  .slider {
+    width: calc( 100% - 20px );
+    padding: 60px 0;
+  }
+  .slider__nav {
+    height: 222px;
+    margin-bottom: 50px;
+  }
+  .slider__h2 {
+    font-size: 16px;
+    width: 189px;
+    text-align: center;
+  }
+  .slider__h3 {
+    font-size: 20px;
+    width: 189px;
+  }
+  .slider__items { 
+    max-width: 300px;
+    height: 300px;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  .item {
+    width: 140px;
+    height: 140px;
+  }
+  .item__background {
+    width: 140px;
+    height: 140px;
+    background-size: 140px 140px;
+  }
+  .item__background::after {
+    left: 46%;
+    top: 51.5%;
+    font-size: 18px;
+  }
+  .item__link {
+    top: 121px;
+  }
+  .item__link::after {
+    font-size: 14px;
+  }
+  .item__circle {
+    width: 31px;
+    height: 31px;
+  }
+  .item:hover .item__circle {
+    width: 100px;
+    height: 100px;
+  }
+  .item__location {
+    width: 79px;
+    font-size: 12px;
+  }
   .pay-and-feed__h2_disabled {
     font-size: 16px;
     margin-top: 47px;
