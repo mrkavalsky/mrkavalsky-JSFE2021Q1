@@ -1624,6 +1624,11 @@ header {
   }
 }
 @media (max-width: 1199px) {
+  .section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .main {
     width: 100%;
   }
@@ -1702,6 +1707,40 @@ header {
   }
   .watch-online-wrapper-content__button-online {
     display: none;
+  }
+  .how-it-works-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  .how-it-works {
+    width: calc( 100% - 40px );
+    padding: 60px 20px 80px;
+    margin: 0;
+    flex-direction: column;
+  }
+  .try-now {
+    width: 100%;
+    height: auto;
+    min-height: 389px;
+    margin-bottom: 60px;
+    order: -1;
+    align-items: center;
+  }
+  .how-it-works__img {
+    width: 61vw;
+    height: 60.3vw;
+    object-position: 39%;
+  }
+  .try-now__h2 {
+    text-align: center;
+  }
+  .try-now__h3 {
+    font-size: 26px;
+    text-align: center;
+  }
+  .try-now__h4 {
+    font-size: 16px;
+    text-align: center;
   }
   .footer {
     height: auto;
