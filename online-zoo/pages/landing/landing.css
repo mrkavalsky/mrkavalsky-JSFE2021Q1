@@ -1515,13 +1515,13 @@ header {
     max-width: 1432px;
     width: calc( 100% - 80px );
     margin-top: 100px;
-    margin-left: 5px;
+    margin-left: 0;
   }
   .footer__logos {
     width: 119px;
   }
   .footer__nav {
-    margin-right: 64px;
+    margin-right: 60px;
   }
   .footer__digital-and-school{
     height: 176px;
@@ -1530,7 +1530,7 @@ header {
     align-items: center;
   }
   .footer__button-and-links {
-    margin-right: 67px;
+    margin-right: 47px;
   }
   .footer__online-zoo-logo {
     width: 119px;
