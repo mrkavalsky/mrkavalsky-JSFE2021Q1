@@ -2095,6 +2095,32 @@ header {
     height: 49px;
     font-size: 14px;
   }
+  .how-it-works {
+    width: calc( 100% - 20px );
+    padding: 0 0 58px;
+  }
+  .try-now {
+    min-height: 406px;
+    margin-bottom: 0;
+    margin-top: 60px;
+    order: 3;
+  }
+  .how-it-works__img {
+    width: 93.75vw;
+    height: 93.75vw;
+    object-position: 39%;
+  }
+  .try-now__h2 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .try-now__h3 {
+    font-size: 20px;
+    margin-top: 7px;
+  }
+  .try-now__h4 {
+    font-size: 14px;
+  }
   .pay-and-feed__h2_disabled {
     font-size: 16px;
     margin-top: 47px;
