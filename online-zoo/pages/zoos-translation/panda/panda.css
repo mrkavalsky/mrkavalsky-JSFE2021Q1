@@ -1486,6 +1486,13 @@ li {
   .slider__nav {
     display: flex;
   }
+  .slider__viewers {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .slider__link {
+    font-size: 14px;
+  }
   .accordion-background {
     width: calc( 100% - 20px);
   }
