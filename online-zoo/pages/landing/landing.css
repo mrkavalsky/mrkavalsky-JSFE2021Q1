@@ -37,10 +37,11 @@ li {
 header {
   background:  #fcfcfc;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  width: 1800px;
 }
 .header-wrapper {
-  width: 1710px;
+  width: 1712px;
   height: 115px;
   display: flex;
   justify-content: flex-end;
