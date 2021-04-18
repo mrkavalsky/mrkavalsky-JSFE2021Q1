@@ -394,7 +394,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 92px;
 }
 .slider__nav {
   width: 326px;
@@ -482,7 +481,7 @@ header {
   opacity: 0.8;
   position: absolute;
   left: 46%;
-  top: 56%;
+  top: 51.5%;
 }
 .item__link {
   display: block;
