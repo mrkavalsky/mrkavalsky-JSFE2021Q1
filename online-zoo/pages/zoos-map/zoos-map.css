@@ -164,6 +164,9 @@ header {
   justify-content: center;
   align-items: center;
 }
+.aside__animal-button_active {
+  border-color: #609fff;
+}
 .aside__animal-button:hover {
   border-color: #609fff;
 }
