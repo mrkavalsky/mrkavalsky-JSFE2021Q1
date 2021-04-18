@@ -476,6 +476,7 @@ header {
     width: calc( 100% - 40px );
     margin-top: 80px;
     flex-wrap: wrap;
+    margin-left: 0;
   }
   .footer__logos {
     width: 100%;
@@ -493,11 +494,10 @@ header {
     width: 264px;
     height: 49px;
     flex-direction: row;
-    margin-right: 132px;
+    margin-right: 128px;
   }
   .footer__button-and-links {
-    margin-right: 0;
-    margin-right: 58px;
+    margin-right: 53px;
     height: 302px;
   }
   .footer__online-zoo-logo {
@@ -529,6 +529,9 @@ header {
   .footer__donate {
     height: 230px;
   }
+  .footer__h2_margin {
+    margin-bottom: -15px;
+  }
 }
 @media (max-width: 639px) {
   .header-wrapper {
@@ -557,6 +560,9 @@ header {
   .main__p {
     font-size: 14px;
     width: 85%;
+  }
+  .main__p_width {
+    width: 70%;
   }
   .main__button {
     margin-top: 29px;
