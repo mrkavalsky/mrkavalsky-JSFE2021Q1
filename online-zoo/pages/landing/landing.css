@@ -2078,7 +2078,7 @@ header {
   .watch-online-wrapper {
     width: calc(  100% - 20px );
     margin: 0;
-    padding: 70px 0 60px;
+    padding: 70px 0 56px;
   }
   .watch-online-wrapper-content {
     width: 300px;
@@ -2105,12 +2105,13 @@ header {
   .try-now {
     min-height: 406px;
     margin-bottom: 0;
-    margin-top: 60px;
+    margin-top: 55px;
     order: 3;
   }
   .how-it-works__img {
-    width: 93.75vw;
-    height: 93.75vw;
+    width: 92.75vw;
+    height: 91.75vw;
+    image-resolution: 300dpi;
     object-position: 39%;
   }
   .try-now__h2 {
@@ -2119,10 +2120,13 @@ header {
   }
   .try-now__h3 {
     font-size: 20px;
-    margin-top: 7px;
+    margin-top: 0;
   }
   .try-now__h4 {
     font-size: 14px;
+    line-height: 162%;
+    margin-bottom: 7px;
+    width: 92%;
   }
   .slider {
     width: calc( 100% - 20px );
@@ -2181,7 +2185,7 @@ header {
   }
   .pay-and-feed__h2_disabled {
     font-size: 16px;
-    margin-top: 47px;
+    margin-top: 57px;
   }
   .pay-and-feed {
     width: calc( 100% - 20px );
@@ -2208,7 +2212,7 @@ header {
     margin-top: 26px;
   }
   .pay-and-feed__in-details_margin-top-41px {
-    margin: 11px 0 66px 0px;
+    margin: 11px 0 61px 0px;
   }
   .pay-and-feed__h3 {
     font-size: 20px;
@@ -2217,10 +2221,11 @@ header {
   }
   .pay-and-feed__h4 {
     font-size: 14px;
+    width: 94%;
   }
   .testimonials {
     width: calc( 100% - 20px );
-    padding: 60px 0;
+    padding: 56px 0 64px;
   }
   .testimonials__feedback {
     width: 100%;
@@ -2228,29 +2233,40 @@ header {
   }
   .testimonials__h2 {
     font-size: 16px;
-    margin-bottom: 35px;
+    margin-bottom: 27px;
   }
   .testimonials__h3 {
     font-size: 20px;
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 23px;
   }
   .testimonials__h4 {
-    margin-bottom: 51px;
+    margin-bottom: 40px;
     font-size: 14px;
     width: 100%;
+  }
+  .testimonials__button {
+    width: 256px;
+    height: 57px;
+    font-size: 14px;
   }
   .testimonials-slider {
     height: 425px;
   }
+  .testimonials-slider__link {
+    font-size: 14px;
+  }
   .testimonials-slider__items {
     padding-left: 0;
+    height: 300px;
+    width: 100%;
   }
   .testimonials-slider__item {
     width: 300px;
     height: 300px;
     min-width: 300px;
     min-height: 300px;
+    padding: 27px 30px 0;
   }
   .testimonials-slider__name {
     font-size: 16px;
@@ -2258,6 +2274,8 @@ header {
   }
   .testimonials-slider__feedback {
     font-size: 18px;
+    margin-top: 22px;
+    line-height: 157%;
   }
   .zoogeography {
     width: calc( 100% - 20px );
@@ -2271,7 +2289,7 @@ header {
     width: 250px;
     height: 374px;
     position: static;
-    margin-bottom: 40px;
+    margin-bottom: 39px;
   }
   .zoogeography__map {
     display: none;
@@ -2286,8 +2304,8 @@ header {
     line-height: 19px;
   }
   .zoogeography__animal-info {
-    padding: 15px 17px 27px;
-    height: 225px;
+    padding: 15px 17px 31px;
+    height: 209px;
   }
   .aside_disable {
     display: flex;
@@ -2298,27 +2316,27 @@ header {
   }
   .aside__nav {
     width: 100%;
-    height: 80px;
-    border-radius: 12px;
+    height: 50px;
     border: 0;
     flex-direction: row;
-    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.1));
+    justify-content: space-between;
   }
   .aside__nav-button {
-    width: 65px;
-    height: 80px;
-    border-radius: 12px;
+    width: 20px;
+    height: 50px;
     border: 0;
   }
   .aside__nav-button_top {
     background: no-repeat center url(../../assets/icons/zoos-map__arrow-left.svg);
+    background-position: 0px;
   }
   .aside__nav-button_bottom {
     background: no-repeat center url(../../assets/icons/zoos-map__arrow-right.svg);
+    background-position: 10px;
   }
   .aside__animal-button {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border: 2px solid #d9E8ff;
     box-sizing: border-box;
     border-radius: 30px;
@@ -2336,8 +2354,8 @@ header {
   }
   .aside__animal-buttons {
     max-width: 640px;
-    width: calc( 100% - 142px);
-    height: 45px;
+    width: calc( 100% - 40px);
+    height: 50px;
     display: flex;
     justify-content: space-between;
   }
