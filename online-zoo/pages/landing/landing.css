@@ -2163,7 +2163,7 @@ header {
     font-size: 18px;
   }
   .item__link {
-    top: 121px;
+    top: 126px;
   }
   .item__link::after {
     font-size: 14px;
@@ -2186,7 +2186,6 @@ header {
   }
   .pay-and-feed {
     width: calc( 100% - 20px );
-    margin-left: 10px;
   }
   .pay-and-feed-wrapper {
     width: 100%;
@@ -2311,6 +2310,7 @@ header {
   .aside {
     width: 100%;
     height: auto;
+    position: static;
   }
   .aside__nav {
     width: 100%;
