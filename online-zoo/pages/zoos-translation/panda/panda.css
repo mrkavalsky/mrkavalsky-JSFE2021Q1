@@ -750,7 +750,7 @@ li {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1880px) {
+@media (max-width: 1919px) {
   .main {
     width: calc(  100% - 80px );
   }
@@ -810,7 +810,7 @@ li {
   }
   .translation {
     justify-content: flex-start;
-    column-gap: 30px;
+    column-gap: 29px;
     width: 78vw;
     margin: 71px 0 0 74px;
   }
@@ -829,6 +829,7 @@ li {
     width: 100%;
     border-bottom: 0;
     padding-bottom: 0;
+    margin-bottom: 6px;
   }
   .translation__h3 {
     font-size: 20px;
@@ -840,7 +841,7 @@ li {
   }
   .translation__h2 {
     font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
   }
   .translation__p {
     font-size: 16px;
@@ -848,7 +849,7 @@ li {
   }
   .translation__content {
     width: 360px;
-    height: 26vw;
+    height: 25.5vw;
     max-height: 345px;
   }
   .translation__button {
@@ -860,8 +861,8 @@ li {
     content: 'Try now';
   }
   .translation__video {
-    width: 45vw;
-    height: 26vw;
+    width: 45.5vw;
+    height: 25.5vw;
     max-height: 600px;
     max-width: 1064px;
     border-radius: 5px;
@@ -869,7 +870,7 @@ li {
   .slider {
     width: 69.25vw;
     height: 302px;
-    margin: 44px 0 81px 74px;
+    margin: 50px 0 81px 74px;
   }
   .slider__h2 {
     width: 148px;
@@ -889,6 +890,7 @@ li {
     overflow: hidden;
     justify-content: flex-start;
     column-gap: 30px;
+    margin-bottom: 9px;
   }
   .slider__video {
     width: 257px;
@@ -923,6 +925,9 @@ li {
   }
   .accordion__h3 {
     font-size: 24px;
+  }
+  .pay-and-feed__h3_width {
+    width: 90%;
   }
   .accordion {
     margin-bottom: 40px;
@@ -1151,9 +1156,16 @@ li {
   .translation__name_disabled {
     display: flex;
   }
+  .translation__name {
+    margin-bottom: 0;
+  }
+  .translation__info {
+    width: 95%;
+  }
   .translation__h3 {
     font-size: 16px;
     line-height: 19px;
+    margin-bottom: 6px;
   }
   .translation__count {
     font-size: 14px;
@@ -1218,13 +1230,14 @@ li {
     font-size: 20px;
   }
   .accordion-wrapper__content {
-    margin-bottom: 44px;
+    margin-bottom: 51px;
   }
   .accordion__item {
     margin-bottom: 30px;
   }
   .accordion-wrapper__h2 {
     font-size: 26px;
+    margin-bottom: -7px;
   }
   .pay-and-feed__h2_disabled {
     align-self: center;
@@ -1313,11 +1326,10 @@ li {
     width: 264px;
     height: 49px;
     flex-direction: row;
-    margin-right: 132px;
+    margin-right: 128px;
   }
   .footer__button-and-links {
-    margin-right: 0;
-    margin-right: 58px;
+    margin-right: 53px;
     height: 302px;
   }
   .footer__online-zoo-logo {
@@ -1348,6 +1360,9 @@ li {
   }
   .footer__donate {
     height: 230px;
+  }
+  .footer__h2_margin {
+    margin-bottom: -15px;
   }
 }
 @media (max-width: 639px) {
@@ -1385,7 +1400,7 @@ li {
   .section-wrapper {
     width: calc( 100% - 20px);
     flex-direction: column;
-    margin: 40px 0 70px 0;
+    margin: 38px 0 70px 0;
   }
   .translation {
     flex-direction: column;
@@ -1400,6 +1415,7 @@ li {
   .translation__h3 {
     font-size: 14px;
     line-height: 154%;
+    margin-bottom: 3px;
   }
   .translation__count {
     font-size: 12px;
@@ -1422,9 +1438,12 @@ li {
   .translation__button {
     width: 173px;
     height: 49px;
-    margin-top: 24px;
+    margin-top: 34px;
     font-size: 14px;
   }
+  .translation__p {
+    font-size: 14px;
+}
   .translation__video {
     width: 100%;
     height: 52.5vw;
@@ -1438,6 +1457,10 @@ li {
   .slider__h2 {
     margin-top: 18px;
     font-size: 20px;
+    width: 135px;
+  }
+  .slider__triangle {
+    transform: scale(0.5);
   }
   .slider__item {
     width: 44vw;
@@ -1454,6 +1477,7 @@ li {
     row-gap: 0;
     column-gap: 20px;
     margin-top: 22px;
+    margin-bottom: 0;
   }
   .slider__video {
     width: 44vw;
