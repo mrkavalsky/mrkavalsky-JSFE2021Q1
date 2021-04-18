@@ -1118,12 +1118,20 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1880px) {
+@media (max-width: 1919px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .main {
-    width: calc(  100% - 80px );
+    width: 100%;
   }
   .section-wrapper {
     width: calc( 100% - 53px );
+  }
+  header {
+    width: calc(  100% - 80px );
   }
   .header-wrapper {
     width: 100%;
@@ -1132,6 +1140,7 @@ header {
   .nav-wrapper {
     width: 100%;
     height: 66px;
+    margin-left: 68px;
   }
   .nav-wrapper img {
     width: 40px;
@@ -1154,6 +1163,7 @@ header {
   }
   .aside {
     height: 585px;
+    left: 40px;
   }
   .aside__nav {
     height: 514px;
@@ -1177,11 +1187,11 @@ header {
     height: 18px;
   }
   .watch-online {
-    width: 100%;
+    width: calc(  100% - 80px );
   }
   .watch-online-wrapper {
     width: calc( 100% - 74px );
-    margin: 59px 0 0 74px;
+    margin: 59px 0 0 143px;
     max-width: 1430px;
   }
   .watch-online-wrapper-content {
@@ -1221,9 +1231,9 @@ header {
     line-height: 19px;
   }
   .how-it-works {
-    width: calc( 100% - 74px );
+    width: calc(  100% - 80px );
     max-width: 1430px;
-    margin-left: 74px;
+    margin-left: 0;
     height: auto;
     padding: 100px 0;
     box-sizing: border-box;
@@ -1240,6 +1250,7 @@ header {
     width: calc( 100vw - 799px );
     height: calc( 100vw - 616px );
     object-position: 39%;
+    margin-left: 144px;
   }
   .try-now__h2 {
     margin: 0;
@@ -1250,6 +1261,7 @@ header {
   }
   .try-now__h4 {
     font-size: 16px;
+    margin-bottom: 12px;
   }
   .try-now__button {
     width: 210px;
@@ -1344,11 +1356,11 @@ header {
   }
   .testimonials {
     max-width: 1710px;
-    width: calc( 100% - 70px );
+    width: calc( 100% - 80px );
     height: auto;
     padding: 109px 0 80px 0;
-    margin-left: 74px;
-    justify-content: flex-start;
+    margin-left: 51px;
+    justify-content: center;
   }
   .testimonials__feedback {
     width: 392px;
@@ -1406,11 +1418,11 @@ header {
     line-height: 19px;
   }
   .zoogeography {
-    width: 100%;
+    width: calc( 100% - 80px );
     height: auto;
     padding: 100px 0 100px 0;
-    justify-content: flex-start;
-    margin-left: 74px;
+    justify-content: center;
+    margin-left: 144px;
   }
   .zoogeography__animal-wrapper {
     width: 292px;
@@ -1526,7 +1538,7 @@ header {
     align-items: center;
   }
   .footer__button-and-links {
-    margin-right: 47px;
+    margin-right: 65px;
   }
   .footer__online-zoo-logo {
     width: 119px;
@@ -1540,11 +1552,12 @@ header {
   .pay-and-feed__h2_disabled {
     display: block;
     align-self: flex-start;
-    margin: 98px 0 0 39px;
+    margin: 98px 0 0 115px;
   }
   .pay-and-feed {
     align-items: center;
     height: auto;
+    margin-left: 67px;
   }
   .pay-and-feed__img {
     width: 242px;
