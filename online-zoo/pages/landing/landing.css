@@ -17,14 +17,14 @@ li {
 .body {
   width: 100%;
   background: #fcfcfc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   overflow-x: hidden;
 }
 .main {
+  width: 100%;
+  position: relative;
   display: flex;
-  width: 1800px;
+  flex-direction: column;
+  align-items: center;
 }
 .section-wrapper {
   width: 1710px;
@@ -148,10 +148,11 @@ header {
 }
 .aside {
   background:  #fcfcfc;
-  position: sticky;
+  position: fixed;
   height: 762px;
   top: 25px;
-  transform: translateX(2px);
+  left: calc( ( 100% - 1800px ) / 2 );
+  z-index: 99;
 }
 .aside_disable {
   display: none;
@@ -304,7 +305,7 @@ header {
 }
 .how-it-works-wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   background:  #fcfcfc;
   width: 100%;
 }
@@ -380,22 +381,11 @@ header {
 }
 .famous-pets-wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background: #d9e8ff;
   width: 100%;
   position: relative;
-}
-.famous-pets-wrapper::after {
-  content: '';
-  background: #d9e8ff;
-  width: 110vw;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 .slider {
   width: 1433px;
@@ -579,7 +569,7 @@ header {
 }
 .pay-and-feed-wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background: #fcfcfc;
   width: 100%;
@@ -699,18 +689,6 @@ header {
   justify-content: center;
   background: #080029;
   width: 100%;
-  position: relative;
-}
-.testimonials-wrapper::after {
-  content: '';
-  background: #080029;
-  width: 110vw;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 .testimonials {
   width: 1710px;
