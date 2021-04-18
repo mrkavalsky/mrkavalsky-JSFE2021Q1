@@ -1553,7 +1553,7 @@ header {
     height: 91px;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1480px) {
   .pay-and-feed__h2_enabled {
     display: none;
   }
