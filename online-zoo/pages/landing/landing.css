@@ -852,6 +852,7 @@ header {
   height: 862px;
   display: flex;
   justify-content: flex-end;
+  margin-left: 84px;
 }
 .zoogeography__animal-wrapper {
   width: 344px;
