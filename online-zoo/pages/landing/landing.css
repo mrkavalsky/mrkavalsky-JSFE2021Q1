@@ -333,8 +333,7 @@ header {
   border-radius: 5px;
   overflow: hidden;
   object-fit: cover;
-  transform: scaleX(-1);
-  object-position: -264px;
+  object-position: -359px;
 }
 .try-now__h2 {
   font-style: normal;
@@ -1249,7 +1248,7 @@ header {
     max-height: 760px;
     width: calc( 100vw - 799px );
     height: calc( 100vw - 616px );
-    object-position: 39%;
+    object-position: 61%;
     margin-left: 144px;
   }
   .try-now__h2 {
@@ -2107,7 +2106,6 @@ header {
   .how-it-works__img {
     width: 92.75vw;
     height: 91.75vw;
-    image-resolution: 300dpi;
     object-position: 39%;
   }
   .try-now__h2 {
