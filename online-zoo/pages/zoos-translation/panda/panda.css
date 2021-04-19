@@ -1223,6 +1223,9 @@ li {
   .slider__item_disabled {
     display: none;
   }
+  .slider__triangle {
+    transform: scale(0.5) rotate(180deg);
+  }
   .slider__nav {
     display: none;
   }
