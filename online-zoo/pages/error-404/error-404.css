@@ -494,10 +494,10 @@ header {
     width: 264px;
     height: 49px;
     flex-direction: row;
-    margin-right: 128px;
+    margin-right: 125px;
   }
   .footer__button-and-links {
-    margin-right: 53px;
+    margin-right: 45px;
     height: 302px;
   }
   .footer__online-zoo-logo {
