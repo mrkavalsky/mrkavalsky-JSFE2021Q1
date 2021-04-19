@@ -1668,6 +1668,9 @@ header {
     display: flex;
     justify-content: center;
     margin-bottom: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
   .watch-online {
     width: 100%;
