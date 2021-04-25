@@ -89,6 +89,7 @@ function drawImage() {
   canvas.width = image.naturalWidth;
   canvas.height = image.naturalHeight;
   const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
   context.filter = setFilter();
   context.drawImage(image, 0, 0);
   const dataURL = canvas.toDataURL("image/png");
