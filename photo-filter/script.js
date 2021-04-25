@@ -111,13 +111,13 @@ function getFilter() {
     const input = label.children[0];
     const filterValue = input.name === 'blur' ? getBlur(input.value) : input.value;
     filterProp.push(`${input.name}(${filterValue}${input.dataset.sizing})`);
-  });
+  }); 
   return filterProp.join(' ');
 }
 
 function getBlur(value) {
   if (image.naturalWidth > image.width || image.naturalHeight > image.height) {
-    value = image.naturalWidth > image.width ? image.naturalWidth / image.width * value : image.naturalHeight / image.height * value;
+    value = image.naturalWidth > image.naturalHeight ? image.naturalWidth / image.width * value : image.naturalHeight / image.height * value;
   };
   return value;
 }
