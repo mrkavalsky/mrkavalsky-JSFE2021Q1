@@ -86,12 +86,18 @@ function setFullScreen() {
 
 function drawImage() {
   const canvas = document.createElement('canvas');
+  let img;
   canvas.width = image.naturalWidth;
   canvas.height = image.naturalHeight;
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.filter = getFilter();
-  context.drawImage(image, 0, 0);
+  if (image.naturalWidth > image.width || image.naturalHeight > image.height) {
+    context.filter = getFilter();
+    img = image;
+  } else {
+    img = getContainImg();
+  }
+  context.drawImage(img, 0, 0, image.naturalWidth, image.naturalHeight);
   const dataURL = canvas.toDataURL("image/png");
   downloadFile(dataURL);
 }
@@ -120,6 +126,18 @@ function getBlur(value) {
     value = image.naturalWidth > image.naturalHeight ? image.naturalWidth / image.width * value : image.naturalHeight / image.height * value;
   };
   return value;
+}
+
+function getContainImg() {
+  const canvas = document.createElement('canvas');
+  const mult = image.naturalWidth > image.naturalHeight ? image.width / image.naturalWidth :  image.height / image.naturalHeight;
+  canvas.width = mult * image.naturalWidth;
+  canvas.height = mult * image.naturalHeight;
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.filter = getFilter();
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  return context.canvas;
 }
 
 filters.addEventListener('input', getInput);
