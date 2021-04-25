@@ -90,7 +90,7 @@ function drawImage() {
   canvas.height = image.naturalHeight;
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.filter = setFilter();
+  context.filter = getFilter();
   context.drawImage(image, 0, 0);
   const dataURL = canvas.toDataURL("image/png");
   downloadFile(dataURL);
@@ -104,7 +104,7 @@ function downloadFile(dataURL) {
   link.delete;
 }
 
-function setFilter() {
+function getFilter() {
   const arr = [...filters.children];
   let filterProp = [];
   arr.forEach(label => {
