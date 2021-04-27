@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
   <title>Online Zoo</title>
 </head>
-<body class="body">
+<body id="body" class="body">
   <aside class="aside">
     <a href="./landing.html" class="logo logo_enabled">
       <img class="logo__icon" src="../../assets/icons/logo.svg" alt="logo">
@@ -42,7 +42,7 @@
     </a>
     </div>
   </aside>
-  <div class="popup">
+  <div id="popup" class="popup hidden">
     <h2 class="popup__h2">Your feedback</h2>
     <form action="#" class="popup__form">
       <label for="text">Your name:</label>
@@ -54,7 +54,7 @@
       <input class="popup__input" type="submit" value="Send for moderation">
     </form>
   </div>
-  <div class="cover"></div>
+  <div id="cover" class="cover hidden"></div>
   <main class="main">
     <header id="top">
       <div class="header-wrapper">
@@ -218,7 +218,7 @@
           <h2 class="testimonials__h2">Testimonials</h2>
           <h3 class="testimonials__h3">You can make us smile</h3>
           <h4 class="testimonials__h4">We want to make animal observation and interaction accessible. You can leave your wishes on how to make the service more convenient, and most importantly, more interesting for you.</h4>
-          <button class="testimonials__button">Leave feedback</button>
+          <button id="feedback-button" class="testimonials__button">Leave feedback</button>
         </div>
         <div class="testimonials-slider">
           <a href="" class="testimonials-slider__link">See more reviews →</a>
@@ -498,5 +498,6 @@
       </div>
     </div>
   </footer>
+  <script src="./landing.js"></script>
 </body>
 </html>
