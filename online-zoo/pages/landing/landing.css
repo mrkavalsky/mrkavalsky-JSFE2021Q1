@@ -972,7 +972,7 @@ header {
   transform: translate(-50%, -100%);
   cursor: pointer;
 }
-.zoogeography__mark_deactive:hover .zoogeography__svg-mark {
+.zoogeography__mark:hover .zoogeography__svg-mark {
   width: 140px;
   height: 168px;
 }
@@ -980,7 +980,7 @@ header {
   width: 140px;
   height: 168px;
 }
-.zoogeography__mark_deactive:hover .zoogeography__svg-path {
+.zoogeography__mark:hover .zoogeography__svg-path {
   stroke-width: 2px;
 }
 .zoogeography__mark_active .zoogeography__svg-path {
@@ -1014,13 +1014,13 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.zoogeography__mark_deactive:hover .zoogeography__mark-fill {
+.zoogeography__mark:hover .zoogeography__mark-fill {
   fill: #0f0049;
 }
 .zoogeography__mark_active .zoogeography__mark-fill {
   fill: #0f0049;
 }
-.zoogeography__mark_deactive:hover .zoogeography__mark-animal {
+.zoogeography__mark:hover .zoogeography__mark-animal {
   height: 67px; 
   width: 67px;
 }

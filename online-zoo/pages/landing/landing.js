@@ -38,13 +38,21 @@ function togglePopup() {
 }
 
 function toggleAnimalCard(e) {
-  const pos = e.target.closest('li').dataset.pos;
+  const mark = e.target.closest('li');
+  if (!mark) return;
+  const pos = mark.dataset.pos;
   const img = card.firstElementChild.lastElementChild;
   const content = card.lastElementChild.children;
+
   img.src = animals[pos].imgSrc;
   content[0].innerText = animals[pos].title;
   content[1].innerText = animals[pos].text;
   content[2].href = animals[pos].linkSrc;
+
+  for (let i = 0; i < map.children.length; i++) {
+    map.children[i].classList.remove('zoogeography__mark_active');
+  }
+  mark.classList.add('zoogeography__mark_active');
 }
 
 fdbckBtn.addEventListener('click', togglePopup);
