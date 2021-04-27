@@ -915,6 +915,9 @@ header {
   border-radius: 15px;
   overflow: hidden;
 }
+.zoogeography__animal-photo {
+  height: 218px;
+}
 .zoogeography__map {
   width: 1223px;
   height: 700px;
