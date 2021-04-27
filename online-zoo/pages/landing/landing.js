@@ -2,6 +2,8 @@ const fdbckBtn = document.getElementById('feedback-button');
 const cover = document.getElementById('cover');
 const popup = document.getElementById('popup');
 const body = document.getElementById('body');
+const map = document.querySelector('.zoogeography__map');
+const card = document.querySelector('.zoogeography__animal');
 const animals = [
   {
     imgSrc: '../../assets/images/zoogeography__animal-photo0.png',
@@ -35,5 +37,16 @@ function togglePopup() {
   body.classList.toggle('body_overflow');
 }
 
+function toggleAnimalCard(e) {
+  const pos = e.target.closest('li').dataset.pos;
+  const img = card.firstElementChild.lastElementChild;
+  const content = card.lastElementChild.children;
+  img.src = animals[pos].imgSrc;
+  content[0].innerText = animals[pos].title;
+  content[1].innerText = animals[pos].text;
+  content[2].href = animals[pos].linkSrc;
+}
+
 fdbckBtn.addEventListener('click', togglePopup);
 cover.addEventListener('click', togglePopup);
+map.addEventListener('click', toggleAnimalCard);
