@@ -897,8 +897,10 @@ header {
   margin-bottom: 34px;
 }
 .popup__textarea {
-  width: 399px;
+  width: 395px;
   height: 100px;
+  max-width: 395px;
+  max-height: 100px;
   border: 2px solid #D3D3D3;
   background: none;
 }
