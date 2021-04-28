@@ -470,6 +470,9 @@ li {
 .accordion-wrapper__p_width {
   width: 512px;
 }
+.accordion-wrapper__p_hidden {
+  display: none;
+}
 .accordion__h3 {
   font-style: normal;
   font-weight: normal;
@@ -482,6 +485,9 @@ li {
   height: 22px;
   border-style: none;
   background: no-repeat center url(../../../assets/icons/accordion__button-minus.svg);
+}
+.accordion__button_hidden {
+  background: no-repeat center url(../../../assets/icons/accordion__button-plus.svg);
 }
 .accordion {
   margin-bottom: 105px;
