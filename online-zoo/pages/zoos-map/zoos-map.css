@@ -368,23 +368,23 @@ header {
   .map {
     width: 1400px;
     top: -328px;
-    left: calc( ( 100% - 1400px ) / 2 );
+    left: calc( ( 100% - 1400px ) / 2 + 100px);
   }
   .background-map__mark_item1 {
     top: 200px;
-    left: calc( ( 100% - 1400px ) / 2 +  28px );
+    left: calc( ( 100% - 1400px ) / 2 +  128px );
   }
   .background-map__mark_item2 {
     top: 362px;
-    left: calc( ( 100% - 1400px ) / 2 + 252px );
+    left: calc( ( 100% - 1400px ) / 2 + 352px );
   }
   .background-map__mark_item3 {
     top: 511px;
-    left: calc( ( 100% - 1400px ) / 2 + 701px );
+    left: calc( ( 100% - 1400px ) / 2 + 801px );
   }
   .background-map__mark_item4 {
     top: 389px;
-    left: calc( ( 100% - 1400px ) / 2 + 1138px );
+    left: calc( ( 100% - 1400px ) / 2 + 1238px );
   }
   .background-map__mark {
     z-index: 2;
