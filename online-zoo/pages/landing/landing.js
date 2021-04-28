@@ -4,6 +4,7 @@ const popup = document.getElementById('popup');
 const body = document.getElementById('body');
 const map = document.querySelector('.zoogeography__map');
 const card = document.querySelector('.zoogeography__animal');
+const button = document.getElementById('button');
 const animals = [
   {
     imgSrc: '../../assets/images/zoogeography__animal-photo0.png',
@@ -58,3 +59,4 @@ function toggleAnimalCard(e) {
 fdbckBtn.addEventListener('click', togglePopup);
 cover.addEventListener('click', togglePopup);
 map.addEventListener('click', toggleAnimalCard);
+button.addEventListener('click', togglePopup);
