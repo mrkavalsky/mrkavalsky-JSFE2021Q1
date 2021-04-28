@@ -177,13 +177,18 @@ header {
   max-width: 1920px;
   width: 100%;
   height: 100vh;
-  background: url(../../assets/images/zoos-map.png);
-  background-position: -5vw -36.5vw;
-  background-size: 113vw 114vw;
+  background: #AACED9;
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: relative;
   overflow: hidden;
+}
+.map {
+  width: 2177px;
+  height: auto;
+  position: absolute;
+  top: -704px;
+  left: -100px;
 }
 .hud-wrapper {
   width: 1796px;
@@ -360,25 +365,26 @@ header {
   .aside__animal-buttons {
     height: 416px;
   }
-  .background-map {
-    background-position: 1vw -26.5vw;
-    background-size: 115vw 116vw;
+  .map {
+    width: 1400px;
+    top: -328px;
+    left: calc( ( 100% - 1400px ) / 2 );
   }
   .background-map__mark_item1 {
-    top: 16.5vw;
-    left: 2.5vw;
+    top: 200px;
+    left: calc( ( 100% - 1400px ) / 2 +  28px );
   }
   .background-map__mark_item2 {
-    top: 30vw;
-    left: 21vw;
+    top: 362px;
+    left: calc( ( 100% - 1400px ) / 2 + 252px );
   }
   .background-map__mark_item3 {
-    top: 42.5vw;
-    left: 58.5vw;
+    top: 511px;
+    left: calc( ( 100% - 1400px ) / 2 + 701px );
   }
   .background-map__mark_item4 {
-    top: 32.5vw;
-    left: 95vw;
+    top: 389px;
+    left: calc( ( 100% - 1400px ) / 2 + 1138px );
   }
   .background-map__mark {
     z-index: 2;
