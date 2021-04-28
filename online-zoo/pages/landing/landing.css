@@ -891,6 +891,7 @@ header {
   font-size: 20px;
   line-height: 135%;
   color: #0B0B0B;
+  background: none;
 }
 .popup__input_margin {
   margin-bottom: 34px;
@@ -899,6 +900,7 @@ header {
   width: 399px;
   height: 100px;
   border: 2px solid #D3D3D3;
+  background: none;
 }
 .popup__textarea_margin {
   margin-bottom: 40px;
