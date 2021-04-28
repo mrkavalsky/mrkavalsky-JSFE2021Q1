@@ -5,6 +5,9 @@ const body = document.getElementById('body');
 const map = document.querySelector('.zoogeography__map');
 const card = document.querySelector('.zoogeography__animal');
 const button = document.getElementById('button');
+const text = document.getElementById('text');
+const email = document.getElementById('email');
+const textarea = document.getElementById('textarea');
 const animals = [
   {
     imgSrc: '../../assets/images/zoogeography__animal-photo0.png',
@@ -32,10 +35,27 @@ const animals = [
   },
 ];
 
-function togglePopup() {
+function validate() {
+  if (
+    textarea.validity.valid &&
+    email.validity.valid &&
+    text.validity.valid
+  ) {
+    button.classList.remove('popup__button_invalid');
+  }
+}
+
+function togglePopup(e) {
+  if (e.target.matches('#button')) {
+    if (e.target.matches('.popup__button_invalid')) return;
+  }
   cover.classList.toggle('hidden');
   popup.classList.toggle('hidden');
   body.classList.toggle('body_overflow');
+  text.value = '';
+  email.value = '';
+  textarea.value = '';
+  button.classList.add('popup__button_invalid');
 }
 
 function toggleAnimalCard(e) {
@@ -60,3 +80,6 @@ fdbckBtn.addEventListener('click', togglePopup);
 cover.addEventListener('click', togglePopup);
 map.addEventListener('click', toggleAnimalCard);
 button.addEventListener('click', togglePopup);
+text.addEventListener('input', validate);
+email.addEventListener('input', validate);
+textarea.addEventListener('input', validate);

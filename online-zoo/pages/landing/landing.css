@@ -920,6 +920,9 @@ header {
   line-height: 21px;
   color: #fff;
 }
+.popup__button_invalid {
+  background: #D3D3D3;
+}
 .cover {
   width: 100%;
   height: 100vh;
