@@ -1,4 +1,6 @@
 const markList = document.querySelector('.mark-list');
+const header = document.getElementById('top');
+const aside = document.querySelector('.aside__nav');
 const animals = [
   {
     imgSrc: '../../assets/images/zoogeography__animal-photo0.png',
@@ -29,6 +31,7 @@ const animals = [
 function showAnimalCard(e) {
   const mark = e.target.closest('.background-map__mark');
   if (!mark) return;
+  if (!checkCoordinates(mark)) return;
   const pos = mark.dataset.pos;
   mark.appendChild(getAnimalCard(pos));
   mark.classList.add('background-map__mark_active');
@@ -54,6 +57,12 @@ function hideAnimalCard() {
       markList.children[i].lastElementChild.remove();
     }
   };
+}
+
+function checkCoordinates(mark) {
+  if (mark.getBoundingClientRect().y < (header.offsetHeight - 20)) return false;
+  if (mark.getBoundingClientRect().x < (aside.getBoundingClientRect().x + aside.getBoundingClientRect().width - 20)) return false;
+  return true;
 }
 
 markList.addEventListener('click', hideAnimalCard);
