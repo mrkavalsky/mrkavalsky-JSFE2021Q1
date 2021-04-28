@@ -31,6 +31,10 @@ function showAnimalCard(e) {
   if (!mark) return;
   const pos = mark.dataset.pos;
   mark.appendChild(getAnimalCard(pos));
+  for (let i = 0; i < backgroundMap.children.length; i++) {
+    backgroundMap.children[i].classList.remove('background-map__mark_active');
+  };
+  mark.classList.add('background-map__mark_active');
 }
 
 function getAnimalCard(pos) {
