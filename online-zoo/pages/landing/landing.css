@@ -889,6 +889,18 @@ header {
 .popup__textarea_margin {
   margin-bottom: 40px;
 }
+.popup__button {
+  width: 399px;
+  height: 66px;
+  background: #171717;
+  border-style: none;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+}
 .cover {
   width: 100%;
   height: 100vh;
