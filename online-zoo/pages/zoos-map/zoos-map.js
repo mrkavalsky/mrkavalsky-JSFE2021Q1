@@ -31,9 +31,6 @@ function showAnimalCard(e) {
   if (!mark) return;
   const pos = mark.dataset.pos;
   mark.appendChild(getAnimalCard(pos));
-  for (let i = 0; i < markList.children.length; i++) {
-    markList.children[i].classList.remove('background-map__mark_active');
-  };
   mark.classList.add('background-map__mark_active');
 }
 
@@ -50,4 +47,14 @@ function getAnimalCard(pos) {
   return animalCard;
 }
 
+function hideAnimalCard() {
+  for (let i = 0; i < markList.children.length; i++) {
+    markList.children[i].classList.remove('background-map__mark_active');
+    if ( markList.children[i].lastElementChild.matches('div')) {
+      markList.children[i].lastElementChild.remove();
+    }
+  };
+}
+
+markList.addEventListener('click', hideAnimalCard);
 markList.addEventListener('click', showAnimalCard);
