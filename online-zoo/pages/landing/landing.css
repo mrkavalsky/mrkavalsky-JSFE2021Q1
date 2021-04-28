@@ -860,6 +860,14 @@ header {
   justify-content: space-between;
   box-sizing: border-box;
 }
+.popup__h2 {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #000000;
+}
 .popup__form {
   display: flex;
   flex-direction: column;
