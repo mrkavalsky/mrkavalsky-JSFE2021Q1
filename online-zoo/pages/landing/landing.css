@@ -887,8 +887,14 @@ header {
 .popup__input_margin {
   margin-bottom: 34px;
 }
+.popup__textarea {
+  width: 399px;
+  height: 135px;
+  border: 2px solid #D3D3D3;
+}
 .popup__textarea_margin {
   margin-bottom: 40px;
+  margin-top: 12px;
 }
 .popup__button {
   width: 399px;
