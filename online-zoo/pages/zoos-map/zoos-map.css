@@ -228,20 +228,20 @@ header {
   transition: all .5s;
 }
 .background-map__mark_item1 {
-  top: 19vw;
-  left: 4vw;
+  top: 365px;
+  left: 77px;
 }
 .background-map__mark_item2 {
-  top: 18vw;
-  left: 15vw;
+  top: 345px;
+  left: 294px;
 }
 .background-map__mark_item3 {
-  top: 31vw;
-  left: 51.5vw;
+  top: 585px;
+  left: 990px;
 }
 .background-map__mark_item4 {
-  top: 20vw;
-  left: 87vw;
+  top: 385px;
+  left: 1671px;
 }
 .background-map__mark-animal {
   background-position: center;
