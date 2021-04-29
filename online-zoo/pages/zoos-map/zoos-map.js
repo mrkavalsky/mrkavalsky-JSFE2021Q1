@@ -40,6 +40,7 @@ function showAnimalCard(e) {
   mark.appendChild(card);
   setCoordinates(card, mark);
   mark.classList.add('background-map__mark_active');
+  mark.style.zIndex = '10';
 }
 
 function getAnimalCard(pos) {
@@ -57,14 +58,12 @@ function getAnimalCard(pos) {
 
 function hideAnimalCard(e) {
   const mark = getMark(e);
+  if (!prevMark) return;
   if (prevMark === mark) return;
-  prevMark = '';
-  for (let i = 0; i < markList.children.length; i++) {
-    markList.children[i].classList.remove('background-map__mark_active');
-    if ( markList.children[i].lastElementChild.matches('div')) {
-      markList.children[i].lastElementChild.remove();
-    }
-  };
+  prevMark.classList.remove('background-map__mark_active');
+  prevMark.lastElementChild.remove();
+  prevMark.style.zIndex = '';
+  prevMark = undefined;
 }
 
 function getMark(e) {

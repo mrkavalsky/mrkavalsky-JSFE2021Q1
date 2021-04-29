@@ -230,7 +230,6 @@ header {
 .background-map__mark_item1 {
   top: 19vw;
   left: 4vw;
-  z-index: 2;
 }
 .background-map__mark_item2 {
   top: 18vw;
@@ -389,9 +388,6 @@ header {
   .background-map__mark_item4 {
     top: 389px;
     left: calc( ( 100% - 1400px ) / 2 + 1238px );
-  }
-  .background-map__mark {
-    z-index: 2;
   }
   .background-map__mark-animal {
     top: 36%;
