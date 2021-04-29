@@ -190,6 +190,11 @@ header {
   top: -704px;
   left: -100px;
 }
+.mark-list {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
 .hud-wrapper {
   width: 1796px;
 }
@@ -313,7 +318,6 @@ header {
   width: 344px;
   height: 218px;
   object-fit: cover;
-  object-position: 0 -42px;
 }
 @media (max-width: 1919px) {
   .header-wrapper {
@@ -369,11 +373,6 @@ header {
     width: 1400px;
     top: -328px;
     left: calc( ( 100% - 1400px ) / 2 + 100px);
-  }
-  .mark-list {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
   }
   .background-map__mark_item1 {
     top: 200px;

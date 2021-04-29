@@ -88,7 +88,7 @@ function setCoordinates(card, mark) {
     pageX = -pageX;
   } else pageX += 15;
   if (cardTopSize > cardTop) {
-    pageY += cardTopSize - cardTop + 20;
+    pageY += cardTopSize - cardTop + 40;
   } else if (cardBottomSize > cardBottom) {
     pageY -= cardBottomSize - cardBottom;
   }
