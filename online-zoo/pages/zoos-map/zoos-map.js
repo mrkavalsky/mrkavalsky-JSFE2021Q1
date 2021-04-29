@@ -33,7 +33,9 @@ function showAnimalCard(e) {
   if (!mark) return;
   if (!checkCoordinates(mark)) return;
   const pos = mark.dataset.pos;
-  mark.appendChild(getAnimalCard(pos));
+  let card = getAnimalCard(pos);
+  mark.appendChild(card);
+  setCoordinates(card, mark);
   mark.classList.add('background-map__mark_active');
 }
 
@@ -63,6 +65,26 @@ function checkCoordinates(mark) {
   if (mark.getBoundingClientRect().y < (header.offsetHeight - 20)) return false;
   if (mark.getBoundingClientRect().x < (aside.getBoundingClientRect().x + aside.getBoundingClientRect().width - 20)) return false;
   return true;
+}
+
+function setCoordinates(card, mark) {
+  let pageX = card.offsetWidth / 2 + 0.49 * mark.getBoundingClientRect().width;
+  let pageY = 0 + 0.42 * mark.getBoundingClientRect().height;
+  const cardTopSize = card.offsetHeight / 2 - pageY;
+  const cardTop = mark.getBoundingClientRect().top - header.getBoundingClientRect().top - header.getBoundingClientRect().height;
+  const cardBottom = markList.offsetHeight - mark.getBoundingClientRect().bottom + mark.getBoundingClientRect().height;
+  const cardBottomSize = card.offsetHeight / 2 + pageY;
+  if (card.offsetWidth < (mark.getBoundingClientRect().x - aside.getBoundingClientRect().x - aside.getBoundingClientRect().width)) {
+    pageX = -pageX;
+  } else pageX += 15;
+  if (cardTopSize > cardTop) {
+    pageY += cardTopSize - cardTop + 20;
+  } else if (cardBottomSize > cardBottom) {
+    pageY -= cardBottomSize - cardBottom;
+  }
+  pageX += mark.getBoundingClientRect().width / 2;
+  card.style.left = `${pageX}px`;
+  card.style.top = `${pageY}px`;
 }
 
 markList.addEventListener('click', hideAnimalCard);
