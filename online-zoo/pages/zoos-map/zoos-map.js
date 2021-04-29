@@ -40,7 +40,7 @@ function showAnimalCard(e) {
   mark.appendChild(card);
   setCoordinates(card, mark);
   mark.classList.add('background-map__mark_active');
-  mark.style.zIndex = '10';
+  mark.style.zIndex = '2';
 }
 
 function getAnimalCard(pos) {
