@@ -8,6 +8,11 @@ const button = document.getElementById('button');
 const text = document.getElementById('text');
 const email = document.getElementById('email');
 const textarea = document.getElementById('textarea');
+const left = document.getElementById('slider__button_left');
+const right = document.getElementById('slider__button_right');
+const slider = document.getElementById('slider');
+let width = slider.offsetWidth;
+let gap = parseFloat(window.getComputedStyle(slider).getPropertyValue('column-gap'));
 const animals = [
   {
     imgSrc: '../../assets/images/zoogeography__animal-photo0.png',
@@ -76,6 +81,14 @@ function toggleAnimalCard(e) {
   mark.classList.add('zoogeography__mark_active');
 }
 
+function moveLeft() {
+  slider.scrollBy(-(width + gap), 0);
+}
+
+function moveRight() {
+  slider.scrollBy(width + gap, 0);
+}
+
 fdbckBtn.addEventListener('click', togglePopup);
 cover.addEventListener('click', togglePopup);
 map.addEventListener('click', toggleAnimalCard);
@@ -83,3 +96,7 @@ button.addEventListener('click', togglePopup);
 text.addEventListener('input', validate);
 email.addEventListener('input', validate);
 textarea.addEventListener('input', validate);
+left.addEventListener('click', moveLeft);
+right.addEventListener('click', moveRight);
+window.addEventListener("resize", () => (width = slider.offsetWidth));
+window.addEventListener("resize", () => (gap = parseFloat(window.getComputedStyle(slider).getPropertyValue('column-gap'))));
