@@ -455,8 +455,15 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 40px;
   margin-left: 40px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.slider__items::-webkit-scrollbar {
+  height: 0;
 }
 .item {
   width: 328px;
@@ -1405,7 +1412,6 @@ header {
     column-gap: 30px;
     row-gap: 30px;
     margin-left: 72px;
-    overflow: hidden;
   }
   .item_item1 {
     order: -4;
