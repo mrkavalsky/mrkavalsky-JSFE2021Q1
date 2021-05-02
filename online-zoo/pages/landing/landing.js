@@ -133,7 +133,6 @@ function alignContent() {
   document.documentElement.style.setProperty('--widthRight', `${fullWidth}px`);
   const itemWidth = item.offsetWidth;
   itemCount = Math.floor(slider.offsetWidth / itemWidth) * Math.floor(slider.offsetHeight / itemWidth);
-  console.log(itemCount);
 }
 
 fdbckBtn.addEventListener('click', togglePopup);
