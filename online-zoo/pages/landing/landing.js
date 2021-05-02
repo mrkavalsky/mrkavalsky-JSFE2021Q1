@@ -11,8 +11,10 @@ const textarea = document.getElementById('textarea');
 const left = document.getElementById('slider__button_left');
 const right = document.getElementById('slider__button_right');
 const slider = document.getElementById('slider');
-let width = slider.offsetWidth;
-let gap = parseFloat(window.getComputedStyle(slider).getPropertyValue('column-gap'));
+const content = document.getElementById('content');
+const item = document.querySelector('.item');
+let itemCount;
+let isEnabled = true;
 const animals = [
   {
     imgSrc: '../../assets/images/zoogeography__animal-photo0.png',
@@ -82,11 +84,59 @@ function toggleAnimalCard(e) {
 }
 
 function moveLeft() {
-  slider.scrollBy(-(width + gap), 0);
+  moveContent('to-right');
 }
 
 function moveRight() {
-  slider.scrollBy(width + gap, 0);
+  moveContent('to-left');
+}
+
+function moveContent(direction) {
+  if (!isEnabled) return;
+  isEnabled = false;
+  content.classList.add(direction);
+  content.addEventListener('animationend', function() {
+    replaceContent(direction);
+    this.classList.remove(direction);
+    isEnabled = true;
+  });
+}
+
+function replaceContent(direction) {
+  if (direction === 'to-left') {
+    for (let i = 0; i < itemCount; i++) {
+      content.append(content.firstElementChild);
+    }
+  }
+  else if (direction === 'to-right') {
+    for (let i = 0; i < itemCount; i++) {
+      content.prepend(content.lastElementChild);
+    }
+  }
+}
+
+function addContent() {
+  content.append(getContent());
+  content.prepend(getContent());
+}
+
+function getContent() {
+  const fragment = new DocumentFragment();
+  [...content.children].forEach(i => {
+    fragment.append(i.cloneNode(true));
+  });
+  return fragment;
+}
+
+function alignContent() {
+  const width = slider.offsetWidth;
+  const gap = parseFloat(window.getComputedStyle(content).getPropertyValue('column-gap'));
+  const fullWidth = width + gap;
+  document.documentElement.style.setProperty('--widthLeft', `${-fullWidth}px`);
+  document.documentElement.style.setProperty('--widthRight', `${fullWidth}px`);
+  const itemWidth = item.offsetWidth;
+  itemCount = Math.floor(slider.offsetWidth / itemWidth) * Math.floor(slider.offsetHeight / itemWidth);
+  console.log(itemCount);
 }
 
 fdbckBtn.addEventListener('click', togglePopup);
@@ -98,5 +148,6 @@ email.addEventListener('input', validate);
 textarea.addEventListener('input', validate);
 left.addEventListener('click', moveLeft);
 right.addEventListener('click', moveRight);
-window.addEventListener("resize", () => (width = slider.offsetWidth));
-window.addEventListener("resize", () => (gap = parseFloat(window.getComputedStyle(slider).getPropertyValue('column-gap'))));
+window.addEventListener('resize', alignContent);
+document.addEventListener('DOMContentLoaded', addContent);
+document.addEventListener('DOMContentLoaded', alignContent);
