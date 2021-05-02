@@ -13,6 +13,7 @@ const right = document.getElementById('slider__button_right');
 const slider = document.getElementById('slider');
 const content = document.getElementById('content');
 const item = document.querySelector('.item');
+let dir;
 let itemCount;
 let isEnabled = true;
 const animals = [
@@ -95,11 +96,7 @@ function moveContent(direction) {
   if (!isEnabled) return;
   isEnabled = false;
   content.classList.add(direction);
-  content.addEventListener('animationend', function() {
-    replaceContent(direction);
-    this.classList.remove(direction);
-    isEnabled = true;
-  });
+  dir = direction;
 }
 
 function replaceContent(direction) {
@@ -151,3 +148,8 @@ right.addEventListener('click', moveRight);
 window.addEventListener('resize', alignContent);
 document.addEventListener('DOMContentLoaded', addContent);
 document.addEventListener('DOMContentLoaded', alignContent);
+content.addEventListener('animationend', function() {
+  replaceContent(dir);
+  this.classList.remove(dir);
+  isEnabled = true;
+});
