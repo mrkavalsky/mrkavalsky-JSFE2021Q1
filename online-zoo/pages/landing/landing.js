@@ -13,6 +13,9 @@ const right = document.getElementById('slider__button_right');
 const slider = document.getElementById('slider');
 const content = document.getElementById('content');
 const item = document.querySelector('.item');
+const feedbackSlider = document.getElementById('testimonials-slider__items');
+const next = document.getElementById('testimonials-slider__button_right');
+const prev = document.getElementById('testimonials-slider__button_left');
 let dir;
 let itemCount;
 let isEnabled = true;
@@ -135,6 +138,28 @@ function alignContent() {
   itemCount = Math.floor(slider.offsetWidth / itemWidth) * Math.floor(slider.offsetHeight / itemWidth);
 }
 
+function scrollToLeft() {
+  const [width, gap]= getDimensions();
+  feedbackSlider.scrollBy(-(width + gap), 0);
+  if (feedbackSlider.scrollLeft === 0) {
+    feedbackSlider.scrollBy(feedbackSlider.scrollWidth, 0);
+  }
+}
+
+function scrollToRight() {
+  const [width, gap]= getDimensions();
+  feedbackSlider.scrollBy(width + gap, 0);
+  if (feedbackSlider.scrollWidth === feedbackSlider.scrollLeft + width) {
+    feedbackSlider.scrollTo(0, 0);
+  }
+}
+
+function getDimensions() {
+  return [feedbackSlider.offsetWidth, parseFloat(window.getComputedStyle(feedbackSlider).getPropertyValue('column-gap'))];
+}
+
+next.addEventListener("click", scrollToRight);
+prev.addEventListener("click", scrollToLeft);
 fdbckBtn.addEventListener('click', togglePopup);
 cover.addEventListener('click', togglePopup);
 map.addEventListener('click', toggleAnimalCard);

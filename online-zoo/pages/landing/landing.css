@@ -803,8 +803,13 @@ header {
   height: 273px;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
   column-gap: 40px;
+}
+.testimonials-slider__items::-webkit-scrollbar {
+  height: 0;
 }
 .testimonials-slider__item {
   min-width: 512px;
@@ -1510,7 +1515,6 @@ header {
     height: 235px;
     justify-content: flex-start;
     column-gap: 30px;
-    overflow: hidden;
   }
   .testimonials-slider__item {
     display: block;
