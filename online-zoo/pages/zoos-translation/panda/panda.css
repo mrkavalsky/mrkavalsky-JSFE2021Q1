@@ -471,7 +471,11 @@ li {
   width: 512px;
 }
 .accordion-wrapper__p_hidden {
-  display: none;
+  overflow: hidden;
+  height: 30px;
+  margin: 0;
+  padding-top: 30px;
+  box-sizing: border-box;
 }
 .accordion__h3 {
   font-style: normal;
