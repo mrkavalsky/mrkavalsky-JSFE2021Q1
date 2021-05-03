@@ -139,6 +139,7 @@ function alignContent() {
 }
 
 function scrollToLeft() {
+  delayAutoSliding();
   const [width, gap]= getDimensions();
   feedbackSlider.scrollBy(-(width + gap), 0);
   if (feedbackSlider.scrollLeft === 0) {
@@ -147,6 +148,7 @@ function scrollToLeft() {
 }
 
 function scrollToRight() {
+  delayAutoSliding();
   const [width, gap]= getDimensions();
   feedbackSlider.scrollBy(width + gap, 0);
   if (feedbackSlider.scrollWidth === feedbackSlider.scrollLeft + width) {
@@ -158,6 +160,20 @@ function getDimensions() {
   return [feedbackSlider.offsetWidth, parseFloat(window.getComputedStyle(feedbackSlider).getPropertyValue('column-gap'))];
 }
 
+let autoSlideInterval = setInterval(scrollToRight, 10000);
+let autoSlideTimeout = null;
+
+function delayAutoSliding() {
+  clearTimeout(autoSlideTimeout);
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = null;
+
+  autoSlideTimeout = setTimeout(() => {
+    autoSlideInterval = setInterval(scrollToRight, 10000);
+  }, 10000);
+}
+
+feedbackSlider.addEventListener('click', delayAutoSliding);
 next.addEventListener("click", scrollToRight);
 prev.addEventListener("click", scrollToLeft);
 fdbckBtn.addEventListener('click', togglePopup);
