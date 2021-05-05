@@ -470,6 +470,13 @@ li {
 .accordion-wrapper__p_width {
   width: 512px;
 }
+.accordion-wrapper__p_hidden {
+  overflow: hidden;
+  height: 30px;
+  margin: 0;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
 .accordion__h3 {
   font-style: normal;
   font-weight: normal;
@@ -483,6 +490,9 @@ li {
   border-style: none;
   background: no-repeat center url(../../../assets/icons/accordion__button-minus.svg);
 }
+.accordion__button_hidden {
+  background: no-repeat center url(../../../assets/icons/accordion__button-plus.svg);
+}
 .accordion {
   margin-bottom: 105px;
 }
@@ -495,6 +505,9 @@ li {
 .accordion__item {
   margin-bottom: 20px;
   border-bottom: 1px solid #609fff;
+}
+.accordion__item_gray-border {
+  border-color: #d3d3d3;
 }
 .accordion__link {
   font-style: normal;

@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
   <title>Online Zoo</title>
 </head>
-<body class="body">
+<body id="body" class="body">
   <aside class="aside">
     <a href="./landing.html" class="logo logo_enabled">
       <img class="logo__icon" src="../../assets/icons/logo.svg" alt="logo">
@@ -42,6 +42,19 @@
     </a>
     </div>
   </aside>
+  <div id="popup" class="popup hidden">
+    <h2 class="popup__h2">Your feedback</h2>
+    <form class="popup__form">
+      <label class="popup__label" for="text">Your name:</label>
+      <input class="popup__input popup__input_margin" id="text" type="text" placeholder="Ellie Coward" required>
+      <label class="popup__label" for="email">Your e-mail:</label>
+      <input class="popup__input popup__input_margin" id="email" type="email" placeholder="example@gmail.com" required>
+      <label class="popup__label" for="textarea">Your review:</label>
+      <textarea class="popup__textarea popup__textarea_margin" id="textarea" required></textarea>
+      <button id="button" class="popup__button popup__button_invalid" type="submit">Send for moderation</button>
+    </form>
+  </div>
+  <div id="cover" class="cover hidden"></div>
   <main class="main">
     <header id="top">
       <div class="header-wrapper">
@@ -120,52 +133,54 @@
           <h2 class="slider__h2">Famous pets</h2>
           <h3 class="slider__h3">You can choose any animal <br> you like</h3>
           <div class="slider__buttons">
-            <button class="slider__button slider__button_left">
+            <button id="slider__button_left" class="slider__button slider__button_left">
               <img src="../../assets/icons/slider__buttons_arrow.svg" alt="">
             </button>
-            <button class="slider__button slider__button_right">
+            <button id="slider__button_right" class="slider__button slider__button_right">
               <img src="../../assets/icons/slider__buttons_arrow.svg" alt="">
             </button>
           </div>
         </div>
-        <ul class="slider__items">
-          <li class="item_overflow item item_item1">
-            <div class="item__background item__background_item1"></div>
-            <div class="item__circle" ></div>
-            <div class="item__location">China, East Asia</div>
-            <a href="" class="item__link" data-name="Little panda"></a>
-          </li>
-          <li class="item_overflow item item_item2">
-            <div class="item__background item__background_item2"></div>
-            <div class="item__circle"></div>
-            <div class="item__location">In the sea of the Southern Hemisphere, Antarctic waters</div>
-            <a href="" class="item__link" data-name="Penguin"></a>
-          </li>
-          <li class="item_overflow item item_item3">
-            <div class="item__background item__background_item3"></div>
-            <div class="item__circle"></div>>
-            <div class="item__location">Russia, forests in the Orenburg region</div>
-            <a href="" class="item__link" data-name="Squirrel"></a>
-          </li>
-          <li class="item_overflow item item_item4">
-            <div class="item__background item__background_item4"></div>
-            <div class="item__circle"></div> 
-            <div class="item__location">Western central China</div>
-            <a href="" class="item__link" data-name="Panda"></a>
-          </li>
-          <li class="item_overflow item item_item5">
-            <div class="item__background item__background_item5"></div>
-            <div class="item__circle"></div>
-            <div class="item__location">North America, islands near Los Angeles</div>
-            <a href="" class="item__link" data-name="Eagles"></a>
-          </li>
-          <li class="item_overflow item item_item6">
-            <div class="item__background item__background_item6"></div>
-            <div class="item__circle"></div>
-            <div class="item__location">Equatorial forests of western and central Africa</div>
-            <a href="" class="item__link" data-name="Gorilla"></a>
-          </li>
-        </ul>
+        <div id="slider" class="slider__items">
+          <ul id="content" class="slider__content">
+            <li class="item_overflow item item_item1">
+              <div class="item__background item__background_item1"></div>
+              <div class="item__circle" ></div>
+              <div class="item__location">China, East Asia</div>
+              <a href="" class="item__link" data-name="Little panda"></a>
+            </li>
+            <li class="item_overflow item item_item2">
+              <div class="item__background item__background_item2"></div>
+              <div class="item__circle"></div>
+              <div class="item__location">In the sea of the Southern Hemisphere, Antarctic waters</div>
+              <a href="" class="item__link" data-name="Penguin"></a>
+            </li>
+            <li class="item_overflow item item_item3">
+              <div class="item__background item__background_item3"></div>
+              <div class="item__circle"></div>>
+              <div class="item__location">Russia, forests in the Orenburg region</div>
+              <a href="" class="item__link" data-name="Squirrel"></a>
+            </li>
+            <li class="item_overflow item item_item4">
+              <div class="item__background item__background_item4"></div>
+              <div class="item__circle"></div> 
+              <div class="item__location">Western central China</div>
+              <a href="" class="item__link" data-name="Panda"></a>
+            </li>
+            <li class="item_overflow item item_item5">
+              <div class="item__background item__background_item5"></div>
+              <div class="item__circle"></div>
+              <div class="item__location">North America, islands near Los Angeles</div>
+              <a href="" class="item__link" data-name="Eagles"></a>
+            </li>
+            <li class="item_overflow item item_item6">
+              <div class="item__background item__background_item6"></div>
+              <div class="item__circle"></div>
+              <div class="item__location">Equatorial forests of western and central Africa</div>
+              <a href="" class="item__link" data-name="Gorilla"></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <section class="pay-and-feed-wrapper" id="pay-&-feed">
@@ -205,11 +220,11 @@
           <h2 class="testimonials__h2">Testimonials</h2>
           <h3 class="testimonials__h3">You can make us smile</h3>
           <h4 class="testimonials__h4">We want to make animal observation and interaction accessible. You can leave your wishes on how to make the service more convenient, and most importantly, more interesting for you.</h4>
-          <button class="testimonials__button">Leave feedback</button>
+          <button id="feedback-button" class="testimonials__button">Leave feedback</button>
         </div>
         <div class="testimonials-slider">
           <a href="" class="testimonials-slider__link">See more reviews →</a>
-          <ul class="testimonials-slider__items">
+          <ul id="testimonials-slider__items" class="testimonials-slider__items">
             <li class="testimonials-slider__item">
               <div class="testimonials-slider__person">
                 <div class="testimonials-slider__avatar testimonials-slider__avatar_avatar1"></div>
@@ -224,10 +239,17 @@
               </div>
               <div class="testimonials-slider__feedback">“Thank you for the cool service, I turn on broadcasts with animals while working in the background, it relaxes and cheers up”</div>
             </li>
+            <li class="testimonials-slider__item">
+              <div class="testimonials-slider__person">
+                <div class="testimonials-slider__avatar testimonials-slider__avatar_avatar2"></div>
+                <div class="testimonials-slider__name">Student 1</div>
+              </div>
+              <div class="testimonials-slider__feedback">“Good job! Good job! Good job! Good job! Good job! Good job! Good job! Good job! Good job! Good job!”</div>
+            </li>
           </ul>
           <div class="testimonials-slider__nav">
-            <button class="testimonials-slider__button testimonials-slider__button_left"></button>
-            <button class="testimonials-slider__button testimonials-slider__button_right"></button>
+            <button id="testimonials-slider__button_left" class="testimonials-slider__button testimonials-slider__button_left"></button>
+            <button id="testimonials-slider__button_right" class="testimonials-slider__button testimonials-slider__button_right"></button>
           </div>
         </div>
       </div>
@@ -236,11 +258,9 @@
       <div class="zoogeography">
         <div class="zoogeography__animal-wrapper">
           <h2 class="zoogeography__h2">Zoogeography</h2>
-          <div class="zoogeography__animal">
+          <div id="card" class="zoogeography__animal">
             <picture>
-              <source srcset="../../assets/images/zoogeography__animal-photo_640px.png" media="(max-width: 1199px)">
-              <source srcset="../../assets/images/zoogeography__animal-photo_1200px.png" media="(max-width: 1919px)">
-              <img src="../../assets/images/zoogeography__animal-photo.png" alt="Animal Photo" class="zoogeography__animal-photo">
+              <img src="../../assets/images/zoogeography__animal-photo0.png" alt="Animal Photo" class="zoogeography__animal-photo">
             </picture>
             <div class="zoogeography__animal-info">
               <h3 class="zoogeography__h3">Eagle</h3>
@@ -249,8 +269,8 @@
             </div>
           </div>
         </div>
-        <ul class="zoogeography__map">
-          <li class="zoogeography__mark zoogeography__mark_item1 zoogeography__mark_active">
+        <ul id="map" class="zoogeography__map">
+          <li data-pos="0" class="zoogeography__mark zoogeography__mark_item1 zoogeography__mark_active">
             <svg class="zoogeography__svg-mark zoogeography__tranansition" width="113" height="123" viewBox="0 0 140 168" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
                 <path d="M117 58.2222C117 84.8546 69 134 69 134C69 134 21 84.8546 21 58.2222C21 31.5898 42.4903 10 69 10C95.5097 10 117 31.5898 117 58.2222Z" 
@@ -280,7 +300,7 @@
               </g>
             </svg>
           </li>
-          <li class="zoogeography__mark zoogeography__mark_item2 zoogeography__mark_deactive">
+          <li data-pos="1" class="zoogeography__mark zoogeography__mark_item2">
             <svg class="zoogeography__svg-mark zoogeography__tranansition" width="113" height="123" viewBox="0 0 140 168" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
                 <path d="M117 58.2222C117 84.8546 69 134 69 134C69 134 21 84.8546 21 58.2222C21 31.5898 42.4903 10 69 10C95.5097 10 117 31.5898 117 58.2222Z" 
@@ -315,7 +335,7 @@
               </g>>
             </svg>
           </li>
-          <li class="zoogeography__mark zoogeography__mark_item3 zoogeography__mark_deactive">
+          <li data-pos="2" class="zoogeography__mark zoogeography__mark_item3">
             <svg class="zoogeography__svg-mark zoogeography__tranansition" width="113" height="123" viewBox="0 0 140 168" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
                 <path d="M117 58.2222C117 84.8546 69 134 69 134C69 134 21 84.8546 21 58.2222C21 31.5898 42.4903 10 69 10C95.5097 10 117 31.5898 117 58.2222Z" 
@@ -347,7 +367,7 @@
               </g>
             </svg>
           </li>
-          <li class="zoogeography__mark zoogeography__mark_item4 zoogeography__mark_deactive">
+          <li data-pos="3" class="zoogeography__mark zoogeography__mark_item4">
             <svg class="zoogeography__svg-mark zoogeography__tranansition" width="113" height="123" viewBox="0 0 140 168" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
                 <path d="M117 58.2222C117 84.8546 69 134 69 134C69 134 21 84.8546 21 58.2222C21 31.5898 42.4903 10 69 10C95.5097 10 117 31.5898 117 58.2222Z" 
@@ -485,5 +505,6 @@
       </div>
     </div>
   </footer>
+  <script src="./landing.js"></script>
 </body>
 </html>

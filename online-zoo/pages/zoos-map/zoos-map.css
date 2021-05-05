@@ -177,13 +177,23 @@ header {
   max-width: 1920px;
   width: 100%;
   height: 100vh;
-  background: url(../../assets/images/zoos-map.png);
-  background-position: -5vw -36.5vw;
-  background-size: 113vw 114vw;
+  background: #AACED9;
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: relative;
   overflow: hidden;
+}
+.map {
+  width: 2177px;
+  height: auto;
+  position: absolute;
+  top: -704px;
+  left: -100px;
+}
+.mark-list {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
 }
 .hud-wrapper {
   width: 1796px;
@@ -200,7 +210,7 @@ header {
   transform: translate(-50%, -100%);
   cursor: pointer;
 }
-.background-map__mark_deactive:hover .background-map__svg-mark {
+.background-map__mark:hover .background-map__svg-mark {
   width: 140px;
   height: 168px;
 }
@@ -208,7 +218,7 @@ header {
   width: 140px;
   height: 168px;
 }
-.background-map__mark_deactive:hover .background-map__svg-path {
+.background-map__mark:hover .background-map__svg-path {
   stroke-width: 2px;
 }
 .background-map__mark_active .background-map__svg-path {
@@ -218,21 +228,20 @@ header {
   transition: all .5s;
 }
 .background-map__mark_item1 {
-  top: 19vw;
-  left: 4vw;
-  z-index: 2;
+  top: 365px;
+  left: 77px;
 }
 .background-map__mark_item2 {
-  top: 18vw;
-  left: 15vw;
+  top: 345px;
+  left: 294px;
 }
 .background-map__mark_item3 {
-  top: 31vw;
-  left: 51.5vw;
+  top: 585px;
+  left: 990px;
 }
 .background-map__mark_item4 {
-  top: 20vw;
-  left: 87vw;
+  top: 385px;
+  left: 1671px;
 }
 .background-map__mark-animal {
   background-position: center;
@@ -243,13 +252,13 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.background-map__mark_deactive:hover .background-map__mark-fill {
+.background-map__mark:hover .background-map__mark-fill {
   fill: #0f0049;
 }
 .background-map__mark_active .background-map__mark-fill {
   fill: #0f0049;
 }
-.background-map__mark_deactive:hover .background-map__mark-animal {
+.background-map__mark:hover .background-map__mark-animal {
   height: 67px; 
   width: 67px;
 }
@@ -308,7 +317,6 @@ header {
   width: 344px;
   height: 218px;
   object-fit: cover;
-  object-position: 0 -42px;
 }
 @media (max-width: 1919px) {
   .header-wrapper {
@@ -360,33 +368,31 @@ header {
   .aside__animal-buttons {
     height: 416px;
   }
-  .background-map {
-    background-position: 1vw -26.5vw;
-    background-size: 115vw 116vw;
+  .map {
+    width: 1400px;
+    top: -328px;
+    left: calc( ( 100% - 1400px ) / 2 + 100px);
   }
   .background-map__mark_item1 {
-    top: 16.5vw;
-    left: 2.5vw;
+    top: 200px;
+    left: calc( ( 100% - 1400px ) / 2 +  128px );
   }
   .background-map__mark_item2 {
-    top: 30vw;
-    left: 21vw;
+    top: 362px;
+    left: calc( ( 100% - 1400px ) / 2 + 352px );
   }
   .background-map__mark_item3 {
-    top: 42.5vw;
-    left: 58.5vw;
+    top: 511px;
+    left: calc( ( 100% - 1400px ) / 2 + 801px );
   }
   .background-map__mark_item4 {
-    top: 32.5vw;
-    left: 95vw;
-  }
-  .background-map__mark {
-    z-index: 2;
+    top: 389px;
+    left: calc( ( 100% - 1400px ) / 2 + 1238px );
   }
   .background-map__mark-animal {
     top: 36%;
   }
-  .background-map__mark_deactive:hover .background-map__svg-mark {
+  .background-map__mark:hover .background-map__svg-mark {
     width: 93px;
     height: 135px;
   }
@@ -398,7 +404,7 @@ header {
     width: 77px;
     height: 120px;
   }
-  .background-map__mark_deactive:hover .background-map__mark-animal {
+  .background-map__mark:hover .background-map__mark-animal {
     height: 42px; 
     width: 38px;
   }
@@ -595,7 +601,7 @@ header {
     top: 92.5vw;
     left: 67.5vw;
   }
-  .background-map__mark_deactive:hover .background-map__svg-mark {
+  .background-map__mark:hover .background-map__svg-mark {
     width: 60px;
     height: 73px;
   }
@@ -603,7 +609,7 @@ header {
     width: 60px;
     height: 73px;
   }
-  .background-map__mark_deactive:hover .background-map__mark-animal {
+  .background-map__mark:hover .background-map__mark-animal {
     height: 30px; 
     width: 30px;
   }
