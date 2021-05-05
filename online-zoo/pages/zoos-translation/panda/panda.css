@@ -506,6 +506,9 @@ li {
   margin-bottom: 20px;
   border-bottom: 1px solid #609fff;
 }
+.accordion__item_gray-border {
+  border-color: #d3d3d3;
+}
 .accordion__link {
   font-style: normal;
   font-weight: normal;
