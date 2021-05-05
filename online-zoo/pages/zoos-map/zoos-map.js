@@ -72,7 +72,7 @@ function getMark(e) {
 
 function checkCoordinates(mark) {
   if (mark.getBoundingClientRect().y < (header.offsetHeight - 40)) return false;
-  if (mark.getBoundingClientRect().x < (aside.getBoundingClientRect().x + aside.getBoundingClientRect().width - 20)) return false;
+  if (mark.getBoundingClientRect().x < (aside.getBoundingClientRect().x + aside.getBoundingClientRect().width - 72)) return false;
   return true;
 }
 
