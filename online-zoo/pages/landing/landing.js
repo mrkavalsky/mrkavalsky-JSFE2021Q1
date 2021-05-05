@@ -147,8 +147,8 @@ function scrollToLeft() {
   }
 }
 
-function scrollToRight() {
-  delayAutoSliding();
+function scrollToRight(e) {
+  if (e) delayAutoSliding();
   const [width, gap]= getDimensions();
   feedbackSlider.scrollBy(width + gap, 0);
   if (feedbackSlider.scrollWidth === feedbackSlider.scrollLeft + width) {
