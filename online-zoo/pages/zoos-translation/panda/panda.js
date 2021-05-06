@@ -5,8 +5,10 @@ const slider = document.getElementById('slider');
 function toggleAccordion(e) {
   if(!e.target.matches('.accordion__button')) return;
   e.target.classList.toggle('accordion__button_hidden');
-  e.target.closest('li').lastElementChild.classList.toggle('accordion-wrapper__p_hidden');
-  e.target.closest('li').classList.toggle('accordion__item_gray-border');
+  const item = e.target.closest('li');
+  item.lastElementChild.classList.toggle('accordion-wrapper__p_hidden');
+  item.classList.toggle('accordion__item_gray-border');
+  item.firstElementChild.firstElementChild.classList.toggle('accordion__h3_blue');
 }
 
 function replaceVideo(e) {
