@@ -482,6 +482,9 @@ li {
   font-weight: normal;
   font-size: 26px;
   line-height: 145%;
+  color: #080029;
+}
+.accordion__h3_blue {
   color: #609fff;
 }
 .accordion__button {
