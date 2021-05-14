@@ -1,7 +1,7 @@
 export class BaseComponent {
-  readonly component:HTMLElement;
+  readonly element:HTMLElement;
   constructor(tag: keyof HTMLElementTagNameMap = 'div', styles: string[] = []) {
-    this.component = document.createElement(tag);
-    this.component.classList.add(...styles);
+    this.element = document.createElement(tag);
+    this.element.classList.add(...styles);
   }
 }
