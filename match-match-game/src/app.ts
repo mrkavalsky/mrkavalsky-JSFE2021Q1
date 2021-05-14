@@ -1,3 +1,3 @@
 export class App {
-  constructor(private readonly rootElement: HTMLBodyElement) {}
+  constructor(private readonly rootElement: HTMLElement) {}
 }
