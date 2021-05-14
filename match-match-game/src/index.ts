@@ -1,6 +1,8 @@
 import { App } from './app';
+import { Header } from './components/header/header';
 import './index.css';
 
 window.addEventListener('DOMContentLoaded', () => {
-  new App(document.body);
+  const matchMatchGameApp: App = new App(document.body);
+  matchMatchGameApp.appendComponent(new Header());
 })
