@@ -1,16 +1,17 @@
 import { BaseBlock } from '../../components/base-block';
 import { BaseButton } from '../../components/base-button';
+import { BasePage } from '../../components/base-page';
 import { navButton } from '../../components/nav-button';
 import './about-game-page.css';
 
-export class AboutGamePage extends BaseBlock {
+export class AboutGamePage extends BasePage {
   public mainContentWrapper: BaseBlock = new BaseBlock('div', ['main__content-wrapper']);
   public formButton: BaseButton = new BaseButton('button', ['button'], 'Register New Player');
   public settingsButton: BaseButton = new navButton('button', ['button'], 'Game Settings', 'settings');
   public startGameButton: BaseButton = new BaseButton('button', ['button'], 'Start Game');
   public gameMenu: BaseBlock = new BaseBlock('div', ['game-menu'], [this.formButton, this.settingsButton, this.startGameButton]);
   constructor() {
-    super('main', ['main'], []);
+    super('main', ['main'], [], 'about-game');
     this.element.innerHTML = `
       <h2 class="main__title">How to play?</h2>
     `;

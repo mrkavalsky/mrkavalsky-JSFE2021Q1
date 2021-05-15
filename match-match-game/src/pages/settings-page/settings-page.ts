@@ -1,8 +1,8 @@
-import { BaseBlock } from "../../components/base-block";
+import { BasePage } from "../../components/base-page";
 import './settings-page.css';
 
-export class SettingsPage extends BaseBlock {
+export class SettingsPage extends BasePage {
   constructor() {
-    super('main', ['main'], []);
+    super('main', ['main'], [], 'settings');
   }
 }
