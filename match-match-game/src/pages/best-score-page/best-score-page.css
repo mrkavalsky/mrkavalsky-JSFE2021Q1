@@ -1,0 +1,15 @@
+.main {
+  width: 1000px;
+  height: 802px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 28px 184px 85px 36px;
+  margin-top: 33px;
+}
+.main__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+}
