@@ -1,14 +1,20 @@
 import { BaseBlock } from '../../components/base-block';
+import { BaseComponent } from '../../components/base-component';
 import './about-game-page.css';
 
 export class AboutGamePage extends BaseBlock {
+  public mainContentWrapper: BaseBlock = new BaseBlock('div', ['main__content-wrapper']);
+  public formButton: BaseComponent = new BaseComponent('button');
+  public settingsButton: BaseComponent = new BaseComponent('button');
+  public startGameButton: BaseComponent = new BaseComponent('button');
+  public gameMenu: BaseBlock = new BaseBlock('div', [], [this.formButton, this.settingsButton, this.startGameButton]);
   constructor() {
     super('main', ['main'], []);
     this.element.innerHTML = `
       <h2 class="main__title">How to play?</h2>
     `;
-    this.appendComponents([new BaseBlock('div', ['main__content-wrapper'])]);
-    this.children[0].element.innerHTML = `
+    this.mainContentWrapper 
+    this.mainContentWrapper.element.innerHTML = `
       <ul class="rules-list">
         <li class="rules-list__item rules-list__item_item1">
           <div class="rules-list__count">1</div>
@@ -24,5 +30,7 @@ export class AboutGamePage extends BaseBlock {
         </li>
       </ul>
     `;
+    this.mainContentWrapper.appendComponents([this.gameMenu]);
+    this.appendComponents([this.mainContentWrapper]);
   }
 }
