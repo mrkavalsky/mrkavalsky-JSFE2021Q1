@@ -28,6 +28,9 @@
   background: #fff;
   width: 100%;
   list-style-type: none;
+  display: flex;
+  padding: 17px;
+  box-sizing: border-box;
 }
 .rules-list__item_item1 {
   height: 230px;
@@ -41,6 +44,7 @@
 .rules-list__count {
   width: 40px;
   height: 40px;
+  min-width: 40px;
   border-radius: 50%;
   background: #2196f3;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
