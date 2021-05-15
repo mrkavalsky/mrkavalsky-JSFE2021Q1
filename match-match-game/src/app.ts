@@ -18,7 +18,7 @@ export class App {
   ) {
     this.appendComponent(new BaseBlock('header', ['header']));
     this.appendComponent(new AboutGamePage());
-    this.addCurrentRootEvent();
+    this.addRouting();
   }
 
   appendComponent(block: BaseComponent): void {
@@ -31,7 +31,7 @@ export class App {
     this.rootChildren.pop();
   }
 
-  addCurrentRootEvent(): void {
+  addRouting(): void {
     window.onpopstate = () => {
       const currentRouteName: string = window.location.hash.slice(1);
       const currentRoute: BasePage | undefined = this.appPages.find(
