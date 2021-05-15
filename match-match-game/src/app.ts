@@ -18,7 +18,7 @@ export class App {
   ) {
     this.appendComponent(new BaseBlock('header', ['header']));
     this.appendComponent(new AboutGamePage());
-    this.addCurrentRootEvent(appPages, this);
+    this.addCurrentRootEvent();
   }
 
   appendComponent(block: BaseComponent): void {
@@ -31,16 +31,16 @@ export class App {
     this.rootChildren.pop();
   }
 
-  addCurrentRootEvent(pages: BasePage[], app: App): void {
+  addCurrentRootEvent(): void {
     window.onpopstate = () => {
       const currentRouteName: string = window.location.hash.slice(1);
-      const currentRoute: BasePage | undefined = pages.find(
+      const currentRoute: BasePage | undefined = this.appPages.find(
         (p) => p.name === currentRouteName,
       );
       if (!currentRoute) return;
-      app.removeComponent();
-      app.appendComponent(currentRoute);
+      this.removeComponent();
+      this.appendComponent(currentRoute);
     };
-    window.location.hash = pages[0].name;
+    window.location.hash = this.appPages[0].name;
   }
 }
