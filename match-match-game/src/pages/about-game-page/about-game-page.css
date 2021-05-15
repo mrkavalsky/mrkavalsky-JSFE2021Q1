@@ -1,0 +1,39 @@
+.main {
+  width: 1000px;
+  height: 802px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 28px 184px 85px 36px;
+  margin-top: 33px;
+}
+.main__content-wrapper {
+  height: 100%;
+}
+.main__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+}
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 360px;
+  height: 100%;
+}
+.rules-list__item {
+  background: #fff;
+  width: 100%;
+  list-style-type: none;
+}
+.rules-list__item_item1 {
+  height: 230px;
+}
+.rules-list__item_item2 {
+  height: 132px;
+}
+.rules-list__item_item3 {
+  height: 240px;
+}
