@@ -26,9 +26,9 @@ export class App {
     this.rootChildren.push(block);
   }
 
-  removeComponent(app: App): void {
-    app.rootElement.lastElementChild?.remove();
-    app.rootChildren.pop();
+  removeComponent(): void {
+    this.rootElement.lastElementChild?.remove();
+    this.rootChildren.pop();
   }
 
   addCurrentRootEvent(pages: BasePage[], app: App): void {
@@ -38,7 +38,7 @@ export class App {
         (p) => p.name === currentRouteName,
       );
       if (!currentRoute) return;
-      app.removeComponent(app);
+      app.removeComponent();
       app.appendComponent(currentRoute);
     };
     window.location.hash = pages[0].name;
