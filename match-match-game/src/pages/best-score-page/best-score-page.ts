@@ -1,4 +1,4 @@
-import { BasePage } from "../../components/base-page";
+import { BasePage } from '../../components/base-page';
 import './best-score-page.css';
 
 export class BestScorePage extends BasePage {

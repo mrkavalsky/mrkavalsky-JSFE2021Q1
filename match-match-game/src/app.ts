@@ -10,7 +10,11 @@ export class App {
   constructor(
     readonly rootElement: HTMLElement,
     public rootChildren: BaseComponent[] = [],
-    public appPages: BasePage[] = [new AboutGamePage(), new BestScorePage(), new SettingsPage()],
+    public appPages: BasePage[] = [
+      new AboutGamePage(),
+      new BestScorePage(),
+      new SettingsPage(),
+    ],
   ) {
     this.appendComponent(new BaseBlock('header', ['header']));
     this.appendComponent(new AboutGamePage());
@@ -21,18 +25,22 @@ export class App {
     this.rootElement.append(block.element);
     this.rootChildren.push(block);
   }
+
   removeComponent(app: App): void {
     app.rootElement.lastElementChild?.remove();
     app.rootChildren.pop();
   }
+
   addCurrentRootEvent(pages: BasePage[], app: App): void {
     window.onpopstate = () => {
-      let currentRouteName: string = window.location.hash.slice(1);
-      let currentRoute: BasePage | undefined  = pages.find(p => p.name === currentRouteName);
-      if(!currentRoute) return;
+      const currentRouteName: string = window.location.hash.slice(1);
+      const currentRoute: BasePage | undefined = pages.find(
+        (p) => p.name === currentRouteName,
+      );
+      if (!currentRoute) return;
       app.removeComponent(app);
       app.appendComponent(currentRoute);
-    }
+    };
     window.location.hash = pages[0].name;
   }
 }
