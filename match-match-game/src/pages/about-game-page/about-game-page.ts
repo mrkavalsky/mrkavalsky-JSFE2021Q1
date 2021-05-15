@@ -4,10 +4,10 @@ import './about-game-page.css';
 
 export class AboutGamePage extends BaseBlock {
   public mainContentWrapper: BaseBlock = new BaseBlock('div', ['main__content-wrapper']);
-  public formButton: BaseComponent = new BaseComponent('button');
-  public settingsButton: BaseComponent = new BaseComponent('button');
-  public startGameButton: BaseComponent = new BaseComponent('button');
-  public gameMenu: BaseBlock = new BaseBlock('div', [], [this.formButton, this.settingsButton, this.startGameButton]);
+  public formButton: BaseComponent = new BaseComponent('button', ['button']);
+  public settingsButton: BaseComponent = new BaseComponent('button', ['button']);
+  public startGameButton: BaseComponent = new BaseComponent('button', ['button']);
+  public gameMenu: BaseBlock = new BaseBlock('div', ['game-menu'], [this.formButton, this.settingsButton, this.startGameButton]);
   constructor() {
     super('main', ['main'], []);
     this.element.innerHTML = `
