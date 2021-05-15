@@ -3,6 +3,6 @@ import './settings-page.css';
 
 export class SettingsPage extends BasePage {
   constructor() {
-    super('main', ['main'], [], 'settings');
+    super('main', ['settings'], [], 'settings');
   }
 }
