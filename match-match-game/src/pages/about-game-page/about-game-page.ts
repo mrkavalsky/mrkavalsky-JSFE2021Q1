@@ -18,9 +18,10 @@ export class AboutGamePage extends BaseBlock {
           <div class="rules-list__count">2</div>
           <p class="rules-list__text">Configure your game settings</p>
         </li>
-        <li class="rules-list__item rules-list__item_item3"></li>
+        <li class="rules-list__item rules-list__item_item3">
           <div class="rules-list__count">3</div>
           <p class="rules-list__text">Start you new game! Remember card positions and match it before times up</p>
+        </li>
       </ul>
     `;
   }
