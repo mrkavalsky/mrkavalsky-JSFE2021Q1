@@ -1,12 +1,12 @@
 import { BaseBlock } from '../../components/base-block';
-import { BaseComponent } from '../../components/base-component';
+import { BaseButton } from '../../components/base-button';
 import './about-game-page.css';
 
 export class AboutGamePage extends BaseBlock {
   public mainContentWrapper: BaseBlock = new BaseBlock('div', ['main__content-wrapper']);
-  public formButton: BaseComponent = new BaseComponent('button', ['button']);
-  public settingsButton: BaseComponent = new BaseComponent('button', ['button']);
-  public startGameButton: BaseComponent = new BaseComponent('button', ['button']);
+  public formButton: BaseButton = new BaseButton('button', ['button'], 'Register New Player');
+  public settingsButton: BaseButton = new BaseButton('button', ['button'], 'Game Settings');
+  public startGameButton: BaseButton = new BaseButton('button', ['button'], 'Start Game');
   public gameMenu: BaseBlock = new BaseBlock('div', ['game-menu'], [this.formButton, this.settingsButton, this.startGameButton]);
   constructor() {
     super('main', ['main'], []);
