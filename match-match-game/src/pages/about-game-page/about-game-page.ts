@@ -13,7 +13,6 @@ export class AboutGamePage extends BaseBlock {
     this.element.innerHTML = `
       <h2 class="main__title">How to play?</h2>
     `;
-    this.mainContentWrapper 
     this.mainContentWrapper.element.innerHTML = `
       <ul class="rules-list">
         <li class="rules-list__item rules-list__item_item1">
