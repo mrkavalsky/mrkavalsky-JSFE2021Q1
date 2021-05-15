@@ -9,6 +9,6 @@ export class BaseBlock extends BaseComponent {
     components.forEach((e:BaseComponent):void => {
       this.element.append(e.element);
     });
-    this.children.concat(components);
+    this.children = this.children.concat(components);
   }
 }
