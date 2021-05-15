@@ -54,3 +54,10 @@
   font-size: 24px;
   color: #fff;
 }
+.rules-list__text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  margin-left: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
