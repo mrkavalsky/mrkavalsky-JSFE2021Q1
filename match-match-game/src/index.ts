@@ -1,5 +1,3 @@
 import { App } from './app';
 
-window.addEventListener('DOMContentLoaded', () => {
-  const matchMatchApp: App = new App(document.body);
-})
+window.addEventListener('DOMContentLoaded', () => new App(document.body));

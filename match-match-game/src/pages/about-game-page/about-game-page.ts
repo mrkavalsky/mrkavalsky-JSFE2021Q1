@@ -1,4 +1,4 @@
-import { BaseBlock } from "../../components/base-block";
+import { BaseBlock } from '../../components/base-block';
 import './about-game-page.css';
 
 export class AboutGamePage extends BaseBlock {
@@ -25,5 +25,4 @@ export class AboutGamePage extends BaseBlock {
       </ul>
     `;
   }
-  
 }
