@@ -1,6 +1,6 @@
 import { BaseButton } from './base-button';
 
-export class navButton extends BaseButton {
+export class NavButton extends BaseButton {
   constructor(
     tag: keyof HTMLElementTagNameMap = 'div',
     styles: string[] = [],
@@ -11,10 +11,9 @@ export class navButton extends BaseButton {
     this.addChangeHashEvent();
   }
 
-  addChangeHashEvent() {
-    this.element.addEventListener(
-      'click',
-      () => (window.location.hash = this.pageHash),
-    );
+  addChangeHashEvent(): void {
+    this.element.addEventListener('click', () => {
+      window.location.hash = this.pageHash;
+    });
   }
 }
