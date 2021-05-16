@@ -2,6 +2,7 @@ import { BaseBlock } from "../base-block";
 import { BaseButton } from "../base-button";
 import { BaseComponent } from "../base-component";
 import { NavButton } from "../nav-button";
+import './header.css';
 
 export class Header extends BaseBlock {
   public logoBlock: BaseComponent = new BaseComponent('div', ['logo']);
