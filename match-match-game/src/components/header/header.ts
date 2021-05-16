@@ -44,7 +44,7 @@ export class Header extends BaseBlock {
     this.navMenu.children[0].element.click();
   }
 
-  addActiveModeEventToButtons() {
+  addActiveModeEventToButtons(): void {
     this.navMenu.children.forEach((i) => {
       i.element.addEventListener('click', () => {
         this.navMenu.children.forEach((elem) => {
