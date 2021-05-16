@@ -21,5 +21,6 @@ export class Header extends BaseBlock {
       <div class="logo__part logo__part_blue">Match</div>
       <div class="logo__part logo__part_white">Match</div>
     `;
+    this.appendComponents([this.logoBlock, this.navMenu, this.RegisterButton]);
   }
 }
