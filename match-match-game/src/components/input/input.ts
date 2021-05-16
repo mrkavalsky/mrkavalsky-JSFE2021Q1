@@ -1,5 +1,6 @@
 import { BaseBlock } from "../base-block";
 import { BaseComponent } from "../base-component";
+import './input.css';
 
 export class Input extends BaseBlock {
   public caption: BaseComponent = new BaseComponent('div', ['input__caption']);
