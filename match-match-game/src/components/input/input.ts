@@ -11,5 +11,15 @@ export class Input extends BaseBlock {
     this.caption.element.innerText = caption;
     this.input.element.setAttribute('type', inputType);
     this.appendComponents([this.caption, this.input, this.error]);
+    this.addValidationEvent();
+  }
+  addValidationEvent(): void {
+    this.input.element.addEventListener('input', () => {
+      const input = this.input.element as HTMLInputElement;
+      this.error.element.innerText = this.inputValidation(input.value);
+    });
+  }
+  inputValidation(inputValue: string): string {
+    return 'blablabla';
   }
 }
