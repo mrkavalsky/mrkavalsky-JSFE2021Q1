@@ -9,6 +9,7 @@ export class Header extends BaseBlock {
   public navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
   public navMenuButtons: string[] = ['About Game', 'Best Score', 'Game Settings'];
   public RegisterButton: BaseButton = new BaseButton('button', ['header__register-button'], 'Register New Player');
+  public settingsButton: BaseComponent;
   constructor(
     tag: keyof HTMLElementTagNameMap = 'header',
     styles: string[] = ['header'],
@@ -18,6 +19,7 @@ export class Header extends BaseBlock {
     this.navMenuButtons.forEach((name) => {
       this.navMenu.appendComponents([new NavButton('button', ['header__nav-button'], name)]);
     });
+    this.settingsButton = this.navMenu.children[2];
     this.logoBlock.element.innerHTML = `
       <div class="logo__part logo__part_blue">Match</div>
       <div class="logo__part logo__part_white">Match</div>

@@ -10,14 +10,17 @@ export class App {
   constructor(
     readonly rootElement: HTMLElement,
     public rootChildren: BaseComponent[] = [],
+    public header: Header = new Header(),
+    public aboutGamePage: AboutGamePage = new AboutGamePage(),
     public appPages: BasePage[] = [
-      new AboutGamePage(),
+      aboutGamePage,
       new BestScorePage(),
       new SettingsPage(),
     ],
   ) {
-    this.appendComponent(new Header());
-    this.appendComponent(new AboutGamePage());
+    this.appendComponent(header);
+    this.appendComponent(aboutGamePage);
+    this.bindSettingsButtons();
     this.addRouting();
   }
 
@@ -41,5 +44,10 @@ export class App {
       this.removeComponent();
       this.appendComponent(currentRoute);
     };
+  }
+  bindSettingsButtons() {
+    this.aboutGamePage.settingsButton.element.addEventListener('click', () => {
+      this.header.settingsButton.element.click();
+    })
   }
 }

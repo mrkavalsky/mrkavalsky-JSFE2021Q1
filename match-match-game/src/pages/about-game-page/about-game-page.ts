@@ -1,7 +1,6 @@
 import { BaseBlock } from '../../components/base-block';
 import { BaseButton } from '../../components/base-button';
 import { BasePage } from '../../components/base-page';
-import { NavButton } from '../../components/nav-button';
 import './about-game-page.css';
 
 export class AboutGamePage extends BasePage {
@@ -15,7 +14,7 @@ export class AboutGamePage extends BasePage {
     'Register New Player',
   );
 
-  public settingsButton: BaseButton = new NavButton(
+  public settingsButton: BaseButton = new BaseButton(
     'button',
     ['button'],
     'Game Settings',
