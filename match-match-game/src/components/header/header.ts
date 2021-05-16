@@ -2,6 +2,7 @@ import { BaseBlock } from '../base-block';
 import { BaseButton } from '../base-button';
 import { BaseComponent } from '../base-component';
 import { NavButton } from '../nav-button';
+import { Popup } from '../popup/popup';
 import './header.css';
 
 export class Header extends BaseBlock {
@@ -23,6 +24,8 @@ export class Header extends BaseBlock {
 
   public settingsButton: BaseComponent;
 
+  public popup: Popup = new Popup();
+
   constructor(
     tag: keyof HTMLElementTagNameMap = 'header',
     styles: string[] = ['header'],
@@ -42,6 +45,7 @@ export class Header extends BaseBlock {
     this.appendComponents([this.logoBlock, this.navMenu, this.RegisterButton]);
     this.addActiveModeEventToButtons();
     this.navMenu.children[0].element.click();
+    this.addShowPopupEvent();
   }
 
   addActiveModeEventToButtons(): void {
@@ -53,5 +57,10 @@ export class Header extends BaseBlock {
         i.element.classList.add('header__nav-button_active');
       });
     });
+  }
+  addShowPopupEvent(): void {
+    this.RegisterButton.element.addEventListener('click', () => {
+      document.body.append(this.popup.element);
+    })
   }
 }

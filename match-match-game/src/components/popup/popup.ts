@@ -5,6 +5,7 @@ import './popup.css';
 
 export class Popup extends BaseBlock {
   public form: Form = new Form();
+  public popupBackground: BaseComponent = new BaseComponent('div', ['popup__background']);
   public formWrapper: BaseBlock = new BaseBlock('div', ['form-wrapper']);
   constructor (
     tag: keyof HTMLElementTagNameMap = 'div',
@@ -12,8 +13,13 @@ export class Popup extends BaseBlock {
     children: BaseComponent[] = [],
   ) {
     super(tag, styles, children);
+    this.addHidePopupEvent();
     this.formWrapper.appendComponents([this.form]);
-    this.appendComponents([this.formWrapper]);
+    this.appendComponents([this.formWrapper, this.popupBackground]);
   }
-
+  addHidePopupEvent(): void {
+    this.popupBackground.element.addEventListener('click', () => {
+      document.body.lastElementChild?.remove();
+    })
+  }
 }
