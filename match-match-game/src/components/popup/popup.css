@@ -24,3 +24,10 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.popup__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  margin-bottom: 50px;
+}

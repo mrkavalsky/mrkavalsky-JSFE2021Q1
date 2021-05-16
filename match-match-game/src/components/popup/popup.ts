@@ -14,6 +14,9 @@ export class Popup extends BaseBlock {
   ) {
     super(tag, styles, children);
     this.addHidePopupEvent();
+    this.formWrapper.element.innerHTML = `
+      <h2 class="popup__title">Register New Player</hw>
+    `;
     this.formWrapper.appendComponents([this.form]);
     this.appendComponents([this.formWrapper, this.popupBackground]);
   }
