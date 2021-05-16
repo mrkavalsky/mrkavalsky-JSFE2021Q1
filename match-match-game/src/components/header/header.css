@@ -30,6 +30,22 @@
   color: #2196f3;
   background: #fff;
 }
+.header__nav-menu {
+  width: 288px;
+  height: 100%;
+  display: flex;
+  margin-right: 510px;
+}
+.header__nav-button {
+  width: 33.3%;
+  height: 100%;
+  border-style: none;
+  background: none;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #fff;
+  cursor: pointer;
+}
 .header__register-button {
   width: 207px;
   height: 36px;
