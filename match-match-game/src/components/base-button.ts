@@ -4,7 +4,7 @@ export class BaseButton extends BaseComponent {
   constructor(
     tag: keyof HTMLElementTagNameMap = 'div',
     styles: string[] = [],
-    innerText = '',
+    public innerText: string = '',
   ) {
     super(tag, styles);
     this.element.innerText = innerText;
