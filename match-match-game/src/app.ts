@@ -1,10 +1,10 @@
-import { BaseBlock } from './components/base-block';
 import { BaseComponent } from './components/base-component';
 import { AboutGamePage } from './pages/about-game-page/about-game-page';
 import './index.css';
 import { BasePage } from './components/base-page';
 import { BestScorePage } from './pages/best-score-page/best-score-page';
 import { SettingsPage } from './pages/settings-page/settings-page';
+import { Header } from './components/header/header';
 
 export class App {
   constructor(
@@ -16,7 +16,7 @@ export class App {
       new SettingsPage(),
     ],
   ) {
-    this.appendComponent(new BaseBlock('header', ['header']));
+    this.appendComponent(new Header());
     this.appendComponent(new AboutGamePage());
     this.addRouting();
   }
