@@ -10,4 +10,17 @@
 .input__field {
   border-style: none;
   background: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 28px;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  align-items: center;
+}
+.input__error {
+  height: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  color: black;
 }
