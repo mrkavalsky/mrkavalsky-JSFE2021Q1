@@ -46,7 +46,7 @@ export class App {
     };
   }
 
-  bindSettingsButtons():void {
+  bindSettingsButtons(): void {
     this.aboutGamePage.settingsButton.element.addEventListener('click', () => {
       this.header.settingsButton.element.click();
     });

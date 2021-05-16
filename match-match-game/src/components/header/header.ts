@@ -34,7 +34,7 @@ export class Header extends BaseBlock {
         new NavButton('button', ['header__nav-button'], name),
       ]);
     });
-    this.settingsButton = this.navMenu.children[2];
+    [, , this.settingsButton] = this.navMenu.children;
     this.logoBlock.element.innerHTML = `
       <div class="logo__part logo__part_blue">Match</div>
       <div class="logo__part logo__part_white">Match</div>
