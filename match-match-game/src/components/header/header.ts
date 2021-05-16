@@ -23,5 +23,17 @@ export class Header extends BaseBlock {
       <div class="logo__part logo__part_white">Match</div>
     `;
     this.appendComponents([this.logoBlock, this.navMenu, this.RegisterButton]);
+    this.addActiveModeEventToButtons();
+    this.navMenu.children[0].element.click();
+  }
+  addActiveModeEventToButtons() {
+    this.navMenu.children.forEach((i) => {
+      i.element.addEventListener('click', () => {
+        this.navMenu.children.forEach((elem) => {
+          elem.element.classList.remove('header__nav-button_active');
+        });
+        i.element.classList.add('header__nav-button_active');
+      })
+    })
   }
 }

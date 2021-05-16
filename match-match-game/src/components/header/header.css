@@ -46,6 +46,9 @@
   color: #fff;
   cursor: pointer;
 }
+.header__nav-button_active {
+  background: #1e88e5;
+}
 .header__register-button {
   width: 207px;
   height: 36px;

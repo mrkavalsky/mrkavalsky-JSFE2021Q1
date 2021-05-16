@@ -41,6 +41,5 @@ export class App {
       this.removeComponent();
       this.appendComponent(currentRoute);
     };
-    window.location.hash = this.appPages[0].name;
   }
 }
