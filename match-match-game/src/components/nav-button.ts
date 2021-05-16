@@ -2,6 +2,7 @@ import { BaseButton } from './base-button';
 
 export class NavButton extends BaseButton {
   public pageHash: string;
+
   constructor(
     tag: keyof HTMLElementTagNameMap = 'div',
     styles: string[] = [],

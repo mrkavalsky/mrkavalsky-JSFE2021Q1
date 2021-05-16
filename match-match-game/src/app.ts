@@ -45,9 +45,10 @@ export class App {
       this.appendComponent(currentRoute);
     };
   }
+
   bindSettingsButtons() {
     this.aboutGamePage.settingsButton.element.addEventListener('click', () => {
       this.header.settingsButton.element.click();
-    })
+    });
   }
 }
