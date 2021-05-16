@@ -1,0 +1,14 @@
+import { BaseBlock } from "../base-block";
+import { BaseComponent } from "../base-component";
+
+export class Input extends BaseBlock {
+  public caption: BaseComponent = new BaseComponent('div', ['input__caption']);
+  public input: BaseComponent = new BaseComponent('input', ['input__field']);
+  public error: BaseComponent = new BaseComponent('div', ['input__error']);
+  constructor(caption: string, inputType: string) {
+    super('div', ['input']);
+    this.caption.element.innerText = caption;
+    this.input.element.setAttribute('type', inputType);
+    this.appendComponents([this.caption, this.input, this.error]);
+  }
+}
