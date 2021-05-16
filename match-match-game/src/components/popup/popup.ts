@@ -1,6 +1,7 @@
 import { BaseBlock } from "../base-block";
 import { BaseComponent } from "../base-component";
 import { Form } from "../form/form";
+import './popup.css';
 
 export class Popup extends BaseBlock {
   public form: Form = new Form();
