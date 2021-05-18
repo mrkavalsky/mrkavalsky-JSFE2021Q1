@@ -18,6 +18,9 @@
   display: flex;
   align-items: center;
 }
+.input__field_error {
+background: yellow;
+}
 .input__error {
   height: 16px;
   font-size: 12px;

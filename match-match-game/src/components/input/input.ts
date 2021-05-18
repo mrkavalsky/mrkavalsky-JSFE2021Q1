@@ -26,10 +26,12 @@ export class Input extends BaseBlock {
     const input:HTMLInputElement = this.getInputNode();
     const inputValue: string = input.value.trim();
     const captionText = this.caption.element.innerText.toLowerCase();
+    this.addTheErrorClass();
     if (inputValue.length === 0) return `!The ${captionText} cannot be empty`;
     if (inputValue.length === inputValue.match(/\d/g)?.length) return `!The ${captionText} cannot consist only of numbers`;
     if (/\s/.test(inputValue)) return `!The ${captionText} cannot contain more than one word`;
     if (/[~!@#$%*()_—+=|:;"'`<>,.?/^]/.test(inputValue)) return `!The ${captionText} cannot contain service symbols`;
+    this.removeTheErrorClass();
     this.toggleIsValidate();
     return 'Ok';
   }
@@ -37,9 +39,11 @@ export class Input extends BaseBlock {
     const input:HTMLInputElement = this.getInputNode();
     const inputValue: string = input.value.trim();
     const matchRes: string[] | null = inputValue.match(/\S+(?=@)/);
+    this.addTheErrorClass();
     if (!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(inputValue))) return `Invalid email`;
     if (matchRes === null) return 'Invalid email';
     if (matchRes[0].length > 64) return 'Invalid email';
+    this.removeTheErrorClass();
     this.toggleIsValidate();
     return 'Ok';
   }
@@ -55,5 +59,11 @@ export class Input extends BaseBlock {
   }
   getInputNode(): HTMLInputElement {
     return this.input.element as HTMLInputElement;
+  }
+  addTheErrorClass(): void {
+    this.input.element.classList.add('input__field_error');
+  }
+  removeTheErrorClass(): void {
+    this.input.element.classList.remove('input__field_error');
   }
 }
