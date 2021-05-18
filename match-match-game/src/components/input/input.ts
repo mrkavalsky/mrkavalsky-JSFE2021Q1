@@ -23,7 +23,7 @@ export class Input extends BaseBlock {
     });
   }
   validateTextInput(): string {
-    const input:HTMLInputElement = this.input.element as HTMLInputElement;
+    const input:HTMLInputElement = this.getInputNode();
     const inputValue: string = input.value.trim();
     const captionText = this.caption.element.innerText.toLowerCase();
     if (inputValue.length === 0) return `!The ${captionText} cannot be empty`;
@@ -34,7 +34,7 @@ export class Input extends BaseBlock {
     return 'Ok';
   }
   validateEmailInput(): string {
-    const input:HTMLInputElement = this.input.element as HTMLInputElement;
+    const input:HTMLInputElement = this.getInputNode();
     const inputValue: string = input.value.trim();
     const matchRes: string[] | null = inputValue.match(/\S+(?=@)/);
     if (!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(inputValue))) return `Invalid email`;
@@ -47,7 +47,10 @@ export class Input extends BaseBlock {
     this.isValidate = true;
   }
   clearDownInput(): void {
-    const input:HTMLInputElement = this.input.element as HTMLInputElement;
+    const input:HTMLInputElement = this.getInputNode();
     input.value = '';
+  }
+  getInputNode(): HTMLInputElement {
+    return this.input.element as HTMLInputElement;
   }
 }
