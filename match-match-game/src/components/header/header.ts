@@ -58,9 +58,10 @@ export class Header extends BaseBlock {
       });
     });
   }
+
   addShowPopupEvent(): void {
     this.RegisterButton.element.addEventListener('click', () => {
       document.body.append(this.popup.element);
-    })
+    });
   }
 }
