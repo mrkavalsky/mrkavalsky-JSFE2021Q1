@@ -17,7 +17,7 @@ export class Input extends BaseBlock {
   }
   addValidationEvent(): void {
     this.input.element.addEventListener('input', () => {
-      this.error.element.innerText = this.inputType === 'text' ? this.textInputValidation() : this.textInputValidation();
+      this.error.element.innerText = this.inputType === 'text' ? this.textInputValidation() : this.emailInputValidation();
     });
   }
   textInputValidation(): string {
@@ -28,6 +28,15 @@ export class Input extends BaseBlock {
     if (inputValue.length === inputValue.match(/\d/g)?.length) return `!The ${captionText} cannot consist only of numbers`;
     if (/\s/.test(inputValue)) return `!The ${captionText} cannot contain more than one word`;
     if (/[~!@#$%*()_—+=|:;"'`<>,.?/^]/.test(inputValue)) return `!The ${captionText} cannot contain service symbols`;
+    return 'Ok';
+  }
+  emailInputValidation(): string {
+    const input:HTMLInputElement = this.input.element as HTMLInputElement;
+    const inputValue: string = input.value.trim();
+    const matchRes: string[] | null = inputValue.match(/\S+(?=@)/);
+    if (!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(inputValue))) return `Invalid email`;
+    if (matchRes === null) return 'Invalid email';
+    if (matchRes[0].length > 64) return 'Invalid email';
     return 'Ok';
   }
 }
