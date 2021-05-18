@@ -55,13 +55,17 @@ export class Input extends BaseBlock {
     const matchRes: string[] | null = inputValue.match(/\S+(?=@)/);
     this.addTheErrorClass();
     if (
-      !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@/.test(
         inputValue,
-      )
+      ) ||
+      !/@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        inputValue,
+      ) ||
+      inputValue.match(/@/)?.length !== 1 ||
+      matchRes === null ||
+      matchRes[0].length > 64
     )
       return `Invalid email`;
-    if (matchRes === null) return 'Invalid email';
-    if (matchRes[0].length > 64) return 'Invalid email';
     this.removeTheErrorClass();
     this.toggleIsValidate();
     return 'Ok';
