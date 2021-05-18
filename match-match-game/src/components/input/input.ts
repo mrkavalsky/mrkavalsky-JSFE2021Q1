@@ -7,6 +7,7 @@ export class Input extends BaseBlock {
   public input: BaseComponent = new BaseComponent('input', ['input__field']);
   public error: BaseComponent = new BaseComponent('div', ['input__error']);
   public inputType: string;
+  public isValidate: boolean = false;
   constructor(caption: string, inputType: string) {
     super('div', ['input']);
     this.inputType = inputType;
@@ -17,6 +18,7 @@ export class Input extends BaseBlock {
   }
   addValidationEvent(): void {
     this.input.element.addEventListener('input', () => {
+      this.isValidate = false;
       this.error.element.innerText = this.inputType === 'text' ? this.textInputValidation() : this.emailInputValidation();
     });
   }
@@ -28,6 +30,7 @@ export class Input extends BaseBlock {
     if (inputValue.length === inputValue.match(/\d/g)?.length) return `!The ${captionText} cannot consist only of numbers`;
     if (/\s/.test(inputValue)) return `!The ${captionText} cannot contain more than one word`;
     if (/[~!@#$%*()_—+=|:;"'`<>,.?/^]/.test(inputValue)) return `!The ${captionText} cannot contain service symbols`;
+    this.toggleIsValidate();
     return 'Ok';
   }
   emailInputValidation(): string {
@@ -37,6 +40,10 @@ export class Input extends BaseBlock {
     if (!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(inputValue))) return `Invalid email`;
     if (matchRes === null) return 'Invalid email';
     if (matchRes[0].length > 64) return 'Invalid email';
+    this.toggleIsValidate();
     return 'Ok';
+  }
+  toggleIsValidate() {
+    this.isValidate = true;
   }
 }
