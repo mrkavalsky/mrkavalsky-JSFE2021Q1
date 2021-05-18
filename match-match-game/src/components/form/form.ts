@@ -24,6 +24,7 @@ export class Form extends BaseBlock {
     this.submitButton.element.addEventListener('click', (e) => {
       e.preventDefault();
       if(this.isFormValidate) document.body.lastElementChild?.remove();
+      this.clearDownForm();
     });
     this.element.addEventListener('input', () => {
       this.validateForm();
@@ -31,6 +32,7 @@ export class Form extends BaseBlock {
     this.cancelButton.element.addEventListener('click', (e) => {
       e.preventDefault();
       document.body.lastElementChild?.remove();
+      this.clearDownForm();
     })
   }
   validateForm(): void {
@@ -39,5 +41,11 @@ export class Form extends BaseBlock {
       this.submitButton.element.classList.remove('form__button_submit_disable');
       this.isFormValidate = true;
     } else this.submitButton.element.classList.add('form__button_submit_disable');
+  }
+  clearDownForm(): void {
+    this.inputsArray.forEach((input) => {
+      input.clearDownInput();
+      input.clearDownError();
+    });
   }
 }
