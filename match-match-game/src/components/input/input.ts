@@ -19,10 +19,10 @@ export class Input extends BaseBlock {
   addValidationEvent(): void {
     this.input.element.addEventListener('input', () => {
       this.isValidate = false;
-      this.error.element.innerText = this.inputType === 'text' ? this.textInputValidation() : this.emailInputValidation();
+      this.error.element.innerText = this.inputType === 'text' ? this.validateTextInput() : this.validateEmailInput();
     });
   }
-  textInputValidation(): string {
+  validateTextInput(): string {
     const input:HTMLInputElement = this.input.element as HTMLInputElement;
     const inputValue: string = input.value.trim();
     const captionText = this.caption.element.innerText.toLowerCase();
@@ -33,7 +33,7 @@ export class Input extends BaseBlock {
     this.toggleIsValidate();
     return 'Ok';
   }
-  emailInputValidation(): string {
+  validateEmailInput(): string {
     const input:HTMLInputElement = this.input.element as HTMLInputElement;
     const inputValue: string = input.value.trim();
     const matchRes: string[] | null = inputValue.match(/\S+(?=@)/);
