@@ -46,4 +46,8 @@ export class Input extends BaseBlock {
   toggleIsValidate() {
     this.isValidate = true;
   }
+  clearDownInput(): void {
+    const input:HTMLInputElement = this.input.element as HTMLInputElement;
+    input.value = '';
+  }
 }
