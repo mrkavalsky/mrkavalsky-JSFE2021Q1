@@ -67,7 +67,7 @@ export class Input extends BaseBlock {
     return 'Ok';
   }
 
-  toggleIsValidate() {
+  toggleIsValidate(): void {
     this.isValidate = true;
   }
 
