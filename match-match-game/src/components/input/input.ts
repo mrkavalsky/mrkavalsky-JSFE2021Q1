@@ -50,6 +50,9 @@ export class Input extends BaseBlock {
     const input:HTMLInputElement = this.getInputNode();
     input.value = '';
   }
+  clearDownError(): void {
+    this.error.element.innerText = '';
+  }
   getInputNode(): HTMLInputElement {
     return this.input.element as HTMLInputElement;
   }
