@@ -8,7 +8,23 @@ export class DataBase {
   private iDB: IDBFactory = window.indexedDB;
   private dataBase: IDBDatabase | null = null;
   private openRequest: IDBOpenDBRequest = this.iDB.open('match-match-game');
-  private initUsers: IUser[] = [];
+  private initUsers: IUser[] = [{
+    firstName: 'Nicci',
+    lastName: 'Troiani', 
+    email: 'nicci@gmail.com'
+  }, {
+    firstName: 'George',
+    lastName: 'Fields', 
+    email: 'jack@gmail.com'
+  }, {
+    firstName: 'Jones',
+    lastName: 'Dermot', 
+    email: 'dermot@gamil.com'
+  }, {
+    firstName: 'Jane',
+    lastName: 'Doe', 
+    email: 'jane.doe@gmail.com'
+  }];
   constructor() {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
@@ -16,17 +32,17 @@ export class DataBase {
       store.createIndex('firstName', 'firstName');
       store.createIndex('lastName', 'lastName');
       store.createIndex('email', 'email', {unique: true});
+      this.initUsers.forEach((user) => this.addNewUser(user));
     };
     this.openRequest.onsuccess = () => {
       this.dataBase =  this.openRequest.result;
     }
   }
 
-  addNewUser([fName, lName, mail]: string[]): void {
+  addNewUser(user: IUser): void {
     if(!this.dataBase) return;
     const transaction =  this.dataBase.transaction('match-match-game', 'readwrite');
     const store = transaction.objectStore('test');
-    const user: IUser = {firstName: fName, lastName: lName, email: mail};
     store.add(user);
     transaction.oncomplete = () => {
       console.log('complete');
