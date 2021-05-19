@@ -12,13 +12,11 @@ export class Form extends BaseBlock {
   ];
 
   public submitButton: BaseButton = new BaseButton(
-    'button',
     ['form__button', 'form__button_submit', 'form__button_submit_disable'],
     'add user',
   );
 
   public cancelButton: BaseButton = new BaseButton(
-    'button',
     ['form__button', 'form__button_cancel'],
     'cancel',
   );

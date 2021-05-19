@@ -9,19 +9,16 @@ export class AboutGamePage extends BasePage {
   ]);
 
   public formButton: BaseButton = new BaseButton(
-    'button',
     ['button'],
     'Register New Player',
   );
 
   public settingsButton: BaseButton = new BaseButton(
-    'button',
     ['button'],
     'Game Settings',
   );
 
   public startGameButton: BaseButton = new BaseButton(
-    'button',
     ['button'],
     'Start Game',
   );

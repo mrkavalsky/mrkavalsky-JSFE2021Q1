@@ -17,7 +17,6 @@ export class Header extends BaseBlock {
   ];
 
   public RegisterButton: BaseButton = new BaseButton(
-    'button',
     ['header__register-button'],
     'Register New Player',
   );
@@ -34,7 +33,7 @@ export class Header extends BaseBlock {
     super(tag, styles, children);
     this.navMenuButtons.forEach((name) => {
       this.navMenu.appendComponents([
-        new NavButton('button', ['header__nav-button'], name),
+        new NavButton(['header__nav-button'], name),
       ]);
     });
     [, , this.settingsButton] = this.navMenu.children;

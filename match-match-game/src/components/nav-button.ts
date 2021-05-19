@@ -4,11 +4,10 @@ export class NavButton extends BaseButton {
   public pageHash: string;
 
   constructor(
-    tag: string = 'div',
     styles: string[] = [],
     innerText: string,
   ) {
-    super(tag, styles, innerText);
+    super(styles, innerText);
     this.pageHash = innerText.toLowerCase().split(' ').join('-');
     this.addChangeHashEvent();
   }
