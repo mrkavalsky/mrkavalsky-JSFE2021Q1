@@ -1,9 +1,4 @@
-interface IUser {
-  firstName: string,
-  lastName: string, 
-  email: string,
-  score: number
-}
+import { IUser } from "./user-interface";
 
 export class DataBase {
   private iDB: IDBFactory = window.indexedDB;
