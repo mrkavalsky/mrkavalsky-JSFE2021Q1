@@ -5,19 +5,23 @@ import { BasePage } from './components/base-page';
 import { BestScorePage } from './pages/best-score-page/best-score-page';
 import { SettingsPage } from './pages/settings-page/settings-page';
 import { Header } from './components/header/header';
+import { DataBase } from './components/data-base';
 
 export class App {
+  private indexDB = new DataBase();
   constructor(
     readonly rootElement: HTMLElement,
     public rootChildren: BaseComponent[] = [],
     public header: Header = new Header(),
     public aboutGamePage: AboutGamePage = new AboutGamePage(),
+    private bestScorePage: BestScorePage = new BestScorePage(),
     public appPages: BasePage[] = [
       aboutGamePage,
-      new BestScorePage(),
+      bestScorePage,
       new SettingsPage(),
     ],
   ) {
+    this.bestScorePage.addBestScoreTable(this.indexDB.getBestScoreArray());
     this.appendComponent(header);
     this.appendComponent(aboutGamePage);
     this.bindSettingsButtons();

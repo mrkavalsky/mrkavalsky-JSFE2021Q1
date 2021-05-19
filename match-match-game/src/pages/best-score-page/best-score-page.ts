@@ -11,7 +11,8 @@ export class BestScorePage extends BasePage {
     `;
   }
 
-  addBestScoreTable(users: IUser[]): void {
+  addBestScoreTable(users: IUser[] | void): void {
+    if (!users) return;
     users.forEach((user) => {
       this.appendComponents([new User(user)]);
     })
