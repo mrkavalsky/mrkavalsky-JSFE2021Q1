@@ -1,7 +1,8 @@
 interface IUser {
   firstName: string,
   lastName: string, 
-  email: string
+  email: string,
+  score: number
 }
 
 export class DataBase {
@@ -11,19 +12,23 @@ export class DataBase {
   private initUsers: IUser[] = [{
     firstName: 'Nicci',
     lastName: 'Troiani', 
-    email: 'nicci@gmail.com'
+    email: 'nicci@gmail.com',
+    score: 456
   }, {
     firstName: 'George',
     lastName: 'Fields', 
-    email: 'jack@gmail.com'
+    email: 'jack@gmail.com',
+    score: 358
   }, {
     firstName: 'Jones',
     lastName: 'Dermot', 
-    email: 'dermot@gamil.com'
+    email: 'dermot@gamil.com',
+    score: 211
   }, {
     firstName: 'Jane',
     lastName: 'Doe', 
-    email: 'jane.doe@gmail.com'
+    email: 'jane.doe@gmail.com',
+    score: 169
   }];
   constructor() {
     this.openRequest.onupgradeneeded = () => {
@@ -32,6 +37,7 @@ export class DataBase {
       store.createIndex('firstName', 'firstName');
       store.createIndex('lastName', 'lastName');
       store.createIndex('email', 'email', {unique: true});
+      store.createIndex('score', 'score');
       this.initUsers.forEach((user) => this.addNewUser(user));
     };
     this.openRequest.onsuccess = () => {
