@@ -24,12 +24,19 @@ export class Input extends BaseBlock {
 
   addValidationEvent(): void {
     this.input.element.addEventListener('input', () => {
-      this.isValidate = false;
-      this.error.element.innerText =
-        this.inputType === 'text'
-          ? this.validateTextInput()
-          : this.validateEmailInput();
+      this.setError();
     });
+    this.input.element.addEventListener('change', () => {
+      this.setError();
+    });
+  }
+
+  setError(): void {
+    this.isValidate = false;
+    this.error.element.innerText =
+      this.inputType === 'text'
+        ? this.validateTextInput()
+        : this.validateEmailInput();
   }
 
   validateTextInput(): string {
