@@ -4,6 +4,7 @@ export class DataBase {
   private iDB: IDBFactory = window.indexedDB;
   private dataBase: IDBDatabase | null = null;
   private openRequest: IDBOpenDBRequest = this.iDB.open('match-match-game');
+  public transactionResult: string = '';
   private initUsers: IUser[] = [{
     firstName: 'Nicci',
     lastName: 'Troiani', 
@@ -33,10 +34,10 @@ export class DataBase {
       store.createIndex('lastName', 'lastName');
       store.createIndex('email', 'email', {unique: true});
       store.createIndex('score', 'score');
-      this.initUsers.forEach((user) => this.addNewUser(user));
     };
     this.openRequest.onsuccess = () => {
       this.dataBase =  this.openRequest.result;
+      this.initUsers.forEach((user) => this.addNewUser(user));
     }
   }
 
@@ -46,10 +47,10 @@ export class DataBase {
     const store = transaction.objectStore('testCollection');
     store.add(user);
     transaction.oncomplete = () => {
-      console.log('complete');
+      this.transactionResult = 'complete';
     }
     transaction.onerror = () => {
-      console.log('error');
+      this.transactionResult = 'error';
     }
   }
   
