@@ -58,13 +58,19 @@ export class DataBase {
     }
   }
   
-  getUsers() {
+  getBestScoreArray(): IUser[] | void {
     if(!this.dataBase) return;
+    const users: IUser[] = [];
     const transaction: IDBTransaction = this.dataBase.transaction('testCollection', "readonly");
     const store: IDBObjectStore = transaction.objectStore('testCollection');
-    const users: IDBRequest<IUser[]> = store.getAll();
-    transaction.oncomplete = () => {
-      return users.result;
+    const request: IDBRequest<IDBCursorWithValue | null> = store.index('score').openCursor(null, 'prev');
+    request.onsuccess = () => {
+      const cursor: IDBCursorWithValue | null = request.result;
+      if(cursor) {
+        users.push(cursor.value);
+        cursor.continue();
+      }
     }
+    return users;
   }
 }
