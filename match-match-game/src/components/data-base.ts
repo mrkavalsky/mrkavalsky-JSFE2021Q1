@@ -33,7 +33,7 @@ export class DataBase {
   constructor() {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
-      const store = this.dataBase.createObjectStore('test', {keyPath: 'id', autoIncrement: true});
+      const store = this.dataBase.createObjectStore('testCollection', {keyPath: 'id', autoIncrement: true});
       store.createIndex('firstName', 'firstName');
       store.createIndex('lastName', 'lastName');
       store.createIndex('email', 'email', {unique: true});
@@ -47,8 +47,8 @@ export class DataBase {
 
   addNewUser(user: IUser): void {
     if(!this.dataBase) return;
-    const transaction =  this.dataBase.transaction('match-match-game', 'readwrite');
-    const store = transaction.objectStore('test');
+    const transaction =  this.dataBase.transaction('testCollection', 'readwrite');
+    const store = transaction.objectStore('testCollection');
     store.add(user);
     transaction.oncomplete = () => {
       console.log('complete');
@@ -60,8 +60,8 @@ export class DataBase {
   
   getUsers() {
     if(!this.dataBase) return;
-    const transaction: IDBTransaction = this.dataBase.transaction('match-match-game', "readonly");
-    const store: IDBObjectStore = transaction.objectStore('test');
+    const transaction: IDBTransaction = this.dataBase.transaction('testCollection', "readonly");
+    const store: IDBObjectStore = transaction.objectStore('testCollection');
     const users: IDBRequest<IUser[]> = store.getAll();
     transaction.oncomplete = () => {
       return users.result;
