@@ -79,6 +79,7 @@ export class Input extends BaseBlock {
     const input: HTMLInputElement = this.getInputNode();
     input.value = '';
     this.isValidate = false;
+    this.removeTheErrorClass();
   }
 
   clearDownError(): void {
