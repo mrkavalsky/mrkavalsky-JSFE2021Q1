@@ -39,8 +39,10 @@ export class Form extends BaseBlock {
   addFormValidationEvent(): void {
     this.submitButton.element.addEventListener('click', (e) => {
       e.preventDefault();
-      if (this.isFormValidate) document.body.lastElementChild?.remove();
-      this.clearDownForm();
+      if (this.isFormValidate) {
+        document.body.lastElementChild?.remove();
+        this.clearDownForm();
+      }
     });
     this.element.addEventListener('input', () => {
       this.validateForm();
