@@ -28,7 +28,7 @@ export class Popup extends BaseBlock {
 
   addHidePopupEvent(): void {
     this.popupBackground.element.addEventListener('click', () => {
-      document.body.lastElementChild?.remove();
+      this.form.cancelButton.element.click();
     });
   }
 }
