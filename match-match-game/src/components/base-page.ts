@@ -3,7 +3,7 @@ import { BaseComponent } from './base-component';
 
 export class BasePage extends BaseBlock {
   constructor(
-    tag: keyof HTMLElementTagNameMap = 'div',
+    tag: string = 'div',
     styles: string[] = [],
     children: BaseComponent[] = [],
     public name: string,

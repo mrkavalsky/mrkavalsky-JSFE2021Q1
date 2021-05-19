@@ -2,7 +2,7 @@ import { BaseComponent } from './base-component';
 
 export class BaseButton extends BaseComponent {
   constructor(
-    tag: keyof HTMLElementTagNameMap = 'div',
+    tag: string = 'div',
     styles: string[] = [],
     public innerText: string = '',
   ) {

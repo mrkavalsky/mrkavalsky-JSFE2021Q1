@@ -26,7 +26,7 @@ export class Form extends BaseBlock {
   public isFormValidate = false;
 
   constructor(
-    tag: keyof HTMLElementTagNameMap = 'form',
+    tag: string = 'form',
     styles: string[] = ['form'],
     children: BaseComponent[] = [],
   ) {

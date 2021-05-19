@@ -4,7 +4,7 @@ export class NavButton extends BaseButton {
   public pageHash: string;
 
   constructor(
-    tag: keyof HTMLElementTagNameMap = 'div',
+    tag: string = 'div',
     styles: string[] = [],
     innerText: string,
   ) {
