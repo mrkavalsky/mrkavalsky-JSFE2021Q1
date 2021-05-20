@@ -16,8 +16,13 @@ export class Header extends BaseBlock {
   ];
 
   public RegisterButton: BaseButton = new BaseButton(
-    ['header__register-button'],
+    ['header__button', 'header__button_register'],
     'Register New Player',
+  );
+
+  public startGameButton: BaseButton = new BaseButton(
+    ['header__button', 'header__button_start-game', 'header__button_hidden'],
+    'start game',
   );
 
   public settingsButton: BaseComponent;
@@ -38,7 +43,7 @@ export class Header extends BaseBlock {
       <div class="logo__part logo__part_blue">Match</div>
       <div class="logo__part logo__part_white">Match</div>
     `;
-    this.appendComponents([this.logoBlock, this.navMenu, this.RegisterButton]);
+    this.appendComponents([this.logoBlock, this.navMenu, this.RegisterButton, this.startGameButton]);
     this.addActiveModeEventToButtons();
     this.navMenu.children[0].element.click();
   }
