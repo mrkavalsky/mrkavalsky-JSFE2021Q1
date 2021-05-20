@@ -21,7 +21,7 @@
 }
 .form__button_submit_disable {
   background: rgba(0, 0, 0, 0.12);
-  cursor: none;
+  cursor: auto;
 }
 .form__button_cancel {
   background: #fff;
