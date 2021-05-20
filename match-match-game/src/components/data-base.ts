@@ -37,6 +37,8 @@ export class DataBase {
     },
   ];
 
+  private currentUsers: IUser[] = this.initUsers;
+
   constructor(public output: ScoreBlock) {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
@@ -94,7 +96,12 @@ export class DataBase {
       }
     };
     transaction.oncomplete = () => {
+      this.currentUsers = users;
       this.output.refreshBestScore(users);
     };
+  }
+
+  findUser(mail: string): IUser | undefined {
+    return this.currentUsers.find(({email}) => email === mail);
   }
 }
