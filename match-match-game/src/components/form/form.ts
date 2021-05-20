@@ -76,6 +76,7 @@ export class Form extends BaseBlock {
     e.preventDefault();
     document.body.lastElementChild?.remove();
     this.clearDownForm();
+    this.errorField.element.innerText = '';
   }
 
   submitForm(): IUser | void {
