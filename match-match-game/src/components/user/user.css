@@ -1,0 +1,35 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+  margin-bottom: 18px;
+}
+.user__score {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.user__title {
+  color: rgba(0, 0, 0, 0.87);
+  margin-right: 10px;
+}
+.user__result {
+  color: #2196f3;
+}
+.user__name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.1px;
+  color: #333333;
+}
+.user__email {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.4px;
+  color: #333333;
+}

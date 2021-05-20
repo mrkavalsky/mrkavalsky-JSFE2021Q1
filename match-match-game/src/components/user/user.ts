@@ -1,9 +1,10 @@
 import { BaseBlock } from "../base-block";
 import { BaseComponent } from "../base-component";
 import { IUser } from "../user-interface";
+import './user.css';
 
 export class User extends BaseBlock {
-  private userInfo: BaseBlock = new BaseBlock('div', ['user__info']);
+  private userInfo: BaseBlock = new BaseBlock('div');
   private userScore: BaseBlock = new BaseBlock('div', ['user__score']);
   constructor(private user: IUser) {
     super('div', ['user']);
