@@ -36,6 +36,9 @@
   display: flex;
   margin-right: 510px;
 }
+.header__nav-menu_margin {
+  margin-right: 590px;
+}
 .header__nav-button {
   width: 33.3%;
   height: 100%;

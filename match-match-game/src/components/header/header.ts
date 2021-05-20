@@ -62,5 +62,6 @@ export class Header extends BaseBlock {
   showStartGameButton(): void {
     this.RegisterButton.element.classList.add('header__button_hidden');
     this.startGameButton.element.classList.remove('header__button_hidden');
+    this.navMenu.element.classList.add('header__nav-menu_margin');
   }
 }
