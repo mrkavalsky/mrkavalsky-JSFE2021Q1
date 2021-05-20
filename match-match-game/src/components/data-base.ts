@@ -43,7 +43,7 @@ export class DataBase {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
       const store: IDBObjectStore = this.dataBase.createObjectStore(
-        'testCollection',
+        'players',
         {
           keyPath: 'id',
           autoIncrement: true,
@@ -64,10 +64,10 @@ export class DataBase {
   addNewUser(user: IUser): void {
     if (!this.dataBase) return;
     const transaction: IDBTransaction = this.dataBase.transaction(
-      'testCollection',
+      'players',
       'readwrite',
     );
-    const store: IDBObjectStore = transaction.objectStore('testCollection');
+    const store: IDBObjectStore = transaction.objectStore('players');
     store.add(user);
     transaction.oncomplete = () => {
       this.transactionResult = 'complete';
@@ -81,10 +81,10 @@ export class DataBase {
     if (!this.dataBase) return;
     const users: IUser[] = [];
     const transaction: IDBTransaction = this.dataBase.transaction(
-      'testCollection',
+      'players',
       'readonly',
     );
-    const store: IDBObjectStore = transaction.objectStore('testCollection');
+    const store: IDBObjectStore = transaction.objectStore('players');
     const request: IDBRequest<IDBCursorWithValue | null> = store
       .index('score')
       .openCursor(null, 'prev');
