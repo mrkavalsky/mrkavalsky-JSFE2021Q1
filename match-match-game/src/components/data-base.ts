@@ -1,3 +1,4 @@
+import { ScoreBlock } from "./score-block/score-block";
 import { IUser } from "./user-interface";
 
 export class DataBase {
@@ -26,7 +27,7 @@ export class DataBase {
     email: 'jane.doe@gmail.com',
     score: 169
   }];
-  constructor() {
+  constructor(public output: ScoreBlock) {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
       const store = this.dataBase.createObjectStore('testCollection', {keyPath: 'id', autoIncrement: true});
@@ -38,6 +39,7 @@ export class DataBase {
     this.openRequest.onsuccess = () => {
       this.dataBase =  this.openRequest.result;
       this.initUsers.forEach((user) => this.addNewUser(user));
+      this.addBestScoreArray();
     }
   }
 
@@ -54,7 +56,7 @@ export class DataBase {
     }
   }
   
-  getBestScoreArray(): IUser[] | void {
+  addBestScoreArray(): IUser[] | void {
     if(!this.dataBase) return;
     const users: IUser[] = [];
     const transaction: IDBTransaction = this.dataBase.transaction('testCollection', "readonly");
@@ -67,6 +69,8 @@ export class DataBase {
         cursor.continue();
       }
     }
-    return users;
+    transaction.oncomplete = () => {
+      this.output.refreshBestScore(users);
+    }
   }
 }

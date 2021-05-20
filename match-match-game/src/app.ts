@@ -8,22 +8,21 @@ import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
 
 export class App {
-  private indexDB = new DataBase();
+  private bestScorePage: BestScorePage = new BestScorePage();
+  private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
+  public aboutGamePage: AboutGamePage = new AboutGamePage();
+  public appPages: BasePage[] = [
+    this.aboutGamePage,
+    this.bestScorePage,
+    new SettingsPage(),
+  ];
+  public rootChildren: BaseComponent[] = [];
+  public header: Header = new Header();
   constructor(
-    readonly rootElement: HTMLElement,
-    public rootChildren: BaseComponent[] = [],
-    public header: Header = new Header(),
-    public aboutGamePage: AboutGamePage = new AboutGamePage(),
-    private bestScorePage: BestScorePage = new BestScorePage(),
-    public appPages: BasePage[] = [
-      aboutGamePage,
-      bestScorePage,
-      new SettingsPage(),
-    ],
+    readonly rootElement: HTMLElement
   ) {
-    this.bestScorePage.addBestScoreTable(this.indexDB.getBestScoreArray());
-    this.appendComponent(header);
-    this.appendComponent(aboutGamePage);
+    this.appendComponent(this.header);
+    this.appendComponent(this.aboutGamePage);
     this.bindSettingsButtons();
     this.addRouting();
   }
