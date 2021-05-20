@@ -45,6 +45,9 @@ export class Form extends BaseBlock {
     this.element.addEventListener('input', () => {
       this.validateForm();
     });
+    this.element.addEventListener('change', () => {
+      this.validateForm();
+    });
     this.cancelButton.element.addEventListener('click', (e) => {
       e.preventDefault();
       document.body.lastElementChild?.remove();
