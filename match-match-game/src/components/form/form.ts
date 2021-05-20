@@ -75,15 +75,16 @@ export class Form extends BaseBlock {
       const userInfo = this.inputsArray.map(
         (input) => input.getInputNode().value,
       );
-        const user: IUser = {
-          firstName: userInfo[0],
-          lastName: userInfo[1],
-          email: userInfo[2],
-          score: 0,
-        };
-        this.output.addNewUser(user);
+      const user: IUser = {
+        firstName: userInfo[0],
+        lastName: userInfo[1],
+        email: userInfo[2],
+        score: 0,
+      };
+      this.output.addNewUser(user);
       this.clearDownForm();
       return user;
-    } else return;
+    }
+    return undefined;
   }
 }

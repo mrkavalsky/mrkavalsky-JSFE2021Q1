@@ -72,15 +72,18 @@ export class App {
   }
 
   addEnterToAccountEvent(): void {
-    this.popup.form.submitButton.element.addEventListener('click', (e: MouseEvent) => {
-      this.enterToAccount(e);
-    });
+    this.popup.form.submitButton.element.addEventListener(
+      'click',
+      (e: MouseEvent) => {
+        this.enterToAccount(e);
+      },
+    );
   }
-  
+
   enterToAccount(e: MouseEvent): void {
     e.preventDefault();
     const user: void | IUser = this.popup.form.submitForm();
-    if(!user) return;
+    if (!user) return;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();
   }

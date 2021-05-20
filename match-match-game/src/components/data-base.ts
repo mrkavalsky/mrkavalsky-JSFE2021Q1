@@ -42,13 +42,10 @@ export class DataBase {
   constructor(public output: ScoreBlock) {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
-      const store: IDBObjectStore = this.dataBase.createObjectStore(
-        'players',
-        {
-          keyPath: 'id',
-          autoIncrement: true,
-        },
-      );
+      const store: IDBObjectStore = this.dataBase.createObjectStore('players', {
+        keyPath: 'id',
+        autoIncrement: true,
+      });
       store.createIndex('firstName', 'firstName');
       store.createIndex('lastName', 'lastName');
       store.createIndex('email', 'email', { unique: true });
@@ -102,6 +99,6 @@ export class DataBase {
   }
 
   findUser(mail: string): IUser | undefined {
-    return this.currentUsers.find(({email}) => email === mail);
+    return this.currentUsers.find(({ email }) => email === mail);
   }
 }
