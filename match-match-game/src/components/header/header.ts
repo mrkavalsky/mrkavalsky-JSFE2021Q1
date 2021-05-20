@@ -16,12 +16,12 @@ export class Header extends BaseBlock {
   ];
 
   public RegisterButton: BaseButton = new BaseButton(
-    ['header__button', 'header__button_register'],
+    ['header__button'],
     'Register New Player',
   );
 
   public startGameButton: BaseButton = new BaseButton(
-    ['header__button', 'header__button_start-game', 'header__button_hidden'],
+    ['header__button', 'header__button_hidden'],
     'start game',
   );
 
