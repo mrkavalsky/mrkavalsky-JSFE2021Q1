@@ -25,12 +25,18 @@ export class Form extends BaseBlock {
 
   public isFormValid = false;
 
-  private errorField: BaseComponent = new BaseComponent('div', ['form__error-field']);
+  private errorField: BaseComponent = new BaseComponent('div', [
+    'form__error-field',
+  ]);
 
   constructor(private output: DataBase) {
     super('form', ['form']);
     this.appendComponents(this.inputsArray);
-    this.appendComponents([this.errorField, this.submitButton, this.cancelButton]);
+    this.appendComponents([
+      this.errorField,
+      this.submitButton,
+      this.cancelButton,
+    ]);
     this.addFormValidationEvent();
   }
 
@@ -91,7 +97,8 @@ export class Form extends BaseBlock {
         user.firstName !== userInfo[0] ||
         user.lastName !== userInfo[1]
       ) {
-        this.errorField.element.innerText = 'A user with this email address already exists';
+        this.errorField.element.innerText =
+          'A user with this email address already exists';
         return undefined;
       }
       document.body.lastElementChild?.remove();
