@@ -69,7 +69,7 @@ export class Form extends BaseBlock {
     this.clearDownForm();
   }
 
-  submitForm(): void {
+  submitForm(): IUser | void {
     if (this.isFormValidate) {
       document.body.lastElementChild?.remove();
       const userInfo = this.inputsArray.map(
@@ -83,6 +83,7 @@ export class Form extends BaseBlock {
         };
         this.output.addNewUser(user);
       this.clearDownForm();
-    }
+      return user;
+    } else return;
   }
 }

@@ -7,6 +7,7 @@ import { SettingsPage } from './pages/settings-page/settings-page';
 import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
 import { Popup } from './components/popup/popup';
+import { IUser } from './components/user-interface';
 
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
@@ -78,6 +79,9 @@ export class App {
   
   enterToAccount(e: MouseEvent): void {
     e.preventDefault();
-    this.popup.form.submitForm();
+    const user: void | IUser = this.popup.form.submitForm();
+    if(!user) return;
+    this.header.showStartGameButton();
+    this.indexDB.addBestScoreArray();
   }
 }
