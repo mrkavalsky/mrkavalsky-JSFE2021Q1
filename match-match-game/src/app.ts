@@ -82,7 +82,7 @@ export class App {
 
   enterToAccount(e: MouseEvent): void {
     e.preventDefault();
-    const user: void | IUser = this.popup.form.submitForm();
+    const user: IUser | void = this.popup.form.submitForm();
     if (!user) return;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();

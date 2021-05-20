@@ -79,12 +79,13 @@ export class Form extends BaseBlock {
   }
 
   submitForm(): IUser | void {
-    if (!this.isFormValid) return;
+    if (!this.isFormValid) return undefined;
     const userInfo: string[] = this.inputsArray.map(
       (input) => input.getInputNode().value,
     );
-    const user: IUser = this.output.findUser(userInfo[2]) || this.getNewUser(userInfo);
-    if (!this.checkUser(user, userInfo)) return;
+    const user: IUser =
+      this.output.findUser(userInfo[2]) || this.getNewUser(userInfo);
+    if (!this.checkUser(user, userInfo)) return undefined;
     document.body.lastElementChild?.remove();
     this.clearDownForm();
     return user;
@@ -101,14 +102,11 @@ export class Form extends BaseBlock {
     return user;
   }
 
-  checkUser({firstName, lastName}: IUser, [fName, lName]: string[]): boolean {
-    if (
-      firstName !== fName ||
-      lastName !== lName
-    ) {
+  checkUser({ firstName, lastName }: IUser, [fName, lName]: string[]): boolean {
+    if (firstName !== fName || lastName !== lName) {
       this.errorField.element.innerText =
         'A user with this email address already exists';
-        return false;
+      return false;
     }
     this.errorField.element.innerText = '';
     return true;
