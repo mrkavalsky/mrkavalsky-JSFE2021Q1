@@ -27,3 +27,9 @@
   background: #fff;
   color: #2196F3;
 }
+.form__error-field {
+  height: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  color: black;
+}

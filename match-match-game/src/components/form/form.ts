@@ -1,5 +1,6 @@
 import { BaseBlock } from '../base-block';
 import { BaseButton } from '../base-button';
+import { BaseComponent } from '../base-component';
 import { DataBase } from '../data-base';
 import { Input } from '../input/input';
 import { IUser } from '../user-interface';
@@ -24,10 +25,12 @@ export class Form extends BaseBlock {
 
   public isFormValid = false;
 
+  private errorField: BaseComponent = new BaseComponent('div', ['form__error-field']);
+
   constructor(private output: DataBase) {
     super('form', ['form']);
     this.appendComponents(this.inputsArray);
-    this.appendComponents([this.submitButton, this.cancelButton]);
+    this.appendComponents([this.errorField, this.submitButton, this.cancelButton]);
     this.addFormValidationEvent();
   }
 
@@ -70,18 +73,28 @@ export class Form extends BaseBlock {
   }
 
   submitForm(): IUser | void {
+    this.errorField.element.innerText = '';
     if (this.isFormValid) {
-      document.body.lastElementChild?.remove();
-      const userInfo = this.inputsArray.map(
+      const userInfo: string[] = this.inputsArray.map(
         (input) => input.getInputNode().value,
       );
-      const user: IUser = {
-        firstName: userInfo[0],
-        lastName: userInfo[1],
-        email: userInfo[2],
-        score: 0,
-      };
-      this.output.addNewUser(user);
+      let user: IUser | void = this.output.findUser(userInfo[2]);
+      if (!user) {
+        user = {
+          firstName: userInfo[0],
+          lastName: userInfo[1],
+          email: userInfo[2],
+          score: 0,
+        };
+        this.output.addNewUser(user);
+      } else if (
+        user.firstName !== userInfo[0] ||
+        user.lastName !== userInfo[1]
+      ) {
+        this.errorField.element.innerText = 'A user with this email address already exists';
+        return undefined;
+      }
+      document.body.lastElementChild?.remove();
       this.clearDownForm();
       return user;
     }
