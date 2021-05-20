@@ -40,10 +40,13 @@ export class DataBase {
   constructor(public output: ScoreBlock) {
     this.openRequest.onupgradeneeded = () => {
       this.dataBase = this.openRequest.result;
-      const store = this.dataBase.createObjectStore('testCollection', {
-        keyPath: 'id',
-        autoIncrement: true,
-      });
+      const store: IDBObjectStore = this.dataBase.createObjectStore(
+        'testCollection',
+        {
+          keyPath: 'id',
+          autoIncrement: true,
+        },
+      );
       store.createIndex('firstName', 'firstName');
       store.createIndex('lastName', 'lastName');
       store.createIndex('email', 'email', { unique: true });
@@ -58,11 +61,11 @@ export class DataBase {
 
   addNewUser(user: IUser): void {
     if (!this.dataBase) return;
-    const transaction = this.dataBase.transaction(
+    const transaction: IDBTransaction = this.dataBase.transaction(
       'testCollection',
       'readwrite',
     );
-    const store = transaction.objectStore('testCollection');
+    const store: IDBObjectStore = transaction.objectStore('testCollection');
     store.add(user);
     transaction.oncomplete = () => {
       this.transactionResult = 'complete';

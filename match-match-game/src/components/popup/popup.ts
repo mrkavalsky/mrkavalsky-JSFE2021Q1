@@ -13,9 +13,7 @@ export class Popup extends BaseBlock {
 
   public formWrapper: BaseBlock = new BaseBlock('div', ['form-wrapper']);
 
-  constructor(
-    private output: DataBase
-  ) {
+  constructor(private output: DataBase) {
     super('div', ['popup']);
     this.form = new Form(this.output);
     this.addHidePopupEvent();

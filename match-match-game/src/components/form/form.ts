@@ -24,9 +24,7 @@ export class Form extends BaseBlock {
 
   public isFormValidate = false;
 
-  constructor(
-    private output: DataBase
-  ) {
+  constructor(private output: DataBase) {
     super('form', ['form']);
     this.appendComponents(this.inputsArray);
     this.appendComponents([this.submitButton, this.cancelButton]);
@@ -78,13 +76,15 @@ export class Form extends BaseBlock {
     e.preventDefault();
     if (this.isFormValidate) {
       document.body.lastElementChild?.remove();
-      const userInfo = this.inputsArray.map((input) => input.getInputNode().value);
+      const userInfo = this.inputsArray.map(
+        (input) => input.getInputNode().value,
+      );
       const user: IUser = {
         firstName: userInfo[0],
         lastName: userInfo[1],
         email: userInfo[2],
-        score: 0
-      }
+        score: 0,
+      };
       this.output.addNewUser(user);
       this.clearDownForm();
     }
