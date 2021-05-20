@@ -6,9 +6,12 @@ import { BestScorePage } from './pages/best-score-page/best-score-page';
 import { SettingsPage } from './pages/settings-page/settings-page';
 import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
+import { Popup } from './components/popup/popup';
 
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
+
+  private popup: Popup = new Popup();
 
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
 
@@ -29,6 +32,7 @@ export class App {
     this.appendComponent(this.aboutGamePage);
     this.bindSettingsButtons();
     this.addRouting();
+    this.addShowPopupEvent();
   }
 
   appendComponent(block: BaseComponent): void {
@@ -56,6 +60,12 @@ export class App {
   bindSettingsButtons(): void {
     this.aboutGamePage.settingsButton.element.addEventListener('click', () => {
       this.header.settingsButton.element.click();
+    });
+  }
+  
+  addShowPopupEvent(): void {
+    this.header.RegisterButton.element.addEventListener('click', () => {
+      document.body.append(this.popup.element);
     });
   }
 }
