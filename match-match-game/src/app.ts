@@ -33,6 +33,7 @@ export class App {
     this.bindSettingsButtons();
     this.addRouting();
     this.addShowPopupEvent();
+    this.addEnterToAccountEvent();
   }
 
   appendComponent(block: BaseComponent): void {
@@ -67,5 +68,16 @@ export class App {
     this.header.RegisterButton.element.addEventListener('click', () => {
       document.body.append(this.popup.element);
     });
+  }
+
+  addEnterToAccountEvent(): void {
+    this.popup.form.submitButton.element.addEventListener('click', (e: MouseEvent) => {
+      this.enterToAccount(e);
+    });
+  }
+  
+  enterToAccount(e: MouseEvent): void {
+    e.preventDefault();
+    this.popup.form.submitForm();
   }
 }
