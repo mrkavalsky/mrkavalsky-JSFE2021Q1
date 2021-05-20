@@ -2,6 +2,7 @@ import { BaseBlock } from '../base-block';
 import { BaseButton } from '../base-button';
 import { DataBase } from '../data-base';
 import { Input } from '../input/input';
+import { IUser } from '../user-interface';
 import './form.css';
 
 export class Form extends BaseBlock {
@@ -33,12 +34,8 @@ export class Form extends BaseBlock {
   }
 
   addFormValidationEvent(): void {
-    this.submitButton.element.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (this.isFormValidate) {
-        document.body.lastElementChild?.remove();
-        this.clearDownForm();
-      }
+    this.submitButton.element.addEventListener('click', (e: MouseEvent) => {
+      this.submitForm(e);
     });
     this.element.addEventListener('input', () => {
       this.validateForm();
@@ -75,5 +72,21 @@ export class Form extends BaseBlock {
     e.preventDefault();
     document.body.lastElementChild?.remove();
     this.clearDownForm();
+  }
+
+  submitForm(e: MouseEvent): void {
+    e.preventDefault();
+    if (this.isFormValidate) {
+      document.body.lastElementChild?.remove();
+      const userInfo = this.inputsArray.map((input) => input.getInputNode().value);
+      const user: IUser = {
+        firstName: userInfo[0],
+        lastName: userInfo[1],
+        email: userInfo[2],
+        score: 0
+      }
+      this.output.addNewUser(user);
+      this.clearDownForm();
+    }
   }
 }
