@@ -24,7 +24,7 @@ export class Form extends BaseBlock {
   public isFormValidate = false;
 
   constructor(
-    tag: string = 'form',
+    tag = 'form',
     styles: string[] = ['form'],
     children: BaseComponent[] = [],
   ) {

@@ -26,7 +26,7 @@ export class Header extends BaseBlock {
   public popup: Popup = new Popup();
 
   constructor(
-    tag: string = 'header',
+    tag = 'header',
     styles: string[] = ['header'],
     children: BaseComponent[] = [],
   ) {

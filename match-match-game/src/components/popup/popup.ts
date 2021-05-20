@@ -13,7 +13,7 @@ export class Popup extends BaseBlock {
   public formWrapper: BaseBlock = new BaseBlock('div', ['form-wrapper']);
 
   constructor(
-    tag: string = 'div',
+    tag = 'div',
     styles: string[] = ['popup'],
     children: BaseComponent[] = [],
   ) {

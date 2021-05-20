@@ -4,6 +4,7 @@ import './best-score-page.css';
 
 export class BestScorePage extends BasePage {
   public scoreBlock = new ScoreBlock();
+
   constructor() {
     super('main', ['main'], [], 'best-score');
     this.element.innerHTML = `

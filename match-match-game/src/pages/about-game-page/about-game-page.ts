@@ -18,10 +18,7 @@ export class AboutGamePage extends BasePage {
     'Game Settings',
   );
 
-  public startGameButton: BaseButton = new BaseButton(
-    ['button'],
-    'Start Game',
-  );
+  public startGameButton: BaseButton = new BaseButton(['button'], 'Start Game');
 
   public gameMenu: BaseBlock = new BaseBlock(
     'div',

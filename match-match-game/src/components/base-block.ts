@@ -2,7 +2,7 @@ import { BaseComponent } from './base-component';
 
 export class BaseBlock extends BaseComponent {
   constructor(
-    tag: string = 'div',
+    tag = 'div',
     styles: string[] = [],
     public children: BaseComponent[] = [],
   ) {

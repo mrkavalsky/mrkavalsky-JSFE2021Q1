@@ -9,18 +9,22 @@ import { DataBase } from './components/data-base';
 
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
+
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
+
   public aboutGamePage: AboutGamePage = new AboutGamePage();
+
   public appPages: BasePage[] = [
     this.aboutGamePage,
     this.bestScorePage,
     new SettingsPage(),
   ];
+
   public rootChildren: BaseComponent[] = [];
+
   public header: Header = new Header();
-  constructor(
-    readonly rootElement: HTMLElement
-  ) {
+
+  constructor(readonly rootElement: HTMLElement) {
     this.appendComponent(this.header);
     this.appendComponent(this.aboutGamePage);
     this.bindSettingsButtons();
