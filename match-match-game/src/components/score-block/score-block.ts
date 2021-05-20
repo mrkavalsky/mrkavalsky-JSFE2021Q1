@@ -1,9 +1,10 @@
 import { BaseBlock } from "../base-block";
 import { IUser } from "../user-interface";
 import { User } from "../user/user";
+import './score-block.css';
 
 export class ScoreBlock extends BaseBlock {
-  private userList: BaseBlock = new BaseBlock('div', ['score-block__users']);
+  private userList: BaseBlock = new BaseBlock('div');
   constructor() {
     super('div', ['score-block']);
     this.appendComponents([this.userList]);
@@ -17,7 +18,7 @@ export class ScoreBlock extends BaseBlock {
   }
   refreshBestScore(users: IUser[] | void): void {
     this.element.lastElementChild?.remove();
-    this.userList = new BaseBlock('div', ['score-block__users']);
+    this.userList = new BaseBlock('div');
     this.getBestScoreList(users);
     this.element.append(this.userList.element);
   }

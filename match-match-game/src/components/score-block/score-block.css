@@ -1,0 +1,5 @@
+.score-block {
+  margin-top: 24px;
+  height: 90%;
+  overflow: auto;
+}
