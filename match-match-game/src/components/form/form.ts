@@ -80,31 +80,32 @@ export class Form extends BaseBlock {
 
   submitForm(): IUser | void {
     this.errorField.element.innerText = '';
-    if (this.isFormValid) {
-      const userInfo: string[] = this.inputsArray.map(
-        (input) => input.getInputNode().value,
-      );
-      let user: IUser | void = this.output.findUser(userInfo[2]);
-      if (!user) {
-        user = {
-          firstName: userInfo[0],
-          lastName: userInfo[1],
-          email: userInfo[2],
-          score: 0,
-        };
-        this.output.addNewUser(user);
-      } else if (
-        user.firstName !== userInfo[0] ||
-        user.lastName !== userInfo[1]
-      ) {
-        this.errorField.element.innerText =
-          'A user with this email address already exists';
-        return undefined;
-      }
-      document.body.lastElementChild?.remove();
-      this.clearDownForm();
-      return user;
+    if (!this.isFormValid) return;
+    const userInfo: string[] = this.inputsArray.map(
+      (input) => input.getInputNode().value,
+    );
+    const user: IUser = this.output.findUser(userInfo[2]) || this.getNewUser(userInfo);
+    if (
+      user.firstName !== userInfo[0] ||
+      user.lastName !== userInfo[1]
+    ) {
+      this.errorField.element.innerText =
+        'A user with this email address already exists';
+      return undefined;
     }
-    return undefined;
+    document.body.lastElementChild?.remove();
+    this.clearDownForm();
+    return user;
+  }
+
+  getNewUser(userInfo: string[]): IUser {
+    const user: IUser = {
+      firstName: userInfo[0],
+      lastName: userInfo[1],
+      email: userInfo[2],
+      score: 0,
+    };
+    this.output.addNewUser(user);
+    return user;
   }
 }
