@@ -1,10 +1,11 @@
 import { BaseBlock } from '../base-block';
 import { BaseComponent } from '../base-component';
+import { DataBase } from '../data-base';
 import { Form } from '../form/form';
 import './popup.css';
 
 export class Popup extends BaseBlock {
-  public form: Form = new Form();
+  public form: Form;
 
   public popupBackground: BaseComponent = new BaseComponent('div', [
     'popup__background',
@@ -13,11 +14,10 @@ export class Popup extends BaseBlock {
   public formWrapper: BaseBlock = new BaseBlock('div', ['form-wrapper']);
 
   constructor(
-    tag = 'div',
-    styles: string[] = ['popup'],
-    children: BaseComponent[] = [],
+    private output: DataBase
   ) {
-    super(tag, styles, children);
+    super('div', ['popup']);
+    this.form = new Form(this.output);
     this.addHidePopupEvent();
     this.formWrapper.element.innerHTML = `
       <h2 class="popup__title">Register New Player</hw>

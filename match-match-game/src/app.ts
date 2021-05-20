@@ -11,9 +11,9 @@ import { Popup } from './components/popup/popup';
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
 
-  private popup: Popup = new Popup();
-
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
+
+  private popup: Popup = new Popup(this.indexDB);
 
   public aboutGamePage: AboutGamePage = new AboutGamePage();
 

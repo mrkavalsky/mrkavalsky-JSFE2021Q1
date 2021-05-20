@@ -1,6 +1,6 @@
 import { BaseBlock } from '../base-block';
 import { BaseButton } from '../base-button';
-import { BaseComponent } from '../base-component';
+import { DataBase } from '../data-base';
 import { Input } from '../input/input';
 import './form.css';
 
@@ -24,11 +24,9 @@ export class Form extends BaseBlock {
   public isFormValidate = false;
 
   constructor(
-    tag = 'form',
-    styles: string[] = ['form'],
-    children: BaseComponent[] = [],
+    private output: DataBase
   ) {
-    super(tag, styles, children);
+    super('form', ['form']);
     this.appendComponents(this.inputsArray);
     this.appendComponents([this.submitButton, this.cancelButton]);
     this.addFormValidationEvent();
