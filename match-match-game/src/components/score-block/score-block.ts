@@ -6,6 +6,7 @@ export class ScoreBlock extends BaseBlock {
   private userList: BaseBlock = new BaseBlock('div', ['score-block__users']);
   constructor() {
     super('div', ['score-block']);
+    this.appendComponents([this.userList]);
   }
 
   getBestScoreList(users: IUser[] | void): void {
