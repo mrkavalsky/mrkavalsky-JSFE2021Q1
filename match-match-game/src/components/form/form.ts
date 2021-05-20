@@ -22,7 +22,7 @@ export class Form extends BaseBlock {
     'cancel',
   );
 
-  public isFormValidate = false;
+  public isFormValid = false;
 
   constructor(private output: DataBase) {
     super('form', ['form']);
@@ -44,13 +44,13 @@ export class Form extends BaseBlock {
   }
 
   validateForm(): void {
-    this.isFormValidate = false;
+    this.isFormValid = false;
     if (
       this.inputsArray.filter(({ isValidate }) => isValidate).length ===
       this.inputsArray.length
     ) {
       this.submitButton.element.classList.remove('form__button_submit_disable');
-      this.isFormValidate = true;
+      this.isFormValid = true;
     } else
       this.submitButton.element.classList.add('form__button_submit_disable');
   }
@@ -70,7 +70,7 @@ export class Form extends BaseBlock {
   }
 
   submitForm(): IUser | void {
-    if (this.isFormValidate) {
+    if (this.isFormValid) {
       document.body.lastElementChild?.remove();
       const userInfo = this.inputsArray.map(
         (input) => input.getInputNode().value,
