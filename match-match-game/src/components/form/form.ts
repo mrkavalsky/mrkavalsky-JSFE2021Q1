@@ -46,10 +46,8 @@ export class Form extends BaseBlock {
     this.element.addEventListener('change', () => {
       this.validateForm();
     });
-    this.cancelButton.element.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.body.lastElementChild?.remove();
-      this.clearDownForm();
+    this.cancelButton.element.addEventListener('click', (e: MouseEvent) => {
+      this.closeForm(e);
     });
   }
 
@@ -71,5 +69,11 @@ export class Form extends BaseBlock {
       input.clearDownError();
       this.validateForm();
     });
+  }
+
+  closeForm(e: MouseEvent): void {
+    e.preventDefault();
+    document.body.lastElementChild?.remove();
+    this.clearDownForm();
   }
 }
