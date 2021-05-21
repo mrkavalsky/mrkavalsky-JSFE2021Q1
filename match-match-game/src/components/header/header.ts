@@ -52,7 +52,7 @@ export class Header extends BaseBlock {
     ]);
     this.addActiveModeEventToButtons();
     if (window.location.hash === '' || window.location.hash === '#start-game') {
-      this.clickOnAboutGameButton();
+      this.clickOnNavButton('about-page');
     }
   }
 
@@ -79,9 +79,5 @@ export class Header extends BaseBlock {
     );
     if (!button) return;
     button.element.click();
-  }
-
-  clickOnAboutGameButton(): void {
-    this.navMenuButtons[0].element.click();
   }
 }

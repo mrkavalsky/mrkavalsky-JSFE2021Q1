@@ -68,7 +68,7 @@ export class App {
     );
     if (!currentRoute) return;
     if (currentRoute instanceof Game && !this.isUserEnter) {
-      this.header.clickOnAboutGameButton();
+      window.location.hash = 'about-game';
       return;
     }
     this.header.clickOnNavButton(currentRouteName);
