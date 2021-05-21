@@ -94,7 +94,7 @@ export class DataBase {
     };
     transaction.oncomplete = () => {
       this.currentUsers = users;
-      this.output.refreshBestScore(users);
+      this.output.refreshBestScore(users.slice(0, 10));
     };
   }
 
