@@ -9,4 +9,9 @@ export class CardField extends BaseBlock {
       this.appendComponents([new Card(''), new Card('')]);
     }
   }
+
+  clear(): void {
+    this.children = [];
+    this.element.innerHTML = '';
+  }
 }
