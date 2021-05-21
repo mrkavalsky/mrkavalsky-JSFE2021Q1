@@ -1,5 +1,5 @@
 import { BaseBlock } from '../../shared/base-block';
-import { BaseComponent } from '../base-component';
+import { BaseComponent } from '../../shared/base-component';
 import { DataBase } from '../data-base';
 import { Form } from '../form/form';
 import './popup.css';

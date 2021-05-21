@@ -1,6 +1,6 @@
 import { BaseBlock } from '../../shared/base-block';
 import { BaseButton } from '../../shared/base-button';
-import { BaseComponent } from '../base-component';
+import { BaseComponent } from '../../shared/base-component';
 import { NavButton } from '../nav-button';
 import './header.css';
 

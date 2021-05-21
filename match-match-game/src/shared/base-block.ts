@@ -1,4 +1,4 @@
-import { BaseComponent } from '../components/base-component';
+import { BaseComponent } from './base-component';
 
 export class BaseBlock extends BaseComponent {
   constructor(

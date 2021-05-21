@@ -1,4 +1,4 @@
-import { BaseComponent } from './components/base-component';
+import { BaseComponent } from './shared/base-component';
 import { AboutGamePage } from './pages/about-game-page/about-game-page';
 import './index.css';
 import { BasePage } from './components/base-page';

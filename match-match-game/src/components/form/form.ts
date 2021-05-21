@@ -1,6 +1,6 @@
 import { BaseBlock } from '../../shared/base-block';
 import { BaseButton } from '../../shared/base-button';
-import { BaseComponent } from '../base-component';
+import { BaseComponent } from '../../shared/base-component';
 import { DataBase } from '../data-base';
 import { Input } from '../input/input';
 import { IUser } from '../user-interface';
