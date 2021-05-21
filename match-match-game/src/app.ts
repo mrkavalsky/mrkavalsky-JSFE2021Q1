@@ -58,6 +58,7 @@ export class App {
         (p) => p.name === currentRouteName,
       );
       if (!currentRoute) return;
+      this.header.clickOnNavButton(currentRouteName);
       this.removeComponent();
       this.appendComponent(currentRoute);
     };

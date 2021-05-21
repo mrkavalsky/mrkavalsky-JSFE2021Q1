@@ -9,10 +9,10 @@ export class Header extends BaseBlock {
 
   public navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
 
-  public navMenuButtons: string[] = [
-    'About Game',
-    'Best Score',
-    'Game Settings',
+  private navMenuButtons: NavButton[] =[
+    new NavButton(['header__nav-button'], 'About Game'),
+    new NavButton(['header__nav-button'], 'Best Score'),
+    new NavButton(['header__nav-button'], 'Game Settings'),
   ];
 
   public RegisterButton: BaseButton = new BaseButton(
@@ -33,11 +33,7 @@ export class Header extends BaseBlock {
     children: BaseComponent[] = [],
   ) {
     super(tag, styles, children);
-    this.navMenuButtons.forEach((name) => {
-      this.navMenu.appendComponents([
-        new NavButton(['header__nav-button'], name),
-      ]);
-    });
+    this.navMenu.appendComponents(this.navMenuButtons);
     [, , this.settingsButton] = this.navMenu.children;
     this.logoBlock.element.innerHTML = `
       <div class="logo__part logo__part_blue">Match</div>
@@ -55,7 +51,9 @@ export class Header extends BaseBlock {
       this.startGameButton,
     ]);
     this.addActiveModeEventToButtons();
-    this.navMenu.children[0].element.click();
+    if (window.location.hash === '' || window.location.hash === '#start-game') {
+      this.navMenu.children[0].element.click();
+    }
   }
 
   addActiveModeEventToButtons(): void {
@@ -73,5 +71,11 @@ export class Header extends BaseBlock {
     this.RegisterButton.element.classList.add('header__button_hidden');
     this.startGameButton.element.classList.remove('header__button_hidden');
     this.navMenu.element.classList.add('header__nav-menu_margin');
+  }
+
+  clickOnNavButton(target: string): void {
+    const button: NavButton | undefined = this.navMenuButtons.find(({pageHash}) => pageHash === target);
+    if (!button) return;
+    button.element.click();
   }
 }
