@@ -1,4 +1,4 @@
-import { BasePage } from '../../components/base-page';
+import { BasePage } from '../../shared/base-page';
 import { ScoreBlock } from '../../components/score-block/score-block';
 import './best-score-page.css';
 

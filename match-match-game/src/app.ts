@@ -1,7 +1,7 @@
 import { BaseComponent } from './shared/base-component';
 import { AboutGamePage } from './pages/about-game-page/about-game-page';
 import './index.css';
-import { BasePage } from './components/base-page';
+import { BasePage } from './shared/base-page';
 import { BestScorePage } from './pages/best-score-page/best-score-page';
 import { SettingsPage } from './pages/settings-page/settings-page';
 import { Header } from './components/header/header';

@@ -1,5 +1,5 @@
-import { BaseBlock } from '../shared/base-block';
-import { BaseComponent } from '../shared/base-component';
+import { BaseBlock } from './base-block';
+import { BaseComponent } from './base-component';
 
 export class BasePage extends BaseBlock {
   constructor(

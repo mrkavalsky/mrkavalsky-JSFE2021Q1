@@ -1,7 +1,7 @@
 import { BaseBlock } from '../../shared/base-block';
 import { BaseButton } from '../../shared/base-button';
 import { BaseComponent } from '../../shared/base-component';
-import { NavButton } from '../nav-button';
+import { NavButton } from '../../shared/nav-button';
 import './header.css';
 
 export class Header extends BaseBlock {
