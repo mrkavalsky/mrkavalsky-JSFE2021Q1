@@ -31,6 +31,8 @@ export class App {
   public rootChildren: BaseComponent[] = [];
 
   public header: Header = new Header();
+  
+  private isUserEnter: boolean = false;
 
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponent(this.header);
@@ -58,6 +60,9 @@ export class App {
         (p) => p.name === currentRouteName,
       );
       if (!currentRoute) return;
+      if (currentRoute instanceof Game && !this.isUserEnter) {
+        this.header.clickOnAboutGameButton();
+        return;}
       this.header.clickOnNavButton(currentRouteName);
       this.removeComponent();
       this.appendComponent(currentRoute);
@@ -89,6 +94,7 @@ export class App {
     e.preventDefault();
     const user: IUser | void = this.popup.form.submitForm();
     if (!user) return;
+    this.isUserEnter = true;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();
   }
