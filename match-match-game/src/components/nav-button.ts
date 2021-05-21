@@ -1,4 +1,4 @@
-import { BaseButton } from './base-button';
+import { BaseButton } from '../shared/base-button';
 
 export class NavButton extends BaseButton {
   public pageHash: string;
