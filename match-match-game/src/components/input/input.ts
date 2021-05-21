@@ -1,4 +1,4 @@
-import { BaseBlock } from '../base-block';
+import { BaseBlock } from '../../shared/base-block';
 import { BaseComponent } from '../base-component';
 import './input.css';
 

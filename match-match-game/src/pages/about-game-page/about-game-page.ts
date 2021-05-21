@@ -1,4 +1,4 @@
-import { BaseBlock } from '../../components/base-block';
+import { BaseBlock } from '../../shared/base-block';
 import { BaseButton } from '../../components/base-button';
 import { BasePage } from '../../components/base-page';
 import './about-game-page.css';

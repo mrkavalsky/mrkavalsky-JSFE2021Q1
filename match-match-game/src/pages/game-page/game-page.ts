@@ -1,4 +1,4 @@
-import { BaseBlock } from "../../components/base-block";
+import { BaseBlock } from "../../shared/base-block";
 import { CardField } from "../../components/card-field/card-field";
 import './game-page.css';
 

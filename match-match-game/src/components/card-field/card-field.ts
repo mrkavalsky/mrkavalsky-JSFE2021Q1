@@ -1,4 +1,4 @@
-import { BaseBlock } from "../base-block";
+import { BaseBlock } from "../../shared/base-block";
 import { Card } from "../card/card";
 import './card-field.css';
 
