@@ -55,19 +55,25 @@ export class App {
 
   addRouting(): void {
     window.onpopstate = () => {
-      const currentRouteName: string = window.location.hash.slice(1);
-      const currentRoute: BasePage | undefined = this.appPages.find(
-        (p) => p.name === currentRouteName,
-      );
-      if (!currentRoute) return;
-      if (currentRoute instanceof Game && !this.isUserEnter) {
-        this.header.clickOnAboutGameButton();
-        return;
-      }
-      this.header.clickOnNavButton(currentRouteName);
-      this.removeComponent();
-      this.appendComponent(currentRoute);
+      this.changeRout();
     };
+    this.header.clickOnNavButton(window.location.hash.slice(1));
+    this.changeRout();
+  }
+
+  changeRout() {
+    const currentRouteName: string = window.location.hash.slice(1);
+    const currentRoute: BasePage | undefined = this.appPages.find(
+      (p) => p.name === currentRouteName,
+    );
+    if (!currentRoute) return;
+    if (currentRoute instanceof Game && !this.isUserEnter) {
+      this.header.clickOnAboutGameButton();
+      return;
+    }
+    this.header.clickOnNavButton(currentRouteName);
+    this.removeComponent();
+    this.appendComponent(currentRoute);
   }
 
   bindSettingsButtons(): void {
