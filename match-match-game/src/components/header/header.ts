@@ -51,9 +51,6 @@ export class Header extends BaseBlock {
       this.startGameButton,
     ]);
     this.addActiveModeEventToButtons();
-    if (window.location.hash === '' || window.location.hash === '#start-game') {
-      this.clickOnNavButton('about-page');
-    }
   }
 
   addActiveModeEventToButtons(): void {

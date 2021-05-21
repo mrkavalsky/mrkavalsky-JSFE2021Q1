@@ -57,6 +57,9 @@ export class App {
     window.onpopstate = () => {
       this.changeRout();
     };
+    if (window.location.hash === '' || window.location.hash === '#start-game') {
+      window.location.hash = 'about-game';
+    }
     this.header.clickOnNavButton(window.location.hash.slice(1));
     this.changeRout();
   }
