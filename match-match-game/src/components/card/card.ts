@@ -16,4 +16,12 @@ export class Card extends BaseBlock {
     super('div', ['card-container']);
     this.appendComponents([this.card]);
   }
+
+  rotateToBack(): void {
+    this.card.element.classList.add('card_rotate');
+  }
+
+  rotateToFront(): void {
+    this.card.element.classList.remove('card_rotate');
+  }
 }
