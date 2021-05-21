@@ -17,8 +17,9 @@ export class CardField extends BaseBlock {
     const cardArray: Card[] = [];
     for (let i = 0; i < this.mode; i++) {
       cardArray.push(new Card(`${i}`));
+      cardArray.push(new Card(`${i}`));
     }
-    return cardArray.concat(cardArray).sort(() => Math.random() - .5);
+    return cardArray.sort(() => Math.random() - .5);
   }
 
   refreshGameField(): void {
