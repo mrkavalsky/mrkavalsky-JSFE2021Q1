@@ -8,7 +8,7 @@ import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
 import { Popup } from './components/popup/popup';
 import { IUser } from './components/user-interface';
-import { Game } from './components/game/game';
+import { Game } from './pages/game-page/game-page';
 
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
