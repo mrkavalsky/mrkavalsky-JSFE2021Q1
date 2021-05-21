@@ -20,4 +20,9 @@ export class CardField extends BaseBlock {
     }
     return cardArray.concat(cardArray).sort(() => Math.random() - .5);
   }
+
+  refreshGameField(): void {
+    this.clear();
+    this.appendComponents(this.getCards());
+  }
 }
