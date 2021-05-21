@@ -8,6 +8,7 @@ import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
 import { Popup } from './components/popup/popup';
 import { IUser } from './components/user-interface';
+import { Game } from './components/game/game';
 
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
@@ -15,6 +16,8 @@ export class App {
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
 
   private popup: Popup = new Popup(this.indexDB);
+
+  private game: Game = new Game();
 
   public aboutGamePage: AboutGamePage = new AboutGamePage();
 
@@ -35,6 +38,9 @@ export class App {
     this.addRouting();
     this.addShowPopupEvent();
     this.addEnterToAccountEvent();
+    this.header.startGameButton.element.addEventListener('click', () => {
+      this.startGame();
+    });
   }
 
   appendComponent(block: BaseComponent): void {
@@ -86,5 +92,10 @@ export class App {
     if (!user) return;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();
+  }
+  
+  startGame(): void {
+    this.removeComponent();
+    this.appendComponent(this.game);
   }
 }
