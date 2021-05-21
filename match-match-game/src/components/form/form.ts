@@ -3,7 +3,7 @@ import { BaseButton } from '../../shared/base-button';
 import { BaseComponent } from '../../shared/base-component';
 import { DataBase } from '../data-base';
 import { Input } from '../input/input';
-import { IUser } from '../user-interface';
+import { IUser } from '../../shared/user-interface';
 import './form.css';
 
 export class Form extends BaseBlock {

@@ -7,7 +7,7 @@ import { SettingsPage } from './pages/settings-page/settings-page';
 import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
 import { Popup } from './components/popup/popup';
-import { IUser } from './components/user-interface';
+import { IUser } from './shared/user-interface';
 import { Game } from './pages/game-page/game-page';
 
 export class App {

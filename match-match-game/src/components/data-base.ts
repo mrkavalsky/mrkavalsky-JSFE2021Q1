@@ -1,5 +1,5 @@
 import { ScoreBlock } from './score-block/score-block';
-import { IUser } from './user-interface';
+import { IUser } from '../shared/user-interface';
 
 export class DataBase {
   private iDB: IDBFactory = window.indexedDB;

@@ -1,5 +1,5 @@
 import { BaseBlock } from '../../shared/base-block';
-import { IUser } from '../user-interface';
+import { IUser } from '../../shared/user-interface';
 import { User } from '../user/user';
 import './score-block.css';
 

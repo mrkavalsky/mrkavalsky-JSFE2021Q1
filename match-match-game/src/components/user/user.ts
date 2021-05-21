@@ -1,6 +1,6 @@
 import { BaseBlock } from '../../shared/base-block';
 import { BaseComponent } from '../../shared/base-component';
-import { IUser } from '../user-interface';
+import { IUser } from '../../shared/user-interface';
 import './user.css';
 
 export class User extends BaseBlock {
