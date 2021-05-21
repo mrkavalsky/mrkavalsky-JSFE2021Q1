@@ -52,7 +52,7 @@ export class Header extends BaseBlock {
     ]);
     this.addActiveModeEventToButtons();
     if (window.location.hash === '' || window.location.hash === '#start-game') {
-      this.navMenu.children[0].element.click();
+      this.clickOnAboutGameButton();
     }
   }
 
@@ -77,5 +77,9 @@ export class Header extends BaseBlock {
     const button: NavButton | undefined = this.navMenuButtons.find(({pageHash}) => pageHash === target);
     if (!button) return;
     button.element.click();
+  }
+
+  clickOnAboutGameButton(): void {
+    this.navMenuButtons[0].element.click();
   }
 }
