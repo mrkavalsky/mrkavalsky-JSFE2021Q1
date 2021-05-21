@@ -1,0 +1,10 @@
+.game {
+  width: 1000px;
+  height: 802px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  margin-top: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
