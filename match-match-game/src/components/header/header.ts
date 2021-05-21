@@ -20,7 +20,7 @@ export class Header extends BaseBlock {
     'Register New Player',
   );
 
-  public startGameButton: BaseButton = new BaseButton(
+  public startGameButton: NavButton = new NavButton(
     ['header__button', 'header__button_hidden'],
     'start game',
   );
@@ -43,6 +43,11 @@ export class Header extends BaseBlock {
       <div class="logo__part logo__part_blue">Match</div>
       <div class="logo__part logo__part_white">Match</div>
     `;
+    this.startGameButton.element.addEventListener('click', () => {
+      this.navMenu.children.forEach((elem) => {
+        elem.element.classList.remove('header__nav-button_active');
+      });
+    });
     this.appendComponents([
       this.logoBlock,
       this.navMenu,

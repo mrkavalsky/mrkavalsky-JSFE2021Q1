@@ -17,7 +17,7 @@ export class App {
 
   private popup: Popup = new Popup(this.indexDB);
 
-  private game: Game = new Game();
+  private gamePage: Game = new Game();
 
   public aboutGamePage: AboutGamePage = new AboutGamePage();
 
@@ -25,6 +25,7 @@ export class App {
     this.aboutGamePage,
     this.bestScorePage,
     new SettingsPage(),
+    this.gamePage,
   ];
 
   public rootChildren: BaseComponent[] = [];
@@ -38,9 +39,6 @@ export class App {
     this.addRouting();
     this.addShowPopupEvent();
     this.addEnterToAccountEvent();
-    this.header.startGameButton.element.addEventListener('click', () => {
-      this.startGame();
-    });
   }
 
   appendComponent(block: BaseComponent): void {
@@ -92,10 +90,5 @@ export class App {
     if (!user) return;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();
-  }
-  
-  startGame(): void {
-    this.removeComponent();
-    this.appendComponent(this.game);
   }
 }
