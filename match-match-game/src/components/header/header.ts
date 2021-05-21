@@ -9,7 +9,7 @@ export class Header extends BaseBlock {
 
   public navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
 
-  private navMenuButtons: NavButton[] =[
+  private navMenuButtons: NavButton[] = [
     new NavButton(['header__nav-button'], 'About Game'),
     new NavButton(['header__nav-button'], 'Best Score'),
     new NavButton(['header__nav-button'], 'Game Settings'),
@@ -74,7 +74,9 @@ export class Header extends BaseBlock {
   }
 
   clickOnNavButton(target: string): void {
-    const button: NavButton | undefined = this.navMenuButtons.find(({pageHash}) => pageHash === target);
+    const button: NavButton | undefined = this.navMenuButtons.find(
+      ({ pageHash }) => pageHash === target,
+    );
     if (!button) return;
     button.element.click();
   }

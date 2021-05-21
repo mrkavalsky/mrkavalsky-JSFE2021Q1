@@ -31,8 +31,8 @@ export class App {
   public rootChildren: BaseComponent[] = [];
 
   public header: Header = new Header();
-  
-  private isUserEnter: boolean = false;
+
+  private isUserEnter = false;
 
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponent(this.header);
@@ -62,7 +62,8 @@ export class App {
       if (!currentRoute) return;
       if (currentRoute instanceof Game && !this.isUserEnter) {
         this.header.clickOnAboutGameButton();
-        return;}
+        return;
+      }
       this.header.clickOnNavButton(currentRouteName);
       this.removeComponent();
       this.appendComponent(currentRoute);
