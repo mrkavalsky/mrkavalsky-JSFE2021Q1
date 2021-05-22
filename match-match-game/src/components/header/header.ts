@@ -71,7 +71,7 @@ export class Header extends BaseBlock {
   }
 
   clickOnNavButton(target: string): void {
-    const button: NavButton | undefined = this.navMenuButtons.find(
+    const button: NavButton | undefined = this.navMenuButtons.concat([this.startGameButton]).find(
       ({ pageHash }) => pageHash === target,
     );
     if (!button) return;
