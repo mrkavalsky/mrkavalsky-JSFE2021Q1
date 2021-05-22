@@ -5,7 +5,7 @@ import './card.css';
 export class Card extends BaseBlock {
   public card: BaseBlock = new BaseBlock(
     'div',
-    ['card'],
+    ['card', 'card_rotate'],
     [
       new BaseComponent('div', ['card__side', 'card__side_back']),
       new BaseComponent('div', ['card__side', 'card__side_front']),

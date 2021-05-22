@@ -5,7 +5,6 @@ import './card-field.css';
 export class CardField extends BaseBlock {
   constructor(private mode: number = 8) {
     super('div', ['card-field']);
-    this.appendComponents(this.getCards());
   }
 
   clear(): void {
@@ -24,6 +23,12 @@ export class CardField extends BaseBlock {
 
   refreshGameField(): void {
     this.clear();
-    this.appendComponents(this.getCards());
+    const cards: Card[] = this.getCards();
+    this.appendComponents(cards);
+    setTimeout(() => {
+      cards.forEach((card) => {
+        card.rotateToFront();
+      })
+    }, 3000);
   }
 }

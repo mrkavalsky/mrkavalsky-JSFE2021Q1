@@ -9,4 +9,8 @@ export class Game extends BasePage {
     super('div', ['game'], [], 'start-game');
     this.appendComponents([this.cardField]);
   }
+
+  startGame(): void {
+    this.cardField.refreshGameField();
+  }
 }
