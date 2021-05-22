@@ -19,7 +19,7 @@ export class CardField extends BaseBlock {
       cardArray.push(new Card(`${i}`));
       cardArray.push(new Card(`${i}`));
     }
-    return cardArray.sort(() => Math.random() - .5);
+    return cardArray.sort(() => Math.random() - 0.5);
   }
 
   refreshGameField(): void {

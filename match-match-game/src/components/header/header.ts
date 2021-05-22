@@ -54,12 +54,12 @@ export class Header extends BaseBlock {
   }
 
   addActiveModeEventToButtons(): void {
-    this.navMenu.children.forEach((i) => {
-      i.element.addEventListener('click', () => {
-        this.navMenu.children.forEach((elem) => {
-          elem.element.classList.remove('header__nav-button_active');
+    this.navMenuButtons.forEach(({ element }) => {
+      element.addEventListener('click', () => {
+        this.navMenuButtons.forEach((i) => {
+          i.element.classList.remove('header__nav-button_active');
         });
-        i.element.classList.add('header__nav-button_active');
+        element.classList.add('header__nav-button_active');
       });
     });
   }
@@ -71,9 +71,9 @@ export class Header extends BaseBlock {
   }
 
   clickOnNavButton(target: string): void {
-    const button: NavButton | undefined = this.navMenuButtons.concat([this.startGameButton]).find(
-      ({ pageHash }) => pageHash === target,
-    );
+    const button: NavButton | undefined = this.navMenuButtons
+      .concat([this.startGameButton])
+      .find(({ pageHash }) => pageHash === target);
     if (!button) return;
     button.element.click();
   }

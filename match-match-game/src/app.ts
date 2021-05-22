@@ -64,7 +64,7 @@ export class App {
     this.changeRout();
   }
 
-  changeRout() {
+  changeRout(): void {
     const currentRouteName: string = window.location.hash.slice(1);
     const currentRoute: BasePage | undefined = this.appPages.find(
       (p) => p.name === currentRouteName,
