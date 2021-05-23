@@ -18,11 +18,18 @@ export class Card extends BaseBlock {
     this.appendComponents([this.card]);
   }
 
-  rotateToBack(): void {
-    this.card.element.classList.add('card_rotate');
+  rotateToBack(): Promise<void> {
+    return this.rotate();
   }
 
-  rotateToFront(): void {
-    this.card.element.classList.remove('card_rotate');
+  rotateToFront(): Promise<void> {
+    return this.rotate(false);
+  }
+
+  rotate(isFront: boolean = true): Promise<void> {
+    return new Promise((resolve) => {
+      this.card.element.classList.toggle('card_rotate', isFront);
+      this.card.element.addEventListener('transitionend', () => resolve(), {once: true});
+    })
   }
 }
