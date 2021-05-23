@@ -57,6 +57,7 @@ export class Header extends BaseBlock {
       this.stopGameButton,
     ]);
     this.addActiveModeEventToButtons();
+    this.startGameButton.element.addEventListener('click', () => this.showStopGameButton());
   }
 
   addActiveModeEventToButtons(): void {
@@ -74,6 +75,11 @@ export class Header extends BaseBlock {
     this.RegisterButton.element.classList.add('header__button_hidden');
     this.startGameButton.element.classList.remove('header__button_hidden');
     this.navMenu.element.classList.add('header__nav-menu_margin');
+  }
+
+  showStopGameButton(): void {
+    this.startGameButton.element.classList.add('header__button_hidden');
+    this.stopGameButton.element.classList.remove('header__button_hidden');
   }
 
   clickOnNavButton(target: string): void {
