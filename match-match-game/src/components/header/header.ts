@@ -9,6 +9,11 @@ export class Header extends BaseBlock {
 
   public navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
 
+  private stopGameButton = new BaseButton(
+    ['header__button', 'header__button_hidden'],
+    'stop game',
+  );
+
   private navMenuButtons: NavButton[] = [
     new NavButton(['header__nav-button'], 'About Game'),
     new NavButton(['header__nav-button'], 'Best Score'),
@@ -49,6 +54,7 @@ export class Header extends BaseBlock {
       this.navMenu,
       this.RegisterButton,
       this.startGameButton,
+      this.stopGameButton,
     ]);
     this.addActiveModeEventToButtons();
   }
