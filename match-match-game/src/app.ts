@@ -77,6 +77,9 @@ export class App {
     if (currentRoute instanceof Game && !this.isUserEnter) {
       this.gamePage.startGame();
     }
+    if(currentRouteName !== 'start-game' && this.isUserEnter) {
+      this.header.showStartGameButton();
+    }
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
     this.appendComponent(currentRoute);
