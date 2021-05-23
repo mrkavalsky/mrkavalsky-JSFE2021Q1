@@ -8,8 +8,6 @@ export class CardField extends BaseBlock {
 
   private isActiveCard = false;
 
-  private isAnimationBegin = false;
-
   constructor(private mode: number = 8, private category: string = 'cats') {
     super('div', ['card-field']);
   }
@@ -53,15 +51,16 @@ export class CardField extends BaseBlock {
   }
 
   async cardHandler(card: Card): Promise<void> {
+    if (this.isActiveCard) return;
     if (card.isFind) return;
     if (card === this.activeCard) return;
-    if (this.isActiveCard) return;
-    await card.rotateToBack();
     if (!this.activeCard) {
       this.activeCard = card;
+      await card.rotateToBack();
       return;
     }
     this.isActiveCard = true;
+    await card.rotateToBack();
     if (this.activeCard.path === card.path) {
       await Promise.all([this.activeCard.showCorrect(), card.showCorrect()]);
     } else {
