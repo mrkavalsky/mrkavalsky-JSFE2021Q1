@@ -21,11 +21,13 @@
   top: 0;
   left: 0;
   backface-visibility: hidden;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
 }
 .card__side_front {
-  background-color: red;
+  background: center / cover no-repeat url(../../assets/card-front.png);
 }
 .card__side_back {
-  background-color: green;
+  background-color: pink;
   transform: rotateY(180deg);
 }
