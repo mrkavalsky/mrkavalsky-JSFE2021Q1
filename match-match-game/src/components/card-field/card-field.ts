@@ -3,7 +3,7 @@ import { Card } from '../card/card';
 import './card-field.css';
 
 export class CardField extends BaseBlock {
-  constructor(private mode: number = 8) {
+  constructor(private mode: number = 8, private category: string = 'cats') {
     super('div', ['card-field']);
   }
 
@@ -15,8 +15,8 @@ export class CardField extends BaseBlock {
   getCards(): Card[] {
     const cardArray: Card[] = [];
     for (let i = 0; i < this.mode; i++) {
-      cardArray.push(new Card(`${i}`));
-      cardArray.push(new Card(`${i}`));
+      cardArray.push(new Card(`/images/${this.category}/${i}.png`));
+      cardArray.push(new Card(`/images/${this.category}/${i}.png`));
     }
     return cardArray.sort(() => Math.random() - 0.5);
   }

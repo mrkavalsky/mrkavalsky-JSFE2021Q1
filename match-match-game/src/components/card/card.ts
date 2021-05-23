@@ -14,6 +14,7 @@ export class Card extends BaseBlock {
 
   constructor(path: string) {
     super('div', ['card-container']);
+    this.card.children[0].element.style.background = `center / contain no-repeat url(${path})`;
     this.appendComponents([this.card]);
   }
 
