@@ -26,10 +26,12 @@ export class Card extends BaseBlock {
     return this.rotate(false);
   }
 
-  rotate(isFront: boolean = true): Promise<void> {
+  rotate(isFront = true): Promise<void> {
     return new Promise((resolve) => {
       this.card.element.classList.toggle('card_rotate', isFront);
-      this.card.element.addEventListener('transitionend', () => resolve(), {once: true});
-    })
+      this.card.element.addEventListener('transitionend', () => resolve(), {
+        once: true,
+      });
+    });
   }
 }

@@ -74,6 +74,9 @@ export class App {
       window.location.hash = 'about-game';
       return;
     }
+    if (currentRoute instanceof Game && !this.isUserEnter) {
+      this.gamePage.startGame();
+    }
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
     this.appendComponent(currentRoute);

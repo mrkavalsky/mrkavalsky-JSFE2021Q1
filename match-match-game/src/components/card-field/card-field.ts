@@ -27,7 +27,7 @@ export class CardField extends BaseBlock {
     const cards: Card[] = this.getCards();
     this.appendComponents(cards);
     await delay(3);
-    cards.forEach( (card) => {
+    cards.forEach((card) => {
       card.rotateToFront();
     });
     await this.waitTransitionEnd();
@@ -35,7 +35,9 @@ export class CardField extends BaseBlock {
 
   waitTransitionEnd(): Promise<void> {
     return new Promise((resolve) => {
-      this.element.addEventListener('transitionend', () => resolve(), {once: true});
+      this.element.addEventListener('transitionend', () => resolve(), {
+        once: true,
+      });
     });
   }
 }
