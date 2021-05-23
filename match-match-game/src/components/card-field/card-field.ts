@@ -4,6 +4,12 @@ import { Card } from '../card/card';
 import './card-field.css';
 
 export class CardField extends BaseBlock {
+  private activeCard: Card | null = null;
+
+  private isActiveCard = false;
+
+  private isAnimationBegin = false;
+
   constructor(private mode: number = 8, private category: string = 'cats') {
     super('div', ['card-field']);
   }
@@ -31,6 +37,11 @@ export class CardField extends BaseBlock {
       card.rotateToFront();
     });
     await this.waitTransitionEnd();
+    cards.forEach((card) => {
+      card.element.addEventListener('click', () => {
+        this.cardHandler(card);
+      });
+    });
   }
 
   waitTransitionEnd(): Promise<void> {
@@ -39,5 +50,28 @@ export class CardField extends BaseBlock {
         once: true,
       });
     });
+  }
+
+  async cardHandler(card: Card): Promise<void> {
+    if (card.isFind) return;
+    if (card === this.activeCard) return;
+    if (this.isActiveCard) return;
+    await card.rotateToBack();
+    if (!this.activeCard) {
+      this.activeCard = card;
+      return;
+    }
+    this.isActiveCard = true;
+    if (this.activeCard.path === card.path) {
+      await Promise.all([this.activeCard.showCorrect(), card.showCorrect()]);
+    } else {
+      await Promise.all([this.activeCard.showError(), card.showError()]);
+      await Promise.all([
+        this.activeCard.rotateToFront(),
+        card.rotateToFront(),
+      ]);
+    }
+    this.activeCard = null;
+    this.isActiveCard = false;
   }
 }

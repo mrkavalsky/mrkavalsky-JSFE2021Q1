@@ -3,18 +3,21 @@ import { BaseComponent } from '../../shared/base-component';
 import './card.css';
 
 export class Card extends BaseBlock {
+  public isFind = false;
+
   public card: BaseBlock = new BaseBlock(
     'div',
     ['card', 'card_rotate'],
     [
+      new BaseComponent('div', ['card__side', 'card__side_result']),
       new BaseComponent('div', ['card__side', 'card__side_back']),
       new BaseComponent('div', ['card__side', 'card__side_front']),
     ],
   );
 
-  constructor(path: string) {
+  constructor(public path: string) {
     super('div', ['card-container']);
-    this.card.children[0].element.style.background = `center / contain no-repeat url(${path})`;
+    this.card.children[1].element.style.background = `center / contain no-repeat url(${this.path})`;
     this.appendComponents([this.card]);
   }
 
@@ -32,6 +35,44 @@ export class Card extends BaseBlock {
       this.card.element.addEventListener('transitionend', () => resolve(), {
         once: true,
       });
+    });
+  }
+
+  showCorrect(): Promise<void> {
+    return new Promise((resolve) => {
+      this.card.children[0].element.addEventListener(
+        'transitionend',
+        () => resolve(),
+        { once: true },
+      );
+      this.card.children[0].element.classList.add(
+        'card__side_background-green',
+      );
+      this.isFind = true;
+    });
+  }
+
+  showError(): Promise<void> {
+    return new Promise((resolve) => {
+      this.card.children[0].element.addEventListener(
+        'transitionend',
+        () => {
+          this.card.children[0].element.addEventListener(
+            'transitionend',
+            () => resolve(),
+            {
+              once: true,
+            },
+          );
+          this.card.children[0].element.classList.remove(
+            'card__side_background-red',
+          );
+        },
+        {
+          once: true,
+        },
+      );
+      this.card.children[0].element.classList.add('card__side_background-red');
     });
   }
 }

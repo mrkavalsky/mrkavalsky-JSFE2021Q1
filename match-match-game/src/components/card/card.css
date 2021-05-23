@@ -31,3 +31,16 @@
   background-color: pink;
   transform: rotateY(180deg);
 }
+.card__side_result {
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: all .3s;
+}
+.card__side_background-red {
+  background-color: rgb(151, 24, 24);
+  opacity: 1;
+}
+.card__side_background-green {
+  background-color: lightgreen;
+  opacity: 1;
+}
