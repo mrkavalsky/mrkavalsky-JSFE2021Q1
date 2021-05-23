@@ -14,6 +14,7 @@ export class Game extends BasePage {
   }
 
   async startGame(): Promise<void> {
+    this.stopwatch.stop();
     await this.cardField.refreshGameField();
     this.stopwatch.start();
   }
