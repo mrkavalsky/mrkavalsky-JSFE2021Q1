@@ -1,4 +1,5 @@
 import { BaseBlock } from '../../shared/base-block';
+import { delay } from '../../shared/delay';
 import { Card } from '../card/card';
 import './card-field.css';
 
@@ -21,14 +22,20 @@ export class CardField extends BaseBlock {
     return cardArray.sort(() => Math.random() - 0.5);
   }
 
-  refreshGameField(): void {
+  async refreshGameField(): Promise<void> {
     this.clear();
     const cards: Card[] = this.getCards();
     this.appendComponents(cards);
-    setTimeout(() => {
-      cards.forEach((card) => {
-        card.rotateToFront();
-      })
-    }, 3000);
+    await delay(3);
+    cards.forEach( (card) => {
+      card.rotateToFront();
+    });
+    await this.waitTransitionEnd();
+  }
+
+  waitTransitionEnd(): Promise<void> {
+    return new Promise((resolve) => {
+      this.element.addEventListener('transitionend', () => resolve(), {once: true});
+    });
   }
 }
