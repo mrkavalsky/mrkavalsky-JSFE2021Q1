@@ -74,7 +74,7 @@ export class App {
       window.location.hash = 'about-game';
       return;
     }
-    if (currentRoute instanceof Game && !this.isUserEnter) {
+    if (currentRoute instanceof Game && this.isUserEnter) {
       this.gamePage.startGame();
     }
     if(currentRouteName !== 'start-game' && this.isUserEnter) {
