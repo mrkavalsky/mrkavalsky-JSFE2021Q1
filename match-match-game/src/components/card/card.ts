@@ -15,8 +15,10 @@ export class Card extends BaseBlock {
     ],
   );
 
-  constructor(public path: string) {
+  constructor(public path: string, difficulty = 4) {
     super('div', ['card-container']);
+    if (difficulty === 6) this.element.classList.add('card-container_diff-6');
+    if (difficulty === 8) this.element.classList.add('card-container_diff-8');
     this.card.children[1].element.style.background = `center / contain no-repeat url(${this.path})`;
     this.appendComponents([this.card]);
   }

@@ -20,9 +20,13 @@ export class CardField extends BaseBlock {
   getCards(): Card[] {
     const cardArray: Card[] = [];
     const pairs = this.difficulty ** 2 / 2;
-    for (let i = 0; i <  pairs; i++) {
-      cardArray.push(new Card(`/images/${this.cardType}/${i}.png`));
-      cardArray.push(new Card(`/images/${this.cardType}/${i}.png`));
+    for (let i = 0; i < pairs; i++) {
+      cardArray.push(
+        new Card(`/images/${this.cardType}/${i}.png`, this.difficulty),
+      );
+      cardArray.push(
+        new Card(`/images/${this.cardType}/${i}.png`, this.difficulty),
+      );
     }
     return cardArray.sort(() => Math.random() - 0.5);
   }
