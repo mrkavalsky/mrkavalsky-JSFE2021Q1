@@ -20,7 +20,7 @@ export class SettingsPage extends BasePage {
     this.appendComponents([this.cardsSettings, this.difficultySettings]);
   }
 
-  getSettingsMenu(): HTMLElement[] {
+  getSettingsMenu(): HTMLSelectElement[] {
     return [
       this.cardsSettings.getMenuNode(),
       this.difficultySettings.getMenuNode(),

@@ -26,7 +26,7 @@ export class SettingsMenu extends BaseBlock {
     this.appendComponents([this.caption, this.select]);
   }
 
-  getMenuNode(): HTMLElement {
-    return this.select.element;
+  getMenuNode(): HTMLSelectElement {
+    return this.select.element as HTMLSelectElement;
   }
 }
