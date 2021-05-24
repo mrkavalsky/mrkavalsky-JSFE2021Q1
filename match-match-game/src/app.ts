@@ -37,7 +37,7 @@ export class App {
 
   public header: Header = new Header();
 
-  private isUserEnter = false;
+  private currentUser: IUser | null = null;
 
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponent(this.header);
@@ -83,14 +83,14 @@ export class App {
       (p) => p.name === currentRouteName,
     );
     if (!currentRoute) return;
-    if (currentRoute instanceof Game && !this.isUserEnter) {
+    if (currentRoute instanceof Game && !this.currentUser) {
       window.location.hash = 'about-game';
       return;
     }
-    if (currentRoute instanceof Game && this.isUserEnter) {
+    if (currentRoute instanceof Game && this.currentUser) {
       this.gameCycle();
     }
-    if (currentRouteName !== 'start-game' && this.isUserEnter) {
+    if (currentRouteName !== 'start-game' && this.currentUser) {
       this.header.showStartGameButton();
     }
     this.header.clickOnNavButton(currentRouteName);
@@ -123,7 +123,7 @@ export class App {
     e.preventDefault();
     const user: IUser | void = this.popup.form.submitForm();
     if (!user) return;
-    this.isUserEnter = true;
+    this.currentUser = user;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();
   }
