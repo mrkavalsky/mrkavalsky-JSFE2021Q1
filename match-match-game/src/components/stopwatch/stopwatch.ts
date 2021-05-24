@@ -38,4 +38,8 @@ export class Stopwatch extends BaseBlock {
   getTime(): number {
     return this.time;
   }
+
+  getTextContent(): string {
+    return this.element.textContent || '0:00';
+  }
 }
