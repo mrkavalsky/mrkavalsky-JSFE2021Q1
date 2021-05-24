@@ -129,6 +129,10 @@ export class App {
   }
 
   async gameCycle(): Promise<void> {
+    if (!this.currentUser) return;
+    const [pairs, time]: number[] = await this.gamePage.startGame();
+    const result: number = pairs * 100 - time * 10;
+    this.currentUser.score = result < 0 ? 0 : result;
     this.scorePopup.showPopup(this.gamePage.stopwatch.getTextContent());
   }
 }
