@@ -8,7 +8,7 @@ export class CardField extends BaseBlock {
 
   private isActiveCard = false;
 
-  constructor(private cardType = 'cats', private difficulty = 8) {
+  constructor(private cardType = 'cats', private difficulty = 4) {
     super('div', ['card-field']);
   }
 
@@ -19,7 +19,8 @@ export class CardField extends BaseBlock {
 
   getCards(): Card[] {
     const cardArray: Card[] = [];
-    for (let i = 0; i < this.difficulty; i++) {
+    const pairs = this.difficulty ** 2 / 2;
+    for (let i = 0; i <  pairs; i++) {
       cardArray.push(new Card(`/images/${this.cardType}/${i}.png`));
       cardArray.push(new Card(`/images/${this.cardType}/${i}.png`));
     }
