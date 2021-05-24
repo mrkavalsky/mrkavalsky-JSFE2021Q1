@@ -8,7 +8,7 @@ export class CardField extends BaseBlock {
 
   private isActiveCard = false;
 
-  constructor(private mode: number = 8, private category: string = 'cats') {
+  constructor(private cardType = 'cats', private difficulty = 8) {
     super('div', ['card-field']);
   }
 
@@ -19,9 +19,9 @@ export class CardField extends BaseBlock {
 
   getCards(): Card[] {
     const cardArray: Card[] = [];
-    for (let i = 0; i < this.mode; i++) {
-      cardArray.push(new Card(`/images/${this.category}/${i}.png`));
-      cardArray.push(new Card(`/images/${this.category}/${i}.png`));
+    for (let i = 0; i < this.difficulty; i++) {
+      cardArray.push(new Card(`/images/${this.cardType}/${i}.png`));
+      cardArray.push(new Card(`/images/${this.cardType}/${i}.png`));
     }
     return cardArray.sort(() => Math.random() - 0.5);
   }
