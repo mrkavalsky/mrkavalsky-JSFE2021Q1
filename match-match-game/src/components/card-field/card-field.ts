@@ -8,19 +8,24 @@ export class CardField extends BaseBlock {
 
   private isActiveCard = false;
 
+  private allPairs = 0;
+
+  private correctPairs = 0;
+
   constructor(private cardType = 'cats', private difficulty = 4) {
     super('div', ['card-field']);
+    this.allPairs = this.difficulty ** 2 / 2;
   }
 
   clear(): void {
     this.children = [];
     this.element.innerHTML = '';
+    this.correctPairs = 0;
   }
 
   getCards(): Card[] {
     const cardArray: Card[] = [];
-    const pairs = this.difficulty ** 2 / 2;
-    for (let i = 0; i < pairs; i++) {
+    for (let i = 0; i < this.allPairs; i++) {
       cardArray.push(
         new Card(`/images/${this.cardType}/${i}.png`, this.difficulty),
       );
@@ -67,6 +72,7 @@ export class CardField extends BaseBlock {
     this.isActiveCard = true;
     await card.rotateToBack();
     if (this.activeCard.path === card.path) {
+      this.correctPairs++;
       await Promise.all([this.activeCard.showCorrect(), card.showCorrect()]);
     } else {
       await Promise.all([this.activeCard.showError(), card.showError()]);
@@ -85,5 +91,6 @@ export class CardField extends BaseBlock {
 
   setDifficulty(difficulty: number): void {
     this.difficulty = difficulty;
+    this.allPairs = this.difficulty ** 2 / 2;
   }
 }
