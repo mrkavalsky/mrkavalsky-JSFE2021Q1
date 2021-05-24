@@ -18,6 +18,7 @@ export class SettingsMenu extends BaseBlock {
     this.caption.element.innerText = title;
     this.optionsTitle.element.innerText = optionTitle;
     this.optionsTitle.element.setAttribute('disabled', 'disabled');
+    this.optionsTitle.element.setAttribute('selected', 'selected');
     this.select.appendComponents([this.optionsTitle]);
     this.select.appendComponents(
       options.map((option) => new BaseComponent('option', [], option)),
