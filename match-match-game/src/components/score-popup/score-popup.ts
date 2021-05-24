@@ -22,10 +22,10 @@ export class ScorePopup extends BaseBlock {
   private message = 'Congratulations! You successfully found all matches on ';
 
   constructor() {
-    super('div', ['score-popup']);
+    super('div', ['score-popup', 'score-popup__hidden']);
     this.confirmButton.element.innerText = 'Ok';
     this.confirmButton.element.addEventListener('click', () =>
-      document.body.lastElementChild?.remove(),
+      this.element.classList.add('score-popup__hidden'),
     );
     this.background.element.addEventListener('click', () =>
       this.confirmButton.element.click(),
@@ -39,5 +39,10 @@ export class ScorePopup extends BaseBlock {
       time[0] === '0'
         ? `${this.message + time} seconds`
         : `${this.message + time} minutes`;
+  }
+
+  showPopup(time: string):void {
+    this.showMessage(time);
+    this.element.classList.remove('score-popup__hidden');
   }
 }

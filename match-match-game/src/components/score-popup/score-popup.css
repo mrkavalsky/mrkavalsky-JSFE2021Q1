@@ -5,6 +5,9 @@
   left: 0;
   top: 0;
 }
+.score-popup__hidden {
+  display: none;
+}
 .score-popup__background {
   width: 100%;
   height: 100%;
