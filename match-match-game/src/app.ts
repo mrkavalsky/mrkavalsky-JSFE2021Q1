@@ -21,10 +21,12 @@ export class App {
 
   public aboutGamePage: AboutGamePage = new AboutGamePage();
 
+  private settingsPage: SettingsPage = new SettingsPage();
+
   public appPages: BasePage[] = [
     this.aboutGamePage,
     this.bestScorePage,
-    new SettingsPage(),
+    this.settingsPage,
     this.gamePage,
   ];
 
@@ -41,6 +43,13 @@ export class App {
     this.addRouting();
     this.addShowPopupEvent();
     this.addEnterToAccountEvent();
+    const [cardType, difficulty] = this.settingsPage.getSettingsMenu();
+    cardType.addEventListener('change', () =>
+      this.gamePage.setCardType(cardType),
+    );
+    difficulty.addEventListener('change', () =>
+      this.gamePage.setDifficulty(difficulty),
+    );
   }
 
   appendComponent(block: BaseComponent): void {
