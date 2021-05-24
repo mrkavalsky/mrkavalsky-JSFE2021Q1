@@ -6,7 +6,7 @@ import { BestScorePage } from './pages/best-score-page/best-score-page';
 import { SettingsPage } from './pages/settings-page/settings-page';
 import { Header } from './components/header/header';
 import { DataBase } from './components/data-base';
-import { Popup } from './components/popup/popup';
+import { RegistrationPopup } from './components/registration-popup/registration-popup';
 import { IUser } from './shared/user-interface';
 import { Game } from './pages/game-page/game-page';
 
@@ -15,7 +15,7 @@ export class App {
 
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
 
-  private popup: Popup = new Popup(this.indexDB);
+  private popup: RegistrationPopup = new RegistrationPopup(this.indexDB);
 
   private gamePage: Game = new Game();
 

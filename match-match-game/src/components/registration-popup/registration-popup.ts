@@ -2,9 +2,9 @@ import { BaseBlock } from '../../shared/base-block';
 import { BaseComponent } from '../../shared/base-component';
 import { DataBase } from '../data-base';
 import { Form } from '../form/form';
-import './popup.css';
+import './registration-popup.css';
 
-export class Popup extends BaseBlock {
+export class RegistrationPopup extends BaseBlock {
   public form: Form;
 
   public popupBackground: BaseComponent = new BaseComponent('div', [
