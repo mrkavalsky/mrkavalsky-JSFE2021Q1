@@ -6,7 +6,7 @@ import { Stopwatch } from '../../components/stopwatch/stopwatch';
 export class Game extends BasePage {
   private cardField: CardField = new CardField();
 
-  private stopwatch: Stopwatch = new Stopwatch();
+  public readonly stopwatch: Stopwatch = new Stopwatch();
 
   constructor() {
     super('div', ['game'], [], 'start-game');

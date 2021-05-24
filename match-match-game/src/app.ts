@@ -9,6 +9,7 @@ import { DataBase } from './components/data-base';
 import { RegistrationPopup } from './components/registration-popup/registration-popup';
 import { IUser } from './shared/user-interface';
 import { Game } from './pages/game-page/game-page';
+import { ScorePopup } from './components/score-popup/score-popup';
 
 export class App {
   private bestScorePage: BestScorePage = new BestScorePage();
@@ -16,6 +17,8 @@ export class App {
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
 
   private popup: RegistrationPopup = new RegistrationPopup(this.indexDB);
+
+  private scorePopup: ScorePopup = new ScorePopup();
 
   private gamePage: Game = new Game();
 
@@ -38,6 +41,7 @@ export class App {
 
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponent(this.header);
+    this.appendComponent(this.scorePopup);
     this.appendComponent(this.aboutGamePage);
     this.bindSettingsButtons();
     this.addRouting();
@@ -84,7 +88,7 @@ export class App {
       return;
     }
     if (currentRoute instanceof Game && this.isUserEnter) {
-      this.gamePage.startGame();
+      this.gameCycle();
     }
     if(currentRouteName !== 'start-game' && this.isUserEnter) {
       this.header.showStartGameButton();
@@ -122,5 +126,9 @@ export class App {
     this.isUserEnter = true;
     this.header.showStartGameButton();
     this.indexDB.addBestScoreArray();
+  }
+
+  async gameCycle(): Promise<void> {
+    this.scorePopup.showPopup(this.gamePage.stopwatch.getTextContent());
   }
 }
