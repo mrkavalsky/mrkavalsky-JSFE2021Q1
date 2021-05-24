@@ -97,4 +97,8 @@ export class CardField extends BaseBlock {
   checkGameEnd(): boolean {
     return this.allPairs === this.correctPairs;
   }
+  
+  getPairs(): number {
+    return this.correctPairs;
+  }
 }
