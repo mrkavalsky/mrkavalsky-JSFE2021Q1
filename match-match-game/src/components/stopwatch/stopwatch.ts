@@ -25,10 +25,13 @@ export class Stopwatch extends BaseBlock {
   }
 
   stop(): void {
-    this.element.innerText = '0:00';
-    this.time = 0;
     if (!this.interval) return;
     clearInterval(this.interval);
     this.interval = null;
+  }
+
+  reset(): void {
+    this.element.innerText = '0:00';
+    this.time = 0;
   }
 }
