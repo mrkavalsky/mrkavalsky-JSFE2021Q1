@@ -98,6 +98,7 @@ export class Form extends BaseBlock {
       lastName: userInfo[1],
       email: userInfo[2],
       score: 0,
+      id: this.output.getID(),
     };
     this.output.addNewUser(user);
     return user;

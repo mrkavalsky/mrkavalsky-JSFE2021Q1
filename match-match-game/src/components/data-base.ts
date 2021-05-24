@@ -101,4 +101,8 @@ export class DataBase {
   findUser(mail: string): IUser | undefined {
     return this.currentUsers.find(({ email }) => email === mail);
   }
+
+  getID(): number {
+    return this.currentUsers.length + 1;
+  }
 }
