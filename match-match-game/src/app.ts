@@ -90,7 +90,7 @@ export class App {
     if (currentRoute instanceof Game && this.isUserEnter) {
       this.gameCycle();
     }
-    if(currentRouteName !== 'start-game' && this.isUserEnter) {
+    if (currentRouteName !== 'start-game' && this.isUserEnter) {
       this.header.showStartGameButton();
     }
     this.header.clickOnNavButton(currentRouteName);

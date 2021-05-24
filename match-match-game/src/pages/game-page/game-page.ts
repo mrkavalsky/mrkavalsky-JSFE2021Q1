@@ -36,7 +36,7 @@ export class Game extends BasePage {
 
   private checkGameEndInterval(): Promise<void> {
     return new Promise((resolve) => {
-      const interval = setInterval(() => {
+      setInterval(() => {
         if (this.cardField.checkGameEnd()) {
           resolve();
         }

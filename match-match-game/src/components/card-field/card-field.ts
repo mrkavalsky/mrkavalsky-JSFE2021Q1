@@ -93,11 +93,11 @@ export class CardField extends BaseBlock {
     this.difficulty = difficulty;
     this.allPairs = this.difficulty ** 2 / 2;
   }
-  
+
   checkGameEnd(): boolean {
     return this.allPairs === this.correctPairs;
   }
-  
+
   getPairs(): number {
     return this.correctPairs;
   }

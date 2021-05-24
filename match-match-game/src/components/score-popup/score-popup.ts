@@ -41,7 +41,7 @@ export class ScorePopup extends BaseBlock {
         : `${this.message + time} minutes`;
   }
 
-  showPopup(time: string):void {
+  showPopup(time: string): void {
     this.showMessage(time);
     this.element.classList.remove('score-popup__hidden');
   }
