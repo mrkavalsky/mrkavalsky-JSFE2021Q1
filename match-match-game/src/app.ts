@@ -133,6 +133,7 @@ export class App {
     const [pairs, time]: number[] = await this.gamePage.startGame();
     const result: number = pairs * 100 - time * 10;
     this.currentUser.score = result < 0 ? 0 : result;
+    this.indexDB.addScore(this.currentUser);
     this.scorePopup.showPopup(this.gamePage.stopwatch.getTextContent());
   }
 }

@@ -105,4 +105,17 @@ export class DataBase {
   getID(): number {
     return this.currentUsers.length + 1;
   }
+
+  addScore(user: IUser): void {
+    if (!this.dataBase) return;
+    const transaction: IDBTransaction = this.dataBase.transaction(
+      'players',
+      'readwrite',
+    );
+    const store: IDBObjectStore = transaction.objectStore('players');
+    store.put(user);
+    transaction.oncomplete = () => {
+      this.addBestScoreArray();
+    };
+  }
 }
