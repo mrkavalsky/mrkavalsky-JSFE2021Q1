@@ -19,4 +19,11 @@ export class SettingsPage extends BasePage {
     super('main', ['settings'], [], 'game-settings');
     this.appendComponents([this.cardsSettings, this.difficultySettings]);
   }
+
+  getSettingsMenu(): HTMLElement[] {
+    return [
+      this.cardsSettings.getMenuNode(),
+      this.difficultySettings.getMenuNode(),
+    ];
+  }
 }
