@@ -18,4 +18,16 @@ export class Game extends BasePage {
     await this.cardField.refreshGameField();
     this.stopwatch.start();
   }
+
+  setCardType(cardTypeElement: HTMLSelectElement): void {
+    this.cardField.setCardType(
+      cardTypeElement.value ? cardTypeElement.value : 'cats',
+    );
+  }
+
+  setDifficulty(difficultyElement: HTMLSelectElement): void {
+    this.cardField.setDifficulty(
+      difficultyElement.value ? +difficultyElement.value : 4,
+    );
+  }
 }

@@ -74,4 +74,12 @@ export class CardField extends BaseBlock {
     this.activeCard = null;
     this.isActiveCard = false;
   }
+
+  setCardType(cardType: string): void {
+    this.cardType = cardType;
+  }
+
+  setDifficulty(difficulty: number): void {
+    this.difficulty = difficulty;
+  }
 }
