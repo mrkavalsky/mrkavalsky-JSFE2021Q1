@@ -8,6 +8,8 @@ export class Game extends BasePage {
 
   public readonly stopwatch: Stopwatch = new Stopwatch();
 
+  private gameInterval: NodeJS.Timeout | null = null;
+
   constructor() {
     super('div', ['game'], [], 'start-game');
     this.appendComponents([this.stopwatch, this.cardField]);
@@ -18,7 +20,7 @@ export class Game extends BasePage {
     await this.cardField.refreshGameField();
     this.stopwatch.start();
     await this.waitGameEnd();
-    this.stopwatch.stop();
+    this.stopGame();
     return [this.cardField.getPairs(), this.stopwatch.getTime()];
   }
 
@@ -36,11 +38,18 @@ export class Game extends BasePage {
 
   private waitGameEnd(): Promise<void> {
     return new Promise((resolve) => {
-      setInterval(() => {
+      this.gameInterval = setInterval(() => {
         if (this.cardField.checkGameEnd()) {
           resolve();
         }
       }, 1000);
     });
+  }
+
+  stopGame(): void {
+    if (!this.gameInterval) return;
+    this.stopwatch.stop();
+    clearInterval(this.gameInterval);
+    this.gameInterval = null;
   }
 }
