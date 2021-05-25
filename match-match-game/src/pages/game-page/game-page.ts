@@ -17,7 +17,7 @@ export class Game extends BasePage {
     this.stopwatch.reset();
     await this.cardField.refreshGameField();
     this.stopwatch.start();
-    await this.checkGameEndInterval();
+    await this.waitGameEnd();
     this.stopwatch.stop();
     return [this.cardField.getPairs(), this.stopwatch.getTime()];
   }
@@ -34,7 +34,7 @@ export class Game extends BasePage {
     );
   }
 
-  private checkGameEndInterval(): Promise<void> {
+  private waitGameEnd(): Promise<void> {
     return new Promise((resolve) => {
       setInterval(() => {
         if (this.cardField.checkGameEnd()) {
