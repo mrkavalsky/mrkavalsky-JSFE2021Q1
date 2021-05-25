@@ -60,6 +60,9 @@ export class Header extends BaseBlock {
     this.startGameButton.element.addEventListener('click', () =>
       this.showStopGameButton(),
     );
+    this.stopGameButton.element.addEventListener('click', () =>
+    this.showStartGameButton(),
+    );
   }
 
   addActiveModeEventToButtons(): void {
