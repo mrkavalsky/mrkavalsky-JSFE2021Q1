@@ -96,7 +96,7 @@ export class App {
       this.gameCycle();
     }
     if (currentRouteName !== 'start-game' && this.currentUser && this.isGameStart) {
-      this.stopGame();
+      this.header.stopGameButton.element.click();
     }
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
