@@ -10,14 +10,18 @@ export class Game extends BasePage {
 
   private gameInterval: NodeJS.Timeout | null = null;
 
+  private isGameStart = false;
+
   constructor() {
     super('div', ['game'], [], 'start-game');
     this.appendComponents([this.stopwatch, this.cardField]);
   }
 
   async startGame(): Promise<void> {
+    this.isGameStart = true;
     this.stopwatch.reset();
     await this.cardField.refreshGameField();
+    if (!this.isGameStart) return;
     this.stopwatch.start();
     await this.waitGameEnd();
     this.stopGame();
@@ -46,6 +50,7 @@ export class Game extends BasePage {
   }
 
   stopGame(): number[] {
+    this.isGameStart = false;
     if (this.gameInterval) {
       this.stopwatch.stop();
       clearInterval(this.gameInterval);
