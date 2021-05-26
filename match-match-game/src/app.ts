@@ -39,6 +39,8 @@ export class App {
 
   private currentUser: IUser | null = null;
 
+  private isGameStart: boolean = false;
+
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponent(this.header);
     this.appendComponent(this.scorePopup);
@@ -93,8 +95,8 @@ export class App {
     if (currentRoute instanceof Game && this.currentUser) {
       this.gameCycle();
     }
-    if (currentRouteName !== 'start-game' && this.currentUser) {
-      this.header.showStartGameButton();
+    if (currentRouteName !== 'start-game' && this.currentUser && this.isGameStart) {
+      this.stopGame();
     }
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
@@ -132,11 +134,13 @@ export class App {
   }
 
   async gameCycle(): Promise<void> {
+    this.isGameStart = true;
     await this.gamePage.startGame();
     this.stopGame();
   }
 
   stopGame(): void {
+    this.isGameStart = false;
     if (!this.currentUser) return;
     const [pairs, time]: number[] = this.gamePage.stopGame();
     const result: number = pairs * 100 - time * 10;
