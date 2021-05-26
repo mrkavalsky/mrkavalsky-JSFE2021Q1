@@ -105,4 +105,8 @@ export class CardField extends BaseBlock {
   getPairs(): number {
     return this.correctPairs;
   }
+
+  handleClickEvent(isGameStart: boolean): void {
+    this.cap.element.classList.toggle('card-field__cup_top', isGameStart);
+  }
 }
