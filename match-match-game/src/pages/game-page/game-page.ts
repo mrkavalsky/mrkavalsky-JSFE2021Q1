@@ -15,13 +15,12 @@ export class Game extends BasePage {
     this.appendComponents([this.stopwatch, this.cardField]);
   }
 
-  async startGame(): Promise<number[]> {
+  async startGame(): Promise<void> {
     this.stopwatch.reset();
     await this.cardField.refreshGameField();
     this.stopwatch.start();
     await this.waitGameEnd();
     this.stopGame();
-    return [this.cardField.getPairs(), this.stopwatch.getTime()];
   }
 
   setCardType(cardTypeElement: HTMLSelectElement): void {
@@ -46,10 +45,11 @@ export class Game extends BasePage {
     });
   }
 
-  stopGame(): void {
+  stopGame(): number[] | void {
     if (!this.gameInterval) return;
     this.stopwatch.stop();
     clearInterval(this.gameInterval);
     this.gameInterval = null;
+    return [this.cardField.getPairs(), this.stopwatch.getTime()];
   }
 }
