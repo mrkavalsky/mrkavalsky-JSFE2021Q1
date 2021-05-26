@@ -14,7 +14,7 @@ export class Game extends BasePage {
   private isGameStart = false;
 
   private counterStartGame = 0;
-  
+
   private cap: BaseComponent = new BaseComponent('div', ['game__cap']);
 
   constructor() {
