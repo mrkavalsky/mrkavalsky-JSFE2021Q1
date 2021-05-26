@@ -136,7 +136,9 @@ export class App {
   async gameCycle(): Promise<void> {
     this.isGameStart = true;
     await this.gamePage.startGame();
+    if (!this.isGameStart) return;
     this.stopGame();
+    this.scorePopup.showPopup(this.gamePage.stopwatch.getTextContent());
   }
 
   stopGame(): void {
@@ -147,6 +149,5 @@ export class App {
     this.currentUser.score =
       result > this.currentUser.score ? result : this.currentUser.score;
     this.indexDB.addScore(this.currentUser);
-    this.scorePopup.showPopup(this.gamePage.stopwatch.getTextContent());
   }
 }
