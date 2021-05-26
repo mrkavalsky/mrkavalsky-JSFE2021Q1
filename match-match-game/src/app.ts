@@ -129,8 +129,13 @@ export class App {
   }
 
   async gameCycle(): Promise<void> {
+    await this.gamePage.startGame();
+    this.stopGame();
+  }
+
+  stopGame(): void {
     if (!this.currentUser) return;
-    const [pairs, time]: number[] = await this.gamePage.startGame();
+    const [pairs, time]: number[] = this.gamePage.stopGame();
     const result: number = pairs * 100 - time * 10;
     this.currentUser.score =
       result > this.currentUser.score ? result : this.currentUser.score;
