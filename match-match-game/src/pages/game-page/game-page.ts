@@ -19,6 +19,7 @@ export class Game extends BasePage {
 
   async startGame(): Promise<void> {
     this.isGameStart = true;
+    this.cardField.handleClickEvent(this.isGameStart);
     this.stopwatch.reset();
     await this.cardField.refreshGameField();
     if (!this.isGameStart) return;
@@ -51,6 +52,7 @@ export class Game extends BasePage {
 
   stopGame(): number[] {
     this.isGameStart = false;
+    this.cardField.handleClickEvent(this.isGameStart);
     if (this.gameInterval) {
       this.stopwatch.stop();
       clearInterval(this.gameInterval);
