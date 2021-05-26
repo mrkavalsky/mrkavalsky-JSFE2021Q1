@@ -45,11 +45,12 @@ export class Game extends BasePage {
     });
   }
 
-  stopGame(): number[] | void {
-    if (!this.gameInterval) return;
-    this.stopwatch.stop();
-    clearInterval(this.gameInterval);
-    this.gameInterval = null;
+  stopGame(): number[] {
+    if (this.gameInterval) {
+      this.stopwatch.stop();
+      clearInterval(this.gameInterval);
+      this.gameInterval = null;
+    }
     return [this.cardField.getPairs(), this.stopwatch.getTime()];
   }
 }
