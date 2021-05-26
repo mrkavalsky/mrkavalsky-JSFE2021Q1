@@ -9,7 +9,7 @@ export class Header extends BaseBlock {
 
   public navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
 
-  private stopGameButton = new BaseButton(
+  public stopGameButton = new BaseButton(
     ['header__button', 'header__button_hidden'],
     'stop game',
   );

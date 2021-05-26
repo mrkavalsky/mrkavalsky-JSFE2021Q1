@@ -54,6 +54,9 @@ export class App {
     difficulty.addEventListener('change', () =>
       this.gamePage.setDifficulty(difficulty),
     );
+    this.header.stopGameButton.element.addEventListener('click', () => {
+      this.stopGame();
+    });
   }
 
   appendComponent(block: BaseComponent): void {
