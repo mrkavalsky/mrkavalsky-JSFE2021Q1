@@ -2,6 +2,7 @@ import { CardField } from '../../components/card-field/card-field';
 import './game-page.css';
 import { BasePage } from '../../shared/base-page';
 import { Stopwatch } from '../../components/stopwatch/stopwatch';
+import { BaseComponent } from '../../shared/base-component';
 
 export class Game extends BasePage {
   private cardField: CardField = new CardField();
@@ -11,15 +12,18 @@ export class Game extends BasePage {
   private gameInterval: NodeJS.Timeout | null = null;
 
   private isGameStart = false;
+  
+  private cap: BaseComponent = new BaseComponent('div', ['game__cap']);
 
   constructor() {
     super('div', ['game'], [], 'start-game');
+    this.appendComponents([this.cap]);
     this.appendComponents([this.stopwatch, this.cardField]);
   }
 
   async startGame(): Promise<void> {
     this.isGameStart = true;
-    this.cardField.handleClickEvent(this.isGameStart);
+    this.handleClickEvent();
     this.stopwatch.reset();
     await this.cardField.refreshGameField();
     if (!this.isGameStart) return;
@@ -52,12 +56,16 @@ export class Game extends BasePage {
 
   stopGame(): number[] {
     this.isGameStart = false;
-    this.cardField.handleClickEvent(this.isGameStart);
+    this.handleClickEvent();
     if (this.gameInterval) {
       this.stopwatch.stop();
       clearInterval(this.gameInterval);
       this.gameInterval = null;
     }
     return [this.cardField.getPairs(), this.stopwatch.getTime()];
+  }
+
+  handleClickEvent(): void {
+    this.cap.element.classList.toggle('game__cap_top', !this.isGameStart);
   }
 }

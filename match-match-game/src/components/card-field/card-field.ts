@@ -1,5 +1,4 @@
 import { BaseBlock } from '../../shared/base-block';
-import { BaseComponent } from '../../shared/base-component';
 import { delay } from '../../shared/delay';
 import { Card } from '../card/card';
 import './card-field.css';
@@ -13,11 +12,8 @@ export class CardField extends BaseBlock {
 
   private correctPairs = 0;
 
-  private cap: BaseComponent = new BaseComponent('div', ['card-field__cap']);
-
   constructor(private cardType = 'cats', private difficulty = 4) {
     super('div', ['card-field']);
-    this.appendComponents([this.cap]);
     this.allPairs = this.difficulty ** 2 / 2;
   }
 
@@ -104,9 +100,5 @@ export class CardField extends BaseBlock {
 
   getPairs(): number {
     return this.correctPairs;
-  }
-
-  handleClickEvent(isGameStart: boolean): void {
-    this.cap.element.classList.toggle('card-field__cup_top', isGameStart);
   }
 }
