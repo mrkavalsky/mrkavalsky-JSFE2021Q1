@@ -12,6 +12,8 @@ export class Game extends BasePage {
   private gameInterval: NodeJS.Timeout | null = null;
 
   private isGameStart = false;
+
+  private counterStartGame = 0;
   
   private cap: BaseComponent = new BaseComponent('div', ['game__cap']);
 
@@ -21,15 +23,17 @@ export class Game extends BasePage {
     this.appendComponents([this.stopwatch, this.cardField]);
   }
 
-  async startGame(): Promise<void> {
+  async startGame(): Promise<boolean> {
     this.isGameStart = true;
+    const gameNumber = ++this.counterStartGame;
     this.handleClickEvent();
     this.stopwatch.reset();
     await this.cardField.refreshGameField();
-    if (!this.isGameStart) return;
+    if (!this.isGameStart) return false;
+    if (gameNumber !== this.counterStartGame) return false;
     this.stopwatch.start();
     await this.waitGameEnd();
-    this.stopGame();
+    return true;
   }
 
   setCardType(cardTypeElement: HTMLSelectElement): void {

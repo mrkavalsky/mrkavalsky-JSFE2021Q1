@@ -135,7 +135,7 @@ export class App {
 
   async gameCycle(): Promise<void> {
     this.isGameStart = true;
-    await this.gamePage.startGame();
+    if (!await this.gamePage.startGame()) return;
     if (!this.isGameStart) return;
     this.stopGame();
     this.scorePopup.showPopup(this.gamePage.stopwatch.getTextContent());
