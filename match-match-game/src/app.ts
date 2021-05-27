@@ -59,6 +59,9 @@ export class App {
     this.header.stopGameButton.element.addEventListener('click', () => {
       this.stopGame();
     });
+    this.header.startGameButton.element.addEventListener('click', () => {
+      this.gameCycle();
+    });
   }
 
   appendComponent(block: BaseComponent): void {
@@ -91,9 +94,6 @@ export class App {
     if (currentRoute instanceof Game && !this.currentUser) {
       window.location.hash = 'about-game';
       return;
-    }
-    if (currentRoute instanceof Game && this.currentUser) {
-      this.gameCycle();
     }
     if (
       currentRouteName !== 'start-game' &&
