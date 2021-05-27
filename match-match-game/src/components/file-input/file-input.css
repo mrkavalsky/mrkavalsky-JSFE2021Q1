@@ -1,0 +1,15 @@
+.file-input {
+  background: url(../../assets/images/default-avatar.png);
+  width: 200px;
+  height: 200px;
+  transition: all .5s;
+}
+.file-input:hover {
+  background: url(../../assets/images/default-avatar_hover.png);
+}
+.file-input__input {
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
