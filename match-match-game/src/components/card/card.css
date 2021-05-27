@@ -25,7 +25,7 @@
   border-radius: 4px;
 }
 .card__side_front {
-  background: center / cover no-repeat url(../../assets/card-front.png);
+  background: center / cover no-repeat url(../../assets/images/card-front.png);
 }
 .card__side_back {
   background-color: pink;
