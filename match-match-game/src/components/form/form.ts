@@ -5,6 +5,7 @@ import { DataBase } from '../data-base';
 import { Input } from '../input/input';
 import { IUser } from '../../shared/user-interface';
 import './form.css';
+import { FileInput } from '../file-input/file-input';
 
 export class Form extends BaseBlock {
   public inputsArray: Input[] = [
@@ -29,9 +30,14 @@ export class Form extends BaseBlock {
     'form__error-field',
   ]);
 
+  private fileInput: FileInput = new FileInput();
+
   constructor(private output: DataBase) {
     super('form', ['form']);
-    this.appendComponents(this.inputsArray);
+    this.appendComponents([
+      new BaseBlock('div', ['form__inputs-wrapper'], this.inputsArray),
+      this.fileInput,
+    ]);
     this.appendComponents([
       this.errorField,
       this.submitButton,

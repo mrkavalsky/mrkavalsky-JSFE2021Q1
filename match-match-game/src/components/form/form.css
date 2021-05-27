@@ -1,6 +1,12 @@
 .form {
-  width: 328px;
   height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form__inputs-wrapper {
+  width: 328px;
+  height: 300px;
+  margin-right: 30px;
 }
 .form__button {
   padding: 10px 16px;
@@ -11,7 +17,6 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1.25px;
-  margin-top: 90px;
   cursor: pointer;
 }
 .form__button_submit {
