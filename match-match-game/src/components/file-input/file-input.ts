@@ -30,4 +30,8 @@ export class FileInput extends BaseBlock {
     };
     reader.readAsDataURL(fileList[0]);
   }
+
+  getImageSrc(): string | ArrayBuffer | null {
+    return this.imageSrc;
+  }
 }
