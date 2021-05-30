@@ -3,6 +3,7 @@ import { BaseButton } from '../../shared/base-button';
 import { BaseComponent } from '../../shared/base-component';
 import { NavButton } from '../../shared/nav-button';
 import './header.css';
+import defaultAvatar from '../../assets/images/default-avatar.png';
 
 export class Header extends BaseBlock {
   public logoBlock: BaseComponent = new BaseComponent('div', ['logo']);
@@ -89,7 +90,6 @@ export class Header extends BaseBlock {
     this.RegisterButton.element.classList.add('header__button_hidden');
     this.stopGameButton.element.classList.add('header__button_hidden');
     this.startGameButton.element.classList.remove('header__button_hidden');
-    this.userAvatar.element.classList.remove('header__avatar_hidden');
   }
 
   showStopGameButton(): void {
@@ -103,5 +103,13 @@ export class Header extends BaseBlock {
       .find(({ pageHash }) => pageHash === target);
     if (!button) return;
     button.element.click();
+  }
+
+  showUserAvatar(userAvatar: string | undefined): void {
+    const image: HTMLImageElement = this.userAvatar.element as HTMLImageElement;
+    image.src = userAvatar
+      ? `data:image/png;base64,${userAvatar}`
+      : defaultAvatar;
+    this.userAvatar.element.classList.remove('header__avatar_hidden');
   }
 }

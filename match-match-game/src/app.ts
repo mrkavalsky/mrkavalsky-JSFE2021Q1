@@ -134,6 +134,7 @@ export class App {
     if (!user) return;
     this.currentUser = user;
     this.header.showStartGameButton();
+    this.header.showUserAvatar(user.avatar);
     this.indexDB.addBestScoreArray();
   }
 
