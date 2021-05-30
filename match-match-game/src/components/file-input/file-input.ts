@@ -1,13 +1,14 @@
 import { BaseBlock } from '../../shared/base-block';
 import { BaseComponent } from '../../shared/base-component';
 import './file-input.css';
+import defaultAvatar from '../../assets/images/default-avatar.png';
 
 export class FileInput extends BaseBlock {
   private input: BaseComponent = new BaseComponent('input', [
     'file-input__input',
   ]);
 
-  private imageSrc = '';
+  private imageSrc: string | null = null;
 
   private reader: FileReader = new FileReader();
 
@@ -37,7 +38,9 @@ export class FileInput extends BaseBlock {
   getImage(): Promise<HTMLImageElement> {
     return new Promise((resolve) => {
       const image: HTMLImageElement = new Image();
-      image.src = this.imageSrc;
+      if (!this.imageSrc) image.src = defaultAvatar;
+      else image.src = this.imageSrc;
+      this.imageSrc = null;
       image.addEventListener(
         'load',
         () => {
