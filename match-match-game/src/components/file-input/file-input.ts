@@ -7,7 +7,7 @@ export class FileInput extends BaseBlock {
     'file-input__input',
   ]);
 
-  private imageSrc: string | ArrayBuffer | null = null;
+  private imageSrc = '';
 
   private reader: FileReader = new FileReader();
 
@@ -20,7 +20,9 @@ export class FileInput extends BaseBlock {
     });
     this.appendComponents([this.input]);
     this.reader.onload = () => {
-      this.imageSrc = this.reader.result;
+      if (typeof this.reader.result === 'string') {
+        this.imageSrc = this.reader.result;
+      }
     };
   }
 
@@ -32,7 +34,17 @@ export class FileInput extends BaseBlock {
     this.reader.readAsDataURL(fileList[0]);
   }
 
-  getImageSrc(): string | ArrayBuffer | null {
-    return this.imageSrc;
+  getImage(): Promise<HTMLImageElement> {
+    return new Promise((resolve) => {
+      const image: HTMLImageElement = new Image();
+      image.src = this.imageSrc;
+      image.addEventListener(
+        'load',
+        () => {
+          resolve(image);
+        },
+        { once: true },
+      );
+    });
   }
 }
