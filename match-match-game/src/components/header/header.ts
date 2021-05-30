@@ -32,6 +32,11 @@ export class Header extends BaseBlock {
 
   public settingsButton: BaseComponent;
 
+  private userAvatar: BaseComponent = new BaseComponent('img', [
+    'header__avatar',
+    'header__avatar_hidden',
+  ]);
+
   constructor(
     tag = 'header',
     styles: string[] = ['header'],
@@ -49,13 +54,17 @@ export class Header extends BaseBlock {
         elem.element.classList.remove('header__nav-button_active');
       });
     });
-    this.appendComponents([
-      this.logoBlock,
-      this.navMenu,
-      this.RegisterButton,
-      this.startGameButton,
-      this.stopGameButton,
-    ]);
+    const buttonsWrapper = new BaseBlock(
+      'div',
+      ['header__buttons-wrapper'],
+      [
+        this.RegisterButton,
+        this.startGameButton,
+        this.stopGameButton,
+        this.userAvatar,
+      ],
+    );
+    this.appendComponents([this.logoBlock, this.navMenu, buttonsWrapper]);
     this.addActiveModeEventToButtons();
     this.startGameButton.element.addEventListener('click', () =>
       this.showStopGameButton(),
@@ -80,7 +89,7 @@ export class Header extends BaseBlock {
     this.RegisterButton.element.classList.add('header__button_hidden');
     this.stopGameButton.element.classList.add('header__button_hidden');
     this.startGameButton.element.classList.remove('header__button_hidden');
-    this.navMenu.element.classList.add('header__nav-menu_margin');
+    this.userAvatar.element.classList.remove('header__avatar_hidden');
   }
 
   showStopGameButton(): void {

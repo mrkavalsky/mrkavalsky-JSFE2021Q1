@@ -36,9 +36,6 @@
   display: flex;
   margin-right: 510px;
 }
-.header__nav-menu_margin {
-  margin-right: 590px;
-}
 .header__nav-button {
   width: 33.3%;
   height: 100%;
@@ -67,4 +64,21 @@
 }
 .header__button_hidden {
   display: none;
+}
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: scale-down;
+  object-position: center center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header__avatar_hidden {
+  display: none;
+}
+.header__buttons-wrapper {
+  width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
