@@ -9,6 +9,8 @@ export class FileInput extends BaseBlock {
 
   private imageSrc: string | ArrayBuffer | null = null;
 
+  private reader: FileReader = new FileReader();
+
   constructor() {
     super('label', ['file-input']);
     this.input.element.setAttribute('type', 'file');
@@ -17,6 +19,9 @@ export class FileInput extends BaseBlock {
       this.uploadFile();
     });
     this.appendComponents([this.input]);
+    this.reader.onload = () => {
+      this.imageSrc = this.reader.result;
+    };
   }
 
   uploadFile(): void {
@@ -24,11 +29,7 @@ export class FileInput extends BaseBlock {
       .element as HTMLInputElement;
     const fileList: FileList | null = inputElement.files;
     if (!fileList) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imageSrc = reader.result;
-    };
-    reader.readAsDataURL(fileList[0]);
+    this.reader.readAsDataURL(fileList[0]);
   }
 
   getImageSrc(): string | ArrayBuffer | null {
