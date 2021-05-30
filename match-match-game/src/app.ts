@@ -128,9 +128,9 @@ export class App {
     );
   }
 
-  enterToAccount(e: MouseEvent): void {
+  async enterToAccount(e: MouseEvent): Promise<void> {
     e.preventDefault();
-    const user: IUser | void = this.popup.form.submitForm();
+    const user: IUser | void = await this.popup.form.submitForm();
     if (!user) return;
     this.currentUser = user;
     this.header.showStartGameButton();

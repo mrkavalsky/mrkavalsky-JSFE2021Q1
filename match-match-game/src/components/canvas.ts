@@ -9,7 +9,7 @@ export class Canvas {
     this.context = this.canvas.getContext('2d');
   }
 
-  getBase64File(img: HTMLImageElement): string | void {
+  getBase64File(img: HTMLImageElement): string | undefined {
     if (!this.context) return undefined;
     const imageRatio =
       img.width > img.height ? img.width / 40 : img.height / 40;

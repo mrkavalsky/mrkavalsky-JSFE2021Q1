@@ -6,6 +6,7 @@ import { Input } from '../input/input';
 import { IUser } from '../../shared/user-interface';
 import './form.css';
 import { FileInput } from '../file-input/file-input';
+import { Canvas } from '../canvas';
 
 export class Form extends BaseBlock {
   public inputsArray: Input[] = [
@@ -31,6 +32,8 @@ export class Form extends BaseBlock {
   ]);
 
   private fileInput: FileInput = new FileInput();
+
+  private canvas: Canvas = new Canvas();
 
   constructor(private output: DataBase) {
     super('form', ['form']);
@@ -85,21 +88,23 @@ export class Form extends BaseBlock {
     this.errorField.element.innerText = '';
   }
 
-  submitForm(): IUser | void {
+  async submitForm(): Promise<IUser | void> {
     if (!this.isFormValid) return undefined;
     const userInfo: string[] = this.inputsArray.map(
       (input) => input.getInputNode().value,
     );
     const user: IUser =
-      this.output.findUser(userInfo[2]) || this.getNewUser(userInfo);
+      this.output.findUser(userInfo[2]) || (await this.getNewUser(userInfo));
     if (!this.checkUser(user, userInfo)) return undefined;
     document.body.lastElementChild?.remove();
     this.clearDownForm();
     return user;
   }
 
-  getNewUser(userInfo: string[]): IUser {
+  async getNewUser(userInfo: string[]): Promise<IUser> {
+    const img = await this.fileInput.getImage();
     const user: IUser = {
+      avatar: this.canvas.getBase64File(img),
       firstName: userInfo[0],
       lastName: userInfo[1],
       email: userInfo[2],
