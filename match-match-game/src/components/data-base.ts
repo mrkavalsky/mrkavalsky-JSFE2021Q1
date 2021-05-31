@@ -1,5 +1,6 @@
 import { ScoreBlock } from './score-block/score-block';
 import { IUser } from '../shared/user-interface';
+import { defaultAvatarBase64 } from '../shared/default-avatar';
 
 export class DataBase {
   private iDB: IDBFactory = window.indexedDB;
@@ -10,24 +11,28 @@ export class DataBase {
 
   private initUsers: IUser[] = [
     {
+      avatar: defaultAvatarBase64,
       firstName: 'Nicci',
       lastName: 'Troiani',
       email: 'nicci@gmail.com',
       score: 456,
     },
     {
+      avatar: defaultAvatarBase64,
       firstName: 'George',
       lastName: 'Fields',
       email: 'jack@gmail.com',
       score: 358,
     },
     {
+      avatar: defaultAvatarBase64,
       firstName: 'Jones',
       lastName: 'Dermot',
       email: 'dermot@gamil.com',
       score: 211,
     },
     {
+      avatar: defaultAvatarBase64,
       firstName: 'Jane',
       lastName: 'Doe',
       email: 'jane.doe@gmail.com',
