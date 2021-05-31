@@ -16,17 +16,13 @@ export class RegistrationPopup extends BaseBlock {
   constructor(private output: DataBase) {
     super('div', ['popup']);
     this.form = new Form(this.output);
-    this.addHidePopupEvent();
+    this.popupBackground.element.addEventListener('click', () => {
+      this.form.cancelButton.element.click();
+    });
     this.formWrapper.element.innerHTML = `
       <h2 class="popup__title">Register New Player</hw>
     `;
     this.formWrapper.appendComponents([this.form]);
     this.appendComponents([this.formWrapper, this.popupBackground]);
-  }
-
-  addHidePopupEvent(): void {
-    this.popupBackground.element.addEventListener('click', () => {
-      this.form.cancelButton.element.click();
-    });
   }
 }
