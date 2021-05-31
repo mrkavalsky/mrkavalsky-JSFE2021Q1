@@ -9,18 +9,18 @@ import { FileInput } from '../file-input/file-input';
 import { Canvas } from '../canvas';
 
 export class Form extends BaseBlock {
-  public inputsArray: Input[] = [
+  private inputsArray: Input[] = [
     new Input('First Name', 'text'),
     new Input('Last Name', 'text'),
     new Input('E-mail', 'email'),
   ];
 
-  public submitButton: BaseButton = new BaseButton(
+  public readonly submitButton: BaseButton = new BaseButton(
     ['form__button', 'form__button_submit', 'form__button_submit_disable'],
     'add user',
   );
 
-  public cancelButton: BaseButton = new BaseButton(
+  public readonly cancelButton: BaseButton = new BaseButton(
     ['form__button', 'form__button_cancel'],
     'cancel',
   );
