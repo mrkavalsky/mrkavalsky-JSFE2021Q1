@@ -1,6 +1,5 @@
 import { BasePage } from '../../shared/base-page';
 import { ScoreBlock } from '../../components/score-block/score-block';
-import './best-score-page.css';
 
 export class BestScorePage extends BasePage {
   public readonly scoreBlock = new ScoreBlock();
