@@ -43,7 +43,7 @@ export class App {
 
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponents([this.header, this.scorePopup, this.aboutGamePage]);
-    this.addRouting();
+    this.loadStartRoute();
     this.header.registerButton.element.addEventListener('click', () => {
       document.body.append(this.popup.element);
     });
@@ -80,7 +80,7 @@ export class App {
     this.rootChildren.pop();
   }
 
-  addRouting(): void {
+  loadStartRoute(): void {
     window.onpopstate = () => {
       this.changeRout();
     };
