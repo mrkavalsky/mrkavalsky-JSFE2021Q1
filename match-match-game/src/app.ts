@@ -44,7 +44,7 @@ export class App {
   constructor(readonly rootElement: HTMLElement) {
     this.appendComponents([this.header, this.scorePopup, this.aboutGamePage]);
     window.onpopstate = () => {
-      this.changeRout();
+      this.changeRoute();
     };
     this.loadStartRoute();
     this.header.registerButton.element.addEventListener('click', () => {
@@ -88,10 +88,10 @@ export class App {
       window.location.hash = 'about-game';
     }
     this.header.clickOnNavButton(window.location.hash.slice(1));
-    this.changeRout();
+    this.changeRoute();
   }
 
-  changeRout(): void {
+  changeRoute(): void {
     const currentRouteName: string = window.location.hash.slice(1);
     const currentRoute: BasePage | undefined = this.appPages.find(
       ({name}) => name === currentRouteName,
