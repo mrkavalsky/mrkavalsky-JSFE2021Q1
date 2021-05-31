@@ -5,13 +5,13 @@ import { Form } from '../form/form';
 import './registration-popup.css';
 
 export class RegistrationPopup extends BaseBlock {
-  public form: Form;
+  public readonly form: Form;
 
-  public popupBackground: BaseComponent = new BaseComponent('div', [
+  private popupBackground: BaseComponent = new BaseComponent('div', [
     'popup__background',
   ]);
 
-  public formWrapper: BaseBlock = new BaseBlock('div', ['form-wrapper']);
+  private formWrapper: BaseBlock = new BaseBlock('div', ['form-wrapper']);
 
   constructor(private output: DataBase) {
     super('div', ['popup']);
