@@ -6,7 +6,7 @@ export class DataBase {
 
   private dataBase: IDBDatabase | null = null;
 
-  private openRequest: IDBOpenDBRequest = this.iDB.open('match-match-game');
+  private openRequest: IDBOpenDBRequest = this.iDB.open('mrkavalsky');
 
   private initUsers: IUser[] = [
     {
