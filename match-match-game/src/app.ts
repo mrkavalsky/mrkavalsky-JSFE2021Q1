@@ -94,7 +94,7 @@ export class App {
   changeRoute(): void {
     const currentRouteName: string = window.location.hash.slice(1);
     const currentRoute: BasePage | undefined = this.appPages.find(
-      ({name}) => name === currentRouteName,
+      ({ name }) => name === currentRouteName,
     );
     if (!currentRoute) return;
     if (currentRoute instanceof Game && !this.currentUser) {
