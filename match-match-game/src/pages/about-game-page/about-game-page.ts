@@ -1,30 +1,14 @@
 import { BaseBlock } from '../../shared/base-block';
-import { BaseButton } from '../../shared/base-button';
 import { BasePage } from '../../shared/base-page';
 import './about-game-page.css';
+import registerFormImg from '../../assets/images/register-form.png';
+import gamePageImg from '../../assets/images/game-page.png';
+import settingsButtonImg from '../../assets/images/settings-button.png';
 
 export class AboutGamePage extends BasePage {
   public mainContentWrapper: BaseBlock = new BaseBlock('div', [
     'main__content-wrapper',
   ]);
-
-  public formButton: BaseButton = new BaseButton(
-    ['button'],
-    'Register New Player',
-  );
-
-  public settingsButton: BaseButton = new BaseButton(
-    ['button'],
-    'Game Settings',
-  );
-
-  public startGameButton: BaseButton = new BaseButton(['button'], 'Start Game');
-
-  public gameMenu: BaseBlock = new BaseBlock(
-    'div',
-    ['game-menu'],
-    [this.formButton, this.settingsButton, this.startGameButton],
-  );
 
   constructor() {
     super('main', ['main'], [], 'about-game');
@@ -46,8 +30,12 @@ export class AboutGamePage extends BasePage {
           <p class="rules-list__text">Start you new game! Remember card positions and match it before times up</p>
         </li>
       </ul>
+      <div class="instruction">
+        <img class="instruction__img instruction__img_img1" src=${registerFormImg} alt="register form">
+        <img class="instruction__img instruction__img_img2" src=${settingsButtonImg} alt="settings button">
+        <img class="instruction__img instruction__img_img3" src=${gamePageImg} alt="game page">
+      </div>
     `;
-    this.mainContentWrapper.appendComponents([this.gameMenu]);
     this.appendComponents([this.mainContentWrapper]);
   }
 }
