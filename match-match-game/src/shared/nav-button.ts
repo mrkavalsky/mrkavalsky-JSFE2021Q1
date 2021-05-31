@@ -6,10 +6,6 @@ export class NavButton extends BaseButton {
   constructor(styles: string[] = [], innerText: string) {
     super(styles, innerText);
     this.pageHash = innerText.toLowerCase().split(' ').join('-');
-    this.addChangeHashEvent();
-  }
-
-  addChangeHashEvent(): void {
     this.element.addEventListener('click', () => {
       window.location.hash = this.pageHash;
     });
