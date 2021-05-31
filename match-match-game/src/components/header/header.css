@@ -72,6 +72,7 @@
   object-position: center center;
   border-radius: 50%;
   overflow: hidden;
+  background: white;
 }
 .header__avatar_hidden {
   display: none;
