@@ -21,6 +21,9 @@
 .input__field_error {
 background: yellow;
 }
+.input__field_correct {
+  background: lightgreen;
+}
 .input__error {
   height: 16px;
   font-size: 12px;

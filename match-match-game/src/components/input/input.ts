@@ -99,10 +99,12 @@ export class Input extends BaseBlock {
 
   addTheErrorClass(): void {
     this.input.element.classList.add('input__field_error');
+    this.input.element.classList.remove('input__field_correct');
   }
 
   removeTheErrorClass(): void {
     this.input.element.classList.remove('input__field_error');
+    this.input.element.classList.add('input__field_correct');
   }
 
   getIsValidate(): boolean {
