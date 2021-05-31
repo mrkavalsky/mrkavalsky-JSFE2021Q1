@@ -19,7 +19,7 @@ export class ScoreBlock extends BaseBlock {
     });
   }
 
-  refreshBestScore(users: IUser[] | void): void {
+  refreshScoreBlock(users: IUser[] | void): void {
     this.element.lastElementChild?.remove();
     this.setUserList(users);
     this.element.append(this.userList.element);
