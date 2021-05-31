@@ -22,20 +22,20 @@ export class App {
 
   private gamePage: Game = new Game();
 
-  public aboutGamePage: AboutGamePage = new AboutGamePage();
+  private aboutGamePage: AboutGamePage = new AboutGamePage();
 
   private settingsPage: SettingsPage = new SettingsPage();
 
-  public appPages: BasePage[] = [
+  private appPages: BasePage[] = [
     this.aboutGamePage,
     this.bestScorePage,
     this.settingsPage,
     this.gamePage,
   ];
 
-  public rootChildren: BaseComponent[] = [];
+  private rootChildren: BaseComponent[] = [];
 
-  public header: Header = new Header();
+  private header: Header = new Header();
 
   private currentUser: IUser | null = null;
 
