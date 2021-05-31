@@ -98,7 +98,7 @@ export class DataBase {
     return this.currentUsers.length + 1;
   }
 
-  addScore(user: IUser): void {
+  addToScore(user: IUser): void {
     if (!this.dataBase) return;
     const transaction: IDBTransaction = this.dataBase.transaction(
       'players',

@@ -146,6 +146,6 @@ export class App {
     const result: number = pairs * 100 - time * 10;
     this.currentUser.score =
       result > this.currentUser.score ? result : this.currentUser.score;
-    this.indexDB.addScore(this.currentUser);
+    this.indexDB.addToScore(this.currentUser);
   }
 }
