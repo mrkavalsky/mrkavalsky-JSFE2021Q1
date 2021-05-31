@@ -11,8 +11,9 @@ export class ScoreBlock extends BaseBlock {
     this.appendComponents([this.userList]);
   }
 
-  getBestScoreList(users: IUser[] | void): void {
+  setUserList(users: IUser[] | void): void {
     if (!users) return;
+    this.userList = new BaseBlock('div');
     users.forEach((user) => {
       this.userList.appendComponents([new User(user)]);
     });
@@ -20,8 +21,7 @@ export class ScoreBlock extends BaseBlock {
 
   refreshBestScore(users: IUser[] | void): void {
     this.element.lastElementChild?.remove();
-    this.userList = new BaseBlock('div');
-    this.getBestScoreList(users);
+    this.setUserList(users);
     this.element.append(this.userList.element);
   }
 }
