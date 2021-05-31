@@ -62,16 +62,6 @@ export class Header extends BaseBlock {
       ],
     );
     this.appendComponents([this.logoBlock, this.navMenu, buttonsWrapper]);
-    this.addActiveModeEventToButtons();
-    this.startGameButton.element.addEventListener('click', () =>
-      this.showStopGameButton(),
-    );
-    this.stopGameButton.element.addEventListener('click', () =>
-      this.showStartGameButton(),
-    );
-  }
-
-  addActiveModeEventToButtons(): void {
     this.navMenuButtons.forEach(({ element }) => {
       element.addEventListener('click', () => {
         this.navMenuButtons.forEach((i) => {
@@ -80,6 +70,12 @@ export class Header extends BaseBlock {
         element.classList.add('header__nav-button_active');
       });
     });
+    this.startGameButton.element.addEventListener('click', () =>
+      this.showStopGameButton(),
+    );
+    this.stopGameButton.element.addEventListener('click', () =>
+      this.showStartGameButton(),
+    );
   }
 
   showStartGameButton(): void {
