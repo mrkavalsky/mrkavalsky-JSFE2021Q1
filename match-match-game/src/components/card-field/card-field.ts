@@ -36,7 +36,7 @@ export class CardField extends BaseBlock {
     return cardArray.sort(() => Math.random() - 0.5);
   }
 
-  async refreshGameField(): Promise<void> {
+  async refreshCardField(): Promise<void> {
     this.clear();
     const cards: Card[] = this.getCards();
     this.appendComponents(cards);

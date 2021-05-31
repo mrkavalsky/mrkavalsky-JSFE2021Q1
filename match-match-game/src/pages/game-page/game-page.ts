@@ -28,7 +28,7 @@ export class Game extends BasePage {
     const gameNumber = ++this.counterStartGame;
     this.handleClickEvent();
     this.stopwatch.reset();
-    await this.cardField.refreshGameField();
+    await this.cardField.refreshCardField();
     if (!this.isGameStart) return false;
     if (gameNumber !== this.counterStartGame) return false;
     this.stopwatch.start();
