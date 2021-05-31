@@ -41,6 +41,8 @@ export class Input extends BaseBlock {
     const inputValue: string = input.value.trim();
     const captionText = this.caption.element.innerText.toLowerCase();
     this.addTheErrorClass();
+    if (inputValue.length > 30)
+      return `!The ${captionText} cannot be more than 30 symbols`;
     if (inputValue.length === 0) return `!The ${captionText} cannot be empty`;
     if (inputValue.length === inputValue.match(/\d/g)?.length)
       return `!The ${captionText} cannot consist only of numbers`;
@@ -67,7 +69,8 @@ export class Input extends BaseBlock {
       ) ||
       inputValue.match(/@/)?.length !== 1 ||
       matchRes === null ||
-      matchRes[0].length > 64
+      matchRes[0].length > 64 ||
+      inputValue.length > 30
     )
       return `Invalid email`;
     this.removeTheErrorClass();
