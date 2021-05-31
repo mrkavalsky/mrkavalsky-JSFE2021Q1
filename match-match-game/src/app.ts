@@ -49,7 +49,12 @@ export class App {
     this.header.registerButton.element.addEventListener('click', () => {
       document.body.append(this.popup.element);
     });
-    this.addEnterToAccountEvent();
+    this.popup.form.submitButton.element.addEventListener(
+      'click',
+      (e: MouseEvent) => {
+        this.enterToAccount(e);
+      },
+    );
     const [cardType, difficulty] = this.settingsPage.getSettingsMenu();
     cardType.addEventListener('change', () =>
       this.gamePage.setCardType(cardType),
@@ -106,15 +111,6 @@ export class App {
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
     this.appendComponent(currentRoute);
-  }
-
-  addEnterToAccountEvent(): void {
-    this.popup.form.submitButton.element.addEventListener(
-      'click',
-      (e: MouseEvent) => {
-        this.enterToAccount(e);
-      },
-    );
   }
 
   async enterToAccount(e: MouseEvent): Promise<void> {
