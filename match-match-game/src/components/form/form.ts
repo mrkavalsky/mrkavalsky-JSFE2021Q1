@@ -25,7 +25,7 @@ export class Form extends BaseBlock {
     'cancel',
   );
 
-  public isFormValid = false;
+  private isFormValid = false;
 
   private errorField: BaseComponent = new BaseComponent('div', [
     'form__error-field',
