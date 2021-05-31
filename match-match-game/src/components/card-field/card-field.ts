@@ -45,7 +45,7 @@ export class CardField extends BaseBlock {
     this.clear();
     const cards: Card[] = this.getCards();
     this.appendComponents(cards);
-    await timeout(3);
+    await timeout(30);
     cards.forEach((card) => {
       card.rotateToFront();
     });
