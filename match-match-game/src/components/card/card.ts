@@ -5,7 +5,7 @@ import './card.css';
 export class Card extends BaseBlock {
   public isFind = false;
 
-  public card: BaseBlock = new BaseBlock(
+  private card: BaseBlock = new BaseBlock(
     'div',
     ['card', 'card_rotate'],
     [
