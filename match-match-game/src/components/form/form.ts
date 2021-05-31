@@ -72,8 +72,6 @@ export class Form extends BaseBlock {
   clearDownForm(): void {
     this.inputsArray.forEach((input) => {
       input.clearDownInput();
-      input.clearDownError();
-      this.validateForm();
     });
   }
 

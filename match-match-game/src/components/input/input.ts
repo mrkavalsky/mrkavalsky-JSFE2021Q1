@@ -5,10 +5,7 @@ import './input.css';
 export class Input extends BaseBlock {
   private caption: BaseComponent = new BaseComponent('div', ['input__caption']);
 
-  private input: BaseComponent = new BaseComponent('input', [
-    'input__field',
-    'input__field_error',
-  ]);
+  private input: BaseComponent = new BaseComponent('input', ['input__field']);
 
   private error: BaseComponent = new BaseComponent('div', ['input__error']);
 
@@ -21,7 +18,7 @@ export class Input extends BaseBlock {
     this.inputType = inputType;
     this.caption.element.innerText = caption;
     this.input.element.setAttribute('type', inputType);
-    this.error.element.innerText = '!Required to fill';
+    this.showStartMessage();
     this.appendComponents([this.caption, this.input, this.error]);
     this.input.element.addEventListener('input', () => {
       this.setError();
@@ -86,11 +83,7 @@ export class Input extends BaseBlock {
     const input: HTMLInputElement = this.getInputNode();
     input.value = '';
     this.isValidate = false;
-    this.removeTheErrorClass();
-  }
-
-  clearDownError(): void {
-    this.error.element.innerText = '';
+    this.showStartMessage();
   }
 
   getInputNode(): HTMLInputElement {
@@ -109,5 +102,10 @@ export class Input extends BaseBlock {
 
   getIsValidate(): boolean {
     return this.isValidate;
+  }
+
+  showStartMessage(): void {
+    this.error.element.innerText = '!Required to fill';
+    this.addTheErrorClass();
   }
 }
