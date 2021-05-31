@@ -42,9 +42,7 @@ export class App {
   private isGameStart = false;
 
   constructor(readonly rootElement: HTMLElement) {
-    this.appendComponent(this.header);
-    this.appendComponent(this.scorePopup);
-    this.appendComponent(this.aboutGamePage);
+    this.appendComponents([this.header, this.scorePopup, this.aboutGamePage]);
     this.addRouting();
     this.header.registerButton.element.addEventListener('click', () => {
       document.body.append(this.popup.element);
@@ -70,9 +68,11 @@ export class App {
     });
   }
 
-  appendComponent(block: BaseComponent): void {
-    this.rootElement.append(block.element);
-    this.rootChildren.push(block);
+  appendComponents(components: BaseComponent[]): void {
+    components.forEach((e: BaseComponent): void => {
+      this.rootElement.append(e.element);
+    });
+    this.rootChildren = this.rootChildren.concat(components);
   }
 
   removeComponent(): void {
@@ -110,7 +110,7 @@ export class App {
     }
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
-    this.appendComponent(currentRoute);
+    this.appendComponents([currentRoute]);
   }
 
   async enterToAccount(e: MouseEvent): Promise<void> {
