@@ -16,7 +16,9 @@ export class App {
 
   private indexDB: DataBase = new DataBase(this.bestScorePage.scoreBlock);
 
-  private popup: RegistrationPopup = new RegistrationPopup(this.indexDB);
+  private registrationPopup: RegistrationPopup = new RegistrationPopup(
+    this.indexDB,
+  );
 
   private scorePopup: ScorePopup = new ScorePopup();
 
@@ -48,9 +50,9 @@ export class App {
     };
     this.loadStartRoute();
     this.header.registerButton.element.addEventListener('click', () => {
-      document.body.append(this.popup.element);
+      document.body.append(this.registrationPopup.element);
     });
-    this.popup.form.submitButton.element.addEventListener(
+    this.registrationPopup.form.submitButton.element.addEventListener(
       'click',
       (e: MouseEvent) => {
         this.enterToAccount(e);
@@ -115,7 +117,7 @@ export class App {
 
   async enterToAccount(e: MouseEvent): Promise<void> {
     e.preventDefault();
-    const user: IUser | void = await this.popup.form.submitForm();
+    const user: IUser | void = await this.registrationPopup.form.submitForm();
     if (!user) return;
     this.currentUser = user;
     this.header.showStartGameButton();
