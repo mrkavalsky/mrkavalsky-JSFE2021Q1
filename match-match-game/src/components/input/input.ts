@@ -3,15 +3,15 @@ import { BaseComponent } from '../../shared/base-component';
 import './input.css';
 
 export class Input extends BaseBlock {
-  public caption: BaseComponent = new BaseComponent('div', ['input__caption']);
+  private caption: BaseComponent = new BaseComponent('div', ['input__caption']);
 
-  public input: BaseComponent = new BaseComponent('input', ['input__field']);
+  private input: BaseComponent = new BaseComponent('input', ['input__field']);
 
-  public error: BaseComponent = new BaseComponent('div', ['input__error']);
+  private error: BaseComponent = new BaseComponent('div', ['input__error']);
 
-  public inputType: string;
+  private inputType: string;
 
-  public isValidate = false;
+  private isValidate = false;
 
   constructor(caption: string, inputType: string) {
     super('div', ['input']);
@@ -99,5 +99,9 @@ export class Input extends BaseBlock {
 
   removeTheErrorClass(): void {
     this.input.element.classList.remove('input__field_error');
+  }
+
+  getIsValidate(): boolean {
+    return this.isValidate;
   }
 }

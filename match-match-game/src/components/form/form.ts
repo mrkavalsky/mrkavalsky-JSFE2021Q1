@@ -60,7 +60,7 @@ export class Form extends BaseBlock {
   validateForm(): void {
     this.isFormValid = false;
     if (
-      this.inputsArray.filter(({ isValidate }) => isValidate).length ===
+      this.inputsArray.filter((input) => input.getIsValidate()).length ===
       this.inputsArray.length
     ) {
       this.submitButton.element.classList.remove('form__button_submit_disable');
