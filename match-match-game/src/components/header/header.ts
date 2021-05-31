@@ -6,11 +6,11 @@ import './header.css';
 import defaultAvatar from '../../assets/images/default-avatar.png';
 
 export class Header extends BaseBlock {
-  public logoBlock: BaseComponent = new BaseComponent('div', ['logo']);
+  private logoBlock: BaseComponent = new BaseComponent('div', ['logo']);
 
-  public navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
+  private navMenu: BaseBlock = new BaseBlock('nav', ['header__nav-menu']);
 
-  public stopGameButton = new BaseButton(
+  public readonly stopGameButton = new BaseButton(
     ['header__button', 'header__button_hidden'],
     'stop game',
   );
@@ -21,12 +21,12 @@ export class Header extends BaseBlock {
     new NavButton(['header__nav-button'], 'Game Settings'),
   ];
 
-  public RegisterButton: BaseButton = new BaseButton(
+  public readonly RegisterButton: BaseButton = new BaseButton(
     ['header__button'],
     'Register New Player',
   );
 
-  public startGameButton: NavButton = new NavButton(
+  public readonly startGameButton: NavButton = new NavButton(
     ['header__button', 'header__button_hidden'],
     'start game',
   );
