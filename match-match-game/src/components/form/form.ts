@@ -46,10 +46,6 @@ export class Form extends BaseBlock {
       this.submitButton,
       this.cancelButton,
     ]);
-    this.addFormValidationEvent();
-  }
-
-  addFormValidationEvent(): void {
     this.element.addEventListener('input', () => {
       this.validateForm();
     });
