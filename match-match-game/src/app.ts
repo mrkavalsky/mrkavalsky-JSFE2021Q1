@@ -46,7 +46,9 @@ export class App {
     this.appendComponent(this.scorePopup);
     this.appendComponent(this.aboutGamePage);
     this.addRouting();
-    this.addShowPopupEvent();
+    this.header.registerButton.element.addEventListener('click', () => {
+      document.body.append(this.popup.element);
+    });
     this.addEnterToAccountEvent();
     const [cardType, difficulty] = this.settingsPage.getSettingsMenu();
     cardType.addEventListener('change', () =>
@@ -104,12 +106,6 @@ export class App {
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
     this.appendComponent(currentRoute);
-  }
-
-  addShowPopupEvent(): void {
-    this.header.registerButton.element.addEventListener('click', () => {
-      document.body.append(this.popup.element);
-    });
   }
 
   addEnterToAccountEvent(): void {
