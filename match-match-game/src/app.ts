@@ -128,7 +128,7 @@ export class App {
     this.currentUser = user;
     this.header.showStartGameButton();
     this.header.showUserAvatar(user.avatar);
-    this.indexDB.addBestScoreArray();
+    this.indexDB.sendDataToScoreBlock();
   }
 
   async gameCycle(): Promise<void> {

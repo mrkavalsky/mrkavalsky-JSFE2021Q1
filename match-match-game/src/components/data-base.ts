@@ -52,7 +52,7 @@ export class DataBase {
     this.openRequest.onsuccess = () => {
       this.dataBase = this.openRequest.result;
       this.initUsers.forEach((user) => this.addNewUser(user));
-      this.addBestScoreArray();
+      this.sendDataToScoreBlock();
     };
   }
 
@@ -66,7 +66,7 @@ export class DataBase {
     store.add(user);
   }
 
-  addBestScoreArray(): IUser[] | void {
+  sendDataToScoreBlock(): IUser[] | void {
     if (!this.dataBase) return;
     const users: IUser[] = [];
     const transaction: IDBTransaction = this.dataBase.transaction(
@@ -107,7 +107,7 @@ export class DataBase {
     const store: IDBObjectStore = transaction.objectStore('players');
     store.put(user);
     transaction.oncomplete = () => {
-      this.addBestScoreArray();
+      this.sendDataToScoreBlock();
     };
   }
 }
