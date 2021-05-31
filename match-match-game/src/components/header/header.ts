@@ -38,12 +38,8 @@ export class Header extends BaseBlock {
     'header__avatar_hidden',
   ]);
 
-  constructor(
-    tag = 'header',
-    styles: string[] = ['header'],
-    children: BaseComponent[] = [],
-  ) {
-    super(tag, styles, children);
+  constructor() {
+    super('header', ['header']);
     this.navMenu.appendComponents(this.navMenuButtons);
     [, , this.settingsButton] = this.navMenu.children;
     this.logoBlock.element.innerHTML = `
