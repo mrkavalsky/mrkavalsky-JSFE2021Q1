@@ -1,7 +1,7 @@
 import { BaseButton } from './base-button';
 
 export class NavButton extends BaseButton {
-  public pageHash: string;
+  public readonly pageHash: string;
 
   constructor(styles: string[] = [], innerText: string) {
     super(styles, innerText);
