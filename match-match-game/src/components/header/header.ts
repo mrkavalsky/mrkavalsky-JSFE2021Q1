@@ -21,7 +21,7 @@ export class Header extends BaseBlock {
     new NavButton(['header__nav-button'], 'Game Settings'),
   ];
 
-  public readonly RegisterButton: BaseButton = new BaseButton(
+  public readonly registerButton: BaseButton = new BaseButton(
     ['header__button'],
     'Register New Player',
   );
@@ -52,7 +52,7 @@ export class Header extends BaseBlock {
       'div',
       ['header__buttons-wrapper'],
       [
-        this.RegisterButton,
+        this.registerButton,
         this.startGameButton,
         this.stopGameButton,
         this.userAvatar,
@@ -76,7 +76,7 @@ export class Header extends BaseBlock {
   }
 
   showStartGameButton(): void {
-    this.RegisterButton.element.classList.add('header__button_hidden');
+    this.registerButton.element.classList.add('header__button_hidden');
     this.stopGameButton.element.classList.add('header__button_hidden');
     this.startGameButton.element.classList.remove('header__button_hidden');
   }

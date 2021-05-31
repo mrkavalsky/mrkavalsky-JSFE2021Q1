@@ -107,7 +107,7 @@ export class App {
   }
 
   addShowPopupEvent(): void {
-    this.header.RegisterButton.element.addEventListener('click', () => {
+    this.header.registerButton.element.addEventListener('click', () => {
       document.body.append(this.popup.element);
     });
   }
