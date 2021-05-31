@@ -8,8 +8,6 @@ export class DataBase {
 
   private openRequest: IDBOpenDBRequest = this.iDB.open('match-match-game');
 
-  public transactionResult = '';
-
   private initUsers: IUser[] = [
     {
       firstName: 'Nicci',
@@ -66,12 +64,6 @@ export class DataBase {
     );
     const store: IDBObjectStore = transaction.objectStore('players');
     store.add(user);
-    transaction.oncomplete = () => {
-      this.transactionResult = 'complete';
-    };
-    transaction.onerror = () => {
-      this.transactionResult = 'error';
-    };
   }
 
   addBestScoreArray(): IUser[] | void {
