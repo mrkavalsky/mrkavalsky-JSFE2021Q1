@@ -45,7 +45,6 @@ export class App {
     this.appendComponent(this.header);
     this.appendComponent(this.scorePopup);
     this.appendComponent(this.aboutGamePage);
-    this.bindSettingsButtons();
     this.addRouting();
     this.addShowPopupEvent();
     this.addEnterToAccountEvent();
@@ -105,12 +104,6 @@ export class App {
     this.header.clickOnNavButton(currentRouteName);
     this.removeComponent();
     this.appendComponent(currentRoute);
-  }
-
-  bindSettingsButtons(): void {
-    this.aboutGamePage.settingsButton.element.addEventListener('click', () => {
-      this.header.settingsButton.element.click();
-    });
   }
 
   addShowPopupEvent(): void {

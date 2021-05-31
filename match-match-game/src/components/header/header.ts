@@ -31,8 +31,6 @@ export class Header extends BaseBlock {
     'start game',
   );
 
-  public settingsButton: BaseComponent;
-
   private userAvatar: BaseComponent = new BaseComponent('img', [
     'header__avatar',
     'header__avatar_hidden',
@@ -41,7 +39,6 @@ export class Header extends BaseBlock {
   constructor() {
     super('header', ['header']);
     this.navMenu.appendComponents(this.navMenuButtons);
-    [, , this.settingsButton] = this.navMenu.children;
     this.logoBlock.element.innerHTML = `
       <div class="logo__part logo__part_blue">Match</div>
       <div class="logo__part logo__part_white">Match</div>
