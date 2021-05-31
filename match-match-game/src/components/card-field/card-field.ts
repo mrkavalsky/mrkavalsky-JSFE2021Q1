@@ -1,7 +1,12 @@
 import { BaseBlock } from '../../shared/base-block';
-import { delay } from '../../shared/delay';
 import { Card } from '../card/card';
 import './card-field.css';
+
+function timeout(time: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time * 1000);
+  });
+}
 
 export class CardField extends BaseBlock {
   private activeCard: Card | null = null;
@@ -40,7 +45,7 @@ export class CardField extends BaseBlock {
     this.clear();
     const cards: Card[] = this.getCards();
     this.appendComponents(cards);
-    await delay(3);
+    await timeout(3);
     cards.forEach((card) => {
       card.rotateToFront();
     });
