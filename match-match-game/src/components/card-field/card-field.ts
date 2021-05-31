@@ -62,7 +62,7 @@ export class CardField extends BaseBlock {
 
   async cardHandler(card: Card): Promise<void> {
     if (this.isActiveCard) return;
-    if (card.isFind) return;
+    if (card.getIsFind()) return;
     if (card === this.activeCard) return;
     if (!this.activeCard) {
       this.activeCard = card;

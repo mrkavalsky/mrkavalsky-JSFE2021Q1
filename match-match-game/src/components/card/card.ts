@@ -3,7 +3,7 @@ import { BaseComponent } from '../../shared/base-component';
 import './card.css';
 
 export class Card extends BaseBlock {
-  public isFind = false;
+  private isFind = false;
 
   private card: BaseBlock = new BaseBlock(
     'div',
@@ -76,5 +76,9 @@ export class Card extends BaseBlock {
       );
       this.card.children[0].element.classList.add('card__side_background-red');
     });
+  }
+
+  getIsFind(): boolean {
+    return this.isFind;
   }
 }
