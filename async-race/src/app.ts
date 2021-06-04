@@ -11,6 +11,12 @@ export class App {
     const header: Header = new Header(rootElement);
     rootElement.append(header.node);
     rootElement.append(this.garagePage.node);
+    header.garageButton.node.addEventListener('click', () =>
+      this.changePage(this.garagePage),
+    );
+    header.winnersButton.node.addEventListener('click', () =>
+      this.changePage(this.winnersPage),
+    );
   }
 
   changePage(page: BasePage): void {
