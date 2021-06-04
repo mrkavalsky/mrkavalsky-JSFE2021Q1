@@ -1,4 +1,5 @@
 import { BaseComponent } from '../../shared/base-component';
+import './race-track.css';
 
 export class RaceTrack extends BaseComponent {
   private finishFlag: BaseComponent = new BaseComponent(

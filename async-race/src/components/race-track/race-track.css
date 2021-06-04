@@ -1,0 +1,13 @@
+.race-track {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 10px dashed;
+}
+.race-track__finish-flag {
+  width: 60px;
+  height: 60px;
+  background: url(../../assets/images/finish-flag.png);
+  margin-right: 120px;
+}
