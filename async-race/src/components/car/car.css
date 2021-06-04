@@ -1,0 +1,7 @@
+.car{
+  width: 120px;
+  height: 60px;
+  background-color: #000;
+  -webkit-mask-image: url(../assets/images/car.svg);
+  mask-image: url(../assets/images/car.svg);
+}
