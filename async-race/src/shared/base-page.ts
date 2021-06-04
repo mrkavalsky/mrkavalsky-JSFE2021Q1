@@ -1,7 +1,8 @@
 import { BaseComponent } from './base-component';
+import { BaseTitle } from './base-title';
 
 export class BasePage extends BaseComponent {
-  private title: BaseComponent;
+  private title: BaseTitle;
 
   private paginationElement: BaseComponent;
 
@@ -10,13 +11,7 @@ export class BasePage extends BaseComponent {
   constructor(className: string) {
     super(null, 'main', className);
     [this.pageName] = className.split('-');
-    const caption = this.pageName[0].toUpperCase() + this.pageName.slice(1);
-    this.title = new BaseComponent(
-      this.node,
-      'h2',
-      `${className}__title`,
-      `${caption} (0)`,
-    );
+    this.title = new BaseTitle(this.node, this.pageName);
     this.paginationElement = new BaseComponent(
       this.node,
       'div',
