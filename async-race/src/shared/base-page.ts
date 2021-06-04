@@ -1,8 +1,11 @@
+import { AsyncRaceApi } from '../components/async-race-api';
 import { BaseComponent } from './base-component';
 import { BaseTitle } from './base-title';
 
 export class BasePage extends BaseComponent {
   private title: BaseTitle;
+
+  private asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
   private paginationElement: BaseComponent;
 
@@ -18,5 +21,12 @@ export class BasePage extends BaseComponent {
       `${className}__pagination`,
       'Page #1',
     );
+    this.refreshTotalCount();
+  }
+
+  async refreshTotalCount(): Promise<void> {
+    const totalCount =
+      (await this.asyncRaceApi.getTotalCount(this.pageName)) || '0';
+    this.title.setTotalCount(totalCount);
   }
 }
