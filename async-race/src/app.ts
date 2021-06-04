@@ -12,4 +12,9 @@ export class App {
     rootElement.append(header.node);
     rootElement.append(this.garagePage.node);
   }
+
+  changePage(page: BasePage): void {
+    this.rootElement.lastElementChild?.remove();
+    this.rootElement.append(page.node);
+  }
 }
