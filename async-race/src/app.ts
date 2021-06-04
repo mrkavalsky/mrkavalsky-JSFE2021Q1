@@ -9,7 +9,6 @@ export class App {
 
   constructor(private rootElement: HTMLElement) {
     const header: Header = new Header(rootElement);
-    rootElement.append(header.node);
     rootElement.append(this.garagePage.node);
     header.garageButton.node.addEventListener('click', () =>
       this.changePage(this.garagePage),
