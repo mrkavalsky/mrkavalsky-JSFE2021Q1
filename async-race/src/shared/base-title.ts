@@ -8,6 +8,7 @@ export class BaseTitle extends BaseComponent {
   constructor(node: HTMLElement, pageName: string) {
     super(node, 'h2', `${node.className}__title`);
     this.caption = pageName[0].toUpperCase() + pageName.slice(1);
+    this.setTotalCount();
   }
 
   setTotalCount(count = '0'): void {
