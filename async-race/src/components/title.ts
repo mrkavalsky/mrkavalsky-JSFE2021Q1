@@ -1,6 +1,6 @@
 import { BaseComponent } from '../shared/base-component';
 
-export class BaseTitle extends BaseComponent {
+export class Title extends BaseComponent {
   private caption: string;
 
   private totalCount = '0';

@@ -1,10 +1,10 @@
 import { AsyncRaceApi } from '../components/async-race-api';
 import { CarList } from '../components/car-list/car-list';
 import { BaseComponent } from './base-component';
-import { BaseTitle } from '../components/base-title';
+import { Title } from '../components/title';
 
 export class BasePage extends BaseComponent {
-  private title: BaseTitle;
+  private title: Title;
 
   private asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
@@ -12,7 +12,7 @@ export class BasePage extends BaseComponent {
 
   constructor(private pageName: string) {
     super(null, 'main', pageName);
-    this.title = new BaseTitle(this.node, this.pageName);
+    this.title = new Title(this.node, this.pageName);
     this.carList = new CarList(this.node);
     this.refreshTotalCount();
   }
