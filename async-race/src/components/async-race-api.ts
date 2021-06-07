@@ -18,4 +18,14 @@ export class AsyncRaceApi {
     const data = await response.json();
     return data;
   }
+
+  async postCar(car: ICar): Promise<void> {
+    await fetch(`${this.baseUrl}/garage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(car),
+    });
+  }
 }
