@@ -6,9 +6,9 @@ import { Title } from '../components/title';
 export class BasePage extends BaseComponent {
   private title: Title;
 
-  private asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
+  protected asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
-  private carList: CarList;
+  protected carList: CarList;
 
   constructor(private pageName: string) {
     super(null, 'main', pageName);
