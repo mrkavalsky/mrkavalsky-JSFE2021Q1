@@ -2,7 +2,7 @@ export class BaseComponent {
   public node: HTMLElement;
 
   constructor(
-    parentNode: HTMLElement | null,
+    parentNode: HTMLElement | null = null,
     tagName = 'div',
     className = '',
     content = '',
