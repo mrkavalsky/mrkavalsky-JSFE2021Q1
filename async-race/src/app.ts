@@ -3,9 +3,9 @@ import { Header } from './components/header';
 import { BasePage } from './shared/base-page';
 
 export class App {
-  private garagePage = new BasePage('garage-page');
+  private garagePage = new BasePage('garage');
 
-  private winnersPage = new BasePage('winners-page');
+  private winnersPage = new BasePage('winners');
 
   constructor(private rootElement: HTMLElement) {
     const header: Header = new Header(rootElement);
