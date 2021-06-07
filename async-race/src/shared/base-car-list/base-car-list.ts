@@ -1,6 +1,6 @@
-import { BaseComponent } from '../../shared/base-component';
-import { ICar } from '../../shared/ICar';
-import { CarListPage } from '../car-list-page/car-list-page';
+import { BaseComponent } from '../base-component';
+import { ICar } from '../ICar';
+import { CarListPage } from '../../components/car-list-page/car-list-page';
 
 export class BaseCarList extends BaseComponent {
   private carListPage: CarListPage = new CarListPage(this.node);

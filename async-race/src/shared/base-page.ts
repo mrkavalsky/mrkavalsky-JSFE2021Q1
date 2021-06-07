@@ -1,5 +1,5 @@
 import { AsyncRaceApi } from '../components/async-race-api';
-import { BaseCarList } from '../components/base-car-list/base-car-list';
+import { BaseCarList } from './base-car-list/base-car-list';
 import { BaseComponent } from './base-component';
 import { Title } from '../components/title';
 
