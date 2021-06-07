@@ -8,6 +8,6 @@
 .race-track__finish-flag {
   width: 60px;
   height: 60px;
-  background: url(../../assets/images/finish-flag.png);
+  background: no-repeat center / contain url(../../assets/images/finish-flag.png);
   margin-right: 120px;
 }
