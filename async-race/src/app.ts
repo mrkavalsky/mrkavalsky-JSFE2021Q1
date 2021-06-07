@@ -1,9 +1,10 @@
 import './app.css';
 import { Header } from './components/header';
+import { Garage } from './pages/garage/garage';
 import { BasePage } from './shared/base-page';
 
 export class App {
-  private garagePage = new BasePage('garage');
+  private garagePage = new Garage();
 
   private winnersPage = new BasePage('winners');
 
