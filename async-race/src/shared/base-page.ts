@@ -1,4 +1,5 @@
 import { AsyncRaceApi } from '../components/async-race-api';
+import { CarList } from '../components/car-list/car-list';
 import { BaseComponent } from './base-component';
 import { BaseTitle } from './base-title';
 
@@ -7,7 +8,7 @@ export class BasePage extends BaseComponent {
 
   private asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
-  private paginationElement: BaseComponent;
+  private carList: CarList;
 
   private pageName: string;
 
@@ -15,12 +16,7 @@ export class BasePage extends BaseComponent {
     super(null, 'main', className);
     [this.pageName] = className.split('-');
     this.title = new BaseTitle(this.node, this.pageName);
-    this.paginationElement = new BaseComponent(
-      this.node,
-      'div',
-      `${className}__pagination`,
-      'Page #1',
-    );
+    this.carList = new CarList(this.node);
     this.refreshTotalCount();
   }
 
