@@ -1,0 +1,162 @@
+[
+  {
+    "id": 0,
+    "manufacturer": "Volkswagen",
+    "models": [
+      "ID.4",
+      "Atlas",
+      "Atlas Cross Sport",
+      "Tiguan",
+      "Taos",
+      "Jetta",
+      "Jetta GLI",
+      "Passat",
+      "Arteon",
+      "Golf"
+    ]
+  },
+  {
+    "id": 1,
+    "manufacturer": "Toyota",
+    "models": [
+      "Avalon",
+      "Camry",
+      "Corolla",
+      "Prius",
+      "Yaris",
+      "86",
+      "Sienna",
+      "C-HR",
+      "RAV4",
+      "Highlander"
+    ]
+  },
+  {
+    "id": 2,
+    "manufacturer": "Renault",
+    "models": [
+      "Alaskan",
+      "Arkana",
+      "Clio",
+      "Clio RS",
+      "Dokker",
+      "Duster",
+      "Espace",
+      "EZ-Ultimo",
+      "Fluence",
+      "Grand Scenic"
+    ]
+  },
+  {
+    "id": 3,
+    "manufacturer": "Hyundai",
+    "models": [
+      "IONIQ 5",
+      "Azera",
+      "Sonata",
+      "Veloster N",
+      "Veloster",
+      "i30 Fastback N",
+      "i30 N",
+      "The new i30",
+      "The all-new Elantra",
+      "Accent"
+    ]
+  },
+  {
+    "id": 4,
+    "manufacturer": "Opel",
+    "models": [
+      "Grandland X",
+      "Crossland",
+      "Corsa-e",
+      "Insignia Grand Sport",
+      "Insignia Sports Tourer",
+      "Mokka",
+      "Mokka-e",
+      "Combo Cargo",
+      "Combo Life",
+      "Sports Tourer"
+    ]
+  },
+  {
+    "id": 5,
+    "manufacturer": "Ford",
+    "models": [
+      "ECOSPORT",
+      "ESCAPE",
+      "BRONCO SPORT",
+      "BRONCO",
+      "EXPLORER",
+      "EDGE",
+      "MUSTANG MACH-E",
+      "EXPEDITION",
+      "RANGER",
+      "TRANSIT CONNECT"
+    ]
+  },
+  {
+    "id": 6,
+    "manufacturer": "Honda",
+    "models": [
+      "HR-V",
+      "CR-V",
+      "CR-V Hybrid",
+      "Pilot",
+      "Civic Sedan",
+      "Accord",
+      "Accord Hybrid",
+      "Clarity Fuel Cell",
+      "Civic Hatchback",
+      "Civic Type R"
+    ]
+  },
+  {
+    "id": 7,
+    "manufacturer": "Suzuki",
+    "models": [
+      "Swift 5 Doors",
+      "Ignis",
+      "Jimny",
+      "Vitara",
+      "SX4 Crossover",
+      "Escudo",
+      "Across",
+      "Baleno",
+      "Ertiga",
+      "Swace"
+    ]
+  },
+  {
+    "id": 8,
+    "manufacturer": "BMW",
+    "models": [
+      "X1",
+      "X2",
+      "X3",
+      "X3 M",
+      "X4",
+      "X4 M",
+      "X5",
+      "X5 M",
+      "X6",
+      "X6 M"
+    ]
+  },
+  {
+    "id": 9,
+    "manufacturer": "Mercedes",
+    "models": [
+      "GLA SUV",
+      "GLB SUV",
+      "GLC SUV",
+      "GLC Couple",
+      "GLE SUV",
+      "GLE Couple",
+      "GLS SUV",
+      "G-Class SUV",
+      "A-Class Sedan",
+      "C-Class Sedan"
+    ]
+  }
+]
