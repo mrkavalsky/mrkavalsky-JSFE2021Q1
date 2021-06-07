@@ -8,8 +8,14 @@ export class AsyncRaceApi {
     return response.headers.get('X-Total-Count');
   }
 
-  async getGarageCars(path: string): Promise<ICar[]> {
+  async getGarageCars(): Promise<ICar[]> {
+    const garageCars = await this.getData('garage');
+    return garageCars;
+  }
+
+  async getData(path: string): Promise<ICar[]> {
     const response = await fetch(`${this.baseUrl}/${path}`);
-    return response.json();
+    const data = await response.json();
+    return data;
   }
 }
