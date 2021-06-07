@@ -6,6 +6,7 @@ export class GarageCarList extends BaseCarList {
   private carListPage: GarageCarListPage = new GarageCarListPage(this.node);
 
   refreshCarListPage(cars: ICar[]): void {
+    this.node.lastElementChild?.remove();
     this.carListPage = new GarageCarListPage(this.node, cars);
   }
 }
