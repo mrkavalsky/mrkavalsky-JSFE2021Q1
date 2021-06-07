@@ -1,7 +1,7 @@
 export interface ICar {
   name: string;
   color: string;
-  id: number;
+  id?: number;
   time?: number;
   wins?: number;
 }
