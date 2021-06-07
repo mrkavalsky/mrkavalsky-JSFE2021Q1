@@ -10,11 +10,8 @@ export class BasePage extends BaseComponent {
 
   private carList: CarList;
 
-  private pageName: string;
-
-  constructor(className: string) {
-    super(null, 'main', className);
-    [this.pageName] = className.split('-');
+  constructor(private pageName: string) {
+    super(null, 'main', pageName);
     this.title = new BaseTitle(this.node, this.pageName);
     this.carList = new CarList(this.node);
     this.refreshTotalCount();
