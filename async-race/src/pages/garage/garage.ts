@@ -10,11 +10,20 @@ export class Garage extends BasePage {
 
   constructor() {
     super('garage');
+    this.pageLimit = 7;
     this.carList = new GarageCarList(this.node);
     this.garageControl.generateCarsButton.node.addEventListener('click', () =>
       this.generateCars(),
     );
+    this.carList.nextPage.node.addEventListener('click', () =>
+      this.changePage(),
+    );
+    this.carList.prevPage.node.addEventListener('click', () =>
+      this.changePage(false),
+    );
     this.refreshCarList();
+    this.changePage();
+    this.setLastPageNumber();
   }
 
   async refreshCarList(): Promise<void> {
@@ -26,6 +35,17 @@ export class Garage extends BasePage {
     const cars = await getCars();
     cars.forEach(async (car) => this.asyncRaceApi.postCar(car));
     this.refreshTotalCount();
+    this.setLastPageNumber();
     this.refreshCarList();
+  }
+
+  async changePage(isForward = true): Promise<void> {
+    this.setPageNumber(isForward);
+    const page = await this.asyncRaceApi.getPage(
+      this.pageName,
+      this.pageNumber,
+      this.pageLimit,
+    );
+    this.carList.refreshCarListPage(page);
   }
 }

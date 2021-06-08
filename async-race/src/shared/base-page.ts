@@ -5,6 +5,12 @@ import { Title } from '../components/title';
 export class BasePage extends BaseComponent {
   private title: Title;
 
+  protected pageNumber = 1;
+
+  protected pageLimit = 1;
+
+  protected lastPageNumber = 1;
+
   protected asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
   constructor(protected pageName: string) {
@@ -15,7 +21,23 @@ export class BasePage extends BaseComponent {
 
   async refreshTotalCount(): Promise<void> {
     const totalCount =
-      (await this.asyncRaceApi.getTotalCount(this.pageName)) || '0';
+      (await this.asyncRaceApi.getTotalCount(this.pageName)) || 0;
     this.title.setTotalCount(totalCount);
+  }
+
+  setPageNumber(isForward: boolean): void {
+    const nextPageNumber = isForward
+      ? this.pageNumber + 1
+      : this.pageNumber - 1;
+    if (nextPageNumber < 1 || nextPageNumber > this.lastPageNumber) return;
+    this.pageNumber = nextPageNumber;
+  }
+
+  async setLastPageNumber(): Promise<void> {
+    const totalCount: number | null = await this.asyncRaceApi.getTotalCount(
+      this.pageName,
+    );
+    if (!totalCount) return;
+    this.lastPageNumber = Math.ceil(totalCount / this.pageLimit);
   }
 }

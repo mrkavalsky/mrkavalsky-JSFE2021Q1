@@ -3,7 +3,7 @@ import { BaseComponent } from '../shared/base-component';
 export class Title extends BaseComponent {
   private caption: string;
 
-  private totalCount = '0';
+  private totalCount = 0;
 
   constructor(parentNode: HTMLElement, pageName: string) {
     super(parentNode, 'h2', `${pageName}__title`);
@@ -11,7 +11,7 @@ export class Title extends BaseComponent {
     this.setTotalCount();
   }
 
-  setTotalCount(count = '0'): void {
+  setTotalCount(count = 0): void {
     this.totalCount = count;
     this.node.innerText = `${this.caption} (${this.totalCount})`;
   }
