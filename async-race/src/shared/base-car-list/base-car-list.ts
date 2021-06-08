@@ -20,4 +20,14 @@ export class BaseCarList extends BaseComponent {
   setPageNumberTitle(pageNumber: number): void {
     this.pageNumberTitle.node.innerText = `Page #${pageNumber}`;
   }
+
+  setButtonsDisable(): void {
+    this.prevPage.setDisable();
+    this.nextPage.setDisable();
+  }
+
+  setButtonsEnable(): void {
+    this.prevPage.setEnable();
+    this.nextPage.setEnable();
+  }
 }
