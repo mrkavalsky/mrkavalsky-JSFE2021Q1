@@ -1,4 +1,4 @@
-import { BaseButton } from '../shared/base-button';
+import { BaseButton } from '../shared/base-button/base-button';
 import { BaseComponent } from '../shared/base-component';
 
 export class Header extends BaseComponent {

@@ -1,4 +1,4 @@
-import { BaseButton } from '../base-button';
+import { BaseButton } from '../base-button/base-button';
 import { BaseComponent } from '../base-component';
 
 export class BaseCarList extends BaseComponent {
