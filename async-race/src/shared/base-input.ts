@@ -7,4 +7,8 @@ export class BaseInput extends BaseComponent {
     super(parentNode, 'input', className);
     this.inputNode = this.node as HTMLInputElement;
   }
+
+  getValue(): string {
+    return this.inputNode.value;
+  }
 }
