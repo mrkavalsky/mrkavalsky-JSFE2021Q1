@@ -13,8 +13,8 @@ export class AsyncRaceApi {
     return garageCars;
   }
 
-  async getData(path: string): Promise<ICar[]> {
-    const response = await fetch(`${this.baseUrl}/${path}`);
+  async getData(path: string, parameters = ''): Promise<ICar[]> {
+    const response = await fetch(`${this.baseUrl}/${path}${parameters}`);
     const data = await response.json();
     return data;
   }
@@ -27,5 +27,10 @@ export class AsyncRaceApi {
       },
       body: JSON.stringify(car),
     });
+  }
+
+  async getPage(path: string, page: number, limit: number): Promise<ICar[]> {
+    const data = await this.getData(path, `?_page=${page}&_limit=${limit}`);
+    return data;
   }
 }
