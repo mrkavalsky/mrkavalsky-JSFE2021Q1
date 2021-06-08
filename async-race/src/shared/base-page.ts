@@ -7,7 +7,7 @@ export class BasePage extends BaseComponent {
 
   protected asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
-  constructor(private pageName: string) {
+  constructor(protected pageName: string) {
     super(null, 'main', pageName);
     this.title = new Title(this.node, this.pageName);
     this.refreshTotalCount();
