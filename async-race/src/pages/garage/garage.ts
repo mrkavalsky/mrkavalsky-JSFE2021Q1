@@ -27,12 +27,14 @@ export class Garage extends BasePage {
   }
 
   async generateCars(): Promise<void> {
+    this.carList.setButtonsDisable();
     const cars = await getCars();
     cars.forEach(async (car) => this.asyncRaceApi.postCar(car));
     this.refreshTotalCount();
     this.setLastPageNumber();
     this.pageNumber = 0;
-    this.changePage();
+    await this.changePage();
+    this.carList.setButtonsEnable();
   }
 
   async changePage(isForward = true): Promise<void> {
