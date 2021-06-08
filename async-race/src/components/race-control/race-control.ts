@@ -9,8 +9,12 @@ export class RaceControl extends BaseComponent {
 
   private raceTrack = new RaceTrack(this.node);
 
-  constructor(parentNode: HTMLElement, carInfo: ICar) {
+  constructor(parentNode: HTMLElement, private carInfo: ICar) {
     super(parentNode, 'div', 'race-control', carInfo.name);
-    this.car.setColor(carInfo.color);
+    this.car.setColor(this.carInfo.color);
+  }
+
+  getCarId(): number | undefined {
+    return this.carInfo.id;
   }
 }
