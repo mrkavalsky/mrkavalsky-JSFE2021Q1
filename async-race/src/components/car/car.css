@@ -4,4 +4,7 @@
   background-color: #000;
   -webkit-mask-image: url(../../assets/images/car.svg);
   mask-image: url(../../assets/images/car.svg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
