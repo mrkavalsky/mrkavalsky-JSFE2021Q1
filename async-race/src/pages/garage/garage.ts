@@ -37,6 +37,7 @@ export class Garage extends BasePage {
 
   async changePage(isForward = true): Promise<void> {
     await super.changePage(isForward);
+    this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
   }
 }
