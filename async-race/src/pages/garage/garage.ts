@@ -21,14 +21,8 @@ export class Garage extends BasePage {
     this.carList.prevPage.node.addEventListener('click', () =>
       this.changePage(false),
     );
-    this.refreshCarList();
     this.changePage();
     this.setLastPageNumber();
-  }
-
-  async refreshCarList(): Promise<void> {
-    const cars = await this.asyncRaceApi.getGarageCars();
-    this.carList.refreshCarListPage(cars);
   }
 
   async generateCars(): Promise<void> {
@@ -36,7 +30,8 @@ export class Garage extends BasePage {
     cars.forEach(async (car) => this.asyncRaceApi.postCar(car));
     this.refreshTotalCount();
     this.setLastPageNumber();
-    this.refreshCarList();
+    this.pageNumber = 0;
+    this.changePage();
   }
 
   async changePage(isForward = true): Promise<void> {

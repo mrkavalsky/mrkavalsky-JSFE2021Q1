@@ -5,7 +5,7 @@ import { Title } from '../components/title';
 export class BasePage extends BaseComponent {
   private title: Title;
 
-  protected pageNumber = 1;
+  protected pageNumber = 0;
 
   protected pageLimit = 1;
 
