@@ -2,6 +2,7 @@ import { getCars } from '../../components/cars-generator';
 import { GarageCarList } from '../../components/garage-car-list/garage-car-list';
 import { GarageControl } from '../../components/garage-control/garage-control';
 import { BasePage } from '../../shared/base-page';
+import './garage.css';
 
 export class Garage extends BasePage {
   private carList: GarageCarList;
