@@ -35,12 +35,7 @@ export class Garage extends BasePage {
   }
 
   async changePage(isForward = true): Promise<void> {
-    this.setPageNumber(isForward);
-    const page = await this.asyncRaceApi.getPage(
-      this.pageName,
-      this.pageNumber,
-      this.pageLimit,
-    );
-    this.carList.refreshCarListPage(page);
+    await super.changePage(isForward);
+    this.carList.refreshCarListPage(this.currentPage);
   }
 }

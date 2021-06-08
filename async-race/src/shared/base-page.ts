@@ -1,6 +1,7 @@
 import { AsyncRaceApi } from '../components/async-race-api';
 import { BaseComponent } from './base-component';
 import { Title } from '../components/title';
+import { ICar } from './ICar';
 
 export class BasePage extends BaseComponent {
   private title: Title;
@@ -10,6 +11,8 @@ export class BasePage extends BaseComponent {
   protected pageLimit = 1;
 
   protected lastPageNumber = 1;
+
+  protected currentPage: ICar[] = [];
 
   protected asyncRaceApi: AsyncRaceApi = new AsyncRaceApi();
 
@@ -39,5 +42,14 @@ export class BasePage extends BaseComponent {
     );
     if (!totalCount) return;
     this.lastPageNumber = Math.ceil(totalCount / this.pageLimit);
+  }
+
+  async changePage(isForward = true): Promise<void> {
+    this.setPageNumber(isForward);
+    this.currentPage = await this.asyncRaceApi.getPage(
+      this.pageName,
+      this.pageNumber,
+      this.pageLimit,
+    );
   }
 }
