@@ -1,6 +1,6 @@
 import { BaseComponent } from '../../shared/base-component';
 import { ICar } from '../../shared/ICar';
-import { RaceControl } from '../race-control';
+import { RaceControl } from '../race-control/race-control';
 
 export class GarageCarListPage extends BaseComponent {
   private carArray: RaceControl[] = [];

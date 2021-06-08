@@ -1,7 +1,7 @@
-import { BaseComponent } from '../shared/base-component';
-import { ICar } from '../shared/ICar';
-import { Car } from './car/car';
-import { RaceTrack } from './race-track/race-track';
+import { BaseComponent } from '../../shared/base-component';
+import { ICar } from '../../shared/ICar';
+import { Car } from '../car/car';
+import { RaceTrack } from '../race-track/race-track';
 
 export class RaceControl extends BaseComponent {
   private car = new Car(this.node);
