@@ -39,6 +39,12 @@ export class AsyncRaceApi {
     });
   }
 
+  async deleteCar(car: ICar): Promise<void> {
+    await fetch(`${this.baseUrl}/garage/${car.id}`, {
+      method: 'DELETE',
+    });
+  }
+
   async getPage(path: string, page: number, limit: number): Promise<ICar[]> {
     const data = await this.getData(path, `?_page=${page}&_limit=${limit}`);
     return data;
