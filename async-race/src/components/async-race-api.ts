@@ -29,6 +29,16 @@ export class AsyncRaceApi {
     });
   }
 
+  async updateCar(car: ICar): Promise<void> {
+    await fetch(`${this.baseUrl}/garage/${car.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(car),
+    });
+  }
+
   async getPage(path: string, page: number, limit: number): Promise<ICar[]> {
     const data = await this.getData(path, `?_page=${page}&_limit=${limit}`);
     return data;
