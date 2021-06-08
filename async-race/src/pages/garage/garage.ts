@@ -38,8 +38,10 @@ export class Garage extends BasePage {
   }
 
   async changePage(isForward = true): Promise<void> {
+    this.carList.setButtonsDisable();
     await super.changePage(isForward);
     this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
+    this.carList.setButtonsEnable();
   }
 }
