@@ -39,8 +39,8 @@ export class AsyncRaceApi {
     });
   }
 
-  async deleteCar(car: ICar): Promise<void> {
-    await fetch(`${this.baseUrl}/garage/${car.id}`, {
+  async deleteCar(id: number): Promise<void> {
+    await fetch(`${this.baseUrl}/garage/${id}`, {
       method: 'DELETE',
     });
   }
