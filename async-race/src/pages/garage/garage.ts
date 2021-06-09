@@ -42,6 +42,26 @@ export class Garage extends BasePage {
     await super.changePage(isForward);
     this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
+    this.observeRemoveButtons();
     this.carList.setButtonsEnable();
+  }
+
+  async removeCar(id: number | undefined): Promise<void> {
+    if (!id) return;
+    this.carList.setButtonsDisable();
+    await this.asyncRaceApi.deleteCar(id);
+    this.pageNumber = 0;
+    await this.changePage();
+    this.carList.setButtonsEnable();
+  }
+
+  observeRemoveButtons(): void {
+    this.carList
+      .getRaceControls()
+      .forEach((control) =>
+        control.removeButton.node.addEventListener('click', () =>
+          this.removeCar(control.getCarId()),
+        ),
+      );
   }
 }

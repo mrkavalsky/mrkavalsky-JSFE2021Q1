@@ -18,4 +18,8 @@ export class GarageCarListPage extends BaseComponent {
   initGarage(cars: ICar[]): void {
     cars.forEach((car) => this.addCar(car));
   }
+
+  getRaceControls(): RaceControl[] {
+    return this.carArray;
+  }
 }
