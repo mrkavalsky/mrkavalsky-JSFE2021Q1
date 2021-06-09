@@ -9,6 +9,8 @@ export class Garage extends BasePage {
 
   private garageControl: GarageControl = new GarageControl(this.node);
 
+  private currentCar: number | undefined = undefined;
+
   constructor() {
     super('garage');
     this.pageLimit = 7;
@@ -56,12 +58,13 @@ export class Garage extends BasePage {
   }
 
   observeRaceControlButtons(): void {
-    this.carList
-      .getRaceControls()
-      .forEach((control) =>
-        control.removeButton.node.addEventListener('click', () =>
-          this.removeCar(control.getCarId()),
-        ),
+    this.carList.getRaceControls().forEach((control) => {
+      control.removeButton.node.addEventListener('click', () =>
+        this.removeCar(control.getCarId()),
       );
+      control.selectButton.node.addEventListener('click', () => {
+        this.currentCar = control.getCarId();
+      });
+    });
   }
 }
