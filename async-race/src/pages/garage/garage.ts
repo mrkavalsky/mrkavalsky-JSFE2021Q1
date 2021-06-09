@@ -42,7 +42,7 @@ export class Garage extends BasePage {
     await super.changePage(isForward);
     this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
-    this.observeRemoveButtons();
+    this.observeRaceControlButtons();
     this.carList.setNavButtonsEnable();
   }
 
@@ -55,7 +55,7 @@ export class Garage extends BasePage {
     this.carList.setNavButtonsEnable();
   }
 
-  observeRemoveButtons(): void {
+  observeRaceControlButtons(): void {
     this.carList
       .getRaceControls()
       .forEach((control) =>
