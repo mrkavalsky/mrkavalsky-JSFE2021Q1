@@ -24,6 +24,10 @@ export class Garage extends BasePage {
     this.carList.prevPage.node.addEventListener('click', () =>
       this.changePage(false),
     );
+    this.garageControl.carControlCreate.submitButton.node.addEventListener(
+      'click',
+      () => this.createCar(),
+    );
     this.changePage();
     this.setLastPageNumber();
   }
@@ -66,5 +70,12 @@ export class Garage extends BasePage {
         this.currentCar = control.getCarId();
       });
     });
+  }
+
+  async createCar(): Promise<void> {
+    const car = this.garageControl.carControlCreate.getInputValues();
+    await this.asyncRaceApi.postCar(car);
+    this.pageNumber = 0;
+    await this.changePage();
   }
 }
