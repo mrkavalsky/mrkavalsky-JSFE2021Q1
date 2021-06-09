@@ -9,8 +9,6 @@
   cursor: pointer;
 }
 .button_disable {
-  background-color: #ccc;
-  color: white;
   pointer-events: none;
   cursor: auto;
 }
