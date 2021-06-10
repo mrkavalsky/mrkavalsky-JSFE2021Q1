@@ -8,6 +8,8 @@ import './race-control.css';
 export class RaceControl extends BaseComponent {
   private car = new Car(this.node);
 
+  public readonly startButton: BaseButton = new BaseButton(this.node, 'start');
+
   public readonly selectButton: BaseButton = new BaseButton(
     this.node,
     'select',
