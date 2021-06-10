@@ -49,4 +49,9 @@ export class AsyncRaceApi {
     const data = await this.getData(path, `?_page=${page}&_limit=${limit}`);
     return data;
   }
+
+  async startEngine(id: number): Promise<ICar[]> {
+    const data = await this.getData('engine', `?id=${id}&status=started`);
+    return data;
+  }
 }
