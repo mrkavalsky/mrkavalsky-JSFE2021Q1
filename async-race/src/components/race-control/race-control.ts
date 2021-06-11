@@ -32,4 +32,19 @@ export class RaceControl extends BaseComponent {
   getCarId(): number | undefined {
     return this.carInfo.id;
   }
+
+  runCar(time: string): void {
+    this.car.setTransitionTime(time);
+    this.car.moveCar();
+  }
+
+  returnBackCar(): void {
+    const time = '0s';
+    this.car.setTransitionTime(time);
+    this.car.returnBackCar();
+  }
+
+  stopCar(): void {
+    this.car.stopCar();
+  }
 }
