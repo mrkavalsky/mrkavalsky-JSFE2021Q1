@@ -76,6 +76,9 @@ export class Garage extends BasePage {
       control.startButton.node.addEventListener('click', () =>
         this.startCarEngine(control.getCarId()),
       );
+      control.stopButton.node.addEventListener('click', () =>
+        this.stopCarEngine(control.getCarId()),
+      );
     });
   }
 
@@ -98,5 +101,10 @@ export class Garage extends BasePage {
   startCarEngine(id: number | undefined): void {
     if (!id) return;
     this.asyncRaceApi.startEngine(id);
+  }
+
+  stopCarEngine(id: number | undefined): void {
+    if (!id) return;
+    this.asyncRaceApi.stopEngine(id);
   }
 }
