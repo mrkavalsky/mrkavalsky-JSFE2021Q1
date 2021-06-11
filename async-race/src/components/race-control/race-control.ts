@@ -10,6 +10,8 @@ export class RaceControl extends BaseComponent {
 
   public readonly startButton: BaseButton = new BaseButton(this.node, 'start');
 
+  public readonly stopButton: BaseButton = new BaseButton(this.node, 'stop');
+
   public readonly selectButton: BaseButton = new BaseButton(
     this.node,
     'select',
