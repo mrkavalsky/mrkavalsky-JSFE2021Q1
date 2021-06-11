@@ -1,6 +1,7 @@
 import { getCars } from '../../components/cars-generator';
 import { GarageCarList } from '../../components/garage-car-list/garage-car-list';
 import { GarageControl } from '../../components/garage-control/garage-control';
+import { RaceControl } from '../../components/race-control/race-control';
 import { BasePage } from '../../shared/base-page';
 import './garage.css';
 
@@ -74,10 +75,10 @@ export class Garage extends BasePage {
         this.currentCar = control.getCarId();
       });
       control.startButton.node.addEventListener('click', () =>
-        this.startCarEngine(control.getCarId()),
+        this.runCar(control),
       );
       control.stopButton.node.addEventListener('click', () =>
-        this.stopCarEngine(control.getCarId()),
+        this.stopCar(control),
       );
     });
   }
@@ -98,13 +99,27 @@ export class Garage extends BasePage {
     await this.changePage();
   }
 
-  startCarEngine(id: number | undefined): void {
+  async runCar(raceControl: RaceControl): Promise<void> {
+    const id = raceControl.getCarId();
     if (!id) return;
-    this.asyncRaceApi.startEngine(id);
+    const data = await this.asyncRaceApi.startEngine(id);
+    const time = data.distance / data.velocity / 1000;
+    raceControl.runCar(`${time}s`);
+    await this.switchEngineToDriveMode(raceControl);
   }
 
-  stopCarEngine(id: number | undefined): void {
+  async stopCar(raceControl: RaceControl): Promise<void> {
+    const id = raceControl.getCarId();
     if (!id) return;
-    this.asyncRaceApi.stopEngine(id);
+    await this.asyncRaceApi.stopEngine(id);
+    raceControl.returnBackCar();
+  }
+
+  async switchEngineToDriveMode(raceControl: RaceControl): Promise<void> {
+    const id = raceControl.getCarId();
+    if (!id) return;
+    this.asyncRaceApi
+      .switchEngineToDriveMode(id)
+      .catch(() => raceControl.stopCar());
   }
 }

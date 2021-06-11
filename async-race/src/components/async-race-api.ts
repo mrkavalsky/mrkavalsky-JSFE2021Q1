@@ -1,4 +1,5 @@
 import { ICar } from '../shared/ICar';
+import { IRaceSpecifications } from '../shared/race-specifications-interface';
 
 export class AsyncRaceApi {
   private baseUrl = 'http://localhost:3000';
@@ -50,8 +51,11 @@ export class AsyncRaceApi {
     return data;
   }
 
-  async startEngine(id: number): Promise<ICar[]> {
-    const data = await this.getData('engine', `?id=${id}&status=started`);
+  async startEngine(id: number): Promise<IRaceSpecifications> {
+    const response = await fetch(
+      `${this.baseUrl}/engine?id=${id}&status=started`,
+    );
+    const data = await response.json();
     return data;
   }
 
@@ -60,8 +64,12 @@ export class AsyncRaceApi {
     return data;
   }
 
-  async switchEngineToDriveMode(id: number): Promise<ICar[]> {
-    const data = await this.getData('engine', `?id=${id}&status=drive`);
-    return data;
+  async switchEngineToDriveMode(id: number): Promise<void> {
+    return new Promise((res, rej) => {
+      fetch(`${this.baseUrl}/engine?id=${id}&status=drive`).then((response) => {
+        if (response.status === 500) rej(response.status);
+        else res();
+      });
+    });
   }
 }
