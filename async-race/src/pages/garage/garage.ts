@@ -37,7 +37,7 @@ export class Garage extends BasePage {
       this.resetRace(),
     );
     this.garageControl.raceButton.node.addEventListener('click', () =>
-      this.startRace(),
+      this.runRaceCycle(),
     );
     this.changePage();
     this.setLastPageNumber();
@@ -105,13 +105,11 @@ export class Garage extends BasePage {
     await this.changePage();
   }
 
-  async runCar(raceControl: RaceControl): Promise<void> {
+  async runCar(raceControl: RaceControl): Promise<RaceControl | void> {
     const id = raceControl.getCarId();
-    if (!id) return;
-    const data = await this.asyncRaceApi.startEngine(id);
-    const time = data.distance / data.velocity / 1000;
-    raceControl.runCar(`${time}s`);
-    await this.switchEngineToDriveMode(raceControl);
+    if (!id) return undefined;
+    const time = await this.switchEngineToDriveMode(raceControl, id);
+    return time;
   }
 
   async stopCar(raceControl: RaceControl): Promise<void> {
@@ -119,14 +117,22 @@ export class Garage extends BasePage {
     if (!id) return;
     await this.asyncRaceApi.stopEngine(id);
     raceControl.returnBackCar();
+    raceControl.clearDelay();
   }
 
-  async switchEngineToDriveMode(raceControl: RaceControl): Promise<void> {
-    const id = raceControl.getCarId();
-    if (!id) return;
-    this.asyncRaceApi
-      .switchEngineToDriveMode(id)
-      .catch(() => raceControl.stopCar());
+  async switchEngineToDriveMode(
+    raceControl: RaceControl,
+    id: number,
+  ): Promise<RaceControl> {
+    const raceTime = await this.getTime(id);
+    this.asyncRaceApi.switchEngineToDriveMode(id).catch(() => {
+      raceControl.stopCar();
+      raceControl.clearDelay();
+    });
+    raceControl.setRaceTime(raceTime);
+    raceControl.runCar();
+    const finishedCar = await raceControl.setDelay();
+    return finishedCar;
   }
 
   resetRace(): void {
@@ -135,9 +141,26 @@ export class Garage extends BasePage {
       .forEach(({ stopButton }) => stopButton.node.click());
   }
 
-  startRace(): void {
-    this.carList
-      .getRaceControls()
-      .forEach(({ startButton }) => startButton.node.click());
+  async startRace(): Promise<RaceControl | void> {
+    const winner = await Promise.race(
+      this.carList.getRaceControls().map((control) => this.runCar(control)),
+    );
+    return winner;
+  }
+
+  async getTime(id: number): Promise<number> {
+    const data = await this.asyncRaceApi.startEngine(id);
+    return Math.round(data.distance / data.velocity);
+  }
+
+  async runRaceCycle(): Promise<void> {
+    const winner = await this.startRace();
+    if (!winner) return;
+    const winners = await this.asyncRaceApi.getWinners();
+    if (winners.find(({ id }) => id === winner.getCarId())) {
+      this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
+    } else {
+      this.asyncRaceApi.postCar(winner.getCarInfo(), 'winners');
+    }
   }
 }

@@ -67,4 +67,8 @@ export class RaceControl extends BaseComponent {
   setRaceTime(time: number): void {
     this.raceTime = time;
   }
+  
+  getCarInfo(): ICar {
+    return this.carInfo;
+  }
 }
