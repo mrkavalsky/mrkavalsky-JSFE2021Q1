@@ -8,6 +8,10 @@ import './race-control.css';
 export class RaceControl extends BaseComponent {
   private car = new Car(this.node);
 
+  private delay: NodeJS.Timeout | null = null;
+
+  private raceTime = 0;
+
   public readonly startButton: BaseButton = new BaseButton(this.node, 'start');
 
   public readonly stopButton: BaseButton = new BaseButton(this.node, 'stop');
@@ -33,8 +37,8 @@ export class RaceControl extends BaseComponent {
     return this.carInfo.id;
   }
 
-  runCar(time: string): void {
-    this.car.setTransitionTime(time);
+  runCar(): void {
+    this.car.setTransitionTime(`${this.raceTime}ms`);
     this.car.moveCar();
   }
 
@@ -46,5 +50,21 @@ export class RaceControl extends BaseComponent {
 
   stopCar(): void {
     this.car.stopCar();
+  }
+
+  setDelay(): Promise<RaceControl> {
+    return new Promise((res) => {
+      this.delay = setTimeout(() => res(this), this.raceTime);
+    });
+  }
+
+  clearDelay(): void {
+    if (!this.delay) return;
+    clearTimeout(this.delay);
+    this.delay = null;
+  }
+  
+  setRaceTime(time: number): void {
+    this.raceTime = time;
   }
 }
