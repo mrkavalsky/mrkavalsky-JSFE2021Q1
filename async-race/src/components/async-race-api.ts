@@ -20,8 +20,8 @@ export class AsyncRaceApi {
     return data;
   }
 
-  async postCar(car: ICar): Promise<void> {
-    await fetch(`${this.baseUrl}/garage`, {
+  async postCar(car: ICar, path = 'garage'): Promise<void> {
+    await fetch(`${this.baseUrl}/${path}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,8 +30,8 @@ export class AsyncRaceApi {
     });
   }
 
-  async updateCar(car: ICar): Promise<void> {
-    await fetch(`${this.baseUrl}/garage/${car.id}`, {
+  async updateCar(car: ICar, path = 'garage'): Promise<void> {
+    await fetch(`${this.baseUrl}/${path}/${car.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -71,5 +71,10 @@ export class AsyncRaceApi {
         else res();
       });
     });
+  }
+
+  async getWinners(): Promise<ICar[]> {
+    const winners = await this.getData('winners');
+    return winners;
   }
 }
