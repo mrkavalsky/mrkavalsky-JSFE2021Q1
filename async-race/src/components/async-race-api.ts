@@ -1,4 +1,4 @@
-import { ICar } from '../shared/ICar';
+import { ICar } from '../shared/car-interface';
 import { IRaceSpecifications } from '../shared/race-specifications-interface';
 
 export class AsyncRaceApi {

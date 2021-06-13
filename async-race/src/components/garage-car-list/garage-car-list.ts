@@ -1,5 +1,5 @@
 import { BaseCarList } from '../../shared/base-car-list/base-car-list';
-import { ICar } from '../../shared/ICar';
+import { ICar } from '../../shared/car-interface';
 import { GarageCarListPage } from '../garage-car-list-page/garage-car-list-page';
 import { RaceControl } from '../race-control/race-control';
 

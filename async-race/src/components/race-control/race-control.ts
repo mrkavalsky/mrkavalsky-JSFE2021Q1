@@ -1,6 +1,6 @@
 import { BaseButton } from '../../shared/base-button/base-button';
 import { BaseComponent } from '../../shared/base-component';
-import { ICar } from '../../shared/ICar';
+import { ICar } from '../../shared/car-interface';
 import { Car } from '../car/car';
 import { RaceTrack } from '../race-track/race-track';
 import './race-control.css';

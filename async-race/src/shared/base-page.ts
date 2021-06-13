@@ -1,7 +1,7 @@
 import { AsyncRaceApi } from '../components/async-race-api';
 import { BaseComponent } from './base-component';
 import { Title } from '../components/title';
-import { ICar } from './ICar';
+import { ICar } from './car-interface';
 
 export class BasePage extends BaseComponent {
   private title: Title;

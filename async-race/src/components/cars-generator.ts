@@ -1,4 +1,4 @@
-import { ICar } from '../shared/ICar';
+import { ICar } from '../shared/car-interface';
 import { ICarModel } from './car-model-interface';
 
 function getRandomInt(): number {

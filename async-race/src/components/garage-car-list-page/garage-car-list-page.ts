@@ -1,5 +1,5 @@
 import { BaseComponent } from '../../shared/base-component';
-import { ICar } from '../../shared/ICar';
+import { ICar } from '../../shared/car-interface';
 import { RaceControl } from '../race-control/race-control';
 
 export class GarageCarListPage extends BaseComponent {

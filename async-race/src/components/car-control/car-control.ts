@@ -1,6 +1,6 @@
 import { BaseButton } from '../../shared/base-button/base-button';
 import { BaseComponent } from '../../shared/base-component';
-import { ICar } from '../../shared/ICar';
+import { ICar } from '../../shared/car-interface';
 import { ColorInput } from '../color-input/color-input';
 import { TextInput } from '../text-input/text-input';
 import './car-control.css';
