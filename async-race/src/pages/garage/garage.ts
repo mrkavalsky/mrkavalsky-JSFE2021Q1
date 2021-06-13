@@ -5,6 +5,7 @@ import { CarControl } from '../../components/car-control/car-control';
 import { BasePage } from '../../shared/base-page';
 import { ICar, INewCar } from '../../shared/car-interface';
 import './garage.css';
+import { BaseButton } from '../../shared/base-button/base-button';
 
 export class Garage extends BasePage {
   private carList: GaragePageWrapper;
@@ -12,6 +13,8 @@ export class Garage extends BasePage {
   private garageControl: GarageControl = new GarageControl(this.node);
 
   private currentCar: number | null = null;
+
+  private carControlButtonsArray: BaseButton[] = [];
 
   constructor() {
     super('garage');
@@ -83,6 +86,7 @@ export class Garage extends BasePage {
   }
 
   observeCarControlButtons(): void {
+    this.carControlButtonsArray = [];
     this.carList.getCarControls().forEach((control) => {
       control.removeButton.node.addEventListener('click', () =>
         this.removeCar(control.getCarId()),
@@ -96,6 +100,9 @@ export class Garage extends BasePage {
       });
       control.stopButton.node.addEventListener('click', () =>
         this.stopCar(control),
+      );
+      this.carControlButtonsArray = this.carControlButtonsArray.concat(
+        control.buttonsArray,
       );
     });
   }
@@ -193,5 +200,8 @@ export class Garage extends BasePage {
   toggleAllButtonsMode(isEnable = true): void {
     this.carList.toggleNavButtonsMode(isEnable);
     this.garageControl.toggleAllButtonsMode(isEnable);
+    this.carControlButtonsArray.forEach((button) =>
+      button.toggleButtonMode(isEnable),
+    );
   }
 }

@@ -26,6 +26,13 @@ export class CarControl extends BaseComponent {
     'remove',
   );
 
+  public readonly buttonsArray: BaseButton[] = [
+    this.startButton,
+    this.stopButton,
+    this.selectButton,
+    this.removeButton,
+  ];
+
   private raceTrack = new RaceTrack(this.node);
 
   constructor(parentNode: HTMLElement, private carInfo: ICar) {
