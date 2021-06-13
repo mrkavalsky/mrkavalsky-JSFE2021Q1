@@ -46,10 +46,5 @@ export class BasePage extends BaseComponent {
 
   async changePage(isForward = true): Promise<void> {
     this.setPageNumber(isForward);
-    this.currentPage = await this.asyncRaceApi.getPage(
-      this.pageName,
-      this.pageNumber,
-      this.pageLimit,
-    );
   }
 }

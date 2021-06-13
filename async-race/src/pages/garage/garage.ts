@@ -47,7 +47,7 @@ export class Garage extends BasePage {
   async generateCars(): Promise<void> {
     this.carList.setNavButtonsDisable();
     const cars = await getCars();
-    cars.forEach(async (car) => this.asyncRaceApi.postCar(car));
+    cars.forEach(async (car) => this.asyncRaceApi.postGarageCar(car));
     this.refreshTotalCount();
     this.setLastPageNumber();
     this.pageNumber = 0;
@@ -58,6 +58,10 @@ export class Garage extends BasePage {
   async changePage(isForward = true): Promise<void> {
     this.carList.setNavButtonsDisable();
     await super.changePage(isForward);
+    this.currentPage = await this.asyncRaceApi.getGaragePage(
+      this.pageNumber,
+      this.pageLimit,
+    );
     this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
     this.observeRaceControlButtons();
@@ -67,7 +71,7 @@ export class Garage extends BasePage {
   async removeCar(id: number | undefined): Promise<void> {
     if (!id) return;
     this.carList.setNavButtonsDisable();
-    await this.asyncRaceApi.deleteCar(id);
+    await this.asyncRaceApi.deleteCar(id, this.pageName);
     this.pageNumber = 0;
     await this.changePage();
     this.carList.setNavButtonsEnable();
@@ -92,7 +96,7 @@ export class Garage extends BasePage {
 
   async createCar(): Promise<void> {
     const car = this.garageControl.carControlCreate.getInputValues();
-    await this.asyncRaceApi.postCar(car);
+    await this.asyncRaceApi.postGarageCar(car);
     this.pageNumber = 0;
     await this.changePage();
   }
@@ -100,7 +104,7 @@ export class Garage extends BasePage {
   async updateCar(): Promise<void> {
     if (!this.currentCar) return;
     const car: INewCar = this.garageControl.carControlUpdate.getInputValues();
-    await this.asyncRaceApi.updateCar(car, this.currentCar);
+    await this.asyncRaceApi.updateGarageCar(car, this.currentCar);
     this.pageNumber = 0;
     await this.changePage();
   }
