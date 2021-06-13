@@ -1,4 +1,4 @@
-import { ICar } from '../shared/car-interface';
+import { ICar, INewCar } from '../shared/car-interface';
 import { IRaceSpecifications } from '../shared/race-specifications-interface';
 
 export class AsyncRaceApi {
@@ -20,7 +20,7 @@ export class AsyncRaceApi {
     return data;
   }
 
-  async postCar(car: ICar, path = 'garage'): Promise<void> {
+  async postCar(car: INewCar, path = 'garage'): Promise<void> {
     await fetch(`${this.baseUrl}/${path}`, {
       method: 'POST',
       headers: {
@@ -30,8 +30,8 @@ export class AsyncRaceApi {
     });
   }
 
-  async updateCar(car: ICar, path = 'garage'): Promise<void> {
-    await fetch(`${this.baseUrl}/${path}/${car.id}`, {
+  async updateCar(car: INewCar, id: number, path = 'garage'): Promise<void> {
+    await fetch(`${this.baseUrl}/${path}/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

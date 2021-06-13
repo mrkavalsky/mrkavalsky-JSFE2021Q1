@@ -1,6 +1,6 @@
 import { BaseButton } from '../../shared/base-button/base-button';
 import { BaseComponent } from '../../shared/base-component';
-import { ICar } from '../../shared/car-interface';
+import { INewCar } from '../../shared/car-interface';
 import { ColorInput } from '../color-input/color-input';
 import { TextInput } from '../text-input/text-input';
 import './car-control.css';
@@ -17,8 +17,8 @@ export class CarControl extends BaseComponent {
     this.submitButton = new BaseButton(this.node, type);
   }
 
-  getInputValues(): ICar {
-    const car: ICar = {
+  getInputValues(): INewCar {
+    const car: INewCar = {
       name: this.textInput.getValue(),
       color: this.colorInput.getValue(),
     };

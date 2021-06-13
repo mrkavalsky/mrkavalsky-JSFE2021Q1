@@ -3,6 +3,7 @@ import { GarageCarList } from '../../components/garage-car-list/garage-car-list'
 import { GarageControl } from '../../components/garage-control/garage-control';
 import { RaceControl } from '../../components/race-control/race-control';
 import { BasePage } from '../../shared/base-page';
+import { INewCar } from '../../shared/car-interface';
 import './garage.css';
 
 export class Garage extends BasePage {
@@ -98,9 +99,8 @@ export class Garage extends BasePage {
 
   async updateCar(): Promise<void> {
     if (!this.currentCar) return;
-    const car = this.garageControl.carControlUpdate.getInputValues();
-    car.id = this.currentCar;
-    await this.asyncRaceApi.updateCar(car);
+    const car: INewCar = this.garageControl.carControlUpdate.getInputValues();
+    await this.asyncRaceApi.updateCar(car, this.currentCar);
     this.pageNumber = 0;
     await this.changePage();
   }
@@ -157,10 +157,10 @@ export class Garage extends BasePage {
     const winner = await this.startRace();
     if (!winner) return;
     const winners = await this.asyncRaceApi.getWinners();
-    if (winners.find(({ id }) => id === winner.getCarId())) {
-      this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
-    } else {
-      this.asyncRaceApi.postCar(winner.getCarInfo(), 'winners');
-    }
+    // if (winners.find(({ id }) => id === winner.getCarId())) {
+    //   this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
+    // } else {
+    //   this.asyncRaceApi.postCar(winner.getCarInfo(), 'winners');
+    // }
   }
 }

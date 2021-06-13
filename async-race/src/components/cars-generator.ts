@@ -1,4 +1,4 @@
-import { ICar } from '../shared/car-interface';
+import { INewCar } from '../shared/car-interface';
 import { ICarModel } from './car-model-interface';
 
 function getRandomInt(): number {
@@ -18,12 +18,12 @@ function getCarName(data: ICarModel[]): string {
   return `${carModel.manufacturer} ${carModel.models[getRandomInt()]}`;
 }
 
-export async function getCars(): Promise<ICar[]> {
-  const cars: ICar[] = [];
+export async function getCars(): Promise<INewCar[]> {
+  const cars: INewCar[] = [];
   const response: Response = await fetch('./car-models.json');
   const data: ICarModel[] = await response.json();
   for (let i = 0; i < 100; i++) {
-    const car: ICar = {
+    const car: INewCar = {
       name: getCarName(data),
       color: getCarColor(),
     };
