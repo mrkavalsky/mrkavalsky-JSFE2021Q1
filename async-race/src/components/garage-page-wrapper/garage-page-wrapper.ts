@@ -1,7 +1,7 @@
 import { BaseCarList } from '../../shared/base-car-list/base-car-list';
 import { ICar } from '../../shared/car-interface';
 import { GarageCurrentPage } from '../garage-current-page/garage-current-page';
-import { RaceControl } from '../race-control/race-control';
+import { CarControl } from '../car-control/car-control';
 
 export class GaragePageWrapper extends BaseCarList {
   private carListPage: GarageCurrentPage = new GarageCurrentPage(this.node);
@@ -11,7 +11,7 @@ export class GaragePageWrapper extends BaseCarList {
     this.carListPage = new GarageCurrentPage(this.node, cars);
   }
 
-  getRaceControls(): RaceControl[] {
-    return this.carListPage.getRaceControls();
+  getCarControls(): CarControl[] {
+    return this.carListPage.getCarControls();
   }
 }

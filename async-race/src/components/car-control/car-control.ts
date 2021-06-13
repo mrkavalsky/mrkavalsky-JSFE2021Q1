@@ -3,9 +3,9 @@ import { BaseComponent } from '../../shared/base-component';
 import { ICar } from '../../shared/car-interface';
 import { Car } from '../car/car';
 import { RaceTrack } from '../race-track/race-track';
-import './race-control.css';
+import './car-control.css';
 
-export class RaceControl extends BaseComponent {
+export class CarControl extends BaseComponent {
   private car = new Car(this.node);
 
   private delay: NodeJS.Timeout | null = null;
@@ -29,7 +29,7 @@ export class RaceControl extends BaseComponent {
   private raceTrack = new RaceTrack(this.node);
 
   constructor(parentNode: HTMLElement, private carInfo: ICar) {
-    super(parentNode, 'div', 'race-control', carInfo.name);
+    super(parentNode, 'div', 'car-control', carInfo.name);
     this.car.setColor(this.carInfo.color);
   }
 
@@ -52,7 +52,7 @@ export class RaceControl extends BaseComponent {
     this.car.stopCar();
   }
 
-  setDelay(): Promise<RaceControl> {
+  setDelay(): Promise<CarControl> {
     return new Promise((res) => {
       this.delay = setTimeout(() => res(this), this.raceTime);
     });

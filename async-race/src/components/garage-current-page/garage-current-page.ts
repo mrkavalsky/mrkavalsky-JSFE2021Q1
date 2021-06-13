@@ -1,9 +1,9 @@
 import { BaseComponent } from '../../shared/base-component';
 import { ICar } from '../../shared/car-interface';
-import { RaceControl } from '../race-control/race-control';
+import { CarControl } from '../car-control/car-control';
 
 export class GarageCurrentPage extends BaseComponent {
-  private carArray: RaceControl[] = [];
+  private carArray: CarControl[] = [];
 
   constructor(parentNode: HTMLElement, cars: ICar[] = []) {
     super(parentNode, 'div', 'car-list__page');
@@ -11,7 +11,7 @@ export class GarageCurrentPage extends BaseComponent {
   }
 
   addCar(carInfo: ICar): void {
-    const car: RaceControl = new RaceControl(this.node, carInfo);
+    const car: CarControl = new CarControl(this.node, carInfo);
     this.carArray.push(car);
   }
 
@@ -19,7 +19,7 @@ export class GarageCurrentPage extends BaseComponent {
     cars.forEach((car) => this.addCar(car));
   }
 
-  getRaceControls(): RaceControl[] {
+  getCarControls(): CarControl[] {
     return this.carArray;
   }
 }
