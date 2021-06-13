@@ -2,7 +2,7 @@ import { BaseComponent } from '../../shared/base-component';
 import { ICar } from '../../shared/car-interface';
 import { RaceControl } from '../race-control/race-control';
 
-export class GarageCarListPage extends BaseComponent {
+export class GarageCurrentPage extends BaseComponent {
   private carArray: RaceControl[] = [];
 
   constructor(parentNode: HTMLElement, cars: ICar[] = []) {
