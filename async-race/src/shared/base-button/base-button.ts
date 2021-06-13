@@ -6,11 +6,7 @@ export class BaseButton extends BaseComponent {
     super(parentNode, 'button', 'button', content);
   }
 
-  setDisable(): void {
-    this.node.classList.add('button_disable');
-  }
-
-  setEnable(): void {
-    this.node.classList.remove('button_disable');
+  toggleButtonMode(isDisable = true): void {
+    this.node.classList.toggle('button_disable', isDisable);
   }
 }

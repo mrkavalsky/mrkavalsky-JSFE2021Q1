@@ -51,18 +51,18 @@ export class Garage extends BasePage {
   }
 
   async generateCars(): Promise<void> {
-    this.carList.setNavButtonsDisable();
+    this.carList.toggleNavButtonsMode(false);
     const cars = await getCars();
     cars.forEach(async (car) => this.asyncRaceApi.postGarageCar(car));
     this.refreshTotalCount();
     this.setLastPageNumber();
     this.pageNumber = 0;
     await this.changePage();
-    this.carList.setNavButtonsEnable();
+    this.carList.toggleNavButtonsMode();
   }
 
   async changePage(isForward = true): Promise<void> {
-    this.carList.setNavButtonsDisable();
+    this.carList.toggleNavButtonsMode(false);
     this.setPageNumber(isForward);
     this.currentPage = await this.asyncRaceApi.getGaragePage(
       this.pageNumber,
@@ -71,15 +71,15 @@ export class Garage extends BasePage {
     this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
     this.observeCarControlButtons();
-    this.carList.setNavButtonsEnable();
+    this.carList.toggleNavButtonsMode();
   }
 
   async removeCar(id: number): Promise<void> {
-    this.carList.setNavButtonsDisable();
+    this.carList.toggleNavButtonsMode(false);
     await this.asyncRaceApi.deleteCar(id, this.pageName);
     this.pageNumber = 0;
     await this.changePage();
-    this.carList.setNavButtonsEnable();
+    this.carList.toggleNavButtonsMode();
   }
 
   observeCarControlButtons(): void {
