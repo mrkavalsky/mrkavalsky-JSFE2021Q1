@@ -1,7 +1,8 @@
-export interface ICar {
+export interface INewCar {
   name: string;
   color: string;
-  id?: number;
-  time?: number;
-  wins?: number;
+}
+
+export interface ICar extends INewCar {
+  id: number;
 }
