@@ -33,7 +33,7 @@ export class CarControl extends BaseComponent {
     this.car.setColor(this.carInfo.color);
   }
 
-  getCarId(): number | undefined {
+  getCarId(): number {
     return this.carInfo.id;
   }
 

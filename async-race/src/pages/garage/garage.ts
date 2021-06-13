@@ -68,8 +68,7 @@ export class Garage extends BasePage {
     this.carList.setNavButtonsEnable();
   }
 
-  async removeCar(id: number | undefined): Promise<void> {
-    if (!id) return;
+  async removeCar(id: number): Promise<void> {
     this.carList.setNavButtonsDisable();
     await this.asyncRaceApi.deleteCar(id, this.pageName);
     this.pageNumber = 0;
@@ -109,16 +108,14 @@ export class Garage extends BasePage {
     await this.changePage();
   }
 
-  async runCar(CarControl: CarControl): Promise<CarControl | void> {
+  async runCar(CarControl: CarControl): Promise<CarControl> {
     const id = CarControl.getCarId();
-    if (!id) return undefined;
     const time = await this.switchEngineToDriveMode(CarControl, id);
     return time;
   }
 
   async stopCar(CarControl: CarControl): Promise<void> {
     const id = CarControl.getCarId();
-    if (!id) return;
     await this.asyncRaceApi.stopEngine(id);
     CarControl.returnBackCar();
     CarControl.clearDelay();
