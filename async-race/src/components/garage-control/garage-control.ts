@@ -1,11 +1,11 @@
 import { BaseButton } from '../../shared/base-button/base-button';
 import { BaseComponent } from '../../shared/base-component';
-import { CarControl } from '../car-control/car-control';
+import { CarAdjust } from '../car-adjust/car-adjust';
 
 export class GarageControl extends BaseComponent {
-  public readonly carControlCreate = new CarControl(this.node, 'create');
+  public readonly carAdjustCreate = new CarAdjust(this.node, 'create');
 
-  public readonly carControlUpdate = new CarControl(this.node, 'update');
+  public readonly carAdjustUpdate = new CarAdjust(this.node, 'update');
 
   public readonly raceButton: BaseButton = new BaseButton(this.node, 'race');
 

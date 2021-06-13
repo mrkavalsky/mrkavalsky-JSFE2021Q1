@@ -3,9 +3,9 @@ import { BaseComponent } from '../../shared/base-component';
 import { INewCar } from '../../shared/car-interface';
 import { ColorInput } from '../color-input/color-input';
 import { TextInput } from '../text-input/text-input';
-import './car-control.css';
+import './car-adjust.css';
 
-export class CarControl extends BaseComponent {
+export class CarAdjust extends BaseComponent {
   private textInput: TextInput = new TextInput(this.node);
 
   private colorInput: ColorInput = new ColorInput(this.node);
@@ -13,7 +13,7 @@ export class CarControl extends BaseComponent {
   public readonly submitButton: BaseButton;
 
   constructor(parentNode: HTMLElement, type: string) {
-    super(parentNode, 'div', 'car-control');
+    super(parentNode, 'div', 'car-adjust');
     this.submitButton = new BaseButton(this.node, type);
   }
 
