@@ -57,7 +57,7 @@ export class Garage extends BasePage {
 
   async changePage(isForward = true): Promise<void> {
     this.carList.setNavButtonsDisable();
-    await super.changePage(isForward);
+    this.setPageNumber(isForward);
     this.currentPage = await this.asyncRaceApi.getGaragePage(
       this.pageNumber,
       this.pageLimit,

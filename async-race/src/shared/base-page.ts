@@ -43,8 +43,4 @@ export class BasePage extends BaseComponent {
     if (!totalCount) return;
     this.lastPageNumber = Math.ceil(totalCount / this.pageLimit);
   }
-
-  async changePage(isForward = true): Promise<void> {
-    this.setPageNumber(isForward);
-  }
 }
