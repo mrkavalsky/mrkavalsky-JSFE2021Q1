@@ -21,8 +21,8 @@ export class BaseCarList extends BaseComponent {
     this.pageNumberTitle.node.innerText = `Page #${pageNumber}`;
   }
 
-  toggleNavButtonsMode(isDisable = true): void {
-    this.prevPage.toggleButtonMode(isDisable);
-    this.nextPage.toggleButtonMode(isDisable);
+  toggleNavButtonsMode(isEnable = true): void {
+    this.prevPage.toggleButtonMode(isEnable);
+    this.nextPage.toggleButtonMode(isEnable);
   }
 }

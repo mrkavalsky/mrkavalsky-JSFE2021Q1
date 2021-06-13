@@ -178,8 +178,8 @@ export class Garage extends BasePage {
     // }
   }
 
-  toggleAllButtonsMode(isDisable = true): void {
-    this.carList.toggleNavButtonsMode(isDisable);
-    this.garageControl.toggleAllButtonsMode(isDisable);
+  toggleAllButtonsMode(isEnable = true): void {
+    this.carList.toggleNavButtonsMode(isEnable);
+    this.garageControl.toggleAllButtonsMode(isEnable);
   }
 }

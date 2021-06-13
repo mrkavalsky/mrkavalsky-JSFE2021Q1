@@ -21,27 +21,27 @@ export class GarageControl extends BaseComponent {
     parentNode.prepend(this.node);
   }
 
-  toggleCarAdjustButtonsMode(isDisable = true): void {
-    this.carAdjustCreate.submitButton.toggleButtonMode(isDisable);
-    this.carAdjustUpdate.submitButton.toggleButtonMode(isDisable);
+  toggleCarAdjustButtonsMode(isEnable = true): void {
+    this.carAdjustCreate.submitButton.toggleButtonMode(isEnable);
+    this.carAdjustUpdate.submitButton.toggleButtonMode(isEnable);
   }
 
-  toggleRaceButtonMode(isDisable = true): void {
-    this.raceButton.toggleButtonMode(isDisable);
+  toggleRaceButtonMode(isEnable = true): void {
+    this.raceButton.toggleButtonMode(isEnable);
   }
 
-  toggleResetButtonMode(isDisable = true): void {
-    this.resetButton.toggleButtonMode(isDisable);
+  toggleResetButtonMode(isEnable = true): void {
+    this.resetButton.toggleButtonMode(isEnable);
   }
 
-  toggleGenerateButtonMode(isDisable = true): void {
-    this.generateCarsButton.toggleButtonMode(isDisable);
+  toggleGenerateButtonMode(isEnable = true): void {
+    this.generateCarsButton.toggleButtonMode(isEnable);
   }
 
-  toggleAllButtonsMode(isDisable = true): void {
-    this.toggleCarAdjustButtonsMode(isDisable);
-    this.toggleGenerateButtonMode(isDisable);
-    this.toggleRaceButtonMode(isDisable);
-    this.toggleResetButtonMode(isDisable);
+  toggleAllButtonsMode(isEnable = true): void {
+    this.toggleCarAdjustButtonsMode(isEnable);
+    this.toggleGenerateButtonMode(isEnable);
+    this.toggleRaceButtonMode(isEnable);
+    this.toggleResetButtonMode(isEnable);
   }
 }
