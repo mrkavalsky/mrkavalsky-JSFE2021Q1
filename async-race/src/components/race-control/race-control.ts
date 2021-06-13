@@ -63,11 +63,11 @@ export class RaceControl extends BaseComponent {
     clearTimeout(this.delay);
     this.delay = null;
   }
-  
+
   setRaceTime(time: number): void {
     this.raceTime = time;
   }
-  
+
   getCarInfo(): ICar {
     return this.carInfo;
   }
