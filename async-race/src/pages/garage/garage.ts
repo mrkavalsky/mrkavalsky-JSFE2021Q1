@@ -11,7 +11,7 @@ export class Garage extends BasePage {
 
   private garageControl: GarageControl = new GarageControl(this.node);
 
-  private currentCar: number | undefined = undefined;
+  private currentCar: number | null = null;
 
   constructor() {
     super('garage');
@@ -112,6 +112,7 @@ export class Garage extends BasePage {
     await this.asyncRaceApi.updateGarageCar(car, this.currentCar);
     this.pageNumber = 0;
     await this.changePage();
+    this.currentCar = null;
   }
 
   async runCar(carControl: CarControl): Promise<CarControl> {
