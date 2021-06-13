@@ -28,11 +28,17 @@ export class Garage extends BasePage {
     );
     this.garageControl.carAdjustCreate.submitButton.node.addEventListener(
       'click',
-      () => this.createCar(),
+      async () => {
+        await this.createCar();
+        this.garageControl.carAdjustCreate.resetInputs();
+      },
     );
     this.garageControl.carAdjustUpdate.submitButton.node.addEventListener(
       'click',
-      () => this.updateCar(),
+      async () => {
+        await this.updateCar();
+        this.garageControl.carAdjustUpdate.resetInputs();
+      },
     );
     this.garageControl.resetButton.node.addEventListener('click', () =>
       this.resetRace(),
