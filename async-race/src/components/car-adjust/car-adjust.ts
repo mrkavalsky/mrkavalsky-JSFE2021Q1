@@ -29,4 +29,9 @@ export class CarAdjust extends BaseComponent {
     this.textInput.resetInput();
     this.colorInput.resetInput();
   }
+
+  setInputs(name: string, color: string): void {
+    this.textInput.setValue(name);
+    this.colorInput.setValue(color);
+  }
 }

@@ -17,4 +17,8 @@ export class BaseInput extends BaseComponent {
   resetInput(): void {
     this.inputNode.value = this.defaultValue;
   }
+
+  setValue(value: string): void {
+    this.inputNode.value = value;
+  }
 }

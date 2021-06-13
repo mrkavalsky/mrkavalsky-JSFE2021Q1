@@ -5,9 +5,13 @@ import { INewWinner, IWinner } from '../shared/winner-interface';
 export class AsyncRaceApi {
   private baseUrl = 'http://localhost:3000';
 
-  private async getResponse(path: string, parameters = ''): Promise<Response> {
+  private async getResponse(
+    path: string,
+    parameters = '',
+    id = -1,
+  ): Promise<Response> {
     const response: Response = await fetch(
-      `${this.baseUrl}/${path}?${parameters}`,
+      `${this.baseUrl}/${path}/${id < 0 ? '' : id}?${parameters}`,
     );
     return response;
   }
@@ -22,6 +26,13 @@ export class AsyncRaceApi {
     const response: Response = await this.getResponse('garage');
     const garageCars: ICar[] = await response.json();
     return garageCars;
+  }
+
+  async getGarageCar(id: number): Promise<ICar> {
+    const path = 'garage';
+    const response: Response = await this.getResponse(path, '', id);
+    const car: ICar = await response.json();
+    return car;
   }
 
   private async postCar(

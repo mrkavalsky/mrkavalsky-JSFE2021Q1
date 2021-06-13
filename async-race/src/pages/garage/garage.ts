@@ -3,7 +3,7 @@ import { GaragePageWrapper } from '../../components/garage-page-wrapper/garage-p
 import { GarageControl } from '../../components/garage-control/garage-control';
 import { CarControl } from '../../components/car-control/car-control';
 import { BasePage } from '../../shared/base-page';
-import { INewCar } from '../../shared/car-interface';
+import { ICar, INewCar } from '../../shared/car-interface';
 import './garage.css';
 
 export class Garage extends BasePage {
@@ -87,9 +87,9 @@ export class Garage extends BasePage {
       control.removeButton.node.addEventListener('click', () =>
         this.removeCar(control.getCarId()),
       );
-      control.selectButton.node.addEventListener('click', () => {
-        this.currentCar = control.getCarId();
-      });
+      control.selectButton.node.addEventListener('click', () =>
+        this.selectCar(control),
+      );
       control.startButton.node.addEventListener('click', () =>
         this.runCar(control),
       );
@@ -113,6 +113,12 @@ export class Garage extends BasePage {
     this.pageNumber = 0;
     await this.changePage();
     this.currentCar = null;
+  }
+
+  async selectCar(control: CarControl): Promise<void> {
+    this.currentCar = control.getCarId();
+    const car: ICar = await this.asyncRaceApi.getGarageCar(this.currentCar);
+    this.garageControl.carAdjustUpdate.setInputs(car.name, car.color);
   }
 
   async runCar(carControl: CarControl): Promise<CarControl> {
