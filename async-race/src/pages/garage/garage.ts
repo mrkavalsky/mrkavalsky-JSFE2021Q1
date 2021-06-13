@@ -1,5 +1,5 @@
 import { getCars } from '../../components/cars-generator';
-import { GarageCarList } from '../../components/garage-car-list/garage-car-list';
+import { GaragePageWrapper } from '../../components/garage-page-wrapper/garage-page-wrapper';
 import { GarageControl } from '../../components/garage-control/garage-control';
 import { RaceControl } from '../../components/race-control/race-control';
 import { BasePage } from '../../shared/base-page';
@@ -7,7 +7,7 @@ import { INewCar } from '../../shared/car-interface';
 import './garage.css';
 
 export class Garage extends BasePage {
-  private carList: GarageCarList;
+  private carList: GaragePageWrapper;
 
   private garageControl: GarageControl = new GarageControl(this.node);
 
@@ -16,7 +16,7 @@ export class Garage extends BasePage {
   constructor() {
     super('garage');
     this.pageLimit = 7;
-    this.carList = new GarageCarList(this.node);
+    this.carList = new GaragePageWrapper(this.node);
     this.garageControl.generateCarsButton.node.addEventListener('click', () =>
       this.generateCars(),
     );

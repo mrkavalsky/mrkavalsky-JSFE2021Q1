@@ -3,7 +3,7 @@ import { ICar } from '../../shared/car-interface';
 import { GarageCurrentPage } from '../garage-current-page/garage-current-page';
 import { RaceControl } from '../race-control/race-control';
 
-export class GarageCarList extends BaseCarList {
+export class GaragePageWrapper extends BaseCarList {
   private carListPage: GarageCurrentPage = new GarageCurrentPage(this.node);
 
   refreshCarListPage(cars: ICar[]): void {
