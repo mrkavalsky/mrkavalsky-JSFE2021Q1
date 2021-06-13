@@ -108,31 +108,31 @@ export class Garage extends BasePage {
     await this.changePage();
   }
 
-  async runCar(CarControl: CarControl): Promise<CarControl> {
-    const id = CarControl.getCarId();
-    const time = await this.switchEngineToDriveMode(CarControl, id);
+  async runCar(carControl: CarControl): Promise<CarControl> {
+    const id = carControl.getCarId();
+    const time = await this.switchEngineToDriveMode(carControl, id);
     return time;
   }
 
-  async stopCar(CarControl: CarControl): Promise<void> {
-    const id = CarControl.getCarId();
+  async stopCar(carControl: CarControl): Promise<void> {
+    const id = carControl.getCarId();
     await this.asyncRaceApi.stopEngine(id);
-    CarControl.returnBackCar();
-    CarControl.clearDelay();
+    carControl.returnBackCar();
+    carControl.clearDelay();
   }
 
   async switchEngineToDriveMode(
-    CarControl: CarControl,
+    carControl: CarControl,
     id: number,
   ): Promise<CarControl> {
     const raceTime = await this.getTime(id);
     this.asyncRaceApi.switchEngineToDriveMode(id).catch(() => {
-      CarControl.stopCar();
-      CarControl.clearDelay();
+      carControl.stopCar();
+      carControl.clearDelay();
     });
-    CarControl.setRaceTime(raceTime);
-    CarControl.runCar();
-    const finishedCar = await CarControl.setDelay();
+    carControl.setRaceTime(raceTime);
+    carControl.runCar();
+    const finishedCar = await carControl.setDelay();
     return finishedCar;
   }
 
