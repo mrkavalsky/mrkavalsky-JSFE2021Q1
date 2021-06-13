@@ -90,9 +90,10 @@ export class Garage extends BasePage {
       control.selectButton.node.addEventListener('click', () =>
         this.selectCar(control),
       );
-      control.startButton.node.addEventListener('click', () =>
-        this.runCar(control),
-      );
+      control.startButton.node.addEventListener('click', async () => {
+        await this.runCar(control);
+        this.switchEngineToDriveMode(control);
+      });
       control.stopButton.node.addEventListener('click', () =>
         this.stopCar(control),
       );
@@ -100,31 +101,37 @@ export class Garage extends BasePage {
   }
 
   async createCar(): Promise<void> {
+    this.toggleAllButtonsMode();
     const car = this.garageControl.carAdjustCreate.getInputValues();
     await this.asyncRaceApi.postGarageCar(car);
     this.pageNumber = 0;
     await this.changePage();
+    this.toggleAllButtonsMode(false);
   }
 
   async updateCar(): Promise<void> {
     if (!this.currentCar) return;
+    this.toggleAllButtonsMode();
     const car: INewCar = this.garageControl.carAdjustUpdate.getInputValues();
     await this.asyncRaceApi.updateGarageCar(car, this.currentCar);
     this.pageNumber = 0;
     await this.changePage();
     this.currentCar = null;
+    this.toggleAllButtonsMode(false);
   }
 
   async selectCar(control: CarControl): Promise<void> {
+    this.toggleAllButtonsMode();
     this.currentCar = control.getCarId();
     const car: ICar = await this.asyncRaceApi.getGarageCar(this.currentCar);
     this.garageControl.carAdjustUpdate.setInputs(car.name, car.color);
+    this.toggleAllButtonsMode(false);
   }
 
-  async runCar(carControl: CarControl): Promise<CarControl> {
+  async runCar(carControl: CarControl): Promise<void> {
     const id = carControl.getCarId();
-    const time = await this.switchEngineToDriveMode(carControl, id);
-    return time;
+    const raceTime = await this.getTime(id);
+    carControl.setRaceTime(raceTime);
   }
 
   async stopCar(carControl: CarControl): Promise<void> {
@@ -134,31 +141,37 @@ export class Garage extends BasePage {
     carControl.clearDelay();
   }
 
-  async switchEngineToDriveMode(
-    carControl: CarControl,
-    id: number,
-  ): Promise<CarControl> {
-    const raceTime = await this.getTime(id);
+  async switchEngineToDriveMode(carControl: CarControl): Promise<CarControl> {
+    const id = carControl.getCarId();
     this.asyncRaceApi.switchEngineToDriveMode(id).catch(() => {
       carControl.stopCar();
       carControl.clearDelay();
     });
-    carControl.setRaceTime(raceTime);
     carControl.runCar();
     const finishedCar = await carControl.setDelay();
     return finishedCar;
   }
 
-  resetRace(): void {
-    this.carList
-      .getCarControls()
-      .forEach(({ stopButton }) => stopButton.node.click());
+  async resetRace(): Promise<void> {
+    this.toggleAllButtonsMode();
+    await Promise.all(
+      this.carList.getCarControls().map((control) => this.stopCar(control)),
+    );
+    this.toggleAllButtonsMode(false);
   }
 
-  async startRace(): Promise<CarControl | void> {
-    const winner = await Promise.race(
+  async startRace(): Promise<CarControl> {
+    this.toggleAllButtonsMode();
+    await Promise.all(
       this.carList.getCarControls().map((control) => this.runCar(control)),
     );
+    this.garageControl.resetButton.toggleButtonMode(false);
+    const winner = await Promise.race(
+      this.carList
+        .getCarControls()
+        .map((control) => this.switchEngineToDriveMode(control)),
+    );
+    this.toggleAllButtonsMode(false);
     return winner;
   }
 
@@ -169,7 +182,6 @@ export class Garage extends BasePage {
 
   async runRaceCycle(): Promise<void> {
     const winner = await this.startRace();
-    if (!winner) return;
     const winners = await this.asyncRaceApi.getWinners();
     // if (winners.find(({ id }) => id === winner.getCarId())) {
     //   this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
