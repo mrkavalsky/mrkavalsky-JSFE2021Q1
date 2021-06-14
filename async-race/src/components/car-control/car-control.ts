@@ -50,12 +50,12 @@ export class CarControl extends BaseComponent {
   }
 
   returnBackCar(): void {
-    const time = '0s';
-    this.car.setTransitionTime(time);
+    this.resetTransitionTime();
     this.car.returnBackCar();
   }
 
   stopCar(): void {
+    this.resetTransitionTime();
     this.car.stopCar();
   }
 
@@ -77,5 +77,10 @@ export class CarControl extends BaseComponent {
 
   getCarInfo(): ICar {
     return this.carInfo;
+  }
+
+  resetTransitionTime(): void {
+    const time = '0s';
+    this.car.setTransitionTime(time);
   }
 }
