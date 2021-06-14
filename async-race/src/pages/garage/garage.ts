@@ -83,6 +83,7 @@ export class Garage extends BasePage {
   async removeCar(id: number): Promise<void> {
     this.toggleAllButtonsMode();
     await this.asyncRaceApi.deleteCar(id, this.pageName);
+    this.refreshTotalCount();
     this.pageNumber = 0;
     await this.changePage();
     this.toggleAllButtonsMode(false);
@@ -113,6 +114,7 @@ export class Garage extends BasePage {
     this.toggleAllButtonsMode();
     const car = this.garageControl.carAdjustCreate.getInputValues();
     await this.asyncRaceApi.postGarageCar(car);
+    this.refreshTotalCount();
     this.pageNumber = 0;
     await this.changePage();
     this.toggleAllButtonsMode(false);
