@@ -7,6 +7,8 @@ import { ICar, INewCar } from '../../shared/car-interface';
 import './garage.css';
 import { BaseButton } from '../../shared/base-button/base-button';
 import { Popup } from '../../components/popup/popup';
+import { IWinner } from '../../shared/winner-interface';
+import { IRaceSpecifications } from '../../shared/race-specifications-interface';
 
 export class Garage extends BasePage {
   private carList: GaragePageWrapper;
@@ -63,7 +65,7 @@ export class Garage extends BasePage {
 
   async generateCars(): Promise<void> {
     this.toggleAllButtonsMode();
-    const cars = await getCars();
+    const cars: INewCar[] = await getCars();
     cars.forEach(async (car) => this.asyncRaceApi.postGarageCar(car));
     this.refreshTotalCount();
     this.setLastPageNumber();
@@ -120,7 +122,7 @@ export class Garage extends BasePage {
 
   async createCar(): Promise<void> {
     this.toggleAllButtonsMode();
-    const car = this.garageControl.carAdjustCreate.getInputValues();
+    const car: INewCar = this.garageControl.carAdjustCreate.getInputValues();
     await this.asyncRaceApi.postGarageCar(car);
     this.refreshTotalCount();
     await this.refreshCurrentPage();
@@ -147,7 +149,7 @@ export class Garage extends BasePage {
 
   async runCar(carControl: CarControl): Promise<void> {
     const id = carControl.getCarId();
-    const raceTime = await this.getTime(id);
+    const raceTime: number = await this.getTime(id);
     carControl.setRaceTime(raceTime);
   }
 
@@ -193,17 +195,17 @@ export class Garage extends BasePage {
   }
 
   async getTime(id: number): Promise<number> {
-    const data = await this.asyncRaceApi.startEngine(id);
+    const data: IRaceSpecifications = await this.asyncRaceApi.startEngine(id);
     return Math.round(data.distance / data.velocity);
   }
 
   async runRaceCycle(): Promise<void> {
-    const winner = await this.startRace();
+    const winner: CarControl = await this.startRace();
     const raceTime: number = winner.getRaceTime() / 1000;
     const message = `${winner.getCarName()} is went first (${raceTime}s)`;
     this.popup.setMessage(message);
     document.body.append(this.popup.node);
-    const winners = await this.asyncRaceApi.getWinners();
+    const winners: IWinner[] = await this.asyncRaceApi.getWinners();
     // if (winners.find(({ id }) => id === winner.getCarId())) {
     //   this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
     // } else {
