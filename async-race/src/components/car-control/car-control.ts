@@ -87,4 +87,12 @@ export class CarControl extends BaseComponent {
   toggleButtonsMode(isEnable = true): void {
     this.buttonsArray.forEach((button) => button.toggleButtonMode(isEnable));
   }
+
+  getCarName(): string {
+    return this.carInfo.name;
+  }
+
+  getRaceTime(): number {
+    return this.raceTime;
+  }
 }

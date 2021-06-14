@@ -6,6 +6,7 @@ import { BasePage } from '../../shared/base-page';
 import { ICar, INewCar } from '../../shared/car-interface';
 import './garage.css';
 import { BaseButton } from '../../shared/base-button/base-button';
+import { Popup } from '../../components/popup/popup';
 
 export class Garage extends BasePage {
   private carList: GaragePageWrapper;
@@ -17,6 +18,8 @@ export class Garage extends BasePage {
   private carControlButtonsArray: BaseButton[] = [];
 
   private countSingleRaces = 0;
+
+  private popup: Popup = new Popup();
 
   constructor() {
     super('garage');
@@ -50,6 +53,9 @@ export class Garage extends BasePage {
     );
     this.garageControl.raceButton.node.addEventListener('click', () =>
       this.runRaceCycle(),
+    );
+    this.popup.node.addEventListener('click', () =>
+      this.garageControl.resetButton.node.click(),
     );
     this.changePage();
     this.setLastPageNumber();
@@ -193,6 +199,10 @@ export class Garage extends BasePage {
 
   async runRaceCycle(): Promise<void> {
     const winner = await this.startRace();
+    const raceTime: number = winner.getRaceTime() / 1000;
+    const message = `${winner.getCarName()} is went first (${raceTime}s)`;
+    this.popup.setMessage(message);
+    document.body.append(this.popup.node);
     const winners = await this.asyncRaceApi.getWinners();
     // if (winners.find(({ id }) => id === winner.getCarId())) {
     //   this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
