@@ -155,9 +155,9 @@ export class Garage extends BasePage {
 
   async stopCar(carControl: CarControl): Promise<void> {
     const id = carControl.getCarId();
-    await this.asyncRaceApi.stopEngine(id);
     carControl.returnBackCar();
     carControl.clearDelay();
+    await this.asyncRaceApi.stopEngine(id);
   }
 
   async switchEngineToDriveMode(carControl: CarControl): Promise<CarControl> {
