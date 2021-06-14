@@ -16,6 +16,8 @@ export class Garage extends BasePage {
 
   private carControlButtonsArray: BaseButton[] = [];
 
+  private countSingleRaces = 0;
+
   constructor() {
     super('garage');
     this.pageLimit = 7;
@@ -74,6 +76,7 @@ export class Garage extends BasePage {
     this.carList.setPageNumberTitle(this.pageNumber);
     this.carList.refreshCarListPage(this.currentPage);
     this.observeCarControlButtons();
+    this.resetCountSingleRaces();
     this.toggleAllButtonsMode(false);
   }
 
@@ -94,12 +97,11 @@ export class Garage extends BasePage {
       control.selectButton.node.addEventListener('click', () =>
         this.selectCar(control),
       );
-      control.startButton.node.addEventListener('click', async () => {
-        await this.runCar(control);
-        this.switchEngineToDriveMode(control);
-      });
+      control.startButton.node.addEventListener('click', async () =>
+        this.runSingleRace(control),
+      );
       control.stopButton.node.addEventListener('click', () =>
-        this.stopCar(control),
+        this.stopSingleRace(control),
       );
       this.carControlButtonsArray = this.carControlButtonsArray.concat(
         control.buttonsArray,
@@ -197,11 +199,37 @@ export class Garage extends BasePage {
     // }
   }
 
+  async runSingleRace(carControl: CarControl): Promise<void> {
+    this.countSingleRaces++;
+    this.toggleGarageControlAndNavButtons();
+    carControl.toggleButtonsMode();
+    await this.runCar(carControl);
+    carControl.stopButton.toggleButtonMode(false);
+    this.switchEngineToDriveMode(carControl);
+  }
+
+  async stopSingleRace(carControl: CarControl): Promise<void> {
+    await this.stopCar(carControl);
+    if (this.countSingleRaces === 1) {
+      this.toggleGarageControlAndNavButtons(false);
+    }
+    this.countSingleRaces--;
+    carControl.toggleButtonsMode(false);
+  }
+
   toggleAllButtonsMode(isEnable = true): void {
-    this.carList.toggleNavButtonsMode(isEnable);
-    this.garageControl.toggleAllButtonsMode(isEnable);
+    this.toggleGarageControlAndNavButtons(isEnable);
     this.carControlButtonsArray.forEach((button) =>
       button.toggleButtonMode(isEnable),
     );
+  }
+
+  toggleGarageControlAndNavButtons(isEnable = true): void {
+    this.carList.toggleNavButtonsMode(isEnable);
+    this.garageControl.toggleAllButtonsMode(isEnable);
+  }
+
+  resetCountSingleRaces(): void {
+    this.countSingleRaces = 0;
   }
 }

@@ -83,4 +83,8 @@ export class CarControl extends BaseComponent {
     const time = '0s';
     this.car.setTransitionTime(time);
   }
+
+  toggleButtonsMode(isEnable = true): void {
+    this.buttonsArray.forEach((button) => button.toggleButtonMode(isEnable));
+  }
 }
