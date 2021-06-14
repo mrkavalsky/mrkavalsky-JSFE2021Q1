@@ -1,7 +1,7 @@
 import { BaseButton } from '../base-button/base-button';
 import { BaseComponent } from '../base-component';
 
-export class BaseCarList extends BaseComponent {
+export class BasePageWrapper extends BaseComponent {
   private pageNumberTitle: BaseComponent = new BaseComponent(
     this.node,
     'h3',
@@ -14,7 +14,7 @@ export class BaseCarList extends BaseComponent {
   public readonly nextPage: BaseButton = new BaseButton(this.node, 'next');
 
   constructor(parentNode: HTMLElement) {
-    super(parentNode, 'div', 'car-list');
+    super(parentNode, 'div', 'page-wrapper');
   }
 
   setPageNumberTitle(pageNumber: number): void {

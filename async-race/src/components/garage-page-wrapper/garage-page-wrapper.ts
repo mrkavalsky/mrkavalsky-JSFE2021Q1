@@ -1,9 +1,9 @@
-import { BaseCarList } from '../../shared/base-car-list/base-car-list';
+import { BasePageWrapper } from '../../shared/base-page-wrapper/base-page-wrapper';
 import { ICar } from '../../shared/car-interface';
 import { GarageCurrentPage } from '../garage-current-page/garage-current-page';
 import { CarControl } from '../car-control/car-control';
 
-export class GaragePageWrapper extends BaseCarList {
+export class GaragePageWrapper extends BasePageWrapper {
   private carListPage: GarageCurrentPage = new GarageCurrentPage(this.node);
 
   refreshCarListPage(cars: ICar[]): void {
