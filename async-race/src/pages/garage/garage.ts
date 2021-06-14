@@ -205,12 +205,43 @@ export class Garage extends BasePage {
     const message = `${winner.getCarName()} is went first (${raceTime}s)`;
     this.popup.setMessage(message);
     document.body.append(this.popup.node);
+    this.refreshWinnersDatabase(winner, raceTime);
+  }
+
+  async refreshWinnersDatabase(
+    winner: CarControl,
+    raceTime: number,
+  ): Promise<void> {
     const winners: IWinner[] = await this.asyncRaceApi.getWinners();
-    // if (winners.find(({ id }) => id === winner.getCarId())) {
-    //   this.asyncRaceApi.updateCar(winner.getCarInfo(), 'winners');
-    // } else {
-    //   this.asyncRaceApi.postCar(winner.getCarInfo(), 'winners');
-    // }
+    const winnerId: number = winner.getCarId();
+    const prevWinnerResult: IWinner | undefined = winners.find(
+      ({ id }) => id === winnerId,
+    );
+    if (prevWinnerResult) {
+      await this.updateWinner(prevWinnerResult, raceTime, winnerId);
+    } else {
+      await this.creatWinner(winner, raceTime);
+    }
+  }
+
+  async updateWinner(
+    prevWinnerResult: IWinner,
+    raceTime: number,
+    winnerId: number,
+  ): Promise<void> {
+    prevWinnerResult.wins++;
+    prevWinnerResult.time =
+      prevWinnerResult.time < raceTime ? prevWinnerResult.time : raceTime;
+    await this.asyncRaceApi.updateWinner(prevWinnerResult, winnerId);
+  }
+
+  async creatWinner(winner: CarControl, raceTime: number): Promise<void> {
+    const winnerResult: IWinner = {
+      id: winner.getCarId(),
+      wins: 1,
+      time: raceTime,
+    };
+    await this.asyncRaceApi.postWinner(winnerResult);
   }
 
   async runSingleRace(carControl: CarControl): Promise<void> {
