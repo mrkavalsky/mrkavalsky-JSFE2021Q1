@@ -137,4 +137,11 @@ export class AsyncRaceApi {
     const winners: IWinner[] = await response.json();
     return winners;
   }
+
+  async getWinnersPage(pageNumber: number, limit: number): Promise<IWinner[]> {
+    const path = 'winners';
+    const response: Response = await this.getPage(path, pageNumber, limit);
+    const page: IWinner[] = await response.json();
+    return page;
+  }
 }
