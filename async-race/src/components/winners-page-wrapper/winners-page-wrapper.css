@@ -1,0 +1,17 @@
+.buttons-wrapper {
+  display: flex;
+}
+.buttons-wrapper__winner-name {
+  width: 240px;
+}
+.buttons-wrapper__winner-car,
+.buttons-wrapper__place-number,
+.buttons-wrapper__winner-wins,
+.buttons-wrapper__winner-time {
+  width: 80px;
+}
+.buttons-wrapper__winner-car,
+.buttons-wrapper__place-number,
+.buttons-wrapper__winner-name {
+  cursor: auto;
+}
