@@ -15,9 +15,11 @@ export class App {
     header.garageButton.node.addEventListener('click', () =>
       this.changePage(this.garagePage),
     );
-    header.winnersButton.node.addEventListener('click', () =>
-      this.changePage(this.winnersPage),
-    );
+    header.winnersButton.node.addEventListener('click', () => {
+      this.changePage(this.winnersPage);
+      this.winnersPage.refreshTotalCount();
+      this.winnersPage.refreshPage();
+    });
   }
 
   changePage(page: BasePage): void {
