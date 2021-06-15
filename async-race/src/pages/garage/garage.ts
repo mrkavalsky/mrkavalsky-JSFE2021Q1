@@ -66,7 +66,7 @@ export class Garage extends BasePage {
   async generateCars(): Promise<void> {
     this.toggleAllButtonsMode();
     const cars: INewCar[] = await getCars();
-    cars.forEach(async (car) => this.asyncRaceApi.postGarageCar(car));
+    await Promise.all(cars.map((car) => this.asyncRaceApi.postGarageCar(car)));
     this.refreshTotalCount();
     this.setLastPageNumber();
     await this.refreshCurrentPage();
