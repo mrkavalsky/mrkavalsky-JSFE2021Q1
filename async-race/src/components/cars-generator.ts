@@ -19,15 +19,12 @@ function getCarName(data: ICarModel[]): string {
 }
 
 export async function getCars(): Promise<INewCar[]> {
-  const cars: INewCar[] = [];
   const response: Response = await fetch('./car-models.json');
   const data: ICarModel[] = await response.json();
-  for (let i = 0; i < 100; i++) {
-    const car: INewCar = {
+  return [...new Array(100)].map(() => {
+    return {
       name: getCarName(data),
       color: getCarColor(),
     };
-    cars.push(car);
-  }
-  return cars;
+  });
 }
