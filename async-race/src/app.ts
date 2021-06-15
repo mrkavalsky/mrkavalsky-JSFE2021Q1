@@ -1,12 +1,13 @@
 import './app.css';
 import { Header } from './components/header';
 import { Garage } from './pages/garage/garage';
+import { Winners } from './pages/winners/winners';
 import { BasePage } from './shared/base-page';
 
 export class App {
   private garagePage = new Garage();
 
-  private winnersPage = new BasePage('winners');
+  private winnersPage = new Winners();
 
   constructor(private rootElement: HTMLElement) {
     const header: Header = new Header(rootElement);
