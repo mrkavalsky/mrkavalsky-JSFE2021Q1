@@ -5,10 +5,11 @@
   padding: 6px 10px;
   border-style: none;
   margin: 1px;
-  background-color: rgb(230, 230, 250);
+  background-color: rgb(230, 230, 252);
   cursor: pointer;
 }
 .button_disable {
   pointer-events: none;
   cursor: auto;
+  background-color: #dddddd;
 }
