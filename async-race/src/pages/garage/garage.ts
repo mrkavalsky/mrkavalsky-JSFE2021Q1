@@ -89,6 +89,7 @@ export class Garage extends BasePage {
   async removeCar(id: number): Promise<void> {
     this.toggleAllButtonsMode();
     await this.asyncRaceApi.deleteCar(id, this.pageName);
+    await this.asyncRaceApi.deleteCar(id, 'winners');
     this.refreshTotalCount();
     await this.refreshCurrentPage();
     this.toggleAllButtonsMode(false);
