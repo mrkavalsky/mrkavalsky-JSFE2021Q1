@@ -36,6 +36,7 @@ export class Winners extends BasePage {
   }
 
   async refreshPage(): Promise<void> {
+    this.toggleAllButtonsMode();
     this.winnersPage = await this.asyncRaceApi.getWinnersPage(
       this.pageNumber,
       this.pageLimit,
@@ -51,6 +52,7 @@ export class Winners extends BasePage {
       this.pageNumber,
       this.pageLimit,
     );
+    this.toggleAllButtonsMode(false);
   }
 
   async getFullCarInfo({ id, wins, time }: IWinner): Promise<IFullCarInfo> {
@@ -82,5 +84,12 @@ export class Winners extends BasePage {
       this.order = 'asc';
     }
     await this.refreshPage();
+  }
+
+  toggleAllButtonsMode(isEnable = true): void {
+    this.winnersPageWrapper.nextPage.toggleButtonMode(isEnable);
+    this.winnersPageWrapper.prevPage.toggleButtonMode(isEnable);
+    this.winnersPageWrapper.sortWinsButton.toggleButtonMode(isEnable);
+    this.winnersPageWrapper.sortTimeButton.toggleButtonMode(isEnable);
   }
 }
