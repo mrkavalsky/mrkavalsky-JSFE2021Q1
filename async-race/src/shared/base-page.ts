@@ -6,7 +6,7 @@ import { ICar } from './car-interface';
 export class BasePage extends BaseComponent {
   private title: Title;
 
-  protected pageNumber = 0;
+  protected pageNumber = 1;
 
   protected pageLimit = 1;
 

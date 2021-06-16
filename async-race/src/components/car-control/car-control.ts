@@ -45,6 +45,7 @@ export class CarControl extends BaseComponent {
     super(parentNode, 'div', 'car-control');
     this.carName.node.innerText = carInfo.name;
     this.car.setColor(this.carInfo.color);
+    this.stopButton.toggleButtonMode();
   }
 
   getCarId(): number {
