@@ -1,0 +1,152 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  user-select: none; 
+  outline: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main {
+  width: 100%;
+  height: auto;
+}
+.button {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-style: none;
+  margin: 1px;
+  background-color: rgb(230, 230, 252);
+  cursor: pointer;
+}
+.button_disable {
+  pointer-events: none;
+  cursor: auto;
+  background-color: #dddddd;
+}
+.car{
+  width: 120px;
+  height: 60px;
+  background-color: #000;
+  -webkit-mask-image: url(assets/9a490bef2b6374d9cf65.svg);
+  mask-image: url(assets/9a490bef2b6374d9cf65.svg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in 0s;
+}
+.race-track {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 10px dashed;
+}
+.race-track__finish-flag {
+  width: 60px;
+  height: 60px;
+  background: no-repeat center / contain url(assets/3e23311fa93bc4a892c1.png);
+  margin-right: 120px;
+}
+.car-control {
+  position: relative;
+}
+.car-control__car-name {
+  display: inline-block;
+  width: 200px;
+  height: auto;
+}
+.color-input {
+  margin: 3px;
+}
+.car-adjust {
+  display: flex;
+  align-items: center;
+}
+.garage {
+  width: 100%;
+  height: auto;
+}
+.popup-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+}
+.popup {
+  background: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popup__message-field {
+  margin-bottom: 20px;
+}
+.winner {
+  display: flex;
+  align-items: center;
+}
+.winner__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+.winner__info_car {
+  width: 100px;
+  height: 50px;
+  background-color: #000;
+  -webkit-mask-image: url(assets/9a490bef2b6374d9cf65.svg);
+  mask-image: url(assets/9a490bef2b6374d9cf65.svg);
+  padding: 0;
+}
+.winner__info_place-number {
+  width: 80px;
+}
+.winner__info_name {
+  width: 250px;
+  justify-content: flex-start;
+}
+.winner__info_wins {
+  width: 60px;
+}
+.winner__info_time {
+  width: 60px;
+}
+.buttons-wrapper {
+  display: flex;
+}
+.buttons-wrapper__winner-name {
+  width: 240px;
+}
+.buttons-wrapper__winner-car,
+.buttons-wrapper__place-number,
+.buttons-wrapper__winner-wins,
+.buttons-wrapper__winner-time {
+  width: 80px;
+}
+.buttons-wrapper__winner-car,
+.buttons-wrapper__place-number,
+.buttons-wrapper__winner-name {
+  cursor: auto;
+}
