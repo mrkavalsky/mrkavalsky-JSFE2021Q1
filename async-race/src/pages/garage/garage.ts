@@ -20,6 +20,8 @@ export class Garage extends BasePage {
 
   private popup: Popup = new Popup();
 
+  private delay: NodeJS.Timeout | undefined = undefined;
+
   constructor() {
     super('garage');
     this.pageLimit = 7;
@@ -172,17 +174,18 @@ export class Garage extends BasePage {
     this.toggleAllButtonsMode(false);
   }
 
-  async startRace(): Promise<CarControl> {
+  async startRace(): Promise<CarControl | void> {
     this.toggleAllButtonsMode();
-    await Promise.all(
-      this.carList.getCarControls().map((control) => this.runCar(control)),
-    );
-    const winner = await Promise.race(
-      this.carList
-        .getCarControls()
-        .map((control) => this.switchEngineToDriveMode(control)),
-    );
+    const carControls = this.carList.getCarControls();
+    await Promise.all(carControls.map((control) => this.runCar(control)));
+    const winner: void | CarControl = await Promise.race([
+      ...carControls.map((control) => this.switchEngineToDriveMode(control)),
+      this.timeout(
+        carControls.reduce((sum, current) => current.getRaceTime() + sum, 0),
+      ),
+    ]);
     this.garageControl.resetButton.toggleButtonMode(false);
+    if (!winner) return undefined;
     return winner;
   }
 
@@ -192,12 +195,17 @@ export class Garage extends BasePage {
   }
 
   async runRaceCycle(): Promise<void> {
-    const winner: CarControl = await this.startRace();
-    const raceTime: number = winner.getRaceTime() / 1000;
-    const message = `${winner.getCarName()} is went first (${raceTime}s)`;
-    this.popup.setMessage(message);
+    const winner: CarControl | void = await this.startRace();
+    if (!winner) {
+      const message = `All cars are broken`;
+      this.popup.setMessage(message);
+    } else {
+      const raceTime: number = winner.getRaceTime() / 1000;
+      const message = `${winner.getCarName()} is went first (${raceTime}s)`;
+      this.popup.setMessage(message);
+      this.refreshWinnersDatabase(winner, raceTime);
+    }
     document.body.append(this.popup.node);
-    this.refreshWinnersDatabase(winner, raceTime);
   }
 
   async refreshWinnersDatabase(
@@ -279,5 +287,15 @@ export class Garage extends BasePage {
 
   resetCountSingleRaces(): void {
     this.countSingleRaces = 0;
+  }
+
+  private timeout(time: number): Promise<void> {
+    return new Promise((res) => {
+      const addTime = 100;
+      if (!this.delay) {
+        clearTimeout(this.delay);
+      }
+      this.delay = setTimeout(() => res(), time + addTime);
+    });
   }
 }
