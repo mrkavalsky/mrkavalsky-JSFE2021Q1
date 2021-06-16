@@ -56,6 +56,7 @@ export class Garage extends BasePage {
     this.garageControl.raceButton.node.addEventListener('click', () =>
       this.runRaceCycle(),
     );
+    this.garageControl.resetButton.toggleButtonMode();
     this.changePage();
     this.setLastPageNumber();
   }
@@ -169,6 +170,7 @@ export class Garage extends BasePage {
   }
 
   async resetRace(): Promise<void> {
+    this.garageControl.resetButton.toggleButtonMode();
     this.toggleAllButtonsMode();
     await Promise.all(
       this.carList.getCarControls().map((control) => this.stopCar(control)),
@@ -181,12 +183,12 @@ export class Garage extends BasePage {
     await Promise.all(
       this.carList.getCarControls().map((control) => this.runCar(control)),
     );
-    this.garageControl.resetButton.toggleButtonMode(false);
     const winner = await Promise.race(
       this.carList
         .getCarControls()
         .map((control) => this.switchEngineToDriveMode(control)),
     );
+    this.garageControl.resetButton.toggleButtonMode(false);
     return winner;
   }
 

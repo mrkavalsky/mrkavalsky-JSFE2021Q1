@@ -42,6 +42,5 @@ export class GarageControl extends BaseComponent {
     this.toggleCarAdjustButtonsMode(isEnable);
     this.toggleGenerateButtonMode(isEnable);
     this.toggleRaceButtonMode(isEnable);
-    this.toggleResetButtonMode(isEnable);
   }
 }
