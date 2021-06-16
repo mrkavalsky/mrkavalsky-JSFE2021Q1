@@ -92,8 +92,9 @@ export class AsyncRaceApi {
     path: string,
     pageNumber: number,
     limit: number,
+    addParameters = '',
   ): Promise<Response> {
-    const parameters = `_page=${pageNumber}&_limit=${limit}`;
+    const parameters = `${addParameters}_page=${pageNumber}&_limit=${limit}`;
     const response: Response = await this.getResponse(path, parameters);
     return response;
   }
@@ -138,9 +139,20 @@ export class AsyncRaceApi {
     return winners;
   }
 
-  async getWinnersPage(pageNumber: number, limit: number): Promise<IWinner[]> {
+  async getWinnersPage(
+    pageNumber: number,
+    limit: number,
+    sort: string,
+    order: string,
+  ): Promise<IWinner[]> {
     const path = 'winners';
-    const response: Response = await this.getPage(path, pageNumber, limit);
+    const addParameters = `_sort=${sort}&_order=${order}&`;
+    const response: Response = await this.getPage(
+      path,
+      pageNumber,
+      limit,
+      addParameters,
+    );
     const page: IWinner[] = await response.json();
     return page;
   }

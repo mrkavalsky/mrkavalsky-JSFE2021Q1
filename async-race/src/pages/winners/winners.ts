@@ -11,6 +11,10 @@ export class Winners extends BasePage {
 
   private winnersPage: IWinner[] = [];
 
+  private sort = 'id';
+
+  private order = 'asc';
+
   constructor() {
     super('winners');
     this.pageLimit = 10;
@@ -23,12 +27,20 @@ export class Winners extends BasePage {
     this.winnersPageWrapper.prevPage.node.addEventListener('click', () =>
       this.changePage(false),
     );
+    this.winnersPageWrapper.sortWinsButton.node.addEventListener('click', () =>
+      this.changeSort('wins'),
+    );
+    this.winnersPageWrapper.sortTimeButton.node.addEventListener('click', () =>
+      this.changeSort('time'),
+    );
   }
 
   async refreshPage(): Promise<void> {
     this.winnersPage = await this.asyncRaceApi.getWinnersPage(
       this.pageNumber,
       this.pageLimit,
+      this.sort,
+      this.order,
     );
     const cars: IFullCarInfo[] = await Promise.all(
       this.winnersPage.map((winner) => this.getFullCarInfo(winner)),
@@ -55,6 +67,20 @@ export class Winners extends BasePage {
 
   async changePage(isForward = true): Promise<void> {
     this.setPageNumber(isForward);
+    await this.refreshPage();
+  }
+
+  changeOrder(): void {
+    this.order = this.order === 'asc' ? 'desc' : 'asc';
+  }
+
+  async changeSort(sort: string): Promise<void> {
+    if (this.sort === sort) {
+      this.changeOrder();
+    } else {
+      this.sort = sort;
+      this.order = 'asc';
+    }
     await this.refreshPage();
   }
 }
