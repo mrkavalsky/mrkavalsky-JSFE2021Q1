@@ -56,9 +56,6 @@ export class Garage extends BasePage {
     this.garageControl.raceButton.node.addEventListener('click', () =>
       this.runRaceCycle(),
     );
-    this.popup.node.addEventListener('click', () =>
-      this.garageControl.resetButton.node.click(),
-    );
     this.changePage();
     this.setLastPageNumber();
   }
@@ -190,7 +187,6 @@ export class Garage extends BasePage {
         .getCarControls()
         .map((control) => this.switchEngineToDriveMode(control)),
     );
-    this.toggleAllButtonsMode(false);
     return winner;
   }
 
