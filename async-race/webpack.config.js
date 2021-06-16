@@ -53,11 +53,11 @@ module.exports = ({ development }) => ({
     ...esLintPlugin(development),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({ title: 'async-race' }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: 'public' },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public' },
+      ],
+    }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   resolve: {
