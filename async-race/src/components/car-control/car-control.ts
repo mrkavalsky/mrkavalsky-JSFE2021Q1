@@ -12,6 +12,12 @@ export class CarControl extends BaseComponent {
 
   private raceTime = 0;
 
+  private carName: BaseComponent = new BaseComponent(
+    this.node,
+    'div',
+    'car-control__car-name',
+  );
+
   public readonly startButton: BaseButton = new BaseButton(this.node, 'start');
 
   public readonly stopButton: BaseButton = new BaseButton(this.node, 'stop');
@@ -36,7 +42,8 @@ export class CarControl extends BaseComponent {
   private raceTrack = new RaceTrack(this.node);
 
   constructor(parentNode: HTMLElement, private carInfo: ICar) {
-    super(parentNode, 'div', 'car-control', carInfo.name);
+    super(parentNode, 'div', 'car-control');
+    this.carName.node.innerText = carInfo.name;
     this.car.setColor(this.carInfo.color);
   }
 

@@ -1,3 +1,8 @@
 .car-control {
   position: relative;
 }
+.car-control__car-name {
+  display: inline-block;
+  width: 200px;
+  height: auto;
+}
