@@ -52,6 +52,7 @@ export class Winners extends BasePage {
       this.pageNumber,
       this.pageLimit,
     );
+    this.setLastPageNumber();
     this.toggleAllButtonsMode(false);
   }
 

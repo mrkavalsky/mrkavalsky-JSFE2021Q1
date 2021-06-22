@@ -86,6 +86,7 @@ export class Garage extends BasePage {
     this.carList.refreshCarListPage(this.currentPage);
     this.observeCarControlButtons();
     this.resetCountSingleRaces();
+    this.setLastPageNumber();
   }
 
   async removeCar(id: number): Promise<void> {
