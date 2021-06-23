@@ -1,0 +1,13 @@
+.form-switch .form-check-input {
+  width: 4em;
+  height: 2rem;
+}
+.form-check {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-toggler{
+    display: flex;
+  }
+}
