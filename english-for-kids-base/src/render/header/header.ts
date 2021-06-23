@@ -6,7 +6,7 @@ export const renderHeader = (): void => {
   header.innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">English For Kids</a>
+        <a class="navbar-brand navbar-brand_pointer">English For Kids</a>
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
           <label class="form-check-label form-check-label_1-5rem" for="flexSwitchCheckDefault">Train</label>

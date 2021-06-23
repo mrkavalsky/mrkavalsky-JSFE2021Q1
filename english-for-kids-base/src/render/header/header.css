@@ -9,6 +9,9 @@
 .form-check-label_1-5rem {
   font-size: 1.5rem;
 }
+.navbar-brand_pointer {
+  cursor: pointer;
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler{
     display: flex;
