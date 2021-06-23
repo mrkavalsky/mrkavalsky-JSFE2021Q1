@@ -1,0 +1,10 @@
+.burger-menu {
+  width: 100%;
+  max-width: 720px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.burger-menu_hidden {
+  width: 0;
+}
