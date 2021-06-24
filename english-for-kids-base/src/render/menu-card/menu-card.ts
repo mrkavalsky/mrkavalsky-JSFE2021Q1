@@ -4,7 +4,7 @@ import './menu-card.css';
 export const renderMenuCard = ({ category, cards }: ICards): HTMLDivElement => {
   const card = document.createElement('div');
 
-  card.className = 'menu-card card border-secondary';
+  card.className = 'menu-card';
 
   const [{ image }] = cards;
   card.innerHTML = `
