@@ -7,3 +7,9 @@ export function changeTheme(newTheme: string): IAction {
     payload: newTheme,
   };
 }
+
+export function initApp(): IAction {
+  return {
+    type: INIT_APP,
+  };
+}
