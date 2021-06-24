@@ -9,3 +9,12 @@ export interface ICards {
   category: string;
   cards: ICardInfo[];
 }
+
+export interface IAction {
+  type: string;
+  [keys: string]: string;
+}
+
+export interface IState {
+  [key: string]: string;
+}
