@@ -8,7 +8,7 @@ export const renderHeader = (): void => {
       <div class="container-fluid">
         <a class="navbar-brand navbar-brand_pointer">English For Kids</a>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <input class="form-check-input" role="button" type="checkbox" id="flexSwitchCheckDefault">
           <label class="form-check-label form-check-label_1-5rem ms-1" for="flexSwitchCheckDefault">Train</label>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
