@@ -18,3 +18,12 @@ export interface IAction {
 export interface IState {
   [key: string]: string;
 }
+
+export interface IMenuState {
+  isHidden: boolean;
+}
+
+export interface IMenuAction {
+  type: string;
+  payload: boolean;
+}
