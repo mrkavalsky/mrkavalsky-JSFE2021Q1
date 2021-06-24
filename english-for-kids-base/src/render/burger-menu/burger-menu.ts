@@ -6,7 +6,7 @@ const createBurgerMenuList = (): HTMLUListElement => {
 
   burgerMenuList.className = 'list-unstyled';
 
-  Object.keys(cards).forEach((category) => {
+  cards.forEach(({category}) => {
     const listItem = document.createElement('li');
 
     listItem.setAttribute('role', 'button');
