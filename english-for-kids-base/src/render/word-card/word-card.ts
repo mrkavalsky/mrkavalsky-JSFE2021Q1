@@ -6,7 +6,7 @@ export const renderWordCard = ({
   translation,
   image,
   audioSrc,
-}: ICardInfo): void => {
+}: ICardInfo): HTMLDivElement => {
   const card = document.createElement('div');
 
   card.className = 'word-card-container';
@@ -29,5 +29,5 @@ export const renderWordCard = ({
     </div>
   `;
 
-  document.body.append(card);
+  return card;
 };
