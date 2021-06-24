@@ -3,6 +3,7 @@
   max-width: 720px;
   height: 100%;
   overflow: hidden;
+  transition: all .5s;
 }
 
 .burger-menu_hidden {
