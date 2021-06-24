@@ -25,6 +25,8 @@ export const renderBurgerMenu = (): void => {
   burgerMenu.className =
     'burger-menu burger-menu_hidden position-fixed top-0 start-0 bg-dark d-flex justify-content-center pt-5';
 
+  burgerMenu.id = 'burger-menu';
+
   burgerMenu.append(createBurgerMenuList());
 
   document.body.append(burgerMenu);
