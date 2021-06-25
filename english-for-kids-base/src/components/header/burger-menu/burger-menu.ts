@@ -1,4 +1,4 @@
-import { cards } from '../../../public/cards';
+import { cards } from '../../../../public/cards';
 import './burger-menu.css';
 
 const createBurgerMenuList = (): HTMLUListElement => {
