@@ -23,7 +23,7 @@ export const renderBurgerMenu = (): void => {
   const burgerMenu = document.createElement('nav');
 
   burgerMenu.className =
-    'burger-menu burger-menu_hidden position-fixed top-0 start-0 bg-dark d-flex justify-content-center pt-5';
+    'burger-menu burger-menu_hidden position-fixed top-0 bg-dark d-flex justify-content-center pt-5';
 
   burgerMenu.id = 'burger-menu';
 

@@ -5,8 +5,9 @@
   overflow: hidden;
   transition: all .5s;
   z-index: 10;
+  left: 0;
 }
 
 .burger-menu_hidden {
-  width: 0;
+  left: -720px;
 }
