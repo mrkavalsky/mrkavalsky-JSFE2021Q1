@@ -3,7 +3,7 @@ import {
   BURGER_MENU_HIDDEN,
   THEME_PLAY,
   THEME_TRAIN,
-} from '../../redux/classes';
+} from './classes';
 import { store } from '../../redux/store';
 import './header.css';
 

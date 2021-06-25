@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { CHANGE_THEME, TOGGLE_MENU } from './types';
 import { IAction, IMenuAction, IMenuState, IState } from '../interfaces';
-import { THEME_TRAIN } from './classes';
+import { THEME_TRAIN } from '../components/header/classes';
 
 const initialTheme = {
   value: THEME_TRAIN,
