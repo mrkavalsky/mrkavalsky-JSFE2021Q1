@@ -1,5 +1,5 @@
 import { IAction, IMenuAction } from '../interfaces';
-import { CHANGE_THEME, INIT_APP, TOGGLE_MENU } from '../redux/action-types';
+import { CHANGE_THEME, INIT_APP, TOGGLE_MENU } from './action-types';
 
 export function changeTheme(newTheme: string): IAction {
   return {
