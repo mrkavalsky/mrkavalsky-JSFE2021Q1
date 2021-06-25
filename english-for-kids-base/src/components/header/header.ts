@@ -1,4 +1,4 @@
-import { changeTheme, toggleMenu } from '../../redux/actions';
+import { changeTheme, toggleMenu } from '../../actions/actions';
 import {
   BURGER_MENU_HIDDEN,
   THEME_PLAY,
