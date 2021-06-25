@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { CHANGE_THEME, TOGGLE_MENU } from './types';
+import { CHANGE_THEME, TOGGLE_MENU } from './action-types';
 import { IAction, IMenuAction, IMenuState, IState } from '../interfaces';
 import { THEME_TRAIN } from '../components/header/classes';
 
