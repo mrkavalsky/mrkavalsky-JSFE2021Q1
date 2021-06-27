@@ -1,9 +1,5 @@
 import { changeTheme, toggleMenu } from '../../actions/actions';
-import {
-  BURGER_MENU_HIDDEN,
-  THEME_PLAY,
-  THEME_TRAIN,
-} from './classes';
+import { BURGER_MENU_HIDDEN, THEME_PLAY, THEME_TRAIN } from './classes';
 import { store } from '../../redux/store';
 import './header.css';
 

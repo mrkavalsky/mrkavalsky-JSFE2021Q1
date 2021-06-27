@@ -1,3 +1,10 @@
-import { app } from './app';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { initApp } from './actions/actions';
+import { store } from './redux/store';
+import { renderApp } from './components/renderApp';
+import './styles.css';
 
-app();
+export const app = (): void => {
+  renderApp();
+  store.dispatch(initApp());
+};
