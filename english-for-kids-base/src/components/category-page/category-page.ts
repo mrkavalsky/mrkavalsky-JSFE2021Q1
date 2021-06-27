@@ -1,13 +1,17 @@
-import { ICards } from '../../interfaces';
+import { cards } from '../../../public/cards';
 import { renderWordCard } from '../word-card/word-card';
-import './main-page.css';
+import './category-page.css';
 
-export const renderCategoryPage = ({ cards }: ICards): void => {
+export const renderCategoryPage = (currentCategory: string): void => {
   const main = document.createElement('main');
 
   main.className = 'category-page';
 
-  cards.forEach((card) => {
+  const currentCards = cards.find(
+    ({ category }) => category === currentCategory,
+  );
+  if (!currentCards) return;
+  currentCards.cardsList.forEach((card) => {
     main.append(renderWordCard(card));
   });
 
