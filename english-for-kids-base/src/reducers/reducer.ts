@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import { CHANGE_THEME, TOGGLE_MENU } from '../actions/action-types';
-import { IAction, IMenuAction, IMenuState, IState } from '../interfaces';
+import { IAction, IMenuAction } from '../interfaces';
 import { THEME_TRAIN } from '../components/header/classes';
 
-const initialTheme = {
+const initialTheme: any = {
   value: THEME_TRAIN,
 };
 
 const themeReducer = (
-  state: IState = initialTheme,
+  state: any = initialTheme,
   { type, payload }: IAction,
 ) => {
   switch (type) {
@@ -19,12 +19,12 @@ const themeReducer = (
   }
 };
 
-const initialMenu = {
+const initialMenu: any = {
   isHidden: true,
 };
 
 const menuReducer = (
-  state: IMenuState = initialMenu,
+  state: any = initialMenu,
   { type, payload }: IMenuAction,
 ) => {
   switch (type) {

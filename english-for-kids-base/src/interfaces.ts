@@ -16,10 +16,7 @@ export interface IAction {
 }
 
 export interface IState {
-  [key: string]: string;
-}
-
-export interface IMenuState {
+  value: string;
   isHidden: boolean;
 }
 
