@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { CHANGE_THEME, TOGGLE_MENU } from '../actions/action-types';
 import { IAction, IMenuAction } from '../interfaces';
 import { THEME_TRAIN } from '../components/header/classes';
@@ -7,10 +6,10 @@ const initialTheme: any = {
   value: THEME_TRAIN,
 };
 
-const themeReducer = (
+export const themeReducer = (
   state: any = initialTheme,
   { type, payload }: IAction,
-) => {
+): any => {
   switch (type) {
     case CHANGE_THEME:
       return { ...state, value: payload };
@@ -23,10 +22,10 @@ const initialMenu: any = {
   isHidden: true,
 };
 
-const menuReducer = (
+export const menuReducer = (
   state: any = initialMenu,
   { type, payload }: IMenuAction,
-) => {
+): any => {
   switch (type) {
     case TOGGLE_MENU:
       return { ...state, isHidden: payload };
@@ -34,8 +33,3 @@ const menuReducer = (
       return state;
   }
 };
-
-export const rootReducer = combineReducers({
-  theme: themeReducer,
-  menu: menuReducer,
-});
