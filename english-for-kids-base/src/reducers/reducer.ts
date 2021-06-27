@@ -41,7 +41,7 @@ export const menuReducer = (
 export const pageReducer = (
   state = initialTheme,
   { type, payload }: IAction,
-) => {
+): any => {
   switch (type) {
     case CHANGE_PAGE:
       return { ...state, value: payload };

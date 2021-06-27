@@ -1,7 +1,7 @@
 import { renderCategoryPage } from '../components/category-page/category-page';
 import { store } from './store';
 
-export const changePage = () => {
+export const changePage = (): void => {
   document.body.lastElementChild?.remove();
 
   const {

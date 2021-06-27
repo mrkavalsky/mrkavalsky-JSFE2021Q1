@@ -4,7 +4,7 @@ import './menu-card.css';
 
 const addHandler = (card: HTMLDivElement): void => {
   card.addEventListener('click', () => {
-    const category = card.dataset.category;
+    const { category } = card.dataset;
     if (!category) return;
     changePage(category);
   });
