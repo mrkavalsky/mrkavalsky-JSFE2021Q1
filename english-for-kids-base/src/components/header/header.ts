@@ -54,12 +54,12 @@ export const initHeader = (): void => {
       ? THEME_PLAY
       : THEME_TRAIN;
 
-    store.dispatch(changeTheme(newTheme));
+    changeTheme(newTheme);
   });
   menuButton?.addEventListener('click', () => {
     const isHidden = !burgerMenu?.classList.contains(BURGER_MENU_HIDDEN);
 
-    store.dispatch(toggleMenu(isHidden));
+    toggleMenu(isHidden);
   });
 
   store.subscribe(changeBodyClass);
