@@ -11,7 +11,7 @@ export const renderWordCard = ({
 
   card.className = 'word-card-container';
 
-  card.dataset.audio = audioSrc;
+  card.dataset.word = word;
 
   card.innerHTML = `
     <div class="word-card">
