@@ -1,4 +1,8 @@
-import { CHANGE_THEME, TOGGLE_MENU } from '../actions/action-types';
+import {
+  CHANGE_PAGE,
+  CHANGE_THEME,
+  TOGGLE_MENU,
+} from '../actions/action-types';
 import { IAction, IMenuAction } from '../interfaces';
 import { THEME_TRAIN } from '../components/header/classes';
 
@@ -29,6 +33,18 @@ export const menuReducer = (
   switch (type) {
     case TOGGLE_MENU:
       return { ...state, isHidden: payload };
+    default:
+      return state;
+  }
+};
+
+export const pageReducer = (
+  state = initialTheme,
+  { type, payload }: IAction,
+) => {
+  switch (type) {
+    case CHANGE_PAGE:
+      return { ...state, value: payload };
     default:
       return state;
   }
