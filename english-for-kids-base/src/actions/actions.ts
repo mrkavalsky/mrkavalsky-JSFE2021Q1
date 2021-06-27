@@ -15,7 +15,7 @@ export function toggleMenu(isHidden: boolean): void {
   });
 }
 
-export function initApp(): void {
+export function initDefaultStore(): void {
   store.dispatch({
     type: INIT_APP,
   });
