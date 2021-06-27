@@ -7,7 +7,7 @@ export interface ICardInfo {
 
 export interface ICards {
   category: string;
-  cards: ICardInfo[];
+  cardsList: ICardInfo[];
 }
 
 export interface IAction {

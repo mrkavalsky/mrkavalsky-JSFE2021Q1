@@ -3,7 +3,7 @@ import { ICards } from '../src/interfaces';
 export const cards: ICards[] = [
   {
     category: 'Action (set A)',
-    cards: [
+    cardsList: [
       {
         word: 'cry',
         translation: 'плакать',
@@ -56,7 +56,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Action (set B)',
-    cards: [
+    cardsList: [
       {
         word: 'open',
         translation: 'открывать',
@@ -109,7 +109,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Action (set С)',
-    cards: [
+    cardsList: [
       {
         word: 'argue',
         translation: 'спорить',
@@ -162,7 +162,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Adjective',
-    cards: [
+    cardsList: [
       {
         word: 'big',
         translation: 'большой',
@@ -215,7 +215,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Animal (set A)',
-    cards: [
+    cardsList: [
       {
         word: 'cat',
         translation: 'кот',
@@ -268,7 +268,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Animal (set B)',
-    cards: [
+    cardsList: [
       {
         word: 'bird',
         translation: 'птица',
@@ -321,7 +321,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Clothes',
-    cards: [
+    cardsList: [
       {
         word: 'skirt',
         translation: 'юбка',
@@ -374,7 +374,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Emotions',
-    cards: [
+    cardsList: [
       {
         word: 'sad',
         translation: 'грустный',
