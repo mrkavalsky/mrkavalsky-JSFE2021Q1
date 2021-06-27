@@ -2,6 +2,42 @@ import { changeTheme, toggleMenu } from '../../actions/actions';
 import { BURGER_MENU_HIDDEN, THEME_PLAY, THEME_TRAIN } from './classes';
 import { store } from '../../redux/store';
 import './header.css';
+import { renderBurgerMenu } from './burger-menu/burger-menu';
+
+const changeBodyClass = (): void => {
+  const { theme } = store.getState();
+
+  document.body.className = theme.value;
+};
+
+const toggleBurgerMenu = (): void => {
+  const { menu } = store.getState();
+  const burgerMenu = document.getElementById('burger-menu');
+
+  burgerMenu?.classList.toggle(BURGER_MENU_HIDDEN, menu.isHidden);
+};
+
+const addHandlers = (): void => {
+  const checkbox = document.getElementById('flexSwitchCheckDefault');
+  const menuButton = document.getElementById('menu-button');
+  const burgerMenu = document.getElementById('burger-menu');
+
+  checkbox?.addEventListener('click', () => {
+    const newTheme = document.body.classList.contains(THEME_TRAIN)
+      ? THEME_PLAY
+      : THEME_TRAIN;
+
+    changeTheme(newTheme);
+  });
+  menuButton?.addEventListener('click', () => {
+    const isHidden = !burgerMenu?.classList.contains(BURGER_MENU_HIDDEN);
+
+    toggleMenu(isHidden);
+  });
+
+  store.subscribe(changeBodyClass);
+  store.subscribe(toggleBurgerMenu);
+};
 
 export const renderHeader = (): void => {
   const header = document.createElement('header');
@@ -29,39 +65,8 @@ export const renderHeader = (): void => {
   `;
 
   document.body.append(header);
-};
 
-const changeBodyClass = (): void => {
-  const { theme } = store.getState();
+  renderBurgerMenu();
 
-  document.body.className = theme.value;
-};
-
-const toggleBurgerMenu = (): void => {
-  const { menu } = store.getState();
-  const burgerMenu = document.getElementById('burger-menu');
-
-  burgerMenu?.classList.toggle(BURGER_MENU_HIDDEN, menu.isHidden);
-};
-
-export const initHeader = (): void => {
-  const checkbox = document.getElementById('flexSwitchCheckDefault');
-  const menuButton = document.getElementById('menu-button');
-  const burgerMenu = document.getElementById('burger-menu');
-
-  checkbox?.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains(THEME_TRAIN)
-      ? THEME_PLAY
-      : THEME_TRAIN;
-
-    changeTheme(newTheme);
-  });
-  menuButton?.addEventListener('click', () => {
-    const isHidden = !burgerMenu?.classList.contains(BURGER_MENU_HIDDEN);
-
-    toggleMenu(isHidden);
-  });
-
-  store.subscribe(changeBodyClass);
-  store.subscribe(toggleBurgerMenu);
+  addHandlers();
 };
