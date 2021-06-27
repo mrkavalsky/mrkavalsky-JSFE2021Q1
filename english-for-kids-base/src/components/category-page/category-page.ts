@@ -1,4 +1,4 @@
-import { cards } from '../../../public/cards';
+import { getCurrentCards } from '../../get-current-cards';
 import { renderWordCard } from '../word-card/word-card';
 import './category-page.css';
 
@@ -7,11 +7,11 @@ export const renderCategoryPage = (currentCategory: string): void => {
 
   main.className = 'category-page';
 
-  const currentCards = cards.find(
-    ({ category }) => category === currentCategory,
-  );
-  if (!currentCards) return;
-  currentCards.cardsList.forEach((card) => {
+  const cardList = getCurrentCards(currentCategory);
+
+  if (!cardList) return;
+
+  cardList.forEach((card) => {
     main.append(renderWordCard(card));
   });
 
