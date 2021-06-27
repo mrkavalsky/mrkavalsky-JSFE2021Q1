@@ -1,5 +1,10 @@
 import { store } from '../redux/store';
-import { CHANGE_THEME, INIT_APP, TOGGLE_MENU } from './action-types';
+import {
+  CHANGE_PAGE,
+  CHANGE_THEME,
+  INIT_APP,
+  TOGGLE_MENU,
+} from './action-types';
 
 export function changeTheme(newTheme: string): void {
   store.dispatch({
@@ -18,5 +23,12 @@ export function toggleMenu(isHidden: boolean): void {
 export function initDefaultStore(): void {
   store.dispatch({
     type: INIT_APP,
+  });
+}
+
+export function changePage(category: string): void {
+  store.dispatch({
+    type: CHANGE_PAGE,
+    payload: category,
   });
 }
