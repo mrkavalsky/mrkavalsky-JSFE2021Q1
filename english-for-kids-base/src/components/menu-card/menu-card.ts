@@ -6,6 +6,8 @@ export const renderMenuCard = ({ category, cards }: ICards): HTMLDivElement => {
 
   card.className = 'menu-card';
 
+  card.dataset.category = category;
+
   const [{ image }] = cards;
   card.innerHTML = `
     <div class="menu-card__img-wrapper">
