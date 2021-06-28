@@ -1,18 +1,13 @@
 import { renderCategoryPage } from '../components/category-page/category-page';
 import { MAIN_PAGE } from '../components/main-page/config';
 import { renderMainPage } from '../components/main-page/main-page';
-import { store } from './store';
 
-export const changeCurrentPage = (): void => {
+export const changeCurrentPage = (hash: string): void => {
   document.body.lastElementChild?.remove();
 
-  const {
-    page: { value },
-  } = store.getState();
-
-  if (value === MAIN_PAGE) {
+  if (hash === MAIN_PAGE) {
     renderMainPage();
   } else {
-    renderCategoryPage(value);
+    renderCategoryPage(hash);
   }
 };

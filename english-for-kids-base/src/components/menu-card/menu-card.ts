@@ -1,6 +1,6 @@
 import { ICards } from '../../interfaces';
+import { changeHash } from '../../redux/change-hash';
 import './menu-card.css';
-import { changeHash } from '../../redux/routing';
 
 const addHandler = (card: HTMLDivElement): void => {
   card.addEventListener('click', () => {
