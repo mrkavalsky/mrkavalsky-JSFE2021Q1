@@ -1,4 +1,4 @@
-import { ICardInfo } from '../../interfaces';
+import { ICardInfo } from '../../types/interfaces';
 import './word-card.css';
 
 export const renderWordCard = ({

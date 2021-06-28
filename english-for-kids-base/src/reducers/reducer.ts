@@ -1,6 +1,6 @@
 import { CHANGE_THEME } from '../actions/action-types';
 import initialState from './initial-state';
-import { IAction } from '../interfaces';
+import { IAction } from '../types/interfaces';
 
 export const themeReducer = (
   state: any = initialState.theme,

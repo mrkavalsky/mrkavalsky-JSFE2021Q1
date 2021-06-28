@@ -1,4 +1,4 @@
-import { ICards } from '../../interfaces';
+import { ICards } from '../../types/interfaces';
 import { changeHash } from '../../router/change-hash';
 import './menu-card.css';
 
