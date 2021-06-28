@@ -5,9 +5,6 @@ const initialState = {
   theme: {
     value: THEME_TRAIN,
   },
-  menu: {
-    isHidden: true,
-  },
   page: {
     value: MAIN_PAGE,
   },

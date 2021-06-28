@@ -20,8 +20,3 @@ export interface IState {
   value: string;
   isHidden: boolean;
 }
-
-export interface IMenuAction {
-  type: string;
-  payload: boolean;
-}
