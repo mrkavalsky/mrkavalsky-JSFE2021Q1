@@ -1,4 +1,5 @@
 import { cards } from '../../../../public/cards';
+import { BURGER_MENU_HIDDEN } from '../classes';
 import './burger-menu.css';
 
 const createBurgerMenuList = (): HTMLUListElement => {
@@ -30,4 +31,10 @@ export const renderBurgerMenu = (): void => {
   burgerMenu.append(createBurgerMenuList());
 
   document.body.append(burgerMenu);
+};
+
+export const toggleBurgerMenu = (): void => {
+  const burgerMenu = document.getElementById('burger-menu');
+
+  burgerMenu?.classList.toggle(BURGER_MENU_HIDDEN);
 };

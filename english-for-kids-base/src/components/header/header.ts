@@ -1,19 +1,13 @@
 import { changeTheme } from '../../actions/actions';
-import { BURGER_MENU_HIDDEN, THEME_PLAY, THEME_TRAIN } from './classes';
+import { THEME_PLAY, THEME_TRAIN } from './classes';
 import { store } from '../../redux/store';
 import './header.css';
-import { renderBurgerMenu } from './burger-menu/burger-menu';
+import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu/burger-menu';
 
 export const changeBodyClass = (): void => {
   const { theme } = store.getState();
 
   document.body.className = theme.value;
-};
-
-export const toggleBurgerMenu = (): void => {
-  const burgerMenu = document.getElementById('burger-menu');
-
-  burgerMenu?.classList.toggle(BURGER_MENU_HIDDEN);
 };
 
 const addHandlers = (): void => {
@@ -27,9 +21,7 @@ const addHandlers = (): void => {
 
     changeTheme(newTheme);
   });
-  menuButton?.addEventListener('click', () => {
-    toggleBurgerMenu();
-  });
+  menuButton?.addEventListener('click', () => toggleBurgerMenu());
 };
 
 export const renderHeader = (): void => {
