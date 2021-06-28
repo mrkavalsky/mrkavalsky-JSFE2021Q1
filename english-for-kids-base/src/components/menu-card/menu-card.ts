@@ -1,34 +1,27 @@
 import { ICards } from '../../types/interfaces';
 import { changeHash } from '../../router/change-hash';
 import './menu-card.css';
+import { createHTMLElement } from '../../helpers/create-html-element';
 
-const addHandler = (card: HTMLDivElement): void => {
-  card.addEventListener('click', () => {
-    const { hash } = card.dataset;
-    if (!hash) return;
-    changeHash(hash);
-  });
+const addHandler = (card: Element, hash: string): void => {
+  card.addEventListener('click', () => changeHash(hash));
 };
 
 export const renderMenuCard = ({
   category,
   hash,
   cardsList: [{ image }],
-}: ICards): HTMLDivElement => {
-  const card = document.createElement('div');
-
-  card.className = 'menu-card';
-
-  card.dataset.hash = hash;
-
-  card.innerHTML = `
-    <div class="menu-card__img-wrapper">
-      <img class="menu-card__img" src="${image}" alt="${category}">
+}: ICards): Element => {
+  const card = createHTMLElement(`
+    <div class="menu-card">
+      <div class="menu-card__img-wrapper">
+        <img class="menu-card__img" src="${image}" alt="${category}">
+      </div>
+      <div class="menu-card__header">${category}</div>
     </div>
-    <div class="menu-card__header">${category}</div>
-  `;
+  `);
 
-  addHandler(card);
+  addHandler(card, hash);
 
   return card;
 };
