@@ -1,24 +1,25 @@
 import { ICards } from '../../interfaces';
-import { changePage } from '../../actions/actions';
 import './menu-card.css';
+import { changeHash } from '../../redux/routing';
 
 const addHandler = (card: HTMLDivElement): void => {
   card.addEventListener('click', () => {
-    const { category } = card.dataset;
-    if (!category) return;
-    changePage(category);
+    const { hash } = card.dataset;
+    if (!hash) return;
+    changeHash(hash);
   });
 };
 
 export const renderMenuCard = ({
   category,
+  hash,
   cardsList: [{ image }],
 }: ICards): HTMLDivElement => {
   const card = document.createElement('div');
 
   card.className = 'menu-card';
 
-  card.dataset.category = category;
+  card.dataset.hash = hash;
 
   card.innerHTML = `
     <div class="menu-card__img-wrapper">

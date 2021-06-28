@@ -3,7 +3,7 @@ import { MAIN_PAGE } from '../components/main-page/config';
 import { renderMainPage } from '../components/main-page/main-page';
 import { store } from './store';
 
-export const changePage = (): void => {
+export const changeCurrentPage = (): void => {
   document.body.lastElementChild?.remove();
 
   const {

@@ -15,9 +15,9 @@ export function toggleMenu(isHidden: boolean): void {
   });
 }
 
-export function changePage(category: string): void {
+export function changePage(hash: string): void {
   store.dispatch({
     type: CHANGE_PAGE,
-    payload: category,
+    payload: hash,
   });
 }

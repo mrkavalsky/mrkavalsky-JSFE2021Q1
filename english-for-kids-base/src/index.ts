@@ -2,11 +2,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderApp } from './components/renderApp';
 import './styles.css';
 import { store } from './redux/store';
-import { changePage } from './redux/change-page';
+import { addRouting } from './redux/routing';
 import { changeBodyClass, toggleBurgerMenu } from './components/header/header';
+import { changeCurrentPage } from './redux/change-current-page';
 
 const initApp = (): void => {
   renderApp();
+
+  addRouting();
 
   let prevState = store.getState();
 
@@ -18,7 +21,7 @@ const initApp = (): void => {
     } else if (menu.isHidden !== prevState.menu.isHidden) {
       toggleBurgerMenu();
     } else if (page.value !== prevState.page.value) {
-      changePage();
+      changeCurrentPage();
     }
 
     prevState = store.getState();

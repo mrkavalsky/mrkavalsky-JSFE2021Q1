@@ -7,6 +7,7 @@ export interface ICardInfo {
 
 export interface ICards {
   category: string;
+  hash: string;
   cardsList: ICardInfo[];
 }
 
