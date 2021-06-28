@@ -1,9 +1,9 @@
 import { store } from '../reducers/core/store';
-import { CHANGE_THEME } from './action-types';
+import { CHANGE_MODE } from './action-types';
 
-export function changeTheme(newTheme: string): void {
+export function changeMode(newMode: string): void {
   store.dispatch({
-    type: CHANGE_THEME,
-    payload: newTheme,
+    type: CHANGE_MODE,
+    payload: newMode,
   });
 }

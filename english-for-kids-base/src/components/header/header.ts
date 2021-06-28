@@ -1,14 +1,14 @@
-import { changeTheme } from '../../actions/actions';
 import { store } from '../../reducers/core/store';
 import './header.css';
 import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu/burger-menu';
-import { Theme } from './classes';
 import { createHTMLElement } from '../../helpers/create-html-element';
+import { Mode } from '../../types/modes';
+import { changeMode } from '../../actions/actions';
+import { Theme } from './classes';
 
-export const changeBodyClass = (): void => {
-  const { theme } = store.getState();
-
-  document.body.className = theme.value;
+export const changeBodyClass = (mode: string): void => {
+  document.body.className =
+    mode === Mode.TRAIN ? Theme.THEME_TRAIN : Theme.THEME_PLAY;
 };
 
 const addHandlers = (): void => {
@@ -16,11 +16,10 @@ const addHandlers = (): void => {
   const menuButton = document.getElementById('menu-button');
 
   checkbox?.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains(Theme.THEME_PLAY)
-      ? Theme.THEME_TRAIN
-      : Theme.THEME_PLAY;
+    const newMode =
+      store.getState().mode.value === Mode.TRAIN ? Mode.PLAY : Mode.TRAIN;
 
-    changeTheme(newTheme);
+    changeMode(newMode);
   });
   menuButton?.addEventListener('click', () => toggleBurgerMenu());
 };

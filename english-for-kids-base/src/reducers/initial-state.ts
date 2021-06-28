@@ -1,8 +1,8 @@
-import { Theme } from '../components/header/classes';
+import { Mode } from '../types/modes';
 
 const initialState = {
-  theme: {
-    value: Theme.THEME_TRAIN,
+  mode: {
+    value: Mode.TRAIN,
   },
 };
 

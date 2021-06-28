@@ -13,10 +13,10 @@ const initApp = (): void => {
   let prevState = store.getState();
 
   store.subscribe(() => {
-    const { theme } = store.getState();
+    const { mode } = store.getState();
 
-    if (theme.value !== prevState.theme.value) {
-      changeBodyClass();
+    if (mode.value !== prevState.mode.value) {
+      changeBodyClass(mode.value);
     }
 
     prevState = store.getState();
