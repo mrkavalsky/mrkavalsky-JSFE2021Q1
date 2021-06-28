@@ -1,11 +1,12 @@
+import { createHTMLElement } from '../../helpers/create-html-element';
 import { getCurrentCards } from '../../helpers/get-current-cards';
 import { renderWordCard } from '../word-card/word-card';
 import './category-page.css';
 
 export const renderCategoryPage = (hash: string): void => {
-  const main = document.createElement('main');
-
-  main.className = 'category-page';
+  const main = createHTMLElement(`
+    <main class="category-page"></main>
+  `);
 
   const cardList = getCurrentCards(hash);
 
