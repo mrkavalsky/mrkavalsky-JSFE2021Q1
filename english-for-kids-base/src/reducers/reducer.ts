@@ -3,15 +3,11 @@ import {
   CHANGE_THEME,
   TOGGLE_MENU,
 } from '../actions/action-types';
+import initialState from '../initial-state';
 import { IAction, IMenuAction } from '../interfaces';
-import { THEME_TRAIN } from '../components/header/classes';
-
-const initialTheme: any = {
-  value: THEME_TRAIN,
-};
 
 export const themeReducer = (
-  state: any = initialTheme,
+  state: any = initialState.theme,
   { type, payload }: IAction,
 ): any => {
   switch (type) {
@@ -22,12 +18,8 @@ export const themeReducer = (
   }
 };
 
-const initialMenu: any = {
-  isHidden: true,
-};
-
 export const menuReducer = (
-  state: any = initialMenu,
+  state: any = initialState.menu,
   { type, payload }: IMenuAction,
 ): any => {
   switch (type) {
@@ -39,7 +31,7 @@ export const menuReducer = (
 };
 
 export const pageReducer = (
-  state = initialTheme,
+  state: any = initialState.page,
   { type, payload }: IAction,
 ): any => {
   switch (type) {
