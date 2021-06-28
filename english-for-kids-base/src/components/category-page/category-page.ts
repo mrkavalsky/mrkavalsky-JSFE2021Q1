@@ -1,4 +1,4 @@
-import { getCurrentCards } from '../../get-current-cards';
+import { getCurrentCards } from '../../helpers/get-current-cards';
 import { renderWordCard } from '../word-card/word-card';
 import './category-page.css';
 
