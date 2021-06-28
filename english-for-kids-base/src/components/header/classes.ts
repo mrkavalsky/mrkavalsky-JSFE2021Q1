@@ -1,2 +1,4 @@
-export const THEME_TRAIN = 'theme-train';
-export const THEME_PLAY = 'theme-play';
+export enum Theme {
+  THEME_TRAIN = 'theme-train',
+  THEME_PLAY = 'theme-play',
+}

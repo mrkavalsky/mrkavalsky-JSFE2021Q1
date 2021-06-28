@@ -1,8 +1,8 @@
 import { changeTheme } from '../../actions/actions';
-import { THEME_PLAY, THEME_TRAIN } from './classes';
 import { store } from '../../reducers/core/store';
 import './header.css';
 import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu/burger-menu';
+import { Theme } from './classes';
 
 export const changeBodyClass = (): void => {
   const { theme } = store.getState();
@@ -15,9 +15,9 @@ const addHandlers = (): void => {
   const menuButton = document.getElementById('menu-button');
 
   checkbox?.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains(THEME_PLAY)
-      ? THEME_TRAIN
-      : THEME_PLAY;
+    const newTheme = document.body.classList.contains(Theme.THEME_PLAY)
+      ? Theme.THEME_TRAIN
+      : Theme.THEME_PLAY;
 
     changeTheme(newTheme);
   });
