@@ -11,7 +11,7 @@ const addHandlers = (card: Element, audioSrc: string) => {
       playAudio(audioSrc);
     }
   });
-}
+};
 
 export const renderWordCard = ({
   word,

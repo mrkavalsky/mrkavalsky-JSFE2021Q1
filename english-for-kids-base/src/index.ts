@@ -3,7 +3,10 @@ import { renderApp } from './components/renderApp';
 import './styles.css';
 import { store } from './reducers/core/store';
 import { addRouting } from './router/add-routing';
-import { changeBodyClass } from './components/header/header';
+import {
+  changeBodyClass,
+  changeCheckboxLabel,
+} from './components/header/header';
 
 const initApp = (): void => {
   renderApp();
@@ -17,6 +20,7 @@ const initApp = (): void => {
 
     if (mode.value !== prevState.mode.value) {
       changeBodyClass(mode.value);
+      changeCheckboxLabel(mode.value);
     }
 
     prevState = store.getState();

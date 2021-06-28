@@ -12,6 +12,11 @@
 .navbar-brand_pointer {
   cursor: pointer;
 }
+.form-check {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler{
     display: flex;

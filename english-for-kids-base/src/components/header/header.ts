@@ -11,6 +11,14 @@ export const changeBodyClass = (mode: string): void => {
     mode === Mode.TRAIN ? Theme.THEME_TRAIN : Theme.THEME_PLAY;
 };
 
+export const changeCheckboxLabel = (mode: string): void => {
+  const label = document.getElementById('checkbox-label');
+
+  if (label) {
+    label.textContent = mode;
+  }
+};
+
 const addHandlers = (): void => {
   const checkbox = document.getElementById('flexSwitchCheckDefault');
   const menuButton = document.getElementById('menu-button');
@@ -32,7 +40,9 @@ export const renderHeader = (): void => {
           <a class="navbar-brand navbar-brand_pointer">English For Kids</a>
           <div class="form-check form-switch">
             <input class="form-check-input" role="button" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label form-check-label_1-5rem ms-1" for="flexSwitchCheckDefault">Train</label>
+            <label class="form-check-label form-check-label_1-5rem ms-1" 
+                    id="checkbox-label" 
+                    for="flexSwitchCheckDefault">TRAIN</label>
           </div>
           <button class="navbar-toggler"
                   id="menu-button"
