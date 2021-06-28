@@ -10,6 +10,9 @@ export const changeCurrentPage = (): void => {
     page: { value },
   } = store.getState();
 
-  if (value === MAIN_PAGE) renderMainPage();
-  else renderCategoryPage(value);
+  if (value === MAIN_PAGE) {
+    renderMainPage();
+  } else {
+    renderCategoryPage(value);
+  }
 };
