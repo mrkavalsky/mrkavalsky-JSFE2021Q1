@@ -1,6 +1,6 @@
 import { changeTheme } from '../../actions/actions';
 import { THEME_PLAY, THEME_TRAIN } from './classes';
-import { store } from '../../redux/store';
+import { store } from '../../reducers/core/store';
 import './header.css';
 import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu/burger-menu';
 
