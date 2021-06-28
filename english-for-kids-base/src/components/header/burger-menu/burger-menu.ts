@@ -1,6 +1,6 @@
 import { cards } from '../../../../public/cards';
-import { BURGER_MENU_HIDDEN } from '../classes';
 import './burger-menu.css';
+import { BURGER_MENU_HIDDEN } from './classes';
 
 const createBurgerMenuList = (): HTMLUListElement => {
   const burgerMenuList = document.createElement('ul');
