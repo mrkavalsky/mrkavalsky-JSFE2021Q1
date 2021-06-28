@@ -4,13 +4,13 @@ import { store } from '../../redux/store';
 import './header.css';
 import { renderBurgerMenu } from './burger-menu/burger-menu';
 
-const changeBodyClass = (): void => {
+export const changeBodyClass = (): void => {
   const { theme } = store.getState();
 
   document.body.className = theme.value;
 };
 
-const toggleBurgerMenu = (): void => {
+export const toggleBurgerMenu = (): void => {
   const { menu } = store.getState();
   const burgerMenu = document.getElementById('burger-menu');
 
@@ -23,9 +23,9 @@ const addHandlers = (): void => {
   const burgerMenu = document.getElementById('burger-menu');
 
   checkbox?.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains(THEME_TRAIN)
-      ? THEME_PLAY
-      : THEME_TRAIN;
+    const newTheme = document.body.classList.contains(THEME_PLAY)
+      ? THEME_TRAIN
+      : THEME_PLAY;
 
     changeTheme(newTheme);
   });
@@ -34,9 +34,6 @@ const addHandlers = (): void => {
 
     toggleMenu(isHidden);
   });
-
-  store.subscribe(changeBodyClass);
-  store.subscribe(toggleBurgerMenu);
 };
 
 export const renderHeader = (): void => {
