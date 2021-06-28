@@ -1,5 +1,5 @@
 import { ICards } from '../../interfaces';
-import { changeHash } from '../../redux/change-hash';
+import { changeHash } from '../../router/change-hash';
 import './menu-card.css';
 
 const addHandler = (card: HTMLDivElement): void => {

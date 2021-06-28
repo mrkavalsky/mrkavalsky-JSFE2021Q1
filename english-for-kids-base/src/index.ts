@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderApp } from './components/renderApp';
 import './styles.css';
 import { store } from './redux/store';
-import { addRouting } from './redux/add-routing';
+import { addRouting } from './router/add-routing';
 import { changeBodyClass } from './components/header/header';
 
 const initApp = (): void => {
