@@ -1,4 +1,6 @@
 import { renderCategoryPage } from '../components/category-page/category-page';
+import { MAIN_PAGE } from '../components/main-page/config';
+import { renderMainPage } from '../components/main-page/main-page';
 import { store } from './store';
 
 export const changePage = (): void => {
@@ -8,5 +10,6 @@ export const changePage = (): void => {
     page: { value },
   } = store.getState();
 
-  renderCategoryPage(value);
+  if (value === MAIN_PAGE) renderMainPage();
+  else renderCategoryPage(value);
 };
