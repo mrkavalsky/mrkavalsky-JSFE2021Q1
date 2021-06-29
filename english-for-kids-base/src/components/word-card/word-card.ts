@@ -6,9 +6,26 @@ import { Mode } from '../../types/modes';
 import './word-card.css';
 
 const addHandlers = (card: Element, audioSrc: string) => {
-  card.addEventListener('click', () => {
-    if (store.getState().mode.value === Mode.TRAIN) {
+  const button = card.querySelector('button');
+  const cardContent = card.firstElementChild;
+
+  card.addEventListener('click', ({ target }) => {
+    if (store.getState().mode.value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
+    }
+  });
+
+  if (button) {
+    button.addEventListener('click', () => {
+      if (store.getState().mode.value === Mode.TRAIN) {
+        cardContent?.classList.add('word-card_rotate');
+      }
+    });
+  }
+
+  card.addEventListener('mouseleave', () => {
+    if (store.getState().mode.value === Mode.TRAIN) {
+      cardContent?.classList.remove('word-card_rotate');
     }
   });
 };
