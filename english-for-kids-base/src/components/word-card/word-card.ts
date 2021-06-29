@@ -1,17 +1,26 @@
+import { ActionTypes } from '../../actions/action-types';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
 import { ICardInfo } from '../../types/interfaces';
 import { Mode } from '../../types/modes';
+import { compareWords } from '../game/compare-words';
 import './word-card.css';
 
-const addHandlers = (card: Element, audioSrc: string) => {
+const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const button = card.querySelector('button');
   const cardContent = card.firstElementChild;
 
   card.addEventListener('click', ({ target }) => {
-    if (store.getState().mode.value === Mode.TRAIN && target !== button) {
+    const {
+      mode: { value },
+      game,
+    } = store.getState();
+
+    if (value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
+    } else if (game.value === ActionTypes.START_GAME) {
+      compareWords(game.currentCard.word, word);
     }
   });
 
@@ -54,7 +63,7 @@ export const renderWordCard = ({
     </div>
   `);
 
-  addHandlers(card, audioSrc);
+  addHandlers(card, audioSrc, word);
 
   return card;
 };

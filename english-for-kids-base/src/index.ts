@@ -24,7 +24,10 @@ const initApp = (): void => {
     if (mode.value !== prevState.mode.value) {
       changeBodyClass(mode.value);
       changeCheckboxLabel(mode.value);
-    } else if (game.value === ActionTypes.START_GAME) {
+    } else if (
+      game.value === ActionTypes.START_GAME &&
+      game.value !== prevState.game.value
+    ) {
       changeStartGameButton();
       playAudio(game.currentCard.audioSrc);
     }
