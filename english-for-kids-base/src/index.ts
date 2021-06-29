@@ -8,7 +8,7 @@ import {
   changeCheckboxLabel,
 } from './components/header/header';
 import { ActionTypes } from './actions/action-types';
-import { changeStartGameButton } from './components/category-page/category-page';
+import { changeStartGameButton } from './components/category-page';
 import { playAudio } from './helpers/play-audio';
 
 const initApp = (): void => {
