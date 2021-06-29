@@ -4,7 +4,7 @@ import { createHTMLElement } from '../../helpers/create-html-element';
 import { getCurrentCards } from '../../helpers/get-current-cards';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
-import { renderWordCard } from '../word-card/word-card';
+import { renderWordCard } from '../word-card';
 import './category-page.css';
 
 const addHandlers = (button: Element): void => {
