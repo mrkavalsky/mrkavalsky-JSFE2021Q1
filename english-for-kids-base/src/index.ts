@@ -9,6 +9,7 @@ import {
 } from './components/header/header';
 import { ActionTypes } from './actions/action-types';
 import { changeStartGameButton } from './components/category-page/category-page';
+import { playAudio } from './helpers/play-audio';
 
 const initApp = (): void => {
   renderApp();
@@ -25,6 +26,7 @@ const initApp = (): void => {
       changeCheckboxLabel(mode.value);
     } else if (game.value === ActionTypes.START_GAME) {
       changeStartGameButton();
+      playAudio(game.currentCard.audioSrc);
     }
 
     prevState = store.getState();

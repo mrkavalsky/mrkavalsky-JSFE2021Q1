@@ -2,6 +2,7 @@ import { ActionTypes } from '../../actions/action-types';
 import { startGame } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { getCurrentCards } from '../../helpers/get-current-cards';
+import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
 import { renderWordCard } from '../word-card/word-card';
 import './category-page.css';
@@ -9,11 +10,13 @@ import './category-page.css';
 const addHandlers = (button: Element): void => {
   button.addEventListener('click', () => {
     const {
-      game: { value },
+      game: { value, currentCard },
     } = store.getState();
 
     if (value !== ActionTypes.START_GAME) {
       startGame();
+    } else if (value === ActionTypes.START_GAME) {
+      playAudio(currentCard.audioSrc);
     }
   });
 };
