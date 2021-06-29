@@ -1,7 +1,7 @@
 import { cards } from '../../../public/cards';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { renderMenuCard } from '../menu-card';
-import './main-page.css';
+import './styles.css';
 
 export const renderMainPage = (): void => {
   const main = createHTMLElement(`
