@@ -1,5 +1,5 @@
 import { store } from '../../reducers/core/store';
-import './header.css';
+import './styles.css';
 import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { Mode } from '../../types/modes';
