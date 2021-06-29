@@ -3,6 +3,9 @@ export interface ICardInfo {
   translation: string;
   image: string;
   audioSrc: string;
+  train: number;
+  hit: number;
+  miss: number;
 }
 
 export interface ICards {
