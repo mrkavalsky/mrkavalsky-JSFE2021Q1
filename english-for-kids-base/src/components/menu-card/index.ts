@@ -1,6 +1,6 @@
 import { ICards } from '../../types/interfaces';
 import { changeHash } from '../../router/change-hash';
-import './menu-card.css';
+import './styles.css';
 import { createHTMLElement } from '../../helpers/create-html-element';
 
 const addHandler = (card: Element, hash: string): void => {
