@@ -30,3 +30,15 @@ export function resetGame(): void {
     type: ActionTypes.RESET_GAME,
   });
 }
+
+export function hitWord(): void {
+  store.dispatch({
+    type: ActionTypes.HIT_WORD,
+  });
+}
+
+export function missWord(): void {
+  store.dispatch({
+    type: ActionTypes.MISS_WORD,
+  });
+}

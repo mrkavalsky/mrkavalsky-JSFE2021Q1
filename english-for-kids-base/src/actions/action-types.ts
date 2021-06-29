@@ -3,4 +3,6 @@ export enum ActionTypes {
   START_GAME = 'START_GAME',
   END_GAME = 'END_GAME',
   RESET_GAME = 'RESET_GAME',
+  HIT_WORD = 'HIT_WORD',
+  MISS_WORD = 'MISS_WORD',
 }
