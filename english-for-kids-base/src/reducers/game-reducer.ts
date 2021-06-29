@@ -17,6 +17,13 @@ export const gameReducer = (
       return { ...state, value: ActionTypes.END_GAME };
     case ActionTypes.RESET_GAME:
       return { ...state, value: ActionTypes.RESET_GAME };
+    case ActionTypes.HIT_WORD:
+      return { ...state, currentCard: { ...state.currentCard, hit: 1 } };
+    case ActionTypes.MISS_WORD:
+      return {
+        ...state,
+        currentCard: { ...state.currentCard, miss: state.currentCard.miss + 1 },
+      };
     default:
       return state;
   }
