@@ -1,6 +1,6 @@
 import { store } from '../../reducers/core/store';
 import './header.css';
-import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu/burger-menu';
+import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { Mode } from '../../types/modes';
 import { changeMode } from '../../actions/actions';
