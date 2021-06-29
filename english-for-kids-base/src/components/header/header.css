@@ -17,6 +17,10 @@
   justify-content: space-between;
   width: 130px;
 }
+.navbar-toggler {
+  position: relative;
+  z-index: 1000;
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler{
     display: flex;
