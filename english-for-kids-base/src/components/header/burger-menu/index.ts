@@ -1,6 +1,6 @@
 import { cards } from '../../../../public/cards';
 import { createHTMLElement } from '../../../helpers/create-html-element';
-import './burger-menu.css';
+import './styles.css';
 import { BURGER_MENU_HIDDEN } from './classes';
 
 const createBurgerMenuList = (): Element => {
