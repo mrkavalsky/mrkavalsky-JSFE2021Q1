@@ -4,7 +4,7 @@ import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
 import { ICardInfo } from '../../types/interfaces';
 import { Mode } from '../../types/modes';
-import { compareWords } from '../game/compare-words';
+import { compareWords } from '../../helpers/compare-words';
 import './word-card.css';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {

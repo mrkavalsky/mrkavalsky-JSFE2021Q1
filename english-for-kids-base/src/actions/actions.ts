@@ -1,5 +1,5 @@
-import { findCard } from '../components/game/find-card';
-import { getGameCards } from '../components/game/get-cards';
+import { findCard } from '../helpers/find-card';
+import { getGameCards } from '../helpers/get-cards';
 import { store } from '../reducers/core/store';
 import { ActionTypes } from './action-types';
 
