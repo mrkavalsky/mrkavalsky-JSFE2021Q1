@@ -6,7 +6,7 @@ import { addRouting } from './router/add-routing';
 import {
   changeBodyClass,
   changeCheckboxLabel,
-} from './components/header/header';
+} from './components/header';
 import { ActionTypes } from './actions/action-types';
 import { changeStartGameButton } from './components/category-page';
 import { playAudio } from './helpers/play-audio';
