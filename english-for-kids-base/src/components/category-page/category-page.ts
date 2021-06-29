@@ -16,5 +16,15 @@ export const renderCategoryPage = (hash: string): void => {
     main.append(renderWordCard(card));
   });
 
+  main.append(
+    createHTMLElement(`
+    <button class="btn btn-primary category-page__button"
+            type="button"
+            id="start-game">
+      start game
+    </button>
+  `),
+  );
+
   document.body.append(main);
 };
