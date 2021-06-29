@@ -1,9 +1,9 @@
 import { store } from '../reducers/core/store';
-import { CHANGE_MODE } from './action-types';
+import { ActionTypes } from './action-types';
 
 export function changeMode(newMode: string): void {
   store.dispatch({
-    type: CHANGE_MODE,
+    type: ActionTypes.CHANGE_MODE,
     payload: newMode,
   });
 }
