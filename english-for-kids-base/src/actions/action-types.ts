@@ -1,3 +1,6 @@
 export enum ActionTypes {
   CHANGE_MODE = 'CHANGE_MODE',
+  START_GAME = 'START_GAME',
+  END_GAME = 'END_GAME',
+  RESET_GAME = 'RESET_GAME',
 }
