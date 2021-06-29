@@ -7,6 +7,8 @@ import {
   changeBodyClass,
   changeCheckboxLabel,
 } from './components/header/header';
+import { ActionTypes } from './actions/action-types';
+import { changeStartGameButton } from './components/category-page/category-page';
 
 const initApp = (): void => {
   renderApp();
@@ -16,11 +18,13 @@ const initApp = (): void => {
   let prevState = store.getState();
 
   store.subscribe(() => {
-    const { mode } = store.getState();
+    const { mode, game } = store.getState();
 
     if (mode.value !== prevState.mode.value) {
       changeBodyClass(mode.value);
       changeCheckboxLabel(mode.value);
+    } else if (game.value === ActionTypes.START_GAME) {
+      changeStartGameButton();
     }
 
     prevState = store.getState();
