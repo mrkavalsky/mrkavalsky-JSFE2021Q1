@@ -3,10 +3,7 @@ import { renderApp } from './components/renderApp';
 import './styles.css';
 import { store } from './reducers/core/store';
 import { addRouting } from './router/add-routing';
-import {
-  changeBodyClass,
-  changeCheckboxLabel,
-} from './components/header';
+import { changeBodyClass, changeCheckboxLabel } from './components/header';
 import { ActionTypes } from './actions/action-types';
 import { changeStartGameButton } from './components/category-page';
 import { playAudio } from './helpers/play-audio';
