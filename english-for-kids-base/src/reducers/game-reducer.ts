@@ -1,10 +1,4 @@
-import {
-  START_GAME,
-  END_GAME,
-  RESET_GAME,
-  HIT_WORD,
-  MISS_WORD,
-} from '../actions/action-types';
+import { GAME_STATE, HIT_WORD, MISS_WORD } from '../actions/action-types';
 import initialState from './initial-state';
 
 export const gameReducer = (
@@ -12,17 +6,13 @@ export const gameReducer = (
   { type, payload }: any,
 ): any => {
   switch (type) {
-    case START_GAME:
+    case GAME_STATE:
       return {
         ...state,
-        value: START_GAME,
+        isGameStarted: payload.isGameStarted,
         currentCards: payload.cards,
         currentCard: payload.card,
       };
-    case END_GAME:
-      return { ...state, value: END_GAME };
-    case RESET_GAME:
-      return { ...state, value: RESET_GAME };
     case HIT_WORD:
       return { ...state, currentCard: { ...state.currentCard, hit: 1 } };
     case MISS_WORD:

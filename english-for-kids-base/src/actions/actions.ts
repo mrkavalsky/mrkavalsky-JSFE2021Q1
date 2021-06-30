@@ -1,12 +1,5 @@
 import { store } from '../reducers/core/store';
-import {
-  CHANGE_MODE,
-  END_GAME,
-  HIT_WORD,
-  MISS_WORD,
-  RESET_GAME,
-  START_GAME,
-} from './action-types';
+import { CHANGE_MODE, GAME_STATE, HIT_WORD, MISS_WORD } from './action-types';
 
 export function changeMode(newMode: string): void {
   store.dispatch({
@@ -17,23 +10,12 @@ export function changeMode(newMode: string): void {
 
 export function startGame(cards: any, card: any): void {
   store.dispatch({
-    type: START_GAME,
+    type: GAME_STATE,
     payload: {
+      isGameStarted: true,
       cards,
       card,
-    }
-  });
-}
-
-export function endGame(): void {
-  store.dispatch({
-    type: END_GAME,
-  });
-}
-
-export function resetGame(): void {
-  store.dispatch({
-    type: RESET_GAME,
+    },
   });
 }
 

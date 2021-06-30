@@ -1,4 +1,3 @@
-import { START_GAME } from '../../actions/action-types';
 import { startGame } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { findCard } from '../../helpers/find-card';
@@ -14,15 +13,15 @@ const addHandlers = (main: Element): void => {
 
   button?.addEventListener('click', () => {
     const {
-      game: { value, currentCard },
+      game: { isGameStarted, currentCard },
     } = store.getState();
 
-    if (value !== START_GAME) {
+    if (!isGameStarted) {
       const cards = getGameCards();
       const card = findCard(cards);
 
       startGame(cards, card);
-    } else if (value === START_GAME) {
+    } else if (isGameStarted) {
       playAudio(currentCard.audioSrc);
     }
   });

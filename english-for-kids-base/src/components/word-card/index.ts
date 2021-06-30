@@ -5,7 +5,6 @@ import { ICardInfo } from '../../types/interfaces';
 import { Mode } from '../../types/modes';
 import { compareWords } from '../../helpers/compare-words';
 import './styles.css';
-import { START_GAME } from '../../actions/action-types';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const button = card.querySelector('button');
@@ -19,7 +18,7 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
 
     if (value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
-    } else if (game.value === START_GAME) {
+    } else if (game.isGameStarted) {
       compareWords(game.currentCard.word, word);
     }
   });
