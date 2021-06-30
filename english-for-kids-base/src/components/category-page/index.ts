@@ -50,7 +50,6 @@ export const renderCategoryPage = (hash: string): void => {
   `);
   const cardList = getCurrentCards(hash);
 
-  
   addHandlers(main);
 
   if (cardList) {
