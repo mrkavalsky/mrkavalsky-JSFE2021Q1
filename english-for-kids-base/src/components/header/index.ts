@@ -11,7 +11,7 @@ export const changeBodyClass = (mode: string): void => {
     mode === Mode.TRAIN ? Theme.THEME_TRAIN : Theme.THEME_PLAY;
 };
 
-export const changeCheckboxLabel = (mode: string): void => {
+const changeCheckboxLabel = (mode: string): void => {
   const label = document.getElementById('checkbox-label');
 
   if (label) {
@@ -27,6 +27,7 @@ const addHandlers = (): void => {
     const newMode =
       store.getState().mode.value === Mode.TRAIN ? Mode.PLAY : Mode.TRAIN;
 
+    changeCheckboxLabel(newMode);
     changeMode(newMode);
   });
   menuButton?.addEventListener('click', () => toggleBurgerMenu());

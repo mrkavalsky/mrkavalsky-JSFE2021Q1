@@ -3,7 +3,7 @@ import { renderApp } from './components/renderApp';
 import './styles.css';
 import { store } from './reducers/core/store';
 import { addRouting } from './router/add-routing';
-import { changeBodyClass, changeCheckboxLabel } from './components/header';
+import { changeBodyClass } from './components/header';
 import { changeStartGameButton } from './components/category-page';
 import { playAudio } from './helpers/play-audio';
 import { START_GAME } from './actions/action-types';
@@ -20,7 +20,6 @@ const initApp = (): void => {
 
     if (mode.value !== prevState.mode.value) {
       changeBodyClass(mode.value);
-      changeCheckboxLabel(mode.value);
     } else if (
       game.value === START_GAME &&
       game.value !== prevState.game.value
