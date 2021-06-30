@@ -27,3 +27,9 @@ export interface IModeAction {
   type: string;
   payload: string;
 }
+
+export interface IGameState {
+  isGameStarted: boolean;
+  currentCards?: ICardInfo[];
+  currentCard?: ICardInfo;
+}
