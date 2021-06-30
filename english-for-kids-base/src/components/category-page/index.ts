@@ -1,6 +1,8 @@
 import { START_GAME } from '../../actions/action-types';
 import { startGame } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
+import { findCard } from '../../helpers/find-card';
+import { getGameCards } from '../../helpers/get-cards';
 import { getCurrentCards } from '../../helpers/get-current-cards';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
@@ -16,7 +18,10 @@ const addHandlers = (main: Element): void => {
     } = store.getState();
 
     if (value !== START_GAME) {
-      startGame();
+      const cards = getGameCards();
+      const card = findCard(cards);
+
+      startGame(cards, card);
     } else if (value === START_GAME) {
       playAudio(currentCard.audioSrc);
     }

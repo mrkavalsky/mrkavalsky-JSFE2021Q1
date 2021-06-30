@@ -1,5 +1,3 @@
-import { findCard } from '../helpers/find-card';
-import { getGameCards } from '../helpers/get-cards';
 import { store } from '../reducers/core/store';
 import {
   CHANGE_MODE,
@@ -17,12 +15,11 @@ export function changeMode(newMode: string): void {
   });
 }
 
-export function startGame(): void {
-  const cards = getGameCards();
+export function startGame(cards: any, card: any): void {
   store.dispatch({
     type: START_GAME,
     cards,
-    card: findCard(cards),
+    card,
   });
 }
 
