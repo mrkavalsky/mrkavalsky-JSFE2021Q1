@@ -1,4 +1,10 @@
-import { ActionTypes } from '../actions/action-types';
+import {
+  START_GAME,
+  END_GAME,
+  RESET_GAME,
+  HIT_WORD,
+  MISS_WORD,
+} from '../actions/action-types';
 import initialState from './initial-state';
 
 export const gameReducer = (
@@ -6,20 +12,20 @@ export const gameReducer = (
   { type, cards, card }: any,
 ): any => {
   switch (type) {
-    case ActionTypes.START_GAME:
+    case START_GAME:
       return {
         ...state,
-        value: ActionTypes.START_GAME,
+        value: START_GAME,
         currentCards: cards,
         currentCard: card,
       };
-    case ActionTypes.END_GAME:
-      return { ...state, value: ActionTypes.END_GAME };
-    case ActionTypes.RESET_GAME:
-      return { ...state, value: ActionTypes.RESET_GAME };
-    case ActionTypes.HIT_WORD:
+    case END_GAME:
+      return { ...state, value: END_GAME };
+    case RESET_GAME:
+      return { ...state, value: RESET_GAME };
+    case HIT_WORD:
       return { ...state, currentCard: { ...state.currentCard, hit: 1 } };
-    case ActionTypes.MISS_WORD:
+    case MISS_WORD:
       return {
         ...state,
         currentCard: { ...state.currentCard, miss: state.currentCard.miss + 1 },

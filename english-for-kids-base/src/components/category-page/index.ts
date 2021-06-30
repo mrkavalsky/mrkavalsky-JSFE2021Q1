@@ -1,4 +1,4 @@
-import { ActionTypes } from '../../actions/action-types';
+import { START_GAME } from '../../actions/action-types';
 import { startGame } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { getCurrentCards } from '../../helpers/get-current-cards';
@@ -15,9 +15,9 @@ const addHandlers = (main: Element): void => {
       game: { value, currentCard },
     } = store.getState();
 
-    if (value !== ActionTypes.START_GAME) {
+    if (value !== START_GAME) {
       startGame();
-    } else if (value === ActionTypes.START_GAME) {
+    } else if (value === START_GAME) {
       playAudio(currentCard.audioSrc);
     }
   });

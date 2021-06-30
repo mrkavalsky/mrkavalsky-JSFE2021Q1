@@ -1,4 +1,4 @@
-import { ActionTypes } from '../actions/action-types';
+import { RESET_GAME } from '../actions/action-types';
 import { Mode } from '../types/modes';
 
 const initialState = {
@@ -6,7 +6,7 @@ const initialState = {
     value: Mode.TRAIN,
   },
   game: {
-    value: ActionTypes.RESET_GAME,
+    value: RESET_GAME,
   },
 };
 

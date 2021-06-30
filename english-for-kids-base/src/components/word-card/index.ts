@@ -1,4 +1,3 @@
-import { ActionTypes } from '../../actions/action-types';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
@@ -6,6 +5,7 @@ import { ICardInfo } from '../../types/interfaces';
 import { Mode } from '../../types/modes';
 import { compareWords } from '../../helpers/compare-words';
 import './styles.css';
+import { START_GAME } from '../../actions/action-types';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const button = card.querySelector('button');
@@ -19,7 +19,7 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
 
     if (value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
-    } else if (game.value === ActionTypes.START_GAME) {
+    } else if (game.value === START_GAME) {
       compareWords(game.currentCard.word, word);
     }
   });
