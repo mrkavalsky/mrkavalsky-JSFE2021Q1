@@ -21,7 +21,7 @@ const createBurgerMenuList = (): Element => {
 
 export const renderBurgerMenu = (): void => {
   const burgerMenu = createHTMLElement(`
-    <nav class="burger-menu burger-menu_hidden position-fixed top-0 bg-dark d-flex justify-content-center pt-5"
+    <nav class="burger-menu burger-menu_hidden bg-dark"
          id="burger-menu">
     </nav>
   `);
