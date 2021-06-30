@@ -19,7 +19,6 @@ export interface IAction {
   [keys: string]: string;
 }
 
-export interface IState {
+export interface IModeState {
   value: string;
-  isHidden: boolean;
 }
