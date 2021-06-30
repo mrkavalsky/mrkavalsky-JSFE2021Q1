@@ -9,15 +9,15 @@ import initialState from './initial-state';
 
 export const gameReducer = (
   state: any = initialState.game,
-  { type, cards, card }: any,
+  { type, payload }: any,
 ): any => {
   switch (type) {
     case START_GAME:
       return {
         ...state,
         value: START_GAME,
-        currentCards: cards,
-        currentCard: card,
+        currentCards: payload.cards,
+        currentCard: payload.card,
       };
     case END_GAME:
       return { ...state, value: END_GAME };
