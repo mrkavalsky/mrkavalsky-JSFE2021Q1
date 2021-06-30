@@ -33,3 +33,12 @@ export interface IGameState {
   currentCards?: ICardInfo[];
   currentCard?: ICardInfo;
 }
+
+export interface IGameAction {
+  type: string;
+  payload: {
+    isGameStarted: boolean;
+    cards?: ICardInfo[];
+    card?: ICardInfo;
+  };
+}
