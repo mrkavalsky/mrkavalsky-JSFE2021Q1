@@ -47,9 +47,13 @@ export const renderCategoryPage = (hash: string): void => {
 
   if (!cardList) return;
 
+  const fragment = document.createDocumentFragment();
+
   cardList.forEach((card) => {
-    main.append(renderWordCard(card));
+    fragment.append(renderWordCard(card));
   });
+
+  main.prepend(fragment);
 
   addHandlers(main);
 
