@@ -1,9 +1,10 @@
 import { GAME_STATE, HIT_WORD, MISS_WORD } from '../actions/action-types';
+import { IGameAction, IGameState } from '../types/interfaces';
 import initialState from './initial-state';
 
 export const gameReducer = (
-  state: any = initialState.game,
-  { type, payload }: any,
+  state: IGameState = initialState.game,
+  { type, payload }: IGameAction,
 ): any => {
   switch (type) {
     case GAME_STATE:
@@ -18,7 +19,10 @@ export const gameReducer = (
     case MISS_WORD:
       return {
         ...state,
-        currentCard: { ...state.currentCard, miss: state.currentCard.miss + 1 },
+        currentCard: {
+          ...state.currentCard,
+          miss: state.currentCard ? state.currentCard.miss + 1 : 1,
+        },
       };
     default:
       return state;
