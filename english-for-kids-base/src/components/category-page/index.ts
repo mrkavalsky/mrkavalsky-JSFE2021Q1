@@ -50,6 +50,9 @@ export const renderCategoryPage = (hash: string): void => {
   `);
   const cardList = getCurrentCards(hash);
 
+  
+  addHandlers(main);
+
   if (cardList) {
     const fragment = document.createDocumentFragment();
 
@@ -59,8 +62,6 @@ export const renderCategoryPage = (hash: string): void => {
 
     main.prepend(fragment);
   }
-
-  addHandlers(main);
 
   document.body.append(main);
 };
