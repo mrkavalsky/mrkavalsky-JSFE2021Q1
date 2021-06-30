@@ -26,11 +26,11 @@ const addHandlers = (main: Element): void => {
 export const changeStartGameButton = (): void => {
   const button = document.getElementById('start-game');
 
-  if (!button) return;
-
-  button.textContent = 'repeat';
-  button.classList.remove('btn-primary');
-  button.classList.add('btn-secondary');
+  if (button) {
+    button.textContent = 'repeat';
+    button.classList.remove('btn-primary');
+    button.classList.add('btn-secondary');
+  }
 };
 
 export const renderCategoryPage = (hash: string): void => {
@@ -45,15 +45,15 @@ export const renderCategoryPage = (hash: string): void => {
   `);
   const cardList = getCurrentCards(hash);
 
-  if (!cardList) return;
+  if (cardList) {
+    const fragment = document.createDocumentFragment();
 
-  const fragment = document.createDocumentFragment();
+    cardList.forEach((card) => {
+      fragment.append(renderWordCard(card));
+    });
 
-  cardList.forEach((card) => {
-    fragment.append(renderWordCard(card));
-  });
-
-  main.prepend(fragment);
+    main.prepend(fragment);
+  }
 
   addHandlers(main);
 
