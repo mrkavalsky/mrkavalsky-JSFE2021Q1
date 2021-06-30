@@ -7,8 +7,10 @@ import { store } from '../../reducers/core/store';
 import { renderWordCard } from '../word-card';
 import './styles.css';
 
-const addHandlers = (button: Element): void => {
-  button.addEventListener('click', () => {
+const addHandlers = (main: Element): void => {
+  const button = main.querySelector('button');
+
+  button?.addEventListener('click', () => {
     const {
       game: { value, currentCard },
     } = store.getState();
@@ -33,25 +35,23 @@ export const changeStartGameButton = (): void => {
 
 export const renderCategoryPage = (hash: string): void => {
   const main = createHTMLElement(`
-    <main class="category-page"></main>
+    <main class="category-page">
+      <button class="btn btn-primary category-page__button"
+              type="button"
+              id="start-game">
+        start game
+      </button>
+    </main>
   `);
   const cardList = getCurrentCards(hash);
-  const button = createHTMLElement(`
-    <button class="btn btn-primary category-page__button"
-            type="button"
-            id="start-game">
-      start game
-    </button>
-  `);
 
   if (!cardList) return;
 
   cardList.forEach((card) => {
     main.append(renderWordCard(card));
   });
-  main.append(button);
 
-  addHandlers(button);
+  addHandlers(main);
 
   document.body.append(main);
 };
