@@ -22,3 +22,8 @@ export interface IAction {
 export interface IModeState {
   value: string;
 }
+
+export interface IModeAction {
+  type: string;
+  payload: string;
+}
