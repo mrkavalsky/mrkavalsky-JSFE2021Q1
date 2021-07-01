@@ -1,4 +1,4 @@
-import { startGame } from '../../actions/actions';
+import { changeGameMode } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { findCard } from '../../helpers/find-card';
 import { getGameCards } from '../../helpers/get-cards';
@@ -17,7 +17,7 @@ const addHandlers = (main: Element): void => {
     } = store.getState();
 
     if (!isGameStarted) {
-      startGame();
+      changeGameMode(!isGameStarted);
     } else if (isGameStarted) {
     }
   });
