@@ -45,3 +45,11 @@ export interface IStore {
 export interface IConfig {
   [keys: string]: () => void;
 }
+
+export interface IGameWord {
+  word: string;
+  audioSrc: string;
+  train: number;
+  isHit: boolean;
+  miss: number;
+}
