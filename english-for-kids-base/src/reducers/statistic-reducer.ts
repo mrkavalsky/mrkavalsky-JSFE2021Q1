@@ -10,8 +10,12 @@ export const statisticReducer = (
     case CHANGE_WORDS_LIST:
       return {
         ...state,
-        currentCards: payload.currentCards ? payload.currentCards : [],
-        currentCard: payload.currentCard,
+        currentCards: payload.currentCards
+          ? payload.currentCards
+          : initialState.statistic.currentCards,
+        currentCard: payload.currentCard
+          ? payload.currentCard
+          : initialState.statistic.currentCard,
       };
     default:
       return state;

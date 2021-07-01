@@ -59,7 +59,7 @@ export interface IStatisticAction {
   type: string;
   payload: {
     currentCards?: IGameWord[];
-    currentCard: IGameWord;
+    currentCard?: IGameWord;
   };
 }
 
