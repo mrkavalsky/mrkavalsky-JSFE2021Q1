@@ -3,7 +3,7 @@ import { ICards } from '../src/types/interfaces';
 export const cards: ICards[] = [
   {
     category: 'Action (set A)',
-    hash: 'action-set-a',
+    hash: 'category_action-set-a',
     cardsList: [
       {
         word: 'cry',
@@ -81,7 +81,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Action (set B)',
-    hash: 'action-set-b',
+    hash: 'category_action-set-b',
     cardsList: [
       {
         word: 'open',
@@ -159,7 +159,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Action (set С)',
-    hash: 'action-set-c',
+    hash: 'category_action-set-c',
     cardsList: [
       {
         word: 'argue',
@@ -237,7 +237,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Adjective',
-    hash: 'adjective',
+    hash: 'category_adjective',
     cardsList: [
       {
         word: 'big',
@@ -315,7 +315,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Animal (set A)',
-    hash: 'animal-set-a',
+    hash: 'category_animal-set-a',
     cardsList: [
       {
         word: 'cat',
@@ -393,7 +393,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Animal (set B)',
-    hash: 'animal-set-b',
+    hash: 'category_animal-set-b',
     cardsList: [
       {
         word: 'bird',
@@ -471,7 +471,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Clothes',
-    hash: 'clothes',
+    hash: 'category_clothes',
     cardsList: [
       {
         word: 'skirt',
@@ -549,7 +549,7 @@ export const cards: ICards[] = [
   },
   {
     category: 'Emotions',
-    hash: 'emotions',
+    hash: 'category_emotions',
     cardsList: [
       {
         word: 'sad',
