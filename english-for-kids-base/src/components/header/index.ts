@@ -3,7 +3,7 @@ import './styles.css';
 import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { Mode } from '../../types/modes';
-import { changeMode } from '../../actions/actions';
+import { changeGameMode, changeMode } from '../../actions/actions';
 import { NAV_BTN_CLOSE, Theme } from './classes';
 import { changeHash } from '../../router/change-hash';
 import { MAIN_PAGE } from '../main-page/config';
@@ -32,6 +32,7 @@ const addHandlers = (): void => {
 
     changeCheckboxLabel(newMode);
     changeMode(newMode);
+    changeGameMode(false);
   });
   menuButton?.addEventListener('click', () => {
     toggleBurgerMenu();
