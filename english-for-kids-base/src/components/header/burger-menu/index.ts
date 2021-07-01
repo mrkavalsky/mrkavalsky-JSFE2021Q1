@@ -4,6 +4,7 @@ import './styles.css';
 import { BURGER_MENU_HIDDEN } from './classes';
 import { changeHash } from '../../../router/change-hash';
 import { changeGameMode } from '../../../actions/actions';
+import { NAV_BTN_CLOSE } from '../classes';
 
 const addListItemHandler = (listItem: Element, hash: string) => {
   listItem.addEventListener('click', () => {
@@ -14,10 +15,12 @@ const addListItemHandler = (listItem: Element, hash: string) => {
 
 const addMenuHandler = (menu: Element) => {
   const background = document.getElementById('burger-menu-wrapper__background');
+  const menuButton = document.getElementById('menu-button');
 
-  background?.addEventListener('click', () =>
-    menu.classList.add(BURGER_MENU_HIDDEN),
-  );
+  background?.addEventListener('click', () => {
+    menu.classList.add(BURGER_MENU_HIDDEN);
+    menuButton?.classList.remove(NAV_BTN_CLOSE);
+  });
 };
 
 const createBurgerMenuList = (): Element => {
