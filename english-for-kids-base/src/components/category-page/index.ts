@@ -1,4 +1,4 @@
-import { changeGameMode } from '../../actions/actions';
+import { changeGameMode, changeWordsList } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { findCard } from '../../helpers/find-card';
 import { getGameWords } from '../../helpers/get-game-words';
@@ -8,6 +8,7 @@ import { store } from '../../reducers/core/store';
 import { renderWordCard } from '../word-card';
 import './styles.css';
 import { getHash } from '../../router/get-hash';
+import { createPageStatistic } from '../../helpers/create-page-statistic';
 
 const addHandlers = (main: Element): void => {
   const button = main.querySelector('button');
@@ -45,6 +46,7 @@ export const renderCategoryPage = (): void => {
     </main>
   `);
   const cardList = getCurrentCards(getHash());
+  const pageStatistic = createPageStatistic();
 
   addHandlers(main);
 
@@ -59,4 +61,8 @@ export const renderCategoryPage = (): void => {
   }
 
   document.body.append(main);
+
+  if (pageStatistic) {
+    changeWordsList(pageStatistic.currentCards, pageStatistic.currentCard);
+  }
 };
