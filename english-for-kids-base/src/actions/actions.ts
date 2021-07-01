@@ -8,10 +8,10 @@ export function changeMode(newMode: string): void {
   });
 }
 
-export function changeGameMode(payload: boolean): void {
+export function changeGameMode(isGameStarted: boolean): void {
   store.dispatch({
     type: GAME_STATE,
-    payload,
+    payload: isGameStarted,
   });
 }
 
