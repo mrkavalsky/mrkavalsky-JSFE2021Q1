@@ -1,11 +1,11 @@
 import { GAME_STATE } from '../actions/action-types';
-import { IGameAction, IGameState } from '../types/interfaces';
+import { IGameModeAction, IGameModeState } from '../types/interfaces';
 import initialState from './initial-state';
 
 export const gameModeReducer = (
-  state: IGameState = initialState.gameMode,
-  { type, payload }: IGameAction,
-): IGameState => {
+  state: IGameModeState = initialState.gameMode,
+  { type, payload }: IGameModeAction,
+): IGameModeState => {
   switch (type) {
     case GAME_STATE:
       return {

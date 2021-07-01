@@ -28,18 +28,18 @@ export interface IModeAction {
   payload: string;
 }
 
-export interface IGameState {
+export interface IGameModeState {
   isGameStarted: boolean;
 }
 
-export interface IGameAction {
+export interface IGameModeAction {
   type: string;
   payload: boolean;
 }
 
 export interface IStore {
   mode: IModeState;
-  gameMode: IGameState;
+  gameMode: IGameModeState;
 }
 
 export interface IConfig {
