@@ -1,13 +1,9 @@
-import { renderCategoryPage } from '../components/category-page';
-import { MAIN_PAGE } from '../components/main-page/config';
-import { renderMainPage } from '../components/main-page';
+import { config } from './config';
 
 export const changeCurrentPage = (hash: string): void => {
   document.body.lastElementChild?.remove();
 
-  if (hash === MAIN_PAGE) {
-    renderMainPage();
-  } else {
-    renderCategoryPage(hash);
-  }
+  const [page] = hash.split('_');
+
+  config[page]();
 };

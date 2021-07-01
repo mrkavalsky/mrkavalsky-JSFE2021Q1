@@ -7,6 +7,7 @@ import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
 import { renderWordCard } from '../word-card';
 import './styles.css';
+import { getHash } from '../../router/get-hash';
 
 const addHandlers = (main: Element): void => {
   const button = main.querySelector('button');
@@ -33,7 +34,7 @@ export const changeStartGameButton = (isGameStarted: boolean): void => {
   }
 };
 
-export const renderCategoryPage = (hash: string): void => {
+export const renderCategoryPage = (): void => {
   const main = createHTMLElement(`
     <main class="category-page">
       <button class="btn btn-primary category-page__button"
@@ -43,7 +44,7 @@ export const renderCategoryPage = (hash: string): void => {
       </button>
     </main>
   `);
-  const cardList = getCurrentCards(hash);
+  const cardList = getCurrentCards(getHash());
 
   addHandlers(main);
 
