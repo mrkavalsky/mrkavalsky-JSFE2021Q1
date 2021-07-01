@@ -41,3 +41,7 @@ export interface IStore {
   mode: IModeState;
   gameMode: IGameState;
 }
+
+export interface IConfig {
+  [keys: string]: () => void;
+}
