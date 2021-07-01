@@ -53,3 +53,16 @@ export interface IGameWord {
   isHit: boolean;
   miss: number;
 }
+
+export interface IStatisticAction {
+  type: string;
+  payload: {
+    currentCards?: IGameWord[];
+    currentCard: IGameWord;
+  };
+}
+
+export interface IStatisticState {
+  currentCards: IGameWord[];
+  currentCard: IGameWord;
+}
