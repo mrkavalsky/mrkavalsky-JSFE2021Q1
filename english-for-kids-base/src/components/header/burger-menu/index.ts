@@ -4,7 +4,7 @@ import './styles.css';
 import { BURGER_MENU_HIDDEN } from './classes';
 import { changeHash } from '../../../router/change-hash';
 
-const addHandler = (listItem: Element, hash: string) => {
+const addListItemHandler = (listItem: Element, hash: string) => {
   listItem.addEventListener('click', () => changeHash(hash));
 };
 
@@ -18,7 +18,7 @@ const createBurgerMenuList = (): Element => {
       <li class="h3 py-1" role="button">${category}</li>
     `);
 
-    addHandler(listItem, hash);
+    addListItemHandler(listItem, hash);
 
     burgerMenuList.append(listItem);
   });
