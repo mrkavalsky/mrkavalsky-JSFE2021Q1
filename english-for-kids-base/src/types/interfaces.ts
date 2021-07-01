@@ -39,5 +39,5 @@ export interface IGameAction {
 
 export interface IStore {
   mode: IModeState;
-  game: IGameState;
+  gameMode: IGameState;
 }

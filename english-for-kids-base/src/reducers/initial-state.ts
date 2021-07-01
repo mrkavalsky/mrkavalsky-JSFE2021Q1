@@ -5,7 +5,7 @@ const initialState: IStore = {
   mode: {
     value: Mode.TRAIN,
   },
-  game: {
+  gameMode: {
     isGameStarted: false,
   },
 };

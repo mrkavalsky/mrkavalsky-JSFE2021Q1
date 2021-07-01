@@ -13,7 +13,7 @@ const addHandlers = (main: Element): void => {
 
   button?.addEventListener('click', () => {
     const {
-      game: { isGameStarted },
+      gameMode: { isGameStarted },
     } = store.getState();
 
     if (!isGameStarted) {

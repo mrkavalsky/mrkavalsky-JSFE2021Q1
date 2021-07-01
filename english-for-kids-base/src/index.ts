@@ -18,14 +18,14 @@ const initApp = (): void => {
     const state = store.getState();
     const {
       mode: { value },
-      game: { isGameStarted },
+      gameMode: { isGameStarted },
     } = state;
 
     if (value !== prevState.mode.value) {
       changeBodyClass(value);
     } else if (
       isGameStarted &&
-      isGameStarted !== prevState.game.isGameStarted
+      isGameStarted !== prevState.gameMode.isGameStarted
     ) {
       changeStartGameButton();
     }

@@ -12,7 +12,7 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
   card.addEventListener('click', ({ target }) => {
     const {
       mode: { value },
-      game: { isGameStarted },
+      gameMode: { isGameStarted },
     } = store.getState();
 
     if (value === Mode.TRAIN && target !== button) {
