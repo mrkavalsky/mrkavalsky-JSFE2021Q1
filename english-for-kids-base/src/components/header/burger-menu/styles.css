@@ -1,18 +1,31 @@
 .burger-menu {
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   width: 100%;
   max-width: 720px;
   height: 100%;
+  padding-top: 6rem;
+  z-index: 100;
+}
+.burger-menu-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   transition: all .5s;
-  z-index: 10;
+  z-index: 100;
   left: 0;
   top: 0;
-  padding-top: 6rem
 }
-
-.burger-menu_hidden {
-  left: -720px;
+.burger-menu-wrapper_hidden {
+  left: -100%;
+}
+.burger-menu-wrapper__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  left: 0;
+  top: 0;
 }

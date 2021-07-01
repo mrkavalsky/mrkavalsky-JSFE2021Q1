@@ -8,6 +8,14 @@ const addListItemHandler = (listItem: Element, hash: string) => {
   listItem.addEventListener('click', () => changeHash(hash));
 };
 
+const addMenuHandler = (menu: Element) => {
+  const background = document.getElementById('burger-menu-wrapper__background');
+
+  background?.addEventListener('click', () =>
+    menu.classList.add(BURGER_MENU_HIDDEN),
+  );
+};
+
 const createBurgerMenuList = (): Element => {
   const burgerMenuList = createHTMLElement(`
     <ul class="list-unstyled"></ul>
@@ -28,14 +36,19 @@ const createBurgerMenuList = (): Element => {
 
 export const renderBurgerMenu = (): void => {
   const burgerMenu = createHTMLElement(`
-    <nav class="burger-menu burger-menu_hidden bg-dark"
-         id="burger-menu">
-    </nav>
+    <div class="burger-menu-wrapper burger-menu-wrapper_hidden"
+        id="burger-menu">
+      <nav class="burger-menu bg-dark"></nav>
+      <div class="burger-menu-wrapper__background"
+          id="burger-menu-wrapper__background"></div>
+    </div>
   `);
 
-  burgerMenu.append(createBurgerMenuList());
+  burgerMenu.firstElementChild?.append(createBurgerMenuList());
 
   document.body.append(burgerMenu);
+
+  addMenuHandler(burgerMenu);
 };
 
 export const toggleBurgerMenu = (): void => {
