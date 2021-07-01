@@ -1,5 +1,12 @@
 import { store } from '../reducers/core/store';
-import { CHANGE_MODE, GAME_STATE, HIT_WORD, MISS_WORD } from './action-types';
+import { IGameWord } from '../types/interfaces';
+import {
+  CHANGE_MODE,
+  CHANGE_WORDS_LIST,
+  GAME_STATE,
+  HIT_WORD,
+  MISS_WORD,
+} from './action-types';
 
 export function changeMode(newMode: string): void {
   store.dispatch({
@@ -12,6 +19,19 @@ export function changeGameMode(isGameStarted: boolean): void {
   store.dispatch({
     type: GAME_STATE,
     payload: isGameStarted,
+  });
+}
+
+export function changeWordsList(
+  currentCards: IGameWord[],
+  currentCard: IGameWord,
+): void {
+  store.dispatch({
+    type: CHANGE_WORDS_LIST,
+    payload: {
+      currentCards,
+      currentCard,
+    },
   });
 }
 
