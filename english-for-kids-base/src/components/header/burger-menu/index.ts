@@ -3,9 +3,13 @@ import { createHTMLElement } from '../../../helpers/create-html-element';
 import './styles.css';
 import { BURGER_MENU_HIDDEN } from './classes';
 import { changeHash } from '../../../router/change-hash';
+import { changeGameMode } from '../../../actions/actions';
 
 const addListItemHandler = (listItem: Element, hash: string) => {
-  listItem.addEventListener('click', () => changeHash(hash));
+  listItem.addEventListener('click', () => {
+    changeHash(hash);
+    changeGameMode(false);
+  });
 };
 
 const addMenuHandler = (menu: Element) => {
