@@ -23,10 +23,8 @@ const initApp = (): void => {
 
     if (value !== prevState.mode.value) {
       changeBodyClass(value);
-    } else if (
-      isGameStarted &&
-      isGameStarted !== prevState.gameMode.isGameStarted
-    ) {
+    }
+    if (isGameStarted && isGameStarted !== prevState.gameMode.isGameStarted) {
       changeStartGameButton(isGameStarted);
     }
     if (!isGameStarted && isGameStarted !== prevState.gameMode.isGameStarted) {

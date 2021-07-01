@@ -19,7 +19,8 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
 
     if (value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
-    } else if (isGameStarted) {
+    }
+    if (isGameStarted) {
       compareWords(currentCard.word, word);
     }
   });

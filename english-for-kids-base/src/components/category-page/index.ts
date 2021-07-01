@@ -24,7 +24,7 @@ const addHandlers = (main: Element): void => {
     if (!isGameStarted) {
       changeGameMode(!isGameStarted);
       playAudio(audioSrc);
-    } else if (isGameStarted) {
+    } else {
       playAudio(audioSrc);
     }
   });
