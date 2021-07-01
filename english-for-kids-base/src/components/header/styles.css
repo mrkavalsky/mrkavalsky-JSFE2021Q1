@@ -27,6 +27,10 @@
   top: 0;
   z-index: 1000;
 }
+.navbar-dark .navbar-toggler_close .navbar-toggler-icon {
+  background-image: url(../../assets/icons/close.svg);
+  background-size: 70%;
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler{
     display: flex;
