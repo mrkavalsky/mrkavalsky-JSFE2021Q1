@@ -2,7 +2,7 @@ import { getHash } from '../router/get-hash';
 import { ICardInfo } from '../types/interfaces';
 import { getCurrentCards } from './get-current-cards';
 
-export const getGameCards = (): ICardInfo[] | void => {
+export const getGameWords = (): ICardInfo[] | void => {
   const cards = getCurrentCards(getHash());
 
   if (cards) {
