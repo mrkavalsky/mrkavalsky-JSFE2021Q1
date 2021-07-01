@@ -5,6 +5,8 @@ import { createHTMLElement } from '../../helpers/create-html-element';
 import { Mode } from '../../types/modes';
 import { changeMode } from '../../actions/actions';
 import { Theme } from './classes';
+import { changeHash } from '../../router/change-hash';
+import { MAIN_PAGE } from '../main-page/config';
 
 export const changeBodyClass = (mode: string): void => {
   document.body.className =
@@ -22,6 +24,7 @@ const changeCheckboxLabel = (mode: string): void => {
 const addHandlers = (): void => {
   const checkbox = document.getElementById('flexSwitchCheckDefault');
   const menuButton = document.getElementById('menu-button');
+  const logo = document.getElementById('logo');
 
   checkbox?.addEventListener('click', () => {
     const newMode =
@@ -31,6 +34,7 @@ const addHandlers = (): void => {
     changeMode(newMode);
   });
   menuButton?.addEventListener('click', () => toggleBurgerMenu());
+  logo?.addEventListener('click', () => changeHash(MAIN_PAGE));
 };
 
 export const renderHeader = (): void => {
@@ -38,7 +42,7 @@ export const renderHeader = (): void => {
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand navbar-brand_pointer">English For Kids</a>
+          <a id="logo" class="navbar-brand navbar-brand_pointer">English For Kids</a>
           <div class="form-check form-switch">
             <input class="form-check-input" role="button" type="checkbox" id="flexSwitchCheckDefault">
             <label class="form-check-label form-check-label_1-5rem ms-1" 
