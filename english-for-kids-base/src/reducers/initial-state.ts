@@ -8,6 +8,16 @@ const initialState: IStore = {
   gameMode: {
     isGameStarted: false,
   },
+  statistic: {
+    currentCards: [],
+    currentCard: {
+      word: '',
+      audioSrc: '',
+      train: 0,
+      isHit: false,
+      miss: 0,
+    },
+  },
 };
 
 export default initialState;

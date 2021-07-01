@@ -40,6 +40,7 @@ export interface IGameModeAction {
 export interface IStore {
   mode: IModeState;
   gameMode: IGameModeState;
+  statistic: IStatisticState;
 }
 
 export interface IConfig {
