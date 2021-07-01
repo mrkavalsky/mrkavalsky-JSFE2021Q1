@@ -39,7 +39,7 @@ const addHandlers = (): void => {
 
 export const renderHeader = (): void => {
   const header = createHTMLElement(`
-    <header>
+    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a id="logo" class="navbar-brand navbar-brand_pointer">English For Kids</a>
