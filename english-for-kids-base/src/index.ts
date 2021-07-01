@@ -27,7 +27,10 @@ const initApp = (): void => {
       isGameStarted &&
       isGameStarted !== prevState.gameMode.isGameStarted
     ) {
-      changeStartGameButton();
+      changeStartGameButton(isGameStarted);
+    }
+    if (!isGameStarted && isGameStarted !== prevState.gameMode.isGameStarted) {
+      changeStartGameButton(isGameStarted);
     }
 
     prevState = state;

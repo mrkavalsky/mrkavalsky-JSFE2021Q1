@@ -23,13 +23,13 @@ const addHandlers = (main: Element): void => {
   });
 };
 
-export const changeStartGameButton = (): void => {
+export const changeStartGameButton = (isGameStarted: boolean): void => {
   const button = document.getElementById('start-game');
 
   if (button) {
-    button.textContent = 'repeat';
-    button.classList.remove('btn-primary');
-    button.classList.add('btn-secondary');
+    button.textContent = isGameStarted ? 'repeat' : 'start game';
+    button.classList.toggle('btn-primary', !isGameStarted);
+    button.classList.toggle('btn-secondary', isGameStarted);
   }
 };
 
