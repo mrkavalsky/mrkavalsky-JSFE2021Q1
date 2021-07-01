@@ -16,11 +16,16 @@ const addHandlers = (main: Element): void => {
   button?.addEventListener('click', () => {
     const {
       gameMode: { isGameStarted },
+      statistic: {
+        currentCard: { audioSrc },
+      },
     } = store.getState();
 
     if (!isGameStarted) {
       changeGameMode(!isGameStarted);
+      playAudio(audioSrc);
     } else if (isGameStarted) {
+      playAudio(audioSrc);
     }
   });
 };
