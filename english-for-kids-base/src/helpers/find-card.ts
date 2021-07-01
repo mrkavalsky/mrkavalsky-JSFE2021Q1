@@ -1,5 +1,4 @@
-import { ICardInfo } from '../types/interfaces';
+import { IGameWord } from '../types/interfaces';
 
-export const findCard = (cards: ICardInfo[]): ICardInfo | undefined => {
-  return cards.find(({ hit }) => hit === 0);
-};
+export const findCard = (cards: IGameWord[]): IGameWord | undefined =>
+  cards.find(({ isHit }) => !isHit);
