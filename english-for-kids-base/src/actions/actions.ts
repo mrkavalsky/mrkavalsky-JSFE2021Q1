@@ -8,25 +8,21 @@ export function changeMode(newMode: string): void {
   });
 }
 
-export function startGame(cards: any, card: any): void {
+export function startGame(): void {
   store.dispatch({
     type: GAME_STATE,
-    payload: {
-      isGameStarted: true,
-      cards,
-      card,
-    },
+    payload: true,
   });
 }
 
-export function hitWord(): void {
-  store.dispatch({
-    type: HIT_WORD,
-  });
-}
+// export function hitWord(): void {
+//   store.dispatch({
+//     type: HIT_WORD,
+//   });
+// }
 
-export function missWord(): void {
-  store.dispatch({
-    type: MISS_WORD,
-  });
-}
+// export function missWord(): void {
+//   store.dispatch({
+//     type: MISS_WORD,
+//   });
+// }

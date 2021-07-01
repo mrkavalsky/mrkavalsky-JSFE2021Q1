@@ -3,7 +3,6 @@ import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
 import { ICardInfo } from '../../types/interfaces';
 import { Mode } from '../../types/modes';
-import { compareWords } from '../../helpers/compare-words';
 import './styles.css';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
@@ -13,13 +12,12 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
   card.addEventListener('click', ({ target }) => {
     const {
       mode: { value },
-      game,
+      game: { isGameStarted },
     } = store.getState();
 
     if (value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
-    } else if (game.isGameStarted) {
-      compareWords(game.currentCard.word, word);
+    } else if (isGameStarted) {
     }
   });
 

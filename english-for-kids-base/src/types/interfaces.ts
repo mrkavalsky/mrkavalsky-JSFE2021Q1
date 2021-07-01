@@ -30,15 +30,14 @@ export interface IModeAction {
 
 export interface IGameState {
   isGameStarted: boolean;
-  currentCards?: ICardInfo[];
-  currentCard?: ICardInfo;
 }
 
 export interface IGameAction {
   type: string;
-  payload: {
-    isGameStarted: boolean;
-    cards?: ICardInfo[];
-    card?: ICardInfo;
-  };
+  payload: boolean;
+}
+
+export interface IStore {
+  mode: IModeState;
+  game: IGameState;
 }

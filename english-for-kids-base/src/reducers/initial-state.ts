@@ -1,6 +1,7 @@
+import { IStore } from '../types/interfaces';
 import { Mode } from '../types/modes';
 
-const initialState = {
+const initialState: IStore = {
   mode: {
     value: Mode.TRAIN,
   },

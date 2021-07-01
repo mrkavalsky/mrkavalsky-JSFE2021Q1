@@ -1,3 +1,5 @@
-export const findCard = (cards: any): any => {
-  return cards.find(({ hit }: any) => hit === 0);
+import { ICardInfo } from '../types/interfaces';
+
+export const findCard = (cards: ICardInfo[]): ICardInfo | undefined => {
+  return cards.find(({ hit }) => hit === 0);
 };
