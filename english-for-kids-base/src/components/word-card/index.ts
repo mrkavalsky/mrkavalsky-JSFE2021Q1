@@ -1,3 +1,4 @@
+import { compareWords } from '../../helpers/compare-words';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
@@ -13,11 +14,13 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
     const {
       mode: { value },
       gameMode: { isGameStarted },
+      statistic: { currentCard },
     } = store.getState();
 
     if (value === Mode.TRAIN && target !== button) {
       playAudio(audioSrc);
     } else if (isGameStarted) {
+      compareWords(currentCard.word, word);
     }
   });
 

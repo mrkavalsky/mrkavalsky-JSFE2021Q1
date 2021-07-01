@@ -35,14 +35,16 @@ export function changeWordsList(
   });
 }
 
-// export function hitWord(): void {
-//   store.dispatch({
-//     type: HIT_WORD,
-//   });
-// }
+export function hitWord(): void {
+  store.dispatch({
+    type: HIT_WORD,
+    payload: {},
+  });
+}
 
-// export function missWord(): void {
-//   store.dispatch({
-//     type: MISS_WORD,
-//   });
-// }
+export function missWord(): void {
+  store.dispatch({
+    type: MISS_WORD,
+    payload: {},
+  });
+}
