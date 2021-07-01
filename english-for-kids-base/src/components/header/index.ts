@@ -29,10 +29,16 @@ const addHandlers = (): void => {
   checkbox?.addEventListener('click', () => {
     const newMode =
       store.getState().mode.value === Mode.TRAIN ? Mode.PLAY : Mode.TRAIN;
+    const {
+      gameMode: { isGameStarted },
+    } = store.getState();
 
     changeCheckboxLabel(newMode);
     changeMode(newMode);
-    changeGameMode(false);
+
+    if (isGameStarted) {
+      changeGameMode(!isGameStarted);
+    }
   });
   menuButton?.addEventListener('click', () => {
     toggleBurgerMenu();

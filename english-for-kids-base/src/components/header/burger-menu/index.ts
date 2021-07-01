@@ -5,11 +5,19 @@ import { BURGER_MENU_HIDDEN } from './classes';
 import { changeHash } from '../../../router/change-hash';
 import { changeGameMode } from '../../../actions/actions';
 import { NAV_BTN_CLOSE } from '../classes';
+import { store } from '../../../reducers/core/store';
 
 const addListItemHandler = (listItem: Element, hash: string) => {
   listItem.addEventListener('click', () => {
+    const {
+      gameMode: { isGameStarted },
+    } = store.getState();
+
     changeHash(hash);
-    changeGameMode(false);
+
+    if (isGameStarted) {
+      changeGameMode(!isGameStarted);
+    }
   });
 };
 
