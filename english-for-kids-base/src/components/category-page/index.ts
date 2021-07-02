@@ -6,7 +6,7 @@ import { store } from '../../reducers/core/store';
 import { renderWordCard } from '../word-card';
 import './styles.css';
 import { getHash } from '../../router/get-hash';
-import { createPageStatistic } from '../../helpers/create-page-statistic';
+import { createPageStatistics } from '../../helpers/create-page-statistics';
 
 const addHandlers = (main: Element): void => {
   const button = main.querySelector('button');
@@ -14,7 +14,7 @@ const addHandlers = (main: Element): void => {
   button?.addEventListener('click', () => {
     const {
       gameMode: { isGameStarted },
-      statistic: {
+      statistics: {
         currentCard: { audioSrc },
       },
     } = store.getState();
@@ -49,7 +49,7 @@ export const renderCategoryPage = (): void => {
     </main>
   `);
   const cardList = getCurrentCards(getHash());
-  const pageStatistic = createPageStatistic();
+  const pageStatistics = createPageStatistics();
 
   addHandlers(main);
 
@@ -65,7 +65,7 @@ export const renderCategoryPage = (): void => {
 
   document.body.append(main);
 
-  if (pageStatistic) {
-    changeWordsList(pageStatistic.currentCards, pageStatistic.currentCard);
+  if (pageStatistics) {
+    changeWordsList(pageStatistics.currentCards, pageStatistics.currentCard);
   }
 };

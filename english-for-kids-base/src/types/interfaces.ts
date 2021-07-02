@@ -40,7 +40,7 @@ export interface IGameModeAction {
 export interface IStore {
   mode: IModeState;
   gameMode: IGameModeState;
-  statistic: IStatisticState;
+  statistics: IStatisticsState;
 }
 
 export interface IConfig {
@@ -55,7 +55,7 @@ export interface IGameWord {
   miss: number;
 }
 
-export interface IStatisticAction {
+export interface IStatisticsAction {
   type: string;
   payload: {
     currentCards?: IGameWord[];
@@ -63,7 +63,7 @@ export interface IStatisticAction {
   };
 }
 
-export interface IStatisticState {
+export interface IStatisticsState {
   currentCards: IGameWord[];
   currentCard: IGameWord;
 }

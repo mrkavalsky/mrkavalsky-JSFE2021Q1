@@ -8,7 +8,7 @@ const initialState: IStore = {
   gameMode: {
     isGameStarted: false,
   },
-  statistic: {
+  statistics: {
     currentCards: [],
     currentCard: {
       word: '',

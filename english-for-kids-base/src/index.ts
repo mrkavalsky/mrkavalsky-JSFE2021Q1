@@ -20,7 +20,7 @@ const initApp = (): void => {
     const {
       mode: { value },
       gameMode: { isGameStarted },
-      statistic: { currentCard, currentCards },
+      statistics: { currentCard, currentCards },
     } = state;
 
     if (value !== prevState.mode.value) {

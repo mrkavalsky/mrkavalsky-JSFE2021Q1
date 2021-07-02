@@ -1,8 +1,8 @@
-import { IStatisticState } from '../types/interfaces';
+import { IStatisticsState } from '../types/interfaces';
 import { findCard } from './find-card';
 import { getGameWords } from './get-game-words';
 
-export const createPageStatistic = (): null | IStatisticState => {
+export const createPageStatistics = (): null | IStatisticsState => {
   const currentCards = getGameWords();
 
   if (currentCards) {

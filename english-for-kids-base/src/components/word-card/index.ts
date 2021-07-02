@@ -14,7 +14,7 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
     const {
       mode: { value },
       gameMode: { isGameStarted },
-      statistic: { currentCard },
+      statistics: { currentCard },
     } = store.getState();
 
     if (value === Mode.TRAIN && target !== button) {
