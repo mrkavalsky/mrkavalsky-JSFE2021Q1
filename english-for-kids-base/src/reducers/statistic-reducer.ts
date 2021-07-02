@@ -1,4 +1,5 @@
 import {
+  CHANGE_CURRENT_CARD,
   CHANGE_WORDS_LIST,
   HIT_WORD,
   MISS_WORD,
@@ -28,6 +29,13 @@ export const statisticReducer = (
       };
     case HIT_WORD:
       return { ...state, currentCard: { ...state.currentCard, isHit: true } };
+    case CHANGE_CURRENT_CARD:
+      return {
+        ...state,
+        currentCard: payload.currentCard
+          ? payload.currentCard
+          : initialState.statistic.currentCard,
+      };
     default:
       return state;
   }
