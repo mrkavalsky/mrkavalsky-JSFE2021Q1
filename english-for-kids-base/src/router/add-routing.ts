@@ -3,6 +3,12 @@ import { changeCurrentPage } from './change-current-page';
 import { getHash } from './get-hash';
 
 export const addRouting = (): void => {
-  window.location.hash = MAIN_PAGE;
+  const hash = getHash();
+
+  if (!hash) {
+    window.location.hash = MAIN_PAGE;
+  }
+  changeCurrentPage(hash);
+
   window.onpopstate = () => changeCurrentPage(getHash());
 };
