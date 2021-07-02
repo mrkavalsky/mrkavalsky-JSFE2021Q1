@@ -67,3 +67,7 @@ export interface IStatisticsState {
   currentCards: IGameWord[];
   currentCard: IGameWord;
 }
+
+export interface ICustomTarget extends EventTarget {
+  id: string;
+}

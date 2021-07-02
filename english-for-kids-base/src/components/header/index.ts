@@ -1,50 +1,27 @@
-import { store } from '../../reducers/core/store';
 import './styles.css';
-import { renderBurgerMenu, toggleBurgerMenu } from './burger-menu';
+import { renderBurgerMenu } from './burger-menu';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { Mode } from '../../types/modes';
-import { changeGameMode, changeMode } from '../../actions/actions';
-import { NAV_BTN_CLOSE, Theme } from './classes';
-import { changeHash } from '../../router/change-hash';
-import { MAIN_PAGE } from '../main-page/config';
+import { ICustomTarget } from '../../types/interfaces';
+import { config } from './config';
+import { Theme } from './classes';
 
 export const changeBodyClass = (mode: string): void => {
   document.body.className =
     mode === Mode.TRAIN ? Theme.THEME_TRAIN : Theme.THEME_PLAY;
 };
 
-const changeCheckboxLabel = (mode: string): void => {
-  const label = document.getElementById('checkbox-label');
+const addHandlers = (header: Element): void => {
+  header.addEventListener('click', ({ target }) => {
+    if (target) {
+      const { id } = target as ICustomTarget;
+      const runHandler = config[id];
 
-  if (label) {
-    label.textContent = mode;
-  }
-};
-
-const addHandlers = (): void => {
-  const checkbox = document.getElementById('flexSwitchCheckDefault');
-  const menuButton = document.getElementById('menu-button');
-  const logo = document.getElementById('logo');
-
-  checkbox?.addEventListener('click', () => {
-    const newMode =
-      store.getState().mode.value === Mode.TRAIN ? Mode.PLAY : Mode.TRAIN;
-    const {
-      gameMode: { isGameStarted },
-    } = store.getState();
-
-    changeCheckboxLabel(newMode);
-    changeMode(newMode);
-
-    if (isGameStarted) {
-      changeGameMode(!isGameStarted);
+      if (runHandler) {
+        runHandler();
+      }
     }
   });
-  menuButton?.addEventListener('click', () => {
-    toggleBurgerMenu();
-    menuButton.classList.toggle(NAV_BTN_CLOSE);
-  });
-  logo?.addEventListener('click', () => changeHash(MAIN_PAGE));
 };
 
 export const renderHeader = (): void => {
@@ -67,7 +44,6 @@ export const renderHeader = (): void => {
                   aria-controls="navbarColor01"
                   aria-expanded="false"
                   aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
@@ -78,5 +54,5 @@ export const renderHeader = (): void => {
 
   renderBurgerMenu();
 
-  addHandlers();
+  addHandlers(header);
 };

@@ -20,6 +20,11 @@
 .navbar-toggler {
   position: relative;
   z-index: 1000;
+  background-image: url(../../assets/icons/burger-menu.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 15px;
 }
 .header {
   position: fixed;
@@ -27,9 +32,8 @@
   top: 0;
   z-index: 1000;
 }
-.navbar-dark .navbar-toggler_close .navbar-toggler-icon {
+.navbar-toggler_close {
   background-image: url(../../assets/icons/close.svg);
-  background-size: 70%;
 }
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler{
