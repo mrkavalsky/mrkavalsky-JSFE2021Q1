@@ -8,10 +8,8 @@ import './styles.css';
 import { getHash } from '../../router/get-hash';
 import { createPageStatistics } from '../../helpers/create-page-statistics';
 
-const addHandlers = (main: Element): void => {
-  const button = main.querySelector('button');
-
-  button?.addEventListener('click', () => {
+const addHandlers = (button: Element): void => {
+  button.addEventListener('click', () => {
     const {
       gameMode: { isGameStarted },
       statistics: {
@@ -50,8 +48,11 @@ export const renderCategoryPage = (): void => {
   `);
   const cardList = getCurrentCards(getHash());
   const pageStatistics = createPageStatistics();
+  const button = main.querySelector('button');
 
-  addHandlers(main);
+  if (button) {
+    addHandlers(button);
+  }
 
   if (cardList) {
     const fragment = document.createDocumentFragment();
