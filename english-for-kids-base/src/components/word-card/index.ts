@@ -26,13 +26,17 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
   });
 
   button?.addEventListener('click', () => {
-    if (store.getState().mode.value === Mode.TRAIN) {
+    const { mode } = store.getState();
+
+    if (mode.value === Mode.TRAIN) {
       cardContent?.classList.add('word-card_rotate');
     }
   });
 
   card.addEventListener('mouseleave', () => {
-    if (store.getState().mode.value === Mode.TRAIN) {
+    const { mode } = store.getState();
+
+    if (mode.value === Mode.TRAIN) {
       cardContent?.classList.remove('word-card_rotate');
     }
   });
