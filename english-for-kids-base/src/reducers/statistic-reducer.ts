@@ -3,6 +3,7 @@ import {
   CHANGE_WORDS_LIST,
   HIT_WORD,
   MISS_WORD,
+  UPDATE_CURRENT_CARDS,
 } from '../actions/action-types';
 import { IStatisticAction, IStatisticState } from '../types/interfaces';
 import initialState from './initial-state';
@@ -35,6 +36,13 @@ export const statisticReducer = (
         currentCard: payload.currentCard
           ? payload.currentCard
           : initialState.statistic.currentCard,
+      };
+    case UPDATE_CURRENT_CARDS:
+      return {
+        ...state,
+        currentCards: payload.currentCards
+          ? payload.currentCards
+          : initialState.statistic.currentCards,
       };
     default:
       return state;
