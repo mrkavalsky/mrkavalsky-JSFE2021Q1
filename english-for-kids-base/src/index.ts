@@ -26,10 +26,7 @@ const initApp = (): void => {
     if (value !== prevState.mode.value) {
       changeBodyClass(value);
     }
-    if (isGameStarted && isGameStarted !== prevState.gameMode.isGameStarted) {
-      changeStartGameButton(isGameStarted);
-    }
-    if (!isGameStarted && isGameStarted !== prevState.gameMode.isGameStarted) {
+    if (isGameStarted !== prevState.gameMode.isGameStarted) {
       changeStartGameButton(isGameStarted);
     }
     if (currentCard.isHit) {
