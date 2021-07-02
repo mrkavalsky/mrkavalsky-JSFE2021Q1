@@ -1,7 +1,7 @@
 import { changeCurrentCard, updateCurrentCards } from '../actions/actions';
 import { IGameWord } from '../types/interfaces';
 import { findCard } from './find-card';
-import { getUpdatedCards } from './getUpdatedCards';
+import { getUpdatedCards } from './get-updated-cards';
 import { playAudio } from './play-audio';
 
 export const updateStatisticsState = (
