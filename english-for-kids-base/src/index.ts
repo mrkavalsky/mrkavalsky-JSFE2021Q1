@@ -6,6 +6,7 @@ import { addRouting } from './router/add-routing';
 import { changeBodyClass } from './components/header';
 import { changeStartGameButton } from './components/category-page';
 import initialState from './reducers/initial-state';
+import { updateStatisticsState } from './helpers/update-statistics-state';
 
 const initApp = (): void => {
   renderApp();
@@ -19,6 +20,7 @@ const initApp = (): void => {
     const {
       mode: { value },
       gameMode: { isGameStarted },
+      statistic: { currentCard, currentCards },
     } = state;
 
     if (value !== prevState.mode.value) {
@@ -29,6 +31,9 @@ const initApp = (): void => {
     }
     if (!isGameStarted && isGameStarted !== prevState.gameMode.isGameStarted) {
       changeStartGameButton(isGameStarted);
+    }
+    if (currentCard.isHit) {
+      updateStatisticsState(currentCards, currentCard);
     }
 
     prevState = state;
