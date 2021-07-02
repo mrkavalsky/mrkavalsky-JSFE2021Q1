@@ -70,4 +70,5 @@ export interface IStatisticsState {
 
 export interface ICustomTarget extends EventTarget {
   id: string;
+  nodeName: string;
 }
