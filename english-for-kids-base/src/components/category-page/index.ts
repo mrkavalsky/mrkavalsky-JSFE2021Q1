@@ -1,7 +1,5 @@
 import { changeGameMode, changeWordsList } from '../../actions/actions';
 import { createHTMLElement } from '../../helpers/create-html-element';
-import { findCard } from '../../helpers/find-card';
-import { getGameWords } from '../../helpers/get-game-words';
 import { getCurrentCards } from '../../helpers/get-current-cards';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
