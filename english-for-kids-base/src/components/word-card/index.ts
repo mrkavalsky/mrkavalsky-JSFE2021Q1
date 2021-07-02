@@ -25,13 +25,11 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
     }
   });
 
-  if (button) {
-    button.addEventListener('click', () => {
-      if (store.getState().mode.value === Mode.TRAIN) {
-        cardContent?.classList.add('word-card_rotate');
-      }
-    });
-  }
+  button?.addEventListener('click', () => {
+    if (store.getState().mode.value === Mode.TRAIN) {
+      cardContent?.classList.add('word-card_rotate');
+    }
+  });
 
   card.addEventListener('mouseleave', () => {
     if (store.getState().mode.value === Mode.TRAIN) {
