@@ -1,6 +1,7 @@
 import { store } from '../reducers/core/store';
 import { IGameWord } from '../types/interfaces';
 import {
+  CHANGE_CURRENT_CARD,
   CHANGE_MODE,
   CHANGE_WORDS_LIST,
   GAME_STATE,
@@ -46,5 +47,14 @@ export function missWord(): void {
   store.dispatch({
     type: MISS_WORD,
     payload: {},
+  });
+}
+
+export function changeCurrentCard(currentCard: IGameWord): void {
+  store.dispatch({
+    type: CHANGE_CURRENT_CARD,
+    payload: {
+      currentCard,
+    },
   });
 }
