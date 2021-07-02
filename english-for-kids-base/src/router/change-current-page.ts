@@ -4,6 +4,7 @@ export const changeCurrentPage = (hash: string): void => {
   document.body.lastElementChild?.remove();
 
   const [page] = hash.split('_');
+  const renderPage = config[page];
 
-  config[page]();
+  renderPage();
 };
