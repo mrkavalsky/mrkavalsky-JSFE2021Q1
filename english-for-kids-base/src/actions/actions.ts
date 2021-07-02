@@ -7,6 +7,7 @@ import {
   GAME_STATE,
   HIT_WORD,
   MISS_WORD,
+  UPDATE_CURRENT_CARDS,
 } from './action-types';
 
 export function changeMode(newMode: string): void {
@@ -55,6 +56,15 @@ export function changeCurrentCard(currentCard: IGameWord): void {
     type: CHANGE_CURRENT_CARD,
     payload: {
       currentCard,
+    },
+  });
+}
+
+export function updateCurrentCards(currentCards: IGameWord[]): void {
+  store.dispatch({
+    type: UPDATE_CURRENT_CARDS,
+    payload: {
+      currentCards,
     },
   });
 }
