@@ -14,9 +14,9 @@ export interface ICards {
   cardsList: ICardInfo[];
 }
 
-export interface IAction {
+export interface IAction<T> {
   type: string;
-  [keys: string]: string;
+  payload: T;
 }
 
 export interface IModeState {
