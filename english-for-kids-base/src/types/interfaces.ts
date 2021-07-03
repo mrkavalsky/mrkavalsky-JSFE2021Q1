@@ -23,11 +23,6 @@ export interface IModeState {
   value: string;
 }
 
-export interface IModeAction {
-  type: string;
-  payload: string;
-}
-
 export interface IGameModeState {
   isGameStarted: boolean;
 }
