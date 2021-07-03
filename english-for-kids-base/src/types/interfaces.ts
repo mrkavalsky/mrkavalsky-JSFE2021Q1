@@ -59,3 +59,9 @@ export interface ICustomTarget extends EventTarget {
   id: string;
   nodeName: string;
 }
+
+export interface IPopupConfig {
+  [keys: string]: {
+    [keys: string]: string;
+  };
+}
