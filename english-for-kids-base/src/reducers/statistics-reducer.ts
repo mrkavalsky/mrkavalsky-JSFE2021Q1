@@ -20,12 +20,9 @@ export const statisticsReducer = (
     case CHANGE_WORDS_LIST:
       return {
         ...state,
-        currentCards: payload.currentCards
-          ? payload.currentCards
-          : initialState.statistics.currentCards,
-        currentCard: payload.currentCard
-          ? payload.currentCard
-          : initialState.statistics.currentCard,
+        currentCards:
+          payload.currentCards || initialState.statistics.currentCards,
+        currentCard: payload.currentCard || initialState.statistics.currentCard,
       };
     case MISS_WORD:
       return {
@@ -37,16 +34,13 @@ export const statisticsReducer = (
     case CHANGE_CURRENT_CARD:
       return {
         ...state,
-        currentCard: payload.currentCard
-          ? payload.currentCard
-          : initialState.statistics.currentCard,
+        currentCard: payload.currentCard || initialState.statistics.currentCard,
       };
     case UPDATE_CURRENT_CARDS:
       return {
         ...state,
-        currentCards: payload.currentCards
-          ? payload.currentCards
-          : initialState.statistics.currentCards,
+        currentCards:
+          payload.currentCards || initialState.statistics.currentCards,
       };
     default:
       return state;
