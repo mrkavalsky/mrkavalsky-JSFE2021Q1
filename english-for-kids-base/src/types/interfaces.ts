@@ -45,12 +45,9 @@ export interface IGameWord {
   miss: number;
 }
 
-export interface IStatisticsAction {
-  type: string;
-  payload: {
-    currentCards?: IGameWord[];
-    currentCard?: IGameWord;
-  };
+export interface IStatisticsPayload {
+  currentCards?: IGameWord[];
+  currentCard?: IGameWord;
 }
 
 export interface IStatisticsState {

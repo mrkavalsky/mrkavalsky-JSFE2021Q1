@@ -5,12 +5,16 @@ import {
   MISS_WORD,
   UPDATE_CURRENT_CARDS,
 } from '../actions/action-types';
-import { IStatisticsAction, IStatisticsState } from '../types/interfaces';
+import {
+  IAction,
+  IStatisticsPayload,
+  IStatisticsState,
+} from '../types/interfaces';
 import initialState from './initial-state';
 
 export const statisticsReducer = (
   state: IStatisticsState = initialState.statistics,
-  { type, payload }: IStatisticsAction,
+  { type, payload }: IAction<IStatisticsPayload>,
 ): IStatisticsState => {
   switch (type) {
     case CHANGE_WORDS_LIST:
