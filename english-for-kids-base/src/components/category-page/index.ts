@@ -19,10 +19,9 @@ const addHandlers = (button: Element): void => {
 
     if (!isGameStarted) {
       changeGameMode(!isGameStarted);
-      playAudio(audioSrc);
-    } else {
-      playAudio(audioSrc);
     }
+
+    playAudio(audioSrc);
   });
 };
 
