@@ -7,6 +7,9 @@
   justify-content: center;
   margin: 8rem auto 2rem;
 }
+.category-page_disable {
+  pointer-events: none;
+}
 .category-page__button {
   width: 85%;
   text-transform: uppercase;

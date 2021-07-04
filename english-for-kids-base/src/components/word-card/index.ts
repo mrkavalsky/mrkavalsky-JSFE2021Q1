@@ -10,6 +10,7 @@ import './styles.css';
 import { updateStatisticsState } from '../../helpers/update-statistics-state';
 import { updateCurrentCard } from '../../helpers/update-current-card';
 import { WORD_CARD_DISABLE, WORD_CARD_ROTATE } from './classes';
+import { togglePreventingClicks } from '../category-page/helpers/toggle-preventing-clicks';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const cardContent = card.firstElementChild;
@@ -30,6 +31,8 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
       }
     }
     if (isGameStarted) {
+      togglePreventingClicks();
+
       const compareResult = compareWords(currentCard.word, word);
 
       if (compareResult) {
@@ -43,6 +46,8 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
       if (compareResult) {
         updateStatisticsState();
       }
+
+      togglePreventingClicks();
     }
   });
 
