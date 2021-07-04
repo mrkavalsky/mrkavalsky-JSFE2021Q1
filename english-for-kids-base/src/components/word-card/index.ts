@@ -9,6 +9,7 @@ import { playCompareResult } from './helpers/play-compare-result';
 import './styles.css';
 import { updateStatisticsState } from '../../helpers/update-statistics-state';
 import { updateCurrentCard } from '../../helpers/update-current-card';
+import { WORD_CARD_ROTATE } from './classes';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const cardContent = card.firstElementChild;
@@ -23,7 +24,7 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
 
     if (value === Mode.TRAIN) {
       if (nodeName === 'BUTTON') {
-        cardContent?.classList.add('word-card_rotate');
+        cardContent?.classList.add(WORD_CARD_ROTATE);
       } else {
         playAudio(audioSrc);
       }
@@ -45,7 +46,7 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
     const { mode } = store.getState();
 
     if (mode.value === Mode.TRAIN) {
-      cardContent?.classList.remove('word-card_rotate');
+      cardContent?.classList.remove(WORD_CARD_ROTATE);
     }
   });
 };
