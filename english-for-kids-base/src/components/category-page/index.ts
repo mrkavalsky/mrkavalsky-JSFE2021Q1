@@ -37,7 +37,7 @@ export const changeStartGameButton = (isGameStarted: boolean): void => {
 
 export const renderCategoryPage = (): void => {
   const main = createHTMLElement(`
-    <main class="category-page">
+    <main class="category-page" id="category-page">
       <div class="category-page__score" id="score"></div>
       <button class="btn btn-primary category-page__button"
               type="button"
