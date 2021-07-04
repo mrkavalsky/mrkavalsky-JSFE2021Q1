@@ -11,6 +11,7 @@ import { updateStatisticsState } from '../../helpers/update-statistics-state';
 import { updateCurrentCard } from '../../helpers/update-current-card';
 import { WORD_CARD_DISABLE, WORD_CARD_ROTATE } from './classes';
 import { togglePreventingClicks } from '../category-page/helpers/toggle-preventing-clicks';
+import { updateTrainField } from '../../helpers/update-train-field';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const cardContent = card.firstElementChild;
@@ -29,6 +30,8 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
       } else {
         playAudio(audioSrc);
       }
+
+      updateTrainField(word);
     }
     if (isGameStarted) {
       togglePreventingClicks();
