@@ -7,6 +7,8 @@ import { changeBodyClass } from './components/header';
 import { changeStartGameButton } from './components/category-page';
 import initialState from './reducers/initial-state';
 import { playAudio } from './helpers/play-audio';
+import { Mode } from './types/modes';
+import { resetGame } from './components/category-page/helpers/reset-game';
 
 const initApp = (): void => {
   renderApp();
@@ -27,6 +29,10 @@ const initApp = (): void => {
 
     if (value !== prevState.mode.value) {
       changeBodyClass(value);
+
+      if (value === Mode.TRAIN) {
+        resetGame();
+      }
     }
     if (isGameStarted !== prevState.gameMode.isGameStarted) {
       changeStartGameButton(isGameStarted);
