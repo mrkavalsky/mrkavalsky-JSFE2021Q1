@@ -14,7 +14,15 @@
   transition: all .5s;
   opacity: 0;
 }
-
+.category-page__score {
+  width: 85%;
+  height: 3vh;
+  overflow: hidden;
+}
+.star {
+  height: 100%;
+  width: auto;
+}
 .theme-play .category-page__button {
   opacity: 1;
 }
