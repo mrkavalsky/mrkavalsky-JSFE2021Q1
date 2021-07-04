@@ -1,14 +1,13 @@
 import { changeCurrentCard, updateCurrentCards } from '../actions/actions';
-import { IGameWord } from '../types/interfaces';
+import { store } from '../reducers/core/store';
 import { findCard } from './find-card';
 import { finishGame } from './finish-game';
 import { getUpdatedCards } from './get-updated-cards';
-import { playAudio } from './play-audio';
 
-export const updateStatisticsState = (
-  currentCards: IGameWord[],
-  currentCard: IGameWord,
-): void => {
+export const updateStatisticsState = (): void => {
+  const {
+    statistics: { currentCard, currentCards },
+  } = store.getState();
   const newCurrentCards = getUpdatedCards(currentCards, currentCard);
   const newCurrentCard = findCard(newCurrentCards);
 
@@ -16,7 +15,6 @@ export const updateStatisticsState = (
 
   if (newCurrentCard) {
     changeCurrentCard(newCurrentCard);
-    playAudio(newCurrentCard.audioSrc);
   } else {
     finishGame();
   }

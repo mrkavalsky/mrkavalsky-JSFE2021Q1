@@ -6,6 +6,7 @@ import { addRouting } from './router/add-routing';
 import { changeBodyClass } from './components/header';
 import { changeStartGameButton } from './components/category-page';
 import initialState from './reducers/initial-state';
+import { playAudio } from './helpers/play-audio';
 
 const initApp = (): void => {
   renderApp();
@@ -19,6 +20,9 @@ const initApp = (): void => {
     const {
       mode: { value },
       gameMode: { isGameStarted },
+      statistics: {
+        currentCard: { word, audioSrc },
+      },
     } = state;
 
     if (value !== prevState.mode.value) {
@@ -26,6 +30,9 @@ const initApp = (): void => {
     }
     if (isGameStarted !== prevState.gameMode.isGameStarted) {
       changeStartGameButton(isGameStarted);
+    }
+    if (isGameStarted && word !== prevState.statistics.currentCard.word) {
+      playAudio(audioSrc);
     }
 
     prevState = state;

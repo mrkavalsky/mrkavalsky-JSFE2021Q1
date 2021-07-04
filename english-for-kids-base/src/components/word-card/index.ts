@@ -1,15 +1,19 @@
-import { compareWords } from '../../helpers/compare-words';
+import { compareWords } from './helpers/compare-words';
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { playAudio } from '../../helpers/play-audio';
 import { store } from '../../reducers/core/store';
 import { ICardInfo, ICustomTarget } from '../../types/interfaces';
 import { Mode } from '../../types/modes';
+import { addStar } from '../category-page/helpers/add-star';
+import { playCompareResult } from './helpers/play-compare-result';
 import './styles.css';
+import { updateStatisticsState } from '../../helpers/update-statistics-state';
+import { updateCurrentCard } from '../../helpers/update-current-card';
 
 const addHandlers = (card: Element, audioSrc: string, word: string) => {
   const cardContent = card.firstElementChild;
 
-  card.addEventListener('click', ({ target }) => {
+  card.addEventListener('click', async ({ target }) => {
     const {
       mode: { value },
       gameMode: { isGameStarted },
@@ -25,7 +29,15 @@ const addHandlers = (card: Element, audioSrc: string, word: string) => {
       }
     }
     if (isGameStarted) {
-      compareWords(currentCard.word, word);
+      const compareResult = compareWords(currentCard.word, word);
+
+      addStar(compareResult);
+      await playCompareResult(compareResult);
+      updateCurrentCard(compareResult);
+
+      if (compareResult) {
+        updateStatisticsState();
+      }
     }
   });
 
