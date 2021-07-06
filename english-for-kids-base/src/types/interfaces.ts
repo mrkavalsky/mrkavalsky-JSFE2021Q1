@@ -65,3 +65,12 @@ export interface IPopupConfig {
     [keys: string]: string;
   };
 }
+
+export interface IStatisticsCard {
+  category: string;
+  word: string;
+  translation: string;
+  train: number;
+  hit: number;
+  miss: number;
+}
