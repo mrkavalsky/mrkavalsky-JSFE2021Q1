@@ -8,6 +8,7 @@ import { NAV_BTN_CLOSE } from '../classes';
 import { store } from '../../../reducers/core/store';
 import { updateLocalStorage } from '../../../local-storage';
 import { getHash } from '../../../router/get-hash';
+import { STATISTICS_PAGE } from '../../statistics-page/config';
 
 const addListItemHandler = (listItem: Element, hash: string) => {
   listItem.addEventListener('click', () => {
@@ -41,7 +42,7 @@ const createBurgerMenuList = (): Element => {
     <ul class="list-unstyled"></ul>
   `);
 
-  cards.forEach(({ category, hash }) => {
+  [...cards, STATISTICS_PAGE].forEach(({ category, hash }) => {
     const listItem = createHTMLElement(`
       <li class="h3 py-1" role="button">${category}</li>
     `);
