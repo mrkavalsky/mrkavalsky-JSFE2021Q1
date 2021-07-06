@@ -30,6 +30,43 @@ const renderCard = ({
   return tableRow;
 };
 
+const renderTableButton = (key: string) => {
+  const caption = key[0].toUpperCase() + key.slice(1);
+  const tableButton = createHTMLElement(
+    `
+    <th scope="col">${caption}</th>
+  `,
+    'tr',
+  );
+
+  return tableButton;
+};
+
+const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
+  const thead = createHTMLElement(
+    `
+    <thead>
+      <tr></tr>
+    </thead>
+  `,
+    'table',
+  );
+  const errorsButton = createHTMLElement(
+    `
+  <th scope="col">Errors, %</th>
+  `,
+    'tr',
+  );
+  const tableRow = thead.querySelector('tr');
+
+  Object.keys(statisticsCard).forEach((key) =>
+    tableRow?.append(renderTableButton(key)),
+  );
+  tableRow?.append(errorsButton);
+
+  return thead;
+};
+
 const renderTableBody = (database: IStatisticsCard[]): Element => {
   const tbody = createHTMLElement(
     `
@@ -51,23 +88,14 @@ export const renderStatisticPage = (
   const page = createHTMLElement(`
     <div class="table-wrapper">
       <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Word</th>
-            <th scope="col">Translation</th>
-            <th scope="col">Category</th>
-            <th scope="col">Train</th>
-            <th scope="col">Hit</th>
-            <th scope="col">Miss</th>
-            <th scope="col">% errors</th>
-          </tr>
-        </thead>
       </table>
     </div>
   `);
+  const thead = renderTableHead(database);
   const tbody = renderTableBody(database);
   const table = page.querySelector('table');
 
+  table?.append(thead);
   table?.append(tbody);
 
   document.body.append(page);
