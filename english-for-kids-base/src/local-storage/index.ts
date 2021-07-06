@@ -18,19 +18,22 @@ const updateCategory = (
   category: ICards,
   currentCards: IGameWord[],
 ): ICards => {
-  const newCardsList = currentCards.reduce((list, card) => {
-    return list.map((item) => {
-      if (card.word === item.word) {
-        return {
-          ...item,
-          train: item.train + card.train,
-          miss: item.miss + card.miss,
-          hit: card.isHit ? item.hit + 1 : item.hit,
-        };
-      }
-      return item;
-    });
-  }, category.cardsList);
+  const newCardsList = currentCards.reduce(
+    (list, { word, train, miss, isHit }) => {
+      return list.map((item) => {
+        if (word === item.word) {
+          return {
+            ...item,
+            train: item.train + train,
+            miss: item.miss + miss,
+            hit: isHit ? item.hit + 1 : item.hit,
+          };
+        }
+        return item;
+      });
+    },
+    category.cardsList,
+  );
 
   return { ...category, cardsList: newCardsList };
 };
