@@ -1,4 +1,4 @@
-import { changeGameMode } from '../../../actions/actions';
+import { changeGameMode, resetCurrentCards } from '../../../actions/actions';
 import { updateLocalStorage } from '../../../local-storage';
 import { store } from '../../../reducers/core/store';
 import { changeHash } from '../../../router/change-hash';
@@ -11,6 +11,7 @@ export const runLogoHandlers = (): void => {
   } = store.getState();
 
   updateLocalStorage(currentCards);
+  resetCurrentCards();
   changeHash(MAIN_PAGE);
 
   if (isGameStarted) {

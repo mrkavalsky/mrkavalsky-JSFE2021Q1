@@ -7,6 +7,7 @@ import {
   GAME_STATE,
   HIT_WORD,
   MISS_WORD,
+  RESET_CURRENT_CARDS,
   UPDATE_CURRENT_CARDS,
 } from './action-types';
 
@@ -66,5 +67,12 @@ export function updateCurrentCards(currentCards: IGameWord[]): void {
     payload: {
       currentCards,
     },
+  });
+}
+
+export function resetCurrentCards(): void {
+  store.dispatch({
+    type: RESET_CURRENT_CARDS,
+    payload: {},
   });
 }

@@ -3,7 +3,7 @@ import { createHTMLElement } from '../../../helpers/create-html-element';
 import './styles.css';
 import { BURGER_MENU_HIDDEN } from './classes';
 import { changeHash } from '../../../router/change-hash';
-import { changeGameMode } from '../../../actions/actions';
+import { changeGameMode, resetCurrentCards } from '../../../actions/actions';
 import { NAV_BTN_CLOSE } from '../classes';
 import { store } from '../../../reducers/core/store';
 import { updateLocalStorage } from '../../../local-storage';
@@ -17,6 +17,7 @@ const addListItemHandler = (listItem: Element, hash: string) => {
     } = store.getState();
 
     updateLocalStorage(currentCards);
+    resetCurrentCards();
     changeHash(hash);
 
     if (isGameStarted) {
