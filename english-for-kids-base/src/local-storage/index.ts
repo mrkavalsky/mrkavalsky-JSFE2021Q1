@@ -37,3 +37,5 @@ export const updateLocalStorage = (currentCards: IGameWord[]): void => {
 
   setDatabase(newDatabase);
 };
+
+export const clearLocalStorage = (): void => localStorage.clear();
