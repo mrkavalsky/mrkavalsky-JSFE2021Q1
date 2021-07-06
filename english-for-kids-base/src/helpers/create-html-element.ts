@@ -1,5 +1,5 @@
-export const createHTMLElement = (HTML: string): Element => {
-  const elem = document.createElement('div');
+export const createHTMLElement = (HTML: string, tag = 'div'): Element => {
+  const elem = document.createElement(tag);
 
   elem.innerHTML = HTML;
 
