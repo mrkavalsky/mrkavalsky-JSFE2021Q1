@@ -30,6 +30,20 @@ const renderCard = ({
   return tableRow;
 };
 
+const renderTableBody = (database: IStatisticsCard[]): Element => {
+  const tbody = createHTMLElement(
+    `
+    <tbody>
+    </tbody>
+  `,
+    'table',
+  );
+
+  database.forEach((card) => tbody.append(renderCard(card)));
+
+  return tbody;
+};
+
 export const renderStatisticPage = (
   sortDatabase: IStatisticsCard[] | null = null,
 ): void => {
@@ -48,14 +62,13 @@ export const renderStatisticPage = (
             <th scope="col">% errors</th>
           </tr>
         </thead>
-        <tbody>
-        </tbody>
       </table>
     </div>
   `);
-  const tbody = page.querySelector('tbody');
+  const tbody = renderTableBody(database);
+  const table = page.querySelector('table');
 
-  database.forEach((card) => tbody?.append(renderCard(card)));
+  table?.append(tbody);
 
   document.body.append(page);
 };
