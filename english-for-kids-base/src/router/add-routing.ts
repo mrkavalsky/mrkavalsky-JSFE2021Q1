@@ -8,7 +8,7 @@ export const addRouting = (): void => {
   if (!hash) {
     window.location.hash = MAIN_PAGE;
   }
-  changeCurrentPage(hash);
+  changeCurrentPage();
 
-  window.onpopstate = () => changeCurrentPage(getHash());
+  window.onpopstate = () => changeCurrentPage();
 };
