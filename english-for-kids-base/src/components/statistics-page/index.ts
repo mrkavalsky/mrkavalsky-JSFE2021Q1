@@ -30,8 +30,10 @@ const renderCard = ({
   return tableRow;
 };
 
-export const renderStatisticPage = (): void => {
-  const database = getDatabase();
+export const renderStatisticPage = (
+  sortDatabase: IStatisticsCard[] | null = null,
+): void => {
+  const database = sortDatabase || getDatabase();
   const page = createHTMLElement(`
     <div class="table-wrapper">
       <table class="table table-hover">
