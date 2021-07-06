@@ -1,15 +1,19 @@
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { getDatabase } from '../../local-storage';
-import { ICards } from '../../types/interfaces';
+import { IStatisticsCard } from '../../types/interfaces';
 import './styles.css';
 
-const renderCategory = ({ cardsList, category }: ICards): DocumentFragment => {
-  const fragment = document.createDocumentFragment();
-
-  cardsList.forEach(({ word, translation, train, hit, miss }) => {
-    const errors = Math.floor(miss / (hit + miss)) || 0;
-    const tableRow = createHTMLElement(
-      `
+const renderCard = ({
+  category,
+  word,
+  translation,
+  train,
+  hit,
+  miss,
+}: IStatisticsCard): Element => {
+  const errors = Math.floor(miss / (hit + miss)) || 0;
+  const tableRow = createHTMLElement(
+    `
       <tr class="table-active">
         <td>${category}</td>
         <td>${word}</td>
@@ -20,13 +24,10 @@ const renderCategory = ({ cardsList, category }: ICards): DocumentFragment => {
         <td>${errors}</td>
       </tr>
     `,
-      'tbody',
-    );
+    'tbody',
+  );
 
-    fragment.append(tableRow);
-  });
-
-  return fragment;
+  return tableRow;
 };
 
 export const renderStatisticPage = (): void => {
@@ -52,9 +53,7 @@ export const renderStatisticPage = (): void => {
   `);
   const tbody = page.querySelector('tbody');
 
-  database.forEach((cardCategory) =>
-    tbody?.append(renderCategory(cardCategory)),
-  );
+  database.forEach((card) => tbody?.append(renderCard(card)));
 
   document.body.append(page);
 };

@@ -7,7 +7,6 @@ import { changeGameMode } from '../../../actions/actions';
 import { NAV_BTN_CLOSE } from '../classes';
 import { store } from '../../../reducers/core/store';
 import { updateLocalStorage } from '../../../local-storage';
-import { getHash } from '../../../router/get-hash';
 import { STATISTICS_PAGE } from '../../statistics-page/config';
 
 const addListItemHandler = (listItem: Element, hash: string) => {
@@ -16,9 +15,8 @@ const addListItemHandler = (listItem: Element, hash: string) => {
       gameMode: { isGameStarted },
       statistics: { currentCards },
     } = store.getState();
-    const currentHash = getHash();
 
-    updateLocalStorage(currentCards, currentHash);
+    updateLocalStorage(currentCards);
     changeHash(hash);
 
     if (isGameStarted) {

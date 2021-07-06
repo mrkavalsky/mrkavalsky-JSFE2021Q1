@@ -1,58 +1,39 @@
-import { cards } from '../../public/cards';
-import { ICards, IGameWord } from '../types/interfaces';
-import { DATABASE } from './config';
+import { IGameWord, IStatisticsCard } from '../types/interfaces';
+import { DATABASE, INITIAL_DATABASE } from './config';
 
-export const getDatabase = (): ICards[] => {
+export const getDatabase = (): IStatisticsCard[] => {
   const storageDatabase = localStorage.getItem(DATABASE);
 
-  return storageDatabase ? JSON.parse(storageDatabase) : cards;
+  return storageDatabase ? JSON.parse(storageDatabase) : INITIAL_DATABASE;
 };
 
-export const setDatabase = (database: ICards[]): void => {
+export const setDatabase = (database: IStatisticsCard[]): void => {
   const storageDatabase = JSON.stringify(database);
 
   localStorage.setItem(DATABASE, storageDatabase);
 };
 
-const updateCategory = (
-  category: ICards,
+const updateDatabase = (
+  database: IStatisticsCard[],
   currentCards: IGameWord[],
-): ICards => {
-  const newCardsList = currentCards.reduce(
-    (list, { word, train, miss, isHit }) => {
-      return list.map((item) => {
-        if (word === item.word) {
-          return {
-            ...item,
-            train: item.train + train,
-            miss: item.miss + miss,
-            hit: isHit ? item.hit + 1 : item.hit,
-          };
-        }
-        return item;
-      });
-    },
-    category.cardsList,
-  );
+) =>
+  currentCards.reduce((newDatabase, { word, train, miss, isHit }) => {
+    return newDatabase.map((item) => {
+      if (word === item.word) {
+        return {
+          ...item,
+          train: item.train + train,
+          miss: item.miss + miss,
+          hit: isHit ? item.hit + 1 : item.hit,
+        };
+      }
+      return item;
+    });
+  }, database);
 
-  return { ...category, cardsList: newCardsList };
-};
-
-export const updateLocalStorage = (
-  currentCards: IGameWord[],
-  hash: string,
-): void => {
+export const updateLocalStorage = (currentCards: IGameWord[]): void => {
   const database = getDatabase();
-  const category = database.find((e) => e.hash === hash);
+  const newDatabase = updateDatabase(database, currentCards);
 
-  if (category) {
-    const newCategory = updateCategory(category, currentCards);
-    const newDatabase = database.map((item) =>
-      item.category === newCategory.category ? newCategory : item,
-    );
-
-    setDatabase(newDatabase);
-  } else {
-    setDatabase(database);
-  }
+  setDatabase(newDatabase);
 };

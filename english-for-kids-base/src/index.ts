@@ -10,7 +10,6 @@ import { playAudio } from './helpers/play-audio';
 import { Mode } from './types/modes';
 import { resetGame } from './components/category-page/helpers/reset-game';
 import { updateLocalStorage } from './local-storage';
-import { getHash } from './router/get-hash';
 
 const initApp = (): void => {
   renderApp();
@@ -52,7 +51,6 @@ window.addEventListener('unload', () => {
   const {
     statistics: { currentCards },
   } = store.getState();
-  const hash = getHash();
 
-  updateLocalStorage(currentCards, hash);
+  updateLocalStorage(currentCards);
 });
