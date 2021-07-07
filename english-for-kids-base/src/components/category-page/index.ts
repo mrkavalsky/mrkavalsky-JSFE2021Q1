@@ -50,7 +50,7 @@ export const renderCategoryPage = (
     </main>
   `);
   const cardList = difficultCards || getCurrentCards(getHash());
-  const pageStatistics = createPageStatistics();
+  const pageStatistics = createPageStatistics(cardList);
   const button = main.querySelector('button');
 
   if (button) {

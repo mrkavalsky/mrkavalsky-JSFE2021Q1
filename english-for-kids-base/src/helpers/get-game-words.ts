@@ -1,12 +1,10 @@
-import { getHash } from '../router/get-hash';
-import { IGameWord } from '../types/interfaces';
-import { getCurrentCards } from './get-current-cards';
+import { ICardInfo, IGameWord } from '../types/interfaces';
 
-export const getGameWords = (): IGameWord[] | void => {
-  const cards = getCurrentCards(getHash());
-
-  if (cards) {
-    return cards
+export const getGameWords = (
+  cardLIst: void | ICardInfo[],
+): IGameWord[] | void => {
+  if (cardLIst) {
+    return cardLIst
       .map(({ word, audioSrc, train, miss }) => {
         return {
           word,
@@ -19,5 +17,5 @@ export const getGameWords = (): IGameWord[] | void => {
       .sort(() => Math.random() - 0.5);
   }
 
-  return cards;
+  return cardLIst;
 };
