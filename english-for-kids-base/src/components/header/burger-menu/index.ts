@@ -15,6 +15,9 @@ const addListItemHandler = (listItem: Element, hash: string) => {
       gameMode: { isGameStarted },
       statistics: { currentCards },
     } = store.getState();
+    const background = document.getElementById(
+      'burger-menu-wrapper__background',
+    );
 
     updateLocalStorage(currentCards);
     resetCurrentCards();
@@ -23,6 +26,8 @@ const addListItemHandler = (listItem: Element, hash: string) => {
     if (isGameStarted) {
       changeGameMode(!isGameStarted);
     }
+
+    background?.click();
   });
 };
 
