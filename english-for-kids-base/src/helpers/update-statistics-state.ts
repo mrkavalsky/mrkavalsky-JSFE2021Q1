@@ -15,7 +15,7 @@ export const updateStatisticsState = (): void => {
 
   if (newCurrentCard) {
     changeCurrentCard(newCurrentCard);
-  } else {
+  } else if (newCurrentCards.length !== 0) {
     finishGame();
   }
 };
