@@ -13,12 +13,18 @@ export const changeBodyClass = (mode: string): void => {
 
 const addHandlers = (header: Element): void => {
   header.addEventListener('click', ({ target }) => {
+    const background = document.getElementById(
+      'burger-menu-wrapper__background',
+    );
+
     if (target) {
       const { id } = target as ICustomTarget;
       const runHandler = config[id];
 
       if (runHandler) {
         runHandler();
+      } else {
+        background?.click();
       }
     }
   });

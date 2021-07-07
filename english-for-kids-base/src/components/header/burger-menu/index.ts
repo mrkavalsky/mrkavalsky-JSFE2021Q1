@@ -63,7 +63,7 @@ export const renderBurgerMenu = (): void => {
   const burgerMenu = createHTMLElement(`
     <div class="burger-menu-wrapper burger-menu-wrapper_hidden"
         id="burger-menu">
-      <nav class="burger-menu bg-dark"></nav>
+      <nav class="burger-menu"></nav>
       <div class="burger-menu-wrapper__background"
           id="burger-menu-wrapper__background"></div>
     </div>
