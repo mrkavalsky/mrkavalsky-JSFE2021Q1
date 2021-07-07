@@ -45,6 +45,16 @@ const renderTableBody = (database: IStatisticsCard[]): Element => {
   return tbody;
 };
 
+const refreshTableBody = (database: IStatisticsCard[]): void => {
+  const tbody = renderTableBody(database);
+  const table = document.getElementById('table');
+
+  if (table) {
+    table.lastElementChild?.remove();
+    table.append(tbody);
+  }
+};
+
 const addTableButtonHandler = (tableButton: Element, key: string): void => {
   const currentKey = key as keyof IStatisticsCard;
   const ascSort = ASC_SORT.toLowerCase();
@@ -56,8 +66,6 @@ const addTableButtonHandler = (tableButton: Element, key: string): void => {
     const database = isASC
       ? sortDatabase(currentKey, ASC_SORT)
       : sortDatabase(currentKey, DESC_SORT);
-    const tbody = renderTableBody(database);
-    const table = document.getElementById('table');
 
     if (tableButtons) {
       [...tableButtons.children].forEach((btn) => {
@@ -67,10 +75,7 @@ const addTableButtonHandler = (tableButton: Element, key: string): void => {
 
     tableButton.className = isASC ? descSort : ascSort;
 
-    if (table) {
-      table.lastElementChild?.remove();
-      table.append(tbody);
-    }
+    refreshTableBody(database);
   });
 };
 
