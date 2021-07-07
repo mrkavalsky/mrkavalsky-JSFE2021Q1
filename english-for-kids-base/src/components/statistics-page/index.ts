@@ -87,6 +87,10 @@ export const renderStatisticPage = (
   const database = sortDatabase || getDatabase();
   const page = createHTMLElement(`
     <div class="table-wrapper">
+      <div class="button-wrapper">
+        <button type="button" class="btn btn-secondary">Repeat difficult words</button>
+        <button type="button" class="btn btn-secondary">Reset</button>
+      </div>
       <table class="table table-hover">
       </table>
     </div>
