@@ -1,7 +1,7 @@
 import { cards } from '../../../../public/cards';
 import { createHTMLElement } from '../../../helpers/create-html-element';
 import './styles.css';
-import { BURGER_MENU_HIDDEN } from './classes';
+import { BURGER_MENU_HIDDEN, BURGER_MENU_ITEM } from './classes';
 import { changeHash } from '../../../router/change-hash';
 import { changeGameMode, resetCurrentCards } from '../../../actions/actions';
 import { NAV_BTN_CLOSE } from '../classes';
@@ -18,6 +18,14 @@ const addListItemHandler = (listItem: Element, hash: string) => {
     const background = document.getElementById(
       'burger-menu-wrapper__background',
     );
+    const menuList = document.getElementById('burger-menu__list');
+
+    if (menuList) {
+      [...menuList.children].forEach((item) =>
+        item.classList.remove(BURGER_MENU_ITEM),
+      );
+    }
+    listItem.classList.add(BURGER_MENU_ITEM);
 
     updateLocalStorage(currentCards);
     resetCurrentCards();
@@ -43,7 +51,7 @@ const addMenuHandler = (menu: Element) => {
 
 const createBurgerMenuList = (): Element => {
   const burgerMenuList = createHTMLElement(`
-    <ul class="list-unstyled"></ul>
+    <ul class="list-unstyled" id="burger-menu__list"></ul>
   `);
 
   [...cards, STATISTICS_PAGE].forEach(({ category, hash }) => {
