@@ -9,6 +9,7 @@ export const runLogoHandlers = (): void => {
     gameMode: { isGameStarted },
     statistics: { currentCards },
   } = store.getState();
+  const background = document.getElementById('burger-menu-wrapper__background');
 
   updateLocalStorage(currentCards);
   resetCurrentCards();
@@ -17,4 +18,6 @@ export const runLogoHandlers = (): void => {
   if (isGameStarted) {
     changeGameMode(!isGameStarted);
   }
+
+  background?.click();
 };
