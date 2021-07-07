@@ -20,11 +20,17 @@ const updateDatabase = (
   currentCards.reduce((newDatabase, { word, train, miss, isHit }) => {
     return newDatabase.map((item) => {
       if (word === item.word) {
-        return {
+        const newItem = {
           ...item,
           train: item.train + train,
           miss: item.miss + miss,
           hit: isHit ? item.hit + 1 : item.hit,
+          errors: 0,
+        };
+
+        return {
+          ...newItem,
+          errors: Math.floor(newItem.miss / (newItem.hit + newItem.miss)) || 0,
         };
       }
       return item;

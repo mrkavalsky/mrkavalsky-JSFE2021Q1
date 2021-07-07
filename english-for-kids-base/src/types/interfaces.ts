@@ -73,4 +73,5 @@ export interface IStatisticsCard {
   train: number;
   hit: number;
   miss: number;
+  errors: number;
 }

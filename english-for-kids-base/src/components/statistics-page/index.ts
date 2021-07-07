@@ -97,18 +97,11 @@ const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
     `,
     'table',
   );
-  const errorsButton = createHTMLElement(
-    `
-      <th scope="col">Errors, %</th>
-    `,
-    'tr',
-  );
   const tableRow = thead.querySelector('tr');
 
   Object.keys(statisticsCard).forEach((key) =>
     tableRow?.append(renderTableButton(key)),
   );
-  tableRow?.append(errorsButton);
 
   return thead;
 };
