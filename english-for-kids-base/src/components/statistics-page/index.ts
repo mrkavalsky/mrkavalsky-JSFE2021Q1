@@ -1,5 +1,5 @@
 import { createHTMLElement } from '../../helpers/create-html-element';
-import { getDatabase } from '../../local-storage';
+import { clearLocalStorage, getDatabase } from '../../local-storage';
 import { IStatisticsCard } from '../../types/interfaces';
 import { ASC_SORT, DESC_SORT } from './config';
 import { sortDatabase } from './helpers/sort-database';
@@ -55,26 +55,43 @@ const refreshTableBody = (database: IStatisticsCard[]): void => {
   }
 };
 
+const setClassToTableButtons = (newClass: string) => {
+  const tableButtons = document.getElementById('table-buttons');
+
+  if (tableButtons) {
+    [...tableButtons.children].forEach((btn) => {
+      btn.className = newClass;
+    });
+  }
+};
+
 const addTableButtonHandler = (tableButton: Element, key: string): void => {
   const currentKey = key as keyof IStatisticsCard;
   const ascSort = ASC_SORT.toLowerCase();
   const descSort = DESC_SORT.toLowerCase();
 
   tableButton.addEventListener('click', () => {
-    const tableButtons = document.getElementById('table-buttons');
     const isASC = tableButton.classList.contains(ascSort);
     const database = isASC
       ? sortDatabase(currentKey, ASC_SORT)
       : sortDatabase(currentKey, DESC_SORT);
 
-    if (tableButtons) {
-      [...tableButtons.children].forEach((btn) => {
-        btn.className = ascSort;
-      });
-    }
+    setClassToTableButtons(ascSort);
 
     tableButton.className = isASC ? descSort : ascSort;
 
+    refreshTableBody(database);
+  });
+};
+
+const addHandlerToResetButton = (resetButton: Element) => {
+  resetButton.addEventListener('click', () => {
+    clearLocalStorage();
+
+    const database = getDatabase();
+    const ascSort = ASC_SORT.toLowerCase();
+
+    setClassToTableButtons(ascSort);
     refreshTableBody(database);
   });
 };
@@ -118,8 +135,8 @@ export const renderStatisticPage = (
   const page = createHTMLElement(`
     <div class="table-wrapper">
       <div class="button-wrapper">
-        <button type="button" class="btn btn-secondary">Repeat difficult words</button>
-        <button type="button" class="btn btn-secondary">Reset</button>
+        <button type="button" class="btn btn-secondary" id="repeat-button">Repeat difficult words</button>
+        <button type="button" class="btn btn-secondary" id="reset-button">Reset</button>
       </div>
       <table class="table table-hover" id="table">
       </table>
@@ -128,6 +145,12 @@ export const renderStatisticPage = (
   const thead = renderTableHead(database);
   const tbody = renderTableBody(database);
   const table = page.querySelector('table');
+  const repeatButton = page.querySelector('#repeat-button');
+  const resetButton = page.querySelector('#reset-button');
+
+  if (resetButton) {
+    addHandlerToResetButton(resetButton);
+  }
 
   table?.append(thead);
   table?.append(tbody);
