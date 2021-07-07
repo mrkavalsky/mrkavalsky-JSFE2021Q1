@@ -21,6 +21,8 @@
   width: 85%;
   height: 3vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 .star {
   height: 100%;
