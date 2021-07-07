@@ -13,7 +13,7 @@ const getNewCardsList = (
       train,
       hit,
       miss,
-      errors: Math.floor(miss / (hit + miss)) || 0,
+      errors: Math.floor((miss / (hit + miss)) * 100) || 0,
     };
   });
 

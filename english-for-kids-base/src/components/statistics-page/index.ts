@@ -12,8 +12,8 @@ const renderCard = ({
   train,
   hit,
   miss,
+  errors,
 }: IStatisticsCard): Element => {
-  const errors = Math.floor(miss / (hit + miss)) || 0;
   const tableRow = createHTMLElement(
     `
       <tr class="table-active">

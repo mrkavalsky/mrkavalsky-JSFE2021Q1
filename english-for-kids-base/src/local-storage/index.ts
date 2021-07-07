@@ -27,10 +27,12 @@ const updateDatabase = (
           hit: isHit ? item.hit + 1 : item.hit,
           errors: 0,
         };
+        const newErrors =
+          Math.floor((newItem.miss / (newItem.hit + newItem.miss)) * 100) || 0;
 
         return {
           ...newItem,
-          errors: Math.floor(newItem.miss / (newItem.hit + newItem.miss)) || 0,
+          errors: newErrors,
         };
       }
       return item;
