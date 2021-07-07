@@ -4,13 +4,14 @@ import { renderMenuCard } from '../menu-card';
 import './styles.css';
 
 export const renderMainPage = (): void => {
+  const header = document.getElementById('header');
   const main = createHTMLElement(`
-    <main class="main-page"></main>
+    <main class="main-page" id="page"></main>
   `);
 
   cards.forEach((card) => {
     main.append(renderMenuCard(card));
   });
 
-  document.body.append(main);
+  header?.after(main);
 };

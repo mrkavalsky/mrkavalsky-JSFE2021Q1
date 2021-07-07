@@ -133,7 +133,7 @@ export const renderStatisticPage = (
 ): void => {
   const database = sortedDatabase || getDatabase();
   const page = createHTMLElement(`
-    <div class="table-wrapper">
+    <div class="table-wrapper" id="page">
       <div class="button-wrapper">
         <button type="button" class="btn btn-secondary" id="repeat-button">Repeat difficult words</button>
         <button type="button" class="btn btn-secondary" id="reset-button">Reset</button>
@@ -147,6 +147,7 @@ export const renderStatisticPage = (
   const table = page.querySelector('table');
   const repeatButton = page.querySelector('#repeat-button');
   const resetButton = page.querySelector('#reset-button');
+  const header = document.getElementById('header');
 
   if (resetButton) {
     addHandlerToResetButton(resetButton);
@@ -155,5 +156,5 @@ export const renderStatisticPage = (
   table?.append(thead);
   table?.append(tbody);
 
-  document.body.append(page);
+  header?.after(page);
 };

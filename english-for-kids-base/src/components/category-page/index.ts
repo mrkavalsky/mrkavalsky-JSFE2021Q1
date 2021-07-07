@@ -49,6 +49,7 @@ export const renderCategoryPage = (): void => {
   const cardList = getCurrentCards(getHash());
   const pageStatistics = createPageStatistics();
   const button = main.querySelector('button');
+  const header = document.getElementById('header');
 
   if (button) {
     addHandlers(button);
@@ -64,9 +65,9 @@ export const renderCategoryPage = (): void => {
     main.prepend(fragment);
   }
 
-  document.body.append(main);
-
   if (pageStatistics) {
     changeWordsList(pageStatistics.currentCards, pageStatistics.currentCard);
   }
+
+  header?.after(main);
 };
