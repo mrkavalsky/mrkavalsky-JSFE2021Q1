@@ -34,8 +34,8 @@ const renderTableButton = (key: string) => {
   const caption = key[0].toUpperCase() + key.slice(1);
   const tableButton = createHTMLElement(
     `
-    <th scope="col">${caption}</th>
-  `,
+      <th scope="col">${caption}</th>
+    `,
     'tr',
   );
 
@@ -45,16 +45,16 @@ const renderTableButton = (key: string) => {
 const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
   const thead = createHTMLElement(
     `
-    <thead>
-      <tr></tr>
-    </thead>
-  `,
+      <thead>
+        <tr></tr>
+      </thead>
+    `,
     'table',
   );
   const errorsButton = createHTMLElement(
     `
-  <th scope="col">Errors, %</th>
-  `,
+      <th scope="col">Errors, %</th>
+    `,
     'tr',
   );
   const tableRow = thead.querySelector('tr');
@@ -70,9 +70,8 @@ const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
 const renderTableBody = (database: IStatisticsCard[]): Element => {
   const tbody = createHTMLElement(
     `
-    <tbody>
-    </tbody>
-  `,
+      <tbody></tbody>
+    `,
     'table',
   );
 
