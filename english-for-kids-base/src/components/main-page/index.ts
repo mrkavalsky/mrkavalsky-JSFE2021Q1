@@ -3,8 +3,7 @@ import { createHTMLElement } from '../../helpers/create-html-element';
 import { renderMenuCard } from '../menu-card';
 import './styles.css';
 
-export const renderMainPage = (): void => {
-  const header = document.getElementById('header');
+export const renderMainPage = (): Element => {
   const main = createHTMLElement(`
     <main class="main-page" id="page"></main>
   `);
@@ -13,5 +12,5 @@ export const renderMainPage = (): void => {
     main.append(renderMenuCard(card));
   });
 
-  header?.after(main);
+  return main;
 };

@@ -34,6 +34,10 @@ export interface IStore {
 }
 
 export interface IConfig {
+  [keys: string]: () => Element;
+}
+
+export interface IHandlerConfig {
   [keys: string]: () => void;
 }
 

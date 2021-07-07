@@ -130,7 +130,7 @@ const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
 
 export const renderStatisticPage = (
   sortedDatabase: IStatisticsCard[] | null = null,
-): void => {
+): Element => {
   const database = sortedDatabase || getDatabase();
   const page = createHTMLElement(`
     <div class="table-wrapper" id="page">
@@ -147,7 +147,6 @@ export const renderStatisticPage = (
   const table = page.querySelector('table');
   const repeatButton = page.querySelector('#repeat-button');
   const resetButton = page.querySelector('#reset-button');
-  const header = document.getElementById('header');
 
   if (resetButton) {
     addHandlerToResetButton(resetButton);
@@ -156,5 +155,5 @@ export const renderStatisticPage = (
   table?.append(thead);
   table?.append(tbody);
 
-  header?.after(page);
+  return page;
 };

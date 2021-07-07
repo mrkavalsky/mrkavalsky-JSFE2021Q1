@@ -35,7 +35,7 @@ export const changeStartGameButton = (isGameStarted: boolean): void => {
   }
 };
 
-export const renderCategoryPage = (): void => {
+export const renderCategoryPage = (): Element => {
   const main = createHTMLElement(`
     <main class="category-page" id="category-page">
       <div class="category-page__score" id="score"></div>
@@ -49,7 +49,6 @@ export const renderCategoryPage = (): void => {
   const cardList = getCurrentCards(getHash());
   const pageStatistics = createPageStatistics();
   const button = main.querySelector('button');
-  const header = document.getElementById('header');
 
   if (button) {
     addHandlers(button);
@@ -69,5 +68,5 @@ export const renderCategoryPage = (): void => {
     changeWordsList(pageStatistics.currentCards, pageStatistics.currentCard);
   }
 
-  header?.after(main);
+  return main;
 };
