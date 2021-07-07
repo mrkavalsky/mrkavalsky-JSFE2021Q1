@@ -4,8 +4,8 @@ export const getSortDESC = (key: keyof IStatisticsCard) => {
   return (firstCard: IStatisticsCard, secondCard: IStatisticsCard): number => {
     if (
       (typeof firstCard[key] === 'number' &&
-        firstCard[key] < secondCard[key]) ||
-      (typeof firstCard[key] === 'string' && firstCard[key] > secondCard[key])
+        firstCard[key] > secondCard[key]) ||
+      (typeof firstCard[key] === 'string' && firstCard[key] < secondCard[key])
     ) {
       return 1;
     }
