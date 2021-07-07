@@ -1,6 +1,8 @@
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { clearLocalStorage, getDatabase } from '../../local-storage';
+import { changeHash } from '../../router/change-hash';
 import { IStatisticsCard } from '../../types/interfaces';
+import { DIFFICULT_WORDS_PAGE } from '../category-page/difficult-words-page/config';
 import { ASC_SORT, DESC_SORT } from './config';
 import { sortDatabase } from './helpers/sort-database';
 import './styles.css';
@@ -96,6 +98,12 @@ const addHandlerToResetButton = (resetButton: Element) => {
   });
 };
 
+const addHandlerToRepeatButton = (repeatButton: Element): void => {
+  repeatButton.addEventListener('click', () =>
+    changeHash(DIFFICULT_WORDS_PAGE.hash),
+  );
+};
+
 const renderTableButton = (key: string) => {
   const caption = key[0].toUpperCase() + key.slice(1);
   const tableButton = createHTMLElement(
@@ -150,6 +158,9 @@ export const renderStatisticPage = (
 
   if (resetButton) {
     addHandlerToResetButton(resetButton);
+  }
+  if (repeatButton) {
+    addHandlerToRepeatButton(repeatButton);
   }
 
   table?.append(thead);

@@ -7,6 +7,7 @@ import { renderWordCard } from '../word-card';
 import './styles.css';
 import { getHash } from '../../router/get-hash';
 import { createPageStatistics } from '../../helpers/create-page-statistics';
+import { ICardInfo } from '../../types/interfaces';
 
 const addHandlers = (button: Element): void => {
   button.addEventListener('click', () => {
@@ -35,7 +36,9 @@ export const changeStartGameButton = (isGameStarted: boolean): void => {
   }
 };
 
-export const renderCategoryPage = (): Element => {
+export const renderCategoryPage = (
+  difficultCards: ICardInfo[] | null = null,
+): Element => {
   const main = createHTMLElement(`
     <main class="category-page" id="category-page">
       <div class="category-page__score" id="score"></div>
@@ -46,7 +49,7 @@ export const renderCategoryPage = (): Element => {
       </button>
     </main>
   `);
-  const cardList = getCurrentCards(getHash());
+  const cardList = difficultCards || getCurrentCards(getHash());
   const pageStatistics = createPageStatistics();
   const button = main.querySelector('button');
 
@@ -55,6 +58,10 @@ export const renderCategoryPage = (): Element => {
   }
 
   if (cardList) {
+    if (cardList.length === 0) {
+      button?.remove();
+    }
+
     const fragment = document.createDocumentFragment();
 
     cardList.forEach((card) => {

@@ -10,6 +10,7 @@ import { playAudio } from './helpers/play-audio';
 import { Mode } from './types/modes';
 import { resetGame } from './components/category-page/helpers/reset-game';
 import { updateLocalStorage } from './local-storage';
+import { renderDifficultWordsPage } from './components/category-page/difficult-words-page';
 
 const initApp = (): void => {
   renderApp();
@@ -44,6 +45,8 @@ const initApp = (): void => {
 
     prevState = state;
   });
+
+  renderDifficultWordsPage();
 };
 
 window.addEventListener('load', initApp);
