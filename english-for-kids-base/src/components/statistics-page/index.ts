@@ -1,6 +1,8 @@
 import { createHTMLElement } from '../../helpers/create-html-element';
 import { getDatabase } from '../../local-storage';
 import { IStatisticsCard } from '../../types/interfaces';
+import { ASC_SORT, DESC_SORT } from './config';
+import { sortDatabase } from './helpers/sort-database';
 import './styles.css';
 
 const renderCard = ({
@@ -30,14 +32,58 @@ const renderCard = ({
   return tableRow;
 };
 
+const renderTableBody = (database: IStatisticsCard[]): Element => {
+  const tbody = createHTMLElement(
+    `
+      <tbody></tbody>
+    `,
+    'table',
+  );
+
+  database.forEach((card) => tbody.append(renderCard(card)));
+
+  return tbody;
+};
+
+const addTableButtonHandler = (tableButton: Element, key: string): void => {
+  const currentKey = key as keyof IStatisticsCard;
+  const ascSort = ASC_SORT.toLowerCase();
+  const descSort = DESC_SORT.toLowerCase();
+
+  tableButton.addEventListener('click', () => {
+    const tableButtons = document.getElementById('table-buttons');
+    const isASC = tableButton.classList.contains(ascSort);
+    const database = isASC
+      ? sortDatabase(currentKey, ASC_SORT)
+      : sortDatabase(currentKey, DESC_SORT);
+    const tbody = renderTableBody(database);
+    const table = document.getElementById('table');
+
+    if (tableButtons) {
+      [...tableButtons.children].forEach((btn) => {
+        btn.className = ascSort;
+      });
+    }
+
+    tableButton.className = isASC ? descSort : ascSort;
+
+    if (table) {
+      table.lastElementChild?.remove();
+      table.append(tbody);
+    }
+  });
+};
+
 const renderTableButton = (key: string) => {
   const caption = key[0].toUpperCase() + key.slice(1);
   const tableButton = createHTMLElement(
     `
-      <th scope="col">${caption}</th>
+      <th class="asc_sort" role="button" scope="col">${caption}</th>
     `,
     'tr',
   );
+
+  addTableButtonHandler(tableButton, key);
 
   return tableButton;
 };
@@ -46,7 +92,7 @@ const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
   const thead = createHTMLElement(
     `
       <thead>
-        <tr></tr>
+        <tr id="table-buttons"></tr>
       </thead>
     `,
     'table',
@@ -67,30 +113,17 @@ const renderTableHead = ([statisticsCard]: IStatisticsCard[]) => {
   return thead;
 };
 
-const renderTableBody = (database: IStatisticsCard[]): Element => {
-  const tbody = createHTMLElement(
-    `
-      <tbody></tbody>
-    `,
-    'table',
-  );
-
-  database.forEach((card) => tbody.append(renderCard(card)));
-
-  return tbody;
-};
-
 export const renderStatisticPage = (
-  sortDatabase: IStatisticsCard[] | null = null,
+  sortedDatabase: IStatisticsCard[] | null = null,
 ): void => {
-  const database = sortDatabase || getDatabase();
+  const database = sortedDatabase || getDatabase();
   const page = createHTMLElement(`
     <div class="table-wrapper">
       <div class="button-wrapper">
         <button type="button" class="btn btn-secondary">Repeat difficult words</button>
         <button type="button" class="btn btn-secondary">Reset</button>
       </div>
-      <table class="table table-hover">
+      <table class="table table-hover" id="table">
       </table>
     </div>
   `);
