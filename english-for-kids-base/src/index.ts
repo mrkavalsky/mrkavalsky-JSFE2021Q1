@@ -39,7 +39,11 @@ const initApp = (): void => {
     if (isGameStarted !== prevState.gameMode.isGameStarted) {
       changeStartGameButton(isGameStarted);
     }
-    if (isGameStarted && word !== prevState.statistics.currentCard.word) {
+    if (
+      isGameStarted &&
+      word !== prevState.statistics.currentCard.word &&
+      audioSrc
+    ) {
       playAudio(audioSrc);
     }
 
