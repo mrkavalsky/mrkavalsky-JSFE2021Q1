@@ -4,7 +4,7 @@ import {
   getCategory,
   getMenuCards,
   getMenuList,
-} from '../controllers/index';
+} from '../../controllers/index';
 
 function createRouter(): Router {
   const router = Router();
@@ -17,4 +17,4 @@ function createRouter(): Router {
   return router;
 }
 
-export const ROUTER = createRouter();
+export const CARDS_ROUTER = createRouter();
