@@ -1,19 +1,20 @@
 import { Request, Response } from 'express';
-import { cards } from '../../cards';
+import { CARDS } from '../init-cards';
+
 import { STATISTICS } from '../statistics';
 import { getDifficultWords } from '../statistics/helpers/get-difficult-words';
 import { sortStatistics } from '../statistics/helpers/sort-database';
 import { IStatisticsCard } from '../types/interfaces';
 
 export const getCards = (req: Request, res: Response): void => {
-  res.status(200).json(cards);
+  res.status(200).json(CARDS.getValue());
 };
 
 export const getMenuList = async (
   req: Request,
   res: Response,
 ): Promise<void> => {
-  const menuList = cards.map(({ category, hash }) => {
+  const menuList = CARDS.getValue().map(({ category, hash }) => {
     return {
       category,
       hash,
@@ -27,13 +28,15 @@ export const getMenuCards = async (
   req: Request,
   res: Response,
 ): Promise<void> => {
-  const menuCards = cards.map(({ category, hash, cardsList: [{ image }] }) => {
-    return {
-      category,
-      hash,
-      image,
-    };
-  });
+  const menuCards = CARDS.getValue().map(
+    ({ category, hash, cardsList: [{ image }] }) => {
+      return {
+        category,
+        hash,
+        image,
+      };
+    },
+  );
 
   res.status(200).json(menuCards);
 };
@@ -42,7 +45,9 @@ export const getCategory = async (
   req: Request,
   res: Response,
 ): Promise<void> => {
-  const category = cards.filter(({ hash }) => hash === req.params.hash);
+  const category = CARDS.getValue().filter(
+    ({ hash }) => hash === req.params.hash,
+  );
 
   res.status(200).json(...category);
 };

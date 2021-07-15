@@ -28,3 +28,8 @@ export interface IStatistics {
   getValue(): IStatisticsCard[];
   setValue(value: IStatisticsCard[]): void;
 }
+
+export interface ICardControl {
+  getValue(): ICards[];
+  setValue(value: ICards[]): void;
+}
