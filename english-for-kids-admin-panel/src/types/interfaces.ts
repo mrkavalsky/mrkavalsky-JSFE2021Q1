@@ -13,3 +13,13 @@ export interface ICards {
   hash: string;
   cardsList: ICardInfo[];
 }
+
+export interface IStatisticsCard {
+  category: string;
+  word: string;
+  translation: string;
+  train: number;
+  hit: number;
+  miss: number;
+  errors: number;
+}

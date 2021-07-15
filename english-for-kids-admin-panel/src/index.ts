@@ -15,9 +15,7 @@ function startServer(): void {
   app.use('/api/cards', ROUTER);
 
   app.listen(PORT, () => {
-    console.log(
-      `Server has been started on port ${PORT}...`,
-    );
+    console.log(`Server has been started on port ${PORT}...`);
   });
 }
 
