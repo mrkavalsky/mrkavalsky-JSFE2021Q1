@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { DEFAULT_IMAGE } from '../../cards';
 import { CARDS } from '../init-cards';
 
 import { STATISTICS } from '../statistics';
@@ -28,15 +29,13 @@ export const getMenuCards = async (
   req: Request,
   res: Response,
 ): Promise<void> => {
-  const menuCards = CARDS.getValue().map(
-    ({ category, hash, cardsList: [{ image }] }) => {
-      return {
-        category,
-        hash,
-        image,
-      };
-    },
-  );
+  const menuCards = CARDS.getValue().map(({ category, hash, cardsList }) => {
+    return {
+      category,
+      hash,
+      image: cardsList[0] ? cardsList[0].image : DEFAULT_IMAGE,
+    };
+  });
 
   res.status(200).json(menuCards);
 };
