@@ -6,7 +6,8 @@ import { ROUTER } from './routes';
 function startServer(): void {
   const app = express();
 
-  app.use(express.static(path.resolve(__dirname, '../static')));
+  app.use('/', express.static(path.resolve(__dirname, '../static')));
+  app.use('/api/content', express.static(path.resolve(__dirname, '../cards')));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(ROUTER);
