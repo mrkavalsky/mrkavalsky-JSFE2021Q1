@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { cards } from '../../cards';
+import { STATISTICS } from '../statistics';
 
 export const getCards = (req: Request, res: Response): void => {
   res.status(200).json(cards);
@@ -41,4 +42,11 @@ export const getCategory = async (
   const category = cards.filter(({ hash }) => hash === req.params.hash);
 
   res.status(200).json(...category);
+};
+
+export const getStatistics = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  res.status(200).json(STATISTICS);
 };
