@@ -51,7 +51,7 @@ export const getStatistics = async (
   req: Request,
   res: Response,
 ): Promise<void> => {
-  res.status(200).json(STATISTICS);
+  res.status(200).json(STATISTICS.getValue());
 };
 
 export const getSortStatistics = async (
@@ -71,4 +71,15 @@ export const getDifficultCards = async (
   const words = getDifficultWords();
 
   res.status(200).json(words);
+};
+
+export const postStatistics = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  const newStatistics = req.body as IStatisticsCard[];
+
+  STATISTICS.setValue(newStatistics);
+
+  res.status(201).json(STATISTICS.getValue());
 };

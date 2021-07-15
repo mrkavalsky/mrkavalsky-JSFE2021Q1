@@ -23,3 +23,8 @@ export interface IStatisticsCard {
   miss: number;
   errors: number;
 }
+
+export interface IStatistics {
+  getValue(): IStatisticsCard[];
+  setValue(value: IStatisticsCard[]): void;
+}

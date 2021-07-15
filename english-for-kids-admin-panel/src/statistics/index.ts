@@ -1,5 +1,5 @@
 import { cards } from '../../cards';
-import { ICardInfo, IStatisticsCard } from '../types/interfaces';
+import { ICardInfo, IStatistics, IStatisticsCard } from '../types/interfaces';
 
 const getNewCardsList = (
   cardsList: ICardInfo[],
@@ -29,4 +29,17 @@ const initDatabase = (): IStatisticsCard[] => {
   );
 };
 
-export const STATISTICS = initDatabase();
+export function StatisticControl(): IStatistics {
+  let STATISTICS = initDatabase();
+
+  return {
+    getValue() {
+      return STATISTICS;
+    },
+    setValue(value: IStatisticsCard[]) {
+      STATISTICS = value;
+    },
+  };
+}
+
+export const STATISTICS = StatisticControl();

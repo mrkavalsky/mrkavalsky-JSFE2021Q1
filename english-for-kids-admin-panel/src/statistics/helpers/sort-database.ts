@@ -11,5 +11,5 @@ export const sortStatistics = (
   const sortDirection =
     sortType === ASC_SORT ? getSortASC(key) : getSortDESC(key);
 
-  return STATISTICS.sort(sortDirection);
+  return STATISTICS.getValue().sort(sortDirection);
 };
