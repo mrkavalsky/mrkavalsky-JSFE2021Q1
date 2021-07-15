@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { cards } from '../../cards';
 import { STATISTICS } from '../statistics';
+import { getDifficultWords } from '../statistics/helpers/get-difficult-words';
 import { sortStatistics } from '../statistics/helpers/sort-database';
 import { IStatisticsCard } from '../types/interfaces';
 
@@ -61,4 +62,13 @@ export const getSortStatistics = async (
   const sortedStatistics = sortStatistics(key, req.params.type);
 
   res.status(200).json(sortedStatistics);
+};
+
+export const getDifficultCards = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  const words = getDifficultWords();
+
+  res.status(200).json(words);
 };
