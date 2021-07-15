@@ -33,3 +33,12 @@ export const getMenuCards = async (
 
   res.status(200).json(menuCards);
 };
+
+export const getCategory = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  const category = cards.filter(({ hash }) => hash === req.params.hash);
+
+  res.status(200).json(...category);
+};

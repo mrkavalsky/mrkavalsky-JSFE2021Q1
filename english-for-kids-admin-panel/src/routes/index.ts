@@ -1,5 +1,10 @@
 import { Router } from 'express';
-import { getCards, getMenuCards, getMenuList } from '../controllers/index';
+import {
+  getCards,
+  getCategory,
+  getMenuCards,
+  getMenuList,
+} from '../controllers/index';
 
 function createRouter(): Router {
   const router = Router();
@@ -7,6 +12,7 @@ function createRouter(): Router {
   router.get('/', getCards);
   router.get('/menu-list', getMenuList);
   router.get('/menu-cards', getMenuCards);
+  router.get('/:hash', getCategory);
 
   return router;
 }
