@@ -10,7 +10,7 @@ function startServer(): void {
   app.use('/api/content', express.static(path.resolve(__dirname, '../cards')));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
-  app.use(ROUTER);
+  app.use('/api/cards', ROUTER);
 
   app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`);

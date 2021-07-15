@@ -4,7 +4,7 @@ import { getCards } from '../controllers/index';
 function createRouter(): Router {
   const router = Router();
 
-  router.get('/api/cards', getCards);
+  router.get('/', getCards);
 
   return router;
 }
