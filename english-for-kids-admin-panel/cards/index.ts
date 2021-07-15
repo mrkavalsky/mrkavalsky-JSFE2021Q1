@@ -1,5 +1,7 @@
 import { ICards } from '../src/types/interfaces';
 
+export const DEFAULT_IMAGE = 'api/content/img/success.jpg';
+
 export const cards: ICards[] = [
   {
     category: 'Action (set A)',
