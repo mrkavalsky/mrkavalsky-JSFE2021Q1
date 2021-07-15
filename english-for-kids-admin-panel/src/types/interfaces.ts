@@ -38,3 +38,7 @@ export interface INewCategory {
   categoryName: string;
   isUserLogin: boolean;
 }
+
+export interface IUpdateCategory extends INewCategory {
+  hash: string;
+}
