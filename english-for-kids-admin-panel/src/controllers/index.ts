@@ -18,3 +18,18 @@ export const getMenuList = async (
 
   res.status(200).json(menuList);
 };
+
+export const getMenuCards = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  const menuCards = cards.map(({ category, hash, cardsList: [{ image }] }) => {
+    return {
+      category,
+      hash,
+      image,
+    };
+  });
+
+  res.status(200).json(menuCards);
+};
