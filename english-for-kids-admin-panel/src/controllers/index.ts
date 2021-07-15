@@ -4,7 +4,7 @@ import { CARDS } from '../init-cards';
 import { STATISTICS } from '../statistics';
 import { getDifficultWords } from '../statistics/helpers/get-difficult-words';
 import { sortStatistics } from '../statistics/helpers/sort-database';
-import { IStatisticsCard } from '../types/interfaces';
+import { INewCategory, IStatisticsCard } from '../types/interfaces';
 
 export const getCards = (req: Request, res: Response): void => {
   res.status(200).json(CARDS.getValue());
@@ -87,4 +87,27 @@ export const postStatistics = async (
   STATISTICS.setValue(newStatistics);
 
   res.status(201).json(STATISTICS.getValue());
+};
+
+export const postCategory = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
+  const { categoryName, isUserLogin } = req.body as INewCategory;
+
+  if (isUserLogin) {
+    const newCards = CARDS.getValue();
+    const category = categoryName.trim();
+    const hash = category.split(' ').join('-');
+
+    newCards.push({
+      category,
+      hash,
+      cardsList: [],
+    });
+
+    CARDS.setValue(newCards);
+
+    res.status(201).json(CARDS.getValue());
+  }
 };

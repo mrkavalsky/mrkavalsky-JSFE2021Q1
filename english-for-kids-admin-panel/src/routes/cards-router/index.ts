@@ -4,6 +4,7 @@ import {
   getCategory,
   getMenuCards,
   getMenuList,
+  postCategory,
 } from '../../controllers/index';
 
 function createRouter(): Router {
@@ -13,6 +14,7 @@ function createRouter(): Router {
   router.get('/menu-list', getMenuList);
   router.get('/menu-cards', getMenuCards);
   router.get('/:hash', getCategory);
+  router.post('/', postCategory);
 
   return router;
 }

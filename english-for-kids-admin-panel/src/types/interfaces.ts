@@ -33,3 +33,8 @@ export interface ICardControl {
   getValue(): ICards[];
   setValue(value: ICards[]): void;
 }
+
+export interface INewCategory {
+  categoryName: string;
+  isUserLogin: boolean;
+}
